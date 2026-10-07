@@ -22,7 +22,7 @@ TOEIC 対策向けの英文学習アプリです。集めた英文を AI(Gemini)
 - 英文・単語・グループ・解析結果は、まず各自のブラウザ(localStorage)に保存されます。API キーはブラウザ内だけで、同期しません。
 - 「⚙ 設定」→「クラウド同期」を有効にすると、英文・単語・グループを **端末側で暗号化してから** Cloudflare D1 に保存し、PC とスマホで共有できます。
   - 暗号化: パスフレーズから PBKDF2(SHA-256・60万回)で鍵を作り、AES-GCM で暗号化。パスフレーズと鍵は送信しないため、サーバー側からは中身を読めません。パスフレーズを忘れると復元できません。
-  - 認証: 初回作成時に発行される「同期キー」(保管庫ID.秘密)で接続します。サーバーは秘密の SHA-256 だけを保存します。
+  - 認証: 初回作成時に発行される「同期キー」(保管庫ID.秘密)で接続します。2台目以降は、設定画面の QR コードをスマホで読み取ると同期キーが入力済みの状態で開きます(キーは URL の `#` 以降に入れるのでサーバーには送られません)。サーバーは秘密の SHA-256 だけを保存します。
   - 保管庫の作成にはセットアップコード(Worker のシークレット `SETUP_CODE`)が必要で、作成できる数は `MAX_VAULTS`(既定 1)までです。
   - 変更は数秒後に自動で同期されます。同じ英文が両方の端末にあれば1つにまとめます。
 - 「バックアップ保存」「復元」で JSON ファイルにも書き出せます(このファイルは暗号化されません)。
@@ -72,4 +72,5 @@ npx wrangler deploy
 ## 外部素材
 
 - 絵文字: [OpenMoji](https://openmoji.org/) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)(jsDelivr から読み込み。このリポジトリには含みません。アプリで作った絵文字シーンを配布する場合はこのライセンスに従ってください)
+- QR コード: [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)(MIT、Kazuhiko Arase。`public/vendor/qrcode.js` に同梱)
 - 関係図: [RelaGrid](https://github.com/minnanosaiban/relagrid)(同じ作者のプロジェクト。`public/relagrid/` に描画部分を同梱)

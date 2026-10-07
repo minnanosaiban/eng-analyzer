@@ -286,6 +286,7 @@ details summary{cursor:pointer}
 </dialog>
 
 <button type="button" id="backToTop" class="back-to-top" aria-label="上へ戻る" hidden><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></svg></button>
+<script src="vendor/qrcode.js"></script>
 <script src="relagrid/icons.js"></script>
 <script src="relagrid/colors.js"></script>
 <script src="relagrid/model.js"></script>
@@ -1148,8 +1149,16 @@ function renderSyncBox(){
       ${newToken?`<div class="card" style="margin:8px 0;padding:10px 12px"><b>同期キー(別の端末で接続するときに必要)</b>
         <input type="text" readonly id="tokOut" value="${esc(newToken)}" style="margin-top:6px;font-family:monospace;font-size:12px">
         <div class="sub">パスワード管理アプリなど安全な場所に保管してください。パスフレーズとは別に必要です。</div></div>`:""}
-      <div class="row" style="margin-top:6px"><button class="sm pri" id="sNow">今すぐ同期</button><button class="sm" id="sKey">同期キーをコピー</button><button class="sm" id="sOff">この端末の同期を解除</button></div>`;
+      <div id="qrBox" class="hide" style="margin-top:8px;text-align:center"></div>
+      <div class="row" style="margin-top:6px"><button class="sm pri" id="sNow">今すぐ同期</button><button class="sm" id="sQr">スマホで接続(QRコード)</button><button class="sm" id="sKey">同期キーをコピー</button><button class="sm" id="sOff">この端末の同期を解除</button></div>`;
     $("#sNow").onclick=()=>syncNow(true).then(renderSyncBox);
+    $("#sQr").onclick=()=>{ // 同期キーを URL の # 以降に入れた QR コード(# 以降はサーバーに送られない)
+      const box=$("#qrBox");if(!box.classList.contains("hide")){box.classList.add("hide");box.innerHTML="";return}
+      const q=qrcode(0,"M");q.addData(location.origin+location.pathname+"#sync="+encodeURIComponent(sync.token));q.make();
+      box.innerHTML=`<div style="display:inline-block;background:#fff;padding:8px;border-radius:10px;width:220px">${q.createSvgTag({cellSize:4,margin:8,scalable:true})}</div>
+        <div class="sub">スマホのカメラで読み取ると、同期キーが入力された状態でアプリが開きます。あとはパスフレーズを入れるだけです。人に見られない場所で表示してください。</div>`;
+      box.classList.remove("hide");
+    };
     $("#sKey").onclick=()=>copyText(sync.token,$("#tokOut")||$("#apiKey")).then(()=>toast("同期キーをコピーしました。安全な場所に保管してください。"));
     $("#sOff").onclick=()=>{if(!confirm("この端末の同期を解除しますか?\n(この端末のデータとクラウドのデータは消えません)"))return;sync=null;cryptoKey=null;newToken=null;saveSync();setSyncStatus("");renderSyncBox()};
     return;
@@ -1173,6 +1182,12 @@ function renderSyncBox(){
 }
 {const open=$("#btnSet").onclick;$("#btnSet").onclick=()=>{open();renderSyncBox()}}
 $("#syncStatus").onclick=()=>syncNow(true);
+// QR コードから開いたとき: # 以降の同期キーを接続フォームに入れ、アドレス欄からは消す
+if(location.hash.startsWith("#sync=")){
+  const tok=decodeURIComponent(location.hash.slice(6));history.replaceState(null,"",location.pathname+location.search);
+  if(sync)toast("この端末はすでに同期しています。");
+  else{syncForm="join";$("#btnSet").onclick();$("#sTok").value=tok;$("#syncBox").scrollIntoView();$("#sP1").focus()}
+}
 addEventListener("online",()=>syncNow());
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")syncNow()});
 if(sync){setSyncStatus("☁ 同期中…");syncNow()}
