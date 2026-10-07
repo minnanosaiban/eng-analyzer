@@ -17,11 +17,20 @@ TOEIC 対策向けの英文学習アプリです。集めた英文を AI(Gemini)
 | ⑸ 音声化 | 端末の読み上げ機能で連続再生・シャドーイング・ディクテーション |
 | ⑹ 英単語グループ化 | 単語帳と、品詞・頻出度・意味などによるグループ分け |
 
-## データと API キー
+## データの保存とクラウド同期
 
-- 英文・単語・グループ・解析結果・API キーは、すべて各自のブラウザ(localStorage)に保存されます。サーバーには送りません。
-- 端末間の移動は「バックアップ保存」→「復元」で行います。
-- AI 機能を使うには、右上の「⚙ 設定」で [Google AI Studio](https://aistudio.google.com/apikey) の Gemini API キーを入力します。呼び出しはボタンを押したときだけです。
+- 英文・単語・グループ・解析結果は、まず各自のブラウザ(localStorage)に保存されます。API キーはブラウザ内だけで、同期しません。
+- 「⚙ 設定」→「クラウド同期」を有効にすると、英文・単語・グループを **端末側で暗号化してから** Cloudflare D1 に保存し、PC とスマホで共有できます。
+  - 暗号化: パスフレーズから PBKDF2(SHA-256・60万回)で鍵を作り、AES-GCM で暗号化。パスフレーズと鍵は送信しないため、サーバー側からは中身を読めません。パスフレーズを忘れると復元できません。
+  - 認証: 初回作成時に発行される「同期キー」(保管庫ID.秘密)で接続します。サーバーは秘密の SHA-256 だけを保存します。
+  - 保管庫の作成にはセットアップコード(Worker のシークレット `SETUP_CODE`)が必要で、作成できる数は `MAX_VAULTS`(既定 1)までです。
+  - 変更は数秒後に自動で同期されます。同じ英文が両方の端末にあれば1つにまとめます。
+- 「バックアップ保存」「復元」で JSON ファイルにも書き出せます(このファイルは暗号化されません)。
+
+## AI の使い方
+
+- **Gemini API**: 「⚙ 設定」で [Google AI Studio](https://aistudio.google.com/apikey) の API キーを入力します。呼び出しはボタンを押したときだけです。
+- **コピペモード**: API キー不要。プロンプトをコピーして Gemini アプリ等に貼り、回答を貼り戻します(一括解析は 10 文ずつ)。
 
 ## 構成
 
@@ -31,14 +40,22 @@ public/            公開されるファイル一式
   sw.js            Service Worker(オフライン用キャッシュ)
   manifest.json    PWA 設定
   relagrid/        RelaGrid の描画部分(minnanosaiban/relagrid の js/ からコピー)
-wrangler.jsonc     Cloudflare Workers(静的アセット)の設定
+src/worker.js      同期 API(/api/*)。暗号文の保存・取得のみ
+migrations/        D1 のテーブル定義
+wrangler.jsonc     Cloudflare Workers(静的アセット + D1)の設定
 ```
 
 ## ローカルで動かす
 
 ```bash
-python -m http.server 8611 -d public
+npx wrangler d1 migrations apply eng-analyzer-db --local
 ```
+
+```bash
+npx wrangler dev
+```
+
+ローカルでセットアップコードを使う場合は `.dev.vars` に `SETUP_CODE=...` を書きます(Git 管理外)。
 
 ## 公開(Cloudflare)
 

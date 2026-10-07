@@ -1,4 +1,4 @@
-const CACHE = "eng-analyzer-v4";
+const CACHE = "eng-analyzer-v6";
 const FILES = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./relagrid/icons.js", "./relagrid/colors.js", "./relagrid/model.js", "./relagrid/parser.js", "./relagrid/renderer.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => e.waitUntil(
@@ -12,7 +12,8 @@ self.addEventListener("fetch", e => {
       if (res.ok) { const c = res.clone(); caches.open(CACHE).then(x => x.put(e.request, c)); } return res; })));
     return;
   }
-  if (e.request.method !== "GET" || u.origin !== location.origin) return;
+  // 同期 API はキャッシュしない(常にサーバーへ)
+  if (e.request.method !== "GET" || u.origin !== location.origin || u.pathname.startsWith("/api/")) return;
   e.respondWith(fetch(e.request).then(r => { const c = r.clone(); caches.open(CACHE).then(x => x.put(e.request, c)); return r; })
     .catch(() => caches.match(e.request).then(r => r || caches.match("./index.html"))));
 });

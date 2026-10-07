@@ -95,7 +95,7 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}
 td,th{border-bottom:1px solid var(--tx-border);padding:6px;text-align:left;vertical-align:top}
 .hide{display:none!important}
 /* ダイアログ(サイドノートのポップオーバーと同じ外観) */
-dialog{border:none;border-radius:10px;background:var(--surface);color:var(--tx-text);box-shadow:0 4px 18px rgba(0,0,0,.18);padding:16px 18px;max-width:440px;width:92%;font-size:13px}
+dialog{max-height:90vh;overflow:auto;border:none;border-radius:10px;background:var(--surface);color:var(--tx-text);box-shadow:0 4px 18px rgba(0,0,0,.18);padding:16px 18px;max-width:440px;width:92%;font-size:13px}
 dialog::backdrop{background:rgba(20,22,26,.25)}
 dialog h3{font-size:13.5px;font-weight:700;margin:0 0 10px}
 .gl label{display:flex;gap:8px;align-items:center;padding:3px 0}
@@ -135,6 +135,7 @@ details summary{cursor:pointer}
       <p class="hero-desc">集めた英文を、構造・図・音で学ぶ。</p>
     </div>
     <div class="hero-actions">
+      <button type="button" id="syncStatus" class="sm hide" title="クリックで今すぐ同期">☁</button>
       <span class="design-label">デザイン <button type="button" id="darkBtn" class="dark-mode-toggle-btn" title="ダークモード" aria-pressed="false"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg></button></span>
       <button id="btnGrp"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5z"/></svg> グループ管理</button>
       <button id="btnSet"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/></svg> 設定</button>
@@ -228,13 +229,39 @@ details summary{cursor:pointer}
 
 <dialog id="dlg">
   <h3 style="margin-top:0">設定</h3>
+  <div class="sub" style="font-weight:700;color:var(--tx-text)">AI の使い方</div>
+  <label class="ck"><input type="radio" name="aiMode" value="api"> Gemini API(API キーで自動実行)</label><br>
+  <label class="ck"><input type="radio" name="aiMode" value="copy"> コピペモード(Gemini アプリ等に貼って実行。API キー不要・API 料金なし)</label>
+  <div id="apiFields" style="margin-top:8px">
   <label class="sub">Gemini API キー(<a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">取得</a>)。この端末のブラウザにのみ保存されます。</label>
   <input type="password" id="apiKey" autocomplete="off">
   <label class="sub">モデル名</label>
   <input type="text" id="model">
+  </div>
   <div class="sub" id="usage" style="margin-top:8px"></div>
+  <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--tx-border)">
+    <div class="sub" style="font-weight:700;color:var(--tx-text)">クラウド同期(Cloudflare)</div>
+    <div id="syncBox" style="margin-top:6px"></div>
+  </div>
   <div class="row" style="margin-top:12px;justify-content:flex-end">
     <button id="setCancel">閉じる</button><button class="pri" id="setSave">保存</button>
+  </div>
+</dialog>
+
+<dialog id="cpDlg">
+  <h3>コピペモード:Gemini で実行</h3>
+  <ol class="sub" style="padding-left:18px;margin:0 0 8px">
+    <li>「プロンプトをコピー」を押す</li>
+    <li>「Gemini を開く」で貼り付けて送信する</li>
+    <li>返ってきた回答をコピーして、下の欄に貼り付けて「反映」</li>
+  </ol>
+  <div class="row"><button class="pri sm" id="cpCopy">プロンプトをコピー</button>
+    <a class="btn-label" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini を開く ↗</a></div>
+  <details style="margin-top:6px"><summary class="sub">プロンプトの中身を見る</summary><textarea class="code" id="cpPrompt" readonly></textarea></details>
+  <textarea id="cpIn" placeholder="ここに Gemini の回答を貼り付け(コードブロックや前後の説明が付いていても大丈夫です)" style="margin-top:8px;min-height:120px"></textarea>
+  <div class="err" id="cpErr"></div>
+  <div class="row" style="margin-top:10px;justify-content:flex-end">
+    <button id="cpCancel">キャンセル</button><button class="pri" id="cpOk">反映</button>
   </div>
 </dialog>
 
@@ -285,7 +312,8 @@ function load(){
   for(const w of d.words)w.gids||=[];
   return d;
 }
-function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast("保存に失敗しました(容量不足の可能性): "+e.message)}}
+function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast("保存に失敗しました(容量不足の可能性): "+e.message,true)}}
+function save(){saveLocal();scheduleSync()}
 const cfg=()=>({model:"gemini-2.5-flash",...db.cfg});
 const gname=id=>db.groups.find(g=>g.id===id)?.name;
 const chips=gids=>(gids||[]).map(gname).filter(Boolean).map(n=>`<span class="tag g">🗂 ${esc(n)}</span>`).join("");
@@ -319,9 +347,35 @@ function fillGroupSelect(el,extra=""){
 const inGroup=(o,v)=>!v||(v==="__none"?!o.gids.length:o.gids.includes(v));
 
 /* ---------- Gemini ---------- */
+const isCopyMode=()=>cfg().mode==="copy";
+// 回答テキストから JSON を取り出す(コードブロックや前後の説明文があっても可)
+function parseLoose(t){
+  t=String(t||"").trim();
+  const fence=t.match(/```(?:json)?\s*([\s\S]*?)```/i);if(fence)t=fence[1].trim();
+  try{return JSON.parse(t)}catch{}
+  const s=t.search(/[\[{]/);if(s<0)throw new Error("JSON が見つかりません");
+  const close=t[s]==="["?"]":"}",e=t.lastIndexOf(close);
+  return JSON.parse(t.slice(s,e+1));
+}
+async function copyText(text,ta){
+  try{await navigator.clipboard.writeText(text)}catch{ta.select();document.execCommand("copy")}
+}
+// コピペモード: プロンプトを渡し、ユーザーが貼り付けた回答を JSON として返す
+function copyPaste(prompt){
+  return new Promise((resolve,reject)=>{
+    const d=$("#cpDlg");$("#cpPrompt").value=prompt;$("#cpIn").value="";$("#cpErr").textContent="";
+    let settled=false;const fin=(ok,v)=>{if(settled)return;settled=true;d.close();ok?resolve(v):reject(v)};
+    $("#cpCopy").onclick=()=>copyText(prompt,$("#cpPrompt")).then(()=>toast("コピーしました。Gemini に貼り付けて送信してください。"));
+    $("#cpOk").onclick=()=>{try{fin(true,parseLoose($("#cpIn").value))}catch(e){$("#cpErr").textContent="回答を読み取れませんでした: "+e.message+"\n回答全体をコピーして貼り付けてください。"}};
+    $("#cpCancel").onclick=()=>fin(false,new Error("キャンセルしました"));
+    d.oncancel=()=>fin(false,new Error("キャンセルしました"));
+    d.showModal();
+  });
+}
 async function gemini(prompt,temp=0.2){
+  if(isCopyMode())return copyPaste(prompt+"\n\n【出力形式】JSON だけを ```json のコードブロック1つで出力してください。前後の説明は不要です。");
   const {apiKey,model}=cfg();
-  if(!apiKey)throw new Error("設定(右上⚙)で Gemini API キーを入力してください。");
+  if(!apiKey)throw new Error("設定(右上⚙)で Gemini API キーを入力するか、「コピペモード」に切り替えてください。");
   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,{
     method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":apiKey},
     body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:"application/json",temperature:temp}})});
@@ -368,14 +422,17 @@ $("#mgList").onclick=e=>{
 };
 
 /* ---------- settings ---------- */
+const syncMode=()=>$("#apiFields").classList.toggle("hide",document.querySelector("[name=aiMode]:checked")?.value==="copy");
+document.querySelectorAll("[name=aiMode]").forEach(r=>r.onchange=syncMode);
 $("#btnSet").onclick=()=>{
   $("#apiKey").value=db.cfg.apiKey||"";$("#model").value=cfg().model;
+  document.querySelector(`[name=aiMode][value=${isCopyMode()?"copy":"api"}]`).checked=true;syncMode();
   const kb=Math.round((localStorage.getItem(KEY)||"").length*2/1024);
   $("#usage").textContent=`保存データ: 約 ${kb} KB / 目安上限 約 5,000 KB(ブラウザにより異なります)`;
   $("#dlg").showModal();
 };
 $("#setCancel").onclick=()=>$("#dlg").close();
-$("#setSave").onclick=()=>{db.cfg.apiKey=$("#apiKey").value.trim();db.cfg.model=$("#model").value.trim()||"gemini-2.5-flash";save();$("#dlg").close()};
+$("#setSave").onclick=()=>{db.cfg.mode=document.querySelector("[name=aiMode]:checked").value;db.cfg.apiKey=$("#apiKey").value.trim();db.cfg.model=$("#model").value.trim()||"gemini-2.5-flash";save();$("#dlg").close()};
 
 /* ---------- add ---------- */
 function addSentences(rows,gidsBase){
@@ -443,6 +500,7 @@ let batchStop=false;
 $("#btnBatch").onclick=async()=>{
   const todo=visibleItems().filter(i=>!i.analysis);
   if(!todo.length)return toast("表示中の英文はすべて解析済みです。");
+  if(isCopyMode())return batchCopy(todo);
   if(!confirm(`${todo.length} 文を順番に解析します(API を ${todo.length} 回呼び出します)。よろしいですか?`))return;
   batchStop=false;$("#btnBatch").classList.add("hide");$("#btnBatchStop").classList.remove("hide");
   let k=0;
@@ -456,6 +514,23 @@ $("#btnBatch").onclick=async()=>{
   $("#btnBatch").classList.remove("hide");$("#btnBatchStop").classList.add("hide");
 };
 $("#btnBatchStop").onclick=()=>batchStop=true;
+// コピペモードの一括解析: 10 文ずつ 1 つのプロンプトにまとめる
+async function batchCopy(todo){
+  const N=10,rounds=Math.ceil(todo.length/N);
+  if(!confirm(`${todo.length} 文を ${N} 文ずつまとめて解析します(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return;
+  let k=0;
+  for(let r=0;r<rounds;r++){
+    const part=todo.slice(r*N,r*N+N);
+    $("#batchMsg").textContent=`コピペ ${r+1} / ${rounds} 回目(${part.length} 文)`;
+    try{
+      const res=await gemini(BPROMPT(part.map(i=>i.text)));
+      const arr=Array.isArray(res)?res:res.results||[];
+      part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];if(a&&typeof a==="object"&&a.translation){delete a.n;it.analysis=a;k++}});
+      save();renderLib();
+    }catch(e){$("#batchMsg").textContent=`停止しました(${k} 文 解析済み): ${e.message}`;return}
+  }
+  $("#batchMsg").textContent=`完了: ${k} / ${todo.length} 文を解析しました`+(k<todo.length?"(読み取れなかった文は、もう一度一括解析すると再挑戦します)":"");
+}
 $("#btnExport").onclick=()=>download("english-library.json",JSON.stringify({groups:db.groups,items:db.items,words:db.words},null,1),"application/json");
 $("#importIn").onchange=async e=>{
   try{
@@ -510,6 +585,12 @@ JSON形式:
  "toeic":{"scene":"ビジネス場面(人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 など1つ)","part":"出題されやすいパート(例: Part 5 / Part 6 / Part 7)","points":[{"type":"品詞 / 時制 / 前置詞 / 接続詞・副詞 / 関係詞 / 代名詞 / 語彙 / 語法 のいずれか","detail":"この文で問われうる論点"}],"paraphrase":["TOEIC(Part 7の設問や選択肢)で使われそうな言い換え表現"]}
 }
 この英文がTOEICに出る場合の観点(toeic)も必ず含めること。`;
+const BPROMPT=list=>`次の${list.length}個の英文それぞれについて、下の「1文あたりの指示」どおりに分析し、結果を JSON 配列 [{"n":1, ...}, {"n":2, ...}] で答えてください(n は英文の番号。各要素は指示の JSON 形式に n を加えたもの)。
+英文:
+${list.map((s,i)=>`${i+1}. ${s}`).join("\n")}
+
+--- 1文あたりの指示 ---
+${PROMPT("(上の各英文)")}`;
 async function analyze(it){const a=await gemini(PROMPT(it.text));it.analysis=a;save();return a}
 const QPROMPT=s=>`次の英文をもとに、TOEIC Part 5 形式の4択穴埋め問題を1問作り、JSONのみで答えてください。解説は日本語。
 英文: ${s}
@@ -954,6 +1035,147 @@ applyDark(isDark());
 const topBtn=$("#backToTop");
 addEventListener("scroll",()=>{topBtn.hidden=scrollY<400},{passive:true});
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+/* ---------- クラウド同期(Cloudflare D1)----------
+   英文・単語・グループを端末側で AES-GCM 暗号化してから送る。鍵はパスフレーズから PBKDF2 で作る。
+   サーバー側は暗号文しか持たないので、中身は Cloudflare からも読めない。
+   変更検知: 最後に同期した時点の各レコードのハッシュと比べ、違うものだけ送る。 */
+const SKEY="eng-analyzer-sync-v1",CHECK="eng-analyzer-check";
+let sync=(()=>{try{return JSON.parse(localStorage.getItem(SKEY))}catch{return null}})();
+let cryptoKey=null,syncing=false,syncAgain=false,syncTimer=null,syncForm=null,newToken=null;
+function saveSync(){try{sync?localStorage.setItem(SKEY,JSON.stringify(sync)):localStorage.removeItem(SKEY)}catch(e){toast("同期情報を保存できませんでした: "+e.message,true)}}
+const te=new TextEncoder(),td=new TextDecoder();
+const toB64=u8=>{let s="";for(let i=0;i<u8.length;i+=0x8000)s+=String.fromCharCode(...u8.subarray(i,i+0x8000));return btoa(s)};
+const fromB64=b=>Uint8Array.from(atob(b),c=>c.charCodeAt(0));
+async function deriveKey(pass,salt){
+  const base=await crypto.subtle.importKey("raw",te.encode(pass),"PBKDF2",false,["deriveKey"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2",salt:fromB64(salt),iterations:600000,hash:"SHA-256"},base,{name:"AES-GCM",length:256},true,["encrypt","decrypt"]);
+}
+const exportKey=async k=>toB64(new Uint8Array(await crypto.subtle.exportKey("raw",k)));
+async function getKey(){return cryptoKey||=await crypto.subtle.importKey("raw",fromB64(sync.key),"AES-GCM",false,["encrypt","decrypt"])}
+async function encrypt(obj,key){const iv=crypto.getRandomValues(new Uint8Array(12));
+  const ct=await crypto.subtle.encrypt({name:"AES-GCM",iv},key,te.encode(JSON.stringify(obj)));return{iv:toB64(iv),data:toB64(new Uint8Array(ct))}}
+async function decrypt(iv,data,key){return JSON.parse(td.decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:fromB64(iv)},key,fromB64(data))))}
+async function api(path,opt={},token=sync?.token){
+  let r;
+  try{r=await fetch("/api/"+path,{...opt,headers:{"content-type":"application/json",...(token?{authorization:"Bearer "+token}:{})}})}
+  catch{throw new Error("通信できませんでした(オフラインの可能性)")}
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(j.error||("HTTP "+r.status));
+  return j;
+}
+const COLL={item:()=>db.items,word:()=>db.words,group:()=>db.groups};
+const NAT={item:x=>String(x.text||"").toLowerCase(),word:x=>String(x.word||"").toLowerCase(),group:x=>x.name};
+const rk=(k,id)=>k+":"+id;
+function hash(s){let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}
+  a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507)^Math.imul(a^(a>>>13),3266489909);
+  return(4294967296*(2097151&b)+(a>>>0)).toString(36)}
+const hashOf=o=>hash(JSON.stringify(o));
+
+async function applyRemote(rec,key){
+  const k=rec.kind,arr=COLL[k]?.();if(!arr)return false;
+  const kk=rk(k,rec.id),idx=arr.findIndex(o=>o.id===rec.id);
+  const localDirty=idx>=0&&sync.hashes[kk]!==hashOf(arr[idx]);
+  if(rec.deleted){
+    if(idx>=0&&!localDirty){arr.splice(idx,1);if(k==="group")[...db.items,...db.words].forEach(o=>o.gids=o.gids.filter(x=>x!==rec.id))}
+    delete sync.hashes[kk];return true;
+  }
+  const o=await decrypt(rec.iv,rec.data,key);
+  if(localDirty)return false; // この端末の変更を優先し、次の送信で上書きする
+  const h=hashOf(o);
+  if(idx>=0)arr[idx]=o;
+  else{
+    // まだ同期していない同じ英文・単語・グループが手元にあれば、1つにまとめる
+    const di=arr.findIndex(x=>!sync.hashes[rk(k,x.id)]&&NAT[k](x)===NAT[k](o));
+    if(di>=0){
+      const loc=arr[di];arr.splice(di,1);
+      if(k==="group")[...db.items,...db.words].forEach(x=>x.gids=uniq(x.gids.map(g=>g===loc.id?o.id:g)));
+      else{o.gids=uniq([...(o.gids||[]),...(loc.gids||[])]);for(const f of["analysis","quiz","rel","illus","meaning"])if(!o[f]&&loc[f])o[f]=loc[f]}
+    }
+    arr.push(o);
+  }
+  sync.hashes[kk]=h;return true;
+}
+function setSyncStatus(text,err){const b=$("#syncStatus");b.classList.toggle("hide",!sync);b.textContent=text;b.style.color=err?"var(--warn)":""}
+function scheduleSync(){if(!sync)return;clearTimeout(syncTimer);setSyncStatus("☁ 未同期の変更あり");syncTimer=setTimeout(()=>syncNow(),3000)}
+async function syncNow(manual){
+  if(!sync)return;
+  if(syncing){syncAgain=true;return}
+  syncing=true;clearTimeout(syncTimer);setSyncStatus("☁ 同期中…");
+  try{
+    const key=await getKey();let got=0,sent=0;
+    for(;;){ // 1) 受信
+      const r=await api("records?since="+sync.since);
+      for(const rec of r.records){if(await applyRemote(rec,key))got++;sync.since=Math.max(sync.since,rec.seq)}
+      if(!r.more)break;
+    }
+    if(got){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();saveSync();renderAll()}
+    const present=new Set(),out=[]; // 2) 送信(前回の同期から変わったものだけ)
+    for(const k of Object.keys(COLL))for(const o of COLL[k]()){
+      const kk=rk(k,o.id),h=hashOf(o);present.add(kk);
+      if(sync.hashes[kk]!==h)out.push({kk,h,rec:{kind:k,id:o.id,...await encrypt(o,key)}});
+    }
+    for(const kk of Object.keys(sync.hashes))if(!present.has(kk)){const i=kk.indexOf(":");out.push({kk,h:null,rec:{kind:kk.slice(0,i),id:kk.slice(i+1),deleted:true}})}
+    for(let i=0;i<out.length;i+=50){
+      const part=out.slice(i,i+50);
+      await api("records",{method:"POST",body:JSON.stringify({records:part.map(p=>p.rec)})});
+      for(const p of part)p.h?sync.hashes[p.kk]=p.h:delete sync.hashes[p.kk];
+      sent+=part.length;saveSync();
+    }
+    sync.last=Date.now();saveSync();
+    setSyncStatus("☁ 同期済み "+new Date(sync.last).toLocaleTimeString("ja-JP",{hour:"2-digit",minute:"2-digit"}));
+    if(manual)toast(`同期しました(受信 ${got} 件・送信 ${sent} 件)`);
+  }catch(e){setSyncStatus("☁ 同期エラー",true);if(manual)toast("同期できませんでした: "+e.message,true)}
+  finally{syncing=false;if(syncAgain){syncAgain=false;scheduleSync()}}
+}
+async function createSync(pass,setup){
+  const salt=toB64(crypto.getRandomValues(new Uint8Array(16))),key=await deriveKey(pass,salt),chk=await encrypt(CHECK,key);
+  const {token}=await api("vault",{method:"POST",body:JSON.stringify({salt,check_iv:chk.iv,check_data:chk.data,setup})},null);
+  sync={token,key:await exportKey(key),since:0,hashes:{},last:0};cryptoKey=null;saveSync();newToken=token;
+  await syncNow(true);
+}
+async function joinSync(token,pass){
+  const v=await api("vault",{},token),key=await deriveKey(pass,v.salt);
+  let ok=false;try{ok=await decrypt(v.check_iv,v.check_data,key)===CHECK}catch{}
+  if(!ok)throw new Error("パスフレーズが違います。");
+  sync={token,key:await exportKey(key),since:0,hashes:{},last:0};cryptoKey=null;saveSync();
+  await syncNow(true);
+}
+function renderSyncBox(){
+  const box=$("#syncBox");
+  if(sync){
+    box.innerHTML=`<div class="sub">この端末は同期しています(最終同期: ${sync.last?new Date(sync.last).toLocaleString("ja-JP"):"まだ"})。データは暗号化して Cloudflare に保存されます。</div>
+      ${newToken?`<div class="card" style="margin:8px 0;padding:10px 12px"><b>同期キー(別の端末で接続するときに必要)</b>
+        <input type="text" readonly id="tokOut" value="${esc(newToken)}" style="margin-top:6px;font-family:monospace;font-size:12px">
+        <div class="sub">パスワード管理アプリなど安全な場所に保管してください。パスフレーズとは別に必要です。</div></div>`:""}
+      <div class="row" style="margin-top:6px"><button class="sm pri" id="sNow">今すぐ同期</button><button class="sm" id="sKey">同期キーをコピー</button><button class="sm" id="sOff">この端末の同期を解除</button></div>`;
+    $("#sNow").onclick=()=>syncNow(true).then(renderSyncBox);
+    $("#sKey").onclick=()=>copyText(sync.token,$("#tokOut")||$("#apiKey")).then(()=>toast("同期キーをコピーしました。安全な場所に保管してください。"));
+    $("#sOff").onclick=()=>{if(!confirm("この端末の同期を解除しますか?\n(この端末のデータとクラウドのデータは消えません)"))return;sync=null;cryptoKey=null;newToken=null;saveSync();setSyncStatus("");renderSyncBox()};
+    return;
+  }
+  box.innerHTML=`<div class="sub">英文・単語・グループを、この端末で暗号化してから Cloudflare に保存し、PC とスマホで共有できます。パスフレーズは送信されないので、Cloudflare 側からも中身は読めません。<b>パスフレーズを忘れると復元できません。</b></div>
+    <div class="row" style="margin-top:6px"><button class="sm ${syncForm==="new"?"on":""}" id="sNew">新しく同期を始める</button><button class="sm ${syncForm==="join"?"on":""}" id="sJoin">同期キーで接続(2台目以降)</button></div>
+    ${syncForm==="new"?`<div style="margin-top:8px"><input type="text" id="sSetup" placeholder="セットアップコード(初回のみ)" autocomplete="off" style="font-family:monospace;margin-bottom:6px"><input type="password" id="sP1" placeholder="パスフレーズ(12文字以上)" autocomplete="new-password"><input type="password" id="sP2" placeholder="パスフレーズ(確認)" autocomplete="new-password" style="margin-top:6px">
+      <button class="pri sm" id="sGo" style="margin-top:8px">作成して同期</button></div>`:""}
+    ${syncForm==="join"?`<div style="margin-top:8px"><input type="text" id="sTok" placeholder="同期キー" autocomplete="off" style="font-family:monospace"><input type="password" id="sP1" placeholder="パスフレーズ" autocomplete="current-password" style="margin-top:6px">
+      <button class="pri sm" id="sGo" style="margin-top:8px">接続して同期</button></div>`:""}
+    <div class="err" id="sErr"></div>`;
+  $("#sNew").onclick=()=>{syncForm="new";renderSyncBox()};
+  $("#sJoin").onclick=()=>{syncForm="join";renderSyncBox()};
+  $("#sGo")?.addEventListener("click",async e=>{
+    const p=$("#sP1").value,err=$("#sErr");err.textContent="";
+    if(syncForm==="new"){if(p.length<12)return err.textContent="パスフレーズは12文字以上にしてください。";if(p!==$("#sP2").value)return err.textContent="確認用と一致しません。"}
+    const b=e.target;b.disabled=true;b.textContent="処理中…(数秒かかります)";
+    try{syncForm==="new"?await createSync(p,$("#sSetup").value.trim()):await joinSync($("#sTok").value.trim(),p);syncForm=null;renderSyncBox()}
+    catch(x){err.textContent=x.message;b.disabled=false;b.textContent=syncForm==="new"?"作成して同期":"接続して同期"}
+  });
+}
+{const open=$("#btnSet").onclick;$("#btnSet").onclick=()=>{open();renderSyncBox()}}
+$("#syncStatus").onclick=()=>syncNow(true);
+addEventListener("online",()=>syncNow());
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")syncNow()});
+if(sync){setSyncStatus("☁ 同期中…");syncNow()}
 
 renderAll();
 if("serviceWorker" in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("sw.js").catch(()=>{});
