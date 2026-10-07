@@ -48,7 +48,11 @@ npx wrangler deploy
 
 `public/sw.js` の `CACHE` の版番号を上げると、利用者の端末のキャッシュが更新されます。
 
+## ライセンス
+
+[MIT License](LICENSE)
+
 ## 外部素材
 
-- 絵文字: [OpenMoji](https://openmoji.org/) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)(jsDelivr から読み込み)
-- 関係図: [RelaGrid](https://github.com/minnanosaiban/relagrid)
+- 絵文字: [OpenMoji](https://openmoji.org/) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)(jsDelivr から読み込み。このリポジトリには含みません。アプリで作った絵文字シーンを配布する場合はこのライセンスに従ってください)
+- 関係図: [RelaGrid](https://github.com/minnanosaiban/relagrid)(同じ作者のプロジェクト。`public/relagrid/` に描画部分を同梱)
