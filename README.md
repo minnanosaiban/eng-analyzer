@@ -3,7 +3,7 @@
 TOEIC 対策向けの英文学習アプリです。集めた英文を AI(Gemini)で構造化し、グループ化・関係図・イラスト・音声で学習します。
 ブラウザだけで動く静的サイト(PWA)で、スマホのホーム画面に追加して使えます。
 
-- 公開版: https://eng-structure-analyzer.scratch-2026-10-07-cb3f9c.workers.dev
+- 公開版: https://eng-analyzer.scratch-2026-10-07-cb3f9c.workers.dev
 - 参考: [英文構造を一発で分解するアプリ(Qiita)](https://qiita.com/oguro_swada/items/17bc234b152a5ae6d0a1)(OCR 機能は除いています)
 
 ## モード
