@@ -118,6 +118,13 @@ details summary{cursor:pointer}
 /* トースト・上へ戻る */
 .btn-label{display:inline-flex;align-items:center;height:30px;padding:0 10px;font-size:13px;font-weight:500;border:1px solid var(--tx-border);border-radius:var(--tx-radius-btn);background:var(--surface);color:var(--tx-text);cursor:pointer}
 .btn-label:hover{background:var(--hover)}
+.tag.warn{background:#fdeaea;color:var(--warn);border-color:#f3c4c0}
+html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
+.wk{display:grid;grid-template-columns:110px 1fr 36px;gap:8px;align-items:center;width:100%;height:38px;margin-top:6px;padding:0 10px;text-align:left}
+.wk.on{background:var(--hover-2);color:var(--tx-text);border-color:var(--inv)}
+.wkt{height:10px;background:var(--tx-bg-muted);border-radius:5px;overflow:hidden}
+.wkb{display:block;height:100%;background:var(--inv);border-radius:5px}
+.wkc{text-align:right;font-variant-numeric:tabular-nums}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;max-width:min(90vw,640px);padding:10px 16px;border-radius:8px;background:#1c1d21;color:#fff;font-size:13px;box-shadow:0 2px 10px rgba(0,0,0,.28);white-space:pre-wrap}
 .toast.toast-error{background:#a12a2a}
 .back-to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:#1c1d21;color:#fff;border:none;padding:0;box-shadow:var(--tx-shadow-md);z-index:50}
@@ -151,6 +158,8 @@ details summary{cursor:pointer}
   <button data-tab="illust">⑷ イラスト化</button>
   <button data-tab="audio">⑸ 音声化</button>
   <button data-tab="words">⑹ 英単語グループ化</button>
+  <button data-tab="weak">弱点集計</button>
+  <button data-tab="gen">英文生成</button>
 </nav>
 </header>
 <main>
@@ -178,6 +187,13 @@ details summary{cursor:pointer}
       <select id="fGrp" class="auto"></select>
       <button id="fBm" class="sm">★のみ</button>
     </div>
+    <div class="row" style="margin-top:8px">
+      <select id="fStatus" class="auto"><option value="notmastered">覚えた以外</option><option value="">すべての状態</option><option value="new">未学習</option><option value="learning">学習中</option><option value="mastered">覚えた</option></select>
+      <select id="fLevel" class="auto"><option value="">全難易度</option><option value="600">600点</option><option value="730">730点</option><option value="860">860点</option><option value="none">未判定</option></select>
+      <button id="fUnv" class="sm">未確認のみ</button>
+      <span class="grow"></span>
+      <button id="btnReview" class="sm pri">この条件で復習を始める</button>
+    </div>
     <div class="row sub" style="margin-top:8px">
       <span id="count"></span><span class="grow"></span>
       <button class="sm" id="btnBatch">表示中の未解析を一括解析</button>
@@ -202,6 +218,8 @@ details summary{cursor:pointer}
 <section id="tab-rel" class="hide"></section>
 <section id="tab-illust" class="hide"></section>
 <section id="tab-audio" class="hide"></section>
+<section id="tab-weak" class="hide"></section>
+<section id="tab-gen" class="hide"></section>
 
 <section id="tab-words" class="hide">
   <div id="wTools"></div>
@@ -213,7 +231,7 @@ details summary{cursor:pointer}
     </div>
     <div class="row" style="margin-top:8px">
       <button class="sm" id="wHide">意味を隠す</button>
-      <button class="sm" id="wTodo">未習得のみ</button>
+      <select id="wStatus" class="auto"><option value="notmastered">覚えた以外</option><option value="">すべての状態</option><option value="new">未学習</option><option value="learning">学習中</option><option value="mastered">覚えた</option></select>
       <span class="sub grow" id="wCount"></span>
     </div>
     <div class="row" style="margin-top:8px">
@@ -265,6 +283,15 @@ details summary{cursor:pointer}
   </div>
 </dialog>
 
+<dialog id="editDlg" style="max-width:680px">
+  <h3 style="margin-top:0">解析結果を修正</h3>
+  <div class="sub">修正した内容は、この英文の解析結果として保存されます(関係図は⑶で作り直してください)。</div>
+  <div id="edBody"></div>
+  <div class="row" style="margin-top:12px;justify-content:flex-end">
+    <button id="edCancel">キャンセル</button><button id="edSave">保存</button><button class="pri" id="edSaveOk">保存して確認済みにする</button>
+  </div>
+</dialog>
+
 <dialog id="pickDlg">
   <h3 style="margin-top:0" id="pickTitle">グループ</h3>
   <div class="gl" id="pickList"></div>
@@ -300,7 +327,31 @@ const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 const uniq=a=>[...new Set(a)];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const isDark=()=>document.documentElement.classList.contains("dark-mode");
-let db=load(), curId=null, active="lib", onlyBm=false, hideMean=false, onlyTodo=false;
+// 学習管理の定数(load() より前に定義する)
+const CATS=["品詞","時制","助動詞","受動態","前置詞","接続詞","関係詞","不定詞・動名詞","分詞","比較","語彙","構文把握","その他"];
+const LEVELS=[600,730,860];
+const LV_DESC={600:"基本的な語彙と単文中心",730:"関係詞・分詞などで修飾が長い、ビジネス語彙を含む",860:"複数の節が入れ子になる、provided that などの語法、抽象度の高い語彙"};
+const LV_TEXT=LEVELS.map(n=>n+": "+LV_DESC[n]).join(" / ");
+const STATUS={new:"未学習",learning:"学習中",mastered:"覚えた"};
+const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const today=()=>ymd(new Date());
+const normLevel=v=>{v=parseInt(v,10);return LEVELS.includes(v)?v:null};
+const normDate=s=>/^\d{4}-\d\d-\d\d$/.test(String(s||""))?s:null;
+// 旧データ・他端末のデータに、新しい項目を既定値で補う(後方互換)
+function normItem(i){
+  i.gids||=[];i.level=normLevel(i.level);
+  if(typeof i.verified!=="boolean")i.verified=true; // 既存データは確認済み扱い
+  if(!STATUS[i.status])i.status="new";
+  i.mistakes=Array.isArray(i.mistakes)?i.mistakes.filter(m=>m&&typeof m==="object"):[];
+  i.review_count=+i.review_count||0;i.last_reviewed=normDate(i.last_reviewed);return i;
+}
+function normWord(w){
+  w.gids||=[];
+  if(!STATUS[w.status])w.status=w.known?"mastered":"new"; // 旧「覚えた」チェックを移行
+  delete w.known;
+  w.review_count=+w.review_count||0;w.last_reviewed=normDate(w.last_reviewed);return w;
+}
+let db=load(), curId=null, active="lib", onlyBm=false, hideMean=false, onlyUnv=false, navList=null;
 const sel=new Set();
 
 function load(){
@@ -310,7 +361,7 @@ function load(){
     if(i.tag){let g=d.groups.find(x=>x.name===i.tag);if(!g){g={id:uid(),name:i.tag};d.groups.push(g)}i.gids=[...(i.gids||[]),g.id];delete i.tag}
     i.gids||=[];
   }
-  for(const w of d.words)w.gids||=[];
+  d.items.forEach(normItem);d.words.forEach(normWord);
   return d;
 }
 function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast("保存に失敗しました(容量不足の可能性): "+e.message,true)}}
@@ -328,7 +379,7 @@ function speak(text,lang="en-US",rate=1){speechSynthesis.cancel();const u=new Sp
 function download(name,text,type="image/svg+xml"){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click()}
 
 /* ---------- tabs ---------- */
-const RENDER={lib:renderLib,add:()=>{},struct:renderStruct,sgroup:renderSGroup,rel:renderRel,illust:renderIllust,audio:renderAudio,words:renderWords};
+const RENDER={lib:renderLib,add:()=>{},struct:renderStruct,sgroup:renderSGroup,rel:renderRel,illust:renderIllust,audio:renderAudio,words:renderWords,weak:renderWeak,gen:renderGen};
 function tab(n){
   active=n;
   Object.keys(RENDER).forEach(t=>{$("#tab-"+t).classList.toggle("hide",t!==n);document.querySelector(`nav [data-tab=${t}]`).classList.toggle("on",t===n)});
@@ -442,7 +493,7 @@ function addSentences(rows,gidsBase){
     const text=(r.text||"").replace(/\s+/g," ").trim();
     if(!text||have.has(text.toLowerCase()))continue;
     have.add(text.toLowerCase());
-    db.items.unshift({id:uid(),text,gids:uniq([...gidsBase,...ensureGroups(r.group)]),bm:false,added:Date.now(),analysis:null});n++;
+    db.items.unshift(normItem({id:uid(),text,gids:uniq([...gidsBase,...ensureGroups(r.group)]),bm:false,added:Date.now(),analysis:null,level:r.level}));n++;
   }
   save();return n;
 }
@@ -461,19 +512,23 @@ $("#fileIn").onchange=async e=>{
 };
 
 /* ---------- library ---------- */
+const stOk=(s,f)=>!f||(f==="notmastered"?s!=="mastered":s===f);
+const refreshLib=()=>{if(active==="lib")renderLib()};
 function visibleItems(){
   const q=$("#q").value.trim().toLowerCase(),g=$("#fGrp").value;
-  return db.items.filter(i=>(!q||i.text.toLowerCase().includes(q)||(i.analysis?.translation||"").includes(q))&&inGroup(i,g)&&(!onlyBm||i.bm));
+  const sf=$("#fStatus").value,lv=$("#fLevel").value;
+  return db.items.filter(i=>(!q||i.text.toLowerCase().includes(q)||(i.analysis?.translation||"").includes(q))&&inGroup(i,g)&&(!onlyBm||i.bm)
+    &&(!onlyUnv||(i.analysis&&!i.verified))&&stOk(i.status,sf)&&(!lv||(lv==="none"?i.level==null:i.level===+lv)));
 }
 function renderLib(){
   fillGroupSelect($("#fGrp"));
   const rows=visibleItems();
-  $("#count").textContent=`${rows.length} / ${db.items.length} 文 ・ 解析済み ${db.items.filter(i=>i.analysis).length}`;
+  $("#count").textContent=`${rows.length} / ${db.items.length} 文 ・ 解析済み ${db.items.filter(i=>i.analysis).length} ・ 未確認 ${db.items.filter(i=>i.analysis&&!i.verified).length}`;$("#fUnv").classList.toggle("on",onlyUnv);
   $("#fBm").classList.toggle("on",onlyBm);
   $("#list").innerHTML=rows.length?rows.map(i=>`<div class="item" data-id="${i.id}">
     <input type="checkbox" data-a="sel" ${sel.has(i.id)?"checked":""} style="margin-top:7px">
     <button class="sm" data-a="bm" title="ブックマーク">${i.bm?"★":"☆"}</button>
-    <div class="t" data-a="open">${esc(i.text)}${chips(i.gids)}${i.analysis?'<span class="tag">解析済</span>':""}</div>
+    <div class="t" data-a="open">${esc(i.text)}${chips(i.gids)}${i.analysis?(i.verified?'<span class="tag">解析済</span>':'<span class="tag warn">未確認</span>'):""}${i.level?`<span class="tag">${i.level}点</span>`:""}${i.status!=="new"?`<span class="tag">${STATUS[i.status]}</span>`:""}${i.mistakes.length?`<span class="tag">間違い${i.mistakes.length}</span>`:""}</div>
     <button class="sm" data-a="grp" title="グループ">🗂</button>
     <button class="sm" data-a="del" title="削除">🗑</button></div>`).join(""):'<div class="sub">該当する英文がありません。「➕ 追加」から登録してください。</div>';
   [...sel].forEach(id=>{if(!db.items.some(i=>i.id===id))sel.delete(id)});
@@ -487,50 +542,67 @@ $("#list").onclick=e=>{
     case"bm":it.bm=!it.bm;save();renderLib();break;
     case"grp":pickGroups("この英文のグループ",it.gids,ids=>it.gids=ids);break;
     case"del":if(confirm("削除しますか?")){db.items=db.items.filter(i=>i.id!==id);save();renderAll()}break;
-    default:openItem(id);
+    default:openItem(id,"struct",visibleItems().map(x=>x.id));
   }
 };
-function openItem(id,t="struct"){curId=id;tab(t)}
+// list を渡すと、構造化画面の「前へ/次へ」がその一覧(絞り込み結果)だけをたどる
+function openItem(id,t="struct",list=null){navList=list;curId=id;tab(t)}
 $("#q").oninput=renderLib;$("#fGrp").onchange=renderLib;
 $("#fBm").onclick=()=>{onlyBm=!onlyBm;renderLib()};
+$("#fStatus").onchange=renderLib;$("#fLevel").onchange=renderLib;
+$("#fUnv").onclick=()=>{onlyUnv=!onlyUnv;renderLib()};
+$("#btnReview").onclick=()=>{
+  const l=visibleItems();if(!l.length)return toast("該当する英文がありません。");
+  openItem(l[0].id,"struct",l.map(x=>x.id));toast(`${l.length} 文を順に復習します(「次へ」で進みます)`);
+};
 $("#btnSelAll").onclick=()=>{visibleItems().forEach(i=>sel.add(i.id));renderLib()};
 $("#bulkClr").onclick=()=>{sel.clear();renderLib()};
 $("#bulkGrp").onclick=()=>pickGroups(`選択した ${sel.size} 文をグループに追加`,[],ids=>db.items.filter(i=>sel.has(i.id)).forEach(i=>i.gids=uniq([...i.gids,...ids])));
 $("#bulkUn").onclick=()=>pickGroups(`選択した ${sel.size} 文から外すグループ`,[],ids=>db.items.filter(i=>sel.has(i.id)).forEach(i=>i.gids=i.gids.filter(x=>!ids.includes(x))));
 let batchStop=false;
+// 解析結果を英文に反映する。新しい解析は「未確認」にし、難易度は未設定のときだけ採用する
+function applyAnalysis(it,a){
+  delete a.n;const lv=normLevel(a.difficulty);delete a.difficulty;
+  it.analysis=a;it.verified=false;if(it.level==null)it.level=lv;
+}
+async function runAnalyze(todo,msg){
+  if(isCopyMode())return batchCopy(todo,msg);
+  if(!confirm(`${todo.length} 文を順番に解析します(API を ${todo.length} 回呼び出します)。よろしいですか?`))return 0;
+  batchStop=false;let k=0;
+  for(const it of todo){
+    if(batchStop){msg(`停止しました(${k} 文 解析済み)`);return k}
+    msg(`解析中… ${k+1} / ${todo.length}`);
+    try{await analyze(it);k++;refreshLib()}catch(e){msg(`エラーで停止(${k} 文 解析済み): ${e.message}`);return k}
+    await wait(1500);
+  }
+  msg(`完了: ${k} 文を解析しました`);return k;
+}
 $("#btnBatch").onclick=async()=>{
   const todo=visibleItems().filter(i=>!i.analysis);
   if(!todo.length)return toast("表示中の英文はすべて解析済みです。");
-  if(isCopyMode())return batchCopy(todo);
-  if(!confirm(`${todo.length} 文を順番に解析します(API を ${todo.length} 回呼び出します)。よろしいですか?`))return;
-  batchStop=false;$("#btnBatch").classList.add("hide");$("#btnBatchStop").classList.remove("hide");
-  let k=0;
-  for(const it of todo){
-    if(batchStop){$("#batchMsg").textContent=`停止しました(${k} 文 解析済み)`;break}
-    $("#batchMsg").textContent=`解析中… ${k+1} / ${todo.length}`;
-    try{await analyze(it);k++;renderLib()}catch(e){$("#batchMsg").textContent=`エラーで停止(${k} 文 解析済み): ${e.message}`;break}
-    if(k===todo.length)$("#batchMsg").textContent=`完了: ${k} 文を解析しました`;
-    await wait(1500);
-  }
-  $("#btnBatch").classList.remove("hide");$("#btnBatchStop").classList.add("hide");
+  const api=!isCopyMode();
+  if(api){$("#btnBatch").classList.add("hide");$("#btnBatchStop").classList.remove("hide")}
+  try{await runAnalyze(todo,t=>{$("#batchMsg").textContent=t})}
+  finally{$("#btnBatch").classList.remove("hide");$("#btnBatchStop").classList.add("hide")}
 };
 $("#btnBatchStop").onclick=()=>batchStop=true;
 // コピペモードの一括解析: 10 文ずつ 1 つのプロンプトにまとめる
-async function batchCopy(todo){
+async function batchCopy(todo,msg){
   const N=10,rounds=Math.ceil(todo.length/N);
-  if(!confirm(`${todo.length} 文を ${N} 文ずつまとめて解析します(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return;
+  if(!confirm(`${todo.length} 文を ${N} 文ずつまとめて解析します(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return 0;
   let k=0;
   for(let r=0;r<rounds;r++){
     const part=todo.slice(r*N,r*N+N);
-    $("#batchMsg").textContent=`コピペ ${r+1} / ${rounds} 回目(${part.length} 文)`;
+    msg(`コピペ ${r+1} / ${rounds} 回目(${part.length} 文)`);
     try{
       const res=await gemini(BPROMPT(part.map(i=>i.text)));
       const arr=Array.isArray(res)?res:res.results||[];
-      part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];if(a&&typeof a==="object"&&a.translation){delete a.n;it.analysis=a;k++}});
-      save();renderLib();
-    }catch(e){$("#batchMsg").textContent=`停止しました(${k} 文 解析済み): ${e.message}`;return}
+      part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];if(a&&typeof a==="object"&&a.translation){applyAnalysis(it,a);k++}});
+      save();refreshLib();
+    }catch(e){msg(`停止しました(${k} 文 解析済み): ${e.message}`);return k}
   }
-  $("#batchMsg").textContent=`完了: ${k} / ${todo.length} 文を解析しました`+(k<todo.length?"(読み取れなかった文は、もう一度一括解析すると再挑戦します)":"");
+  msg(`完了: ${k} / ${todo.length} 文を解析しました`+(k<todo.length?"(読み取れなかった文は、もう一度一括解析すると再挑戦します)":""));
+  return k;
 }
 $("#btnExport").onclick=()=>download("english-library.json",JSON.stringify({groups:db.groups,items:db.items,words:db.words},null,1),"application/json");
 $("#importIn").onchange=async e=>{
@@ -540,20 +612,25 @@ $("#importIn").onchange=async e=>{
     for(const g of d.groups||[])gmap[g.id]=ensureGroup(g.name);
     const remap=a=>uniq((a||[]).map(id=>gmap[id]).filter(Boolean));
     const have=new Set(db.items.map(i=>i.text.toLowerCase()));let n=0;
-    for(const i of d.items||[]){if(i.text&&!have.has(i.text.toLowerCase())){db.items.push({...i,id:uid(),gids:remap(i.gids)});n++}}
+    for(const i of d.items||[]){if(i.text&&!have.has(i.text.toLowerCase())){db.items.push(normItem({...i,id:uid(),gids:remap(i.gids)}));n++}}
     const hw=new Set(db.words.map(w=>w.word.toLowerCase()));let m=0;
-    for(const w of d.words||[]){if(w.word&&!hw.has(w.word.toLowerCase())){db.words.push({...w,id:uid(),src:null,gids:remap(w.gids)});m++}}
+    for(const w of d.words||[]){if(w.word&&!hw.has(w.word.toLowerCase())){db.words.push(normWord({...w,id:uid(),src:null,gids:remap(w.gids)}));m++}}
     save();renderAll();toast(`英文 ${n} / 単語 ${m} を復元しました`);
   }catch(err){toast("読み込めませんでした: "+err.message)}
   e.target.value="";
 };
 
 /* ---------- 共通: 英文選択バー ---------- */
+function navItems(it){
+  if(navList&&navList.includes(it.id)){const l=navList.map(id=>db.items.find(i=>i.id===id)).filter(Boolean);if(l.length)return l}
+  return db.items;
+}
 function bar(extra=""){
   const it=getCur();
-  if(!it)return `<div class="card sub">英文がありません。「➕ 追加」から登録してください。</div>`;
-  return `<div class="card"><div class="row"><select class="sbSel grow">${db.items.map(i=>`<option value="${i.id}" ${i.id===it.id?"selected":""}>${esc(i.text.slice(0,80))}</option>`).join("")}</select>
-    <button class="sm sbPrev">‹ 前へ</button><button class="sm sbNext">次へ ›</button></div>
+  if(!it)return `<div class="card sub">英文がありません。「追加」から登録してください。</div>`;
+  const list=navItems(it),narrowed=list!==db.items;
+  return `<div class="card"><div class="row"><select class="sbSel grow">${list.map(i=>`<option value="${i.id}" ${i.id===it.id?"selected":""}>${esc(i.text.slice(0,80))}</option>`).join("")}</select>
+    <button class="sm sbPrev">‹ 前へ</button><button class="sm sbNext">次へ ›</button>${narrowed?`<button class="sm sbAll" title="絞り込み中: ${list.length} 文">全件に戻す</button>`:""}</div>
     <div class="en" style="margin-top:6px">${esc(it.text)}</div><div>${chips(it.gids)}</div>
     <div class="row" style="margin-top:6px"><button class="sm sbBm">${it.bm?"★ ブックマーク済":"☆ ブックマーク"}</button><button class="sm sbGrp">🗂 グループ</button><button class="sm sbSpk">🔊 読み上げ</button>${extra}</div>
     <div class="err sbErr"></div></div>`;
@@ -562,8 +639,9 @@ function wireBar(box){
   const it=getCur();if(!it)return;
   const rr=RENDER[active];
   box.querySelector(".sbSel").onchange=e=>{curId=e.target.value;rr()};
-  const mv=d=>{const i=db.items.indexOf(it)+d;if(db.items[i]){curId=db.items[i].id;rr()}};
+  const mv=d=>{const l=navItems(it),i=l.indexOf(it)+d;if(l[i]){curId=l[i].id;rr()}else toast(d>0?"最後の英文です。":"最初の英文です。")};
   box.querySelector(".sbPrev").onclick=()=>mv(-1);box.querySelector(".sbNext").onclick=()=>mv(1);
+  box.querySelector(".sbAll")?.addEventListener("click",()=>{navList=null;rr()});
   box.querySelector(".sbBm").onclick=()=>{it.bm=!it.bm;save();rr()};
   box.querySelector(".sbGrp").onclick=()=>pickGroups("この英文のグループ",it.gids,ids=>it.gids=ids);
   box.querySelector(".sbSpk").onclick=()=>speak(it.text);
@@ -585,18 +663,20 @@ JSON形式:
  "vocab":[{"word":"単語・熟語(原形)","pos":"品詞","meaning":"この文脈での意味","note":"補足(任意)","level":"TOEIC頻出度 1〜3 の数字(3が最頻出)","toeic":"TOEICでの典型的な使われ方・よく組む語(コロケーション)。なければ空文字"}],
  "toeic":{"scene":"ビジネス場面(人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 など1つ)","part":"出題されやすいパート(例: Part 5 / Part 6 / Part 7)","points":[{"type":"品詞 / 時制 / 前置詞 / 接続詞・副詞 / 関係詞 / 代名詞 / 語彙 / 語法 のいずれか","detail":"この文で問われうる論点"}],"paraphrase":["TOEIC(Part 7の設問や選択肢)で使われそうな言い換え表現"]}
 }
-この英文がTOEICに出る場合の観点(toeic)も必ず含めること。`;
+この英文がTOEICに出る場合の観点(toeic)も必ず含めること。
+さらに JSON の最上位に "difficulty" を加え、この英文の難易度の目安を 600 / 730 / 860 のいずれかの数字1つで答えること(TOEICのスコア帯の目安)。
+${LV_TEXT}`;
 const BPROMPT=list=>`次の${list.length}個の英文それぞれについて、下の「1文あたりの指示」どおりに分析し、結果を JSON 配列 [{"n":1, ...}, {"n":2, ...}] で答えてください(n は英文の番号。各要素は指示の JSON 形式に n を加えたもの)。
 英文:
 ${list.map((s,i)=>`${i+1}. ${s}`).join("\n")}
 
 --- 1文あたりの指示 ---
 ${PROMPT("(上の各英文)")}`;
-async function analyze(it){const a=await gemini(PROMPT(it.text));it.analysis=a;save();return a}
+async function analyze(it){const a=await gemini(PROMPT(it.text));applyAnalysis(it,a);save();return a}
 const QPROMPT=s=>`次の英文をもとに、TOEIC Part 5 形式の4択穴埋め問題を1問作り、JSONのみで答えてください。解説は日本語。
 英文: ${s}
 空所は原文の語句1つ(または短い句)にし、question では空所を ______ で表す。誤答は品詞違い・時制違い・語彙違いなど、TOEICらしい紛らわしいものにする。
-{"question":"空所を含む英文","choices":["A","B","C","D"],"answer":0〜3の正解インデックス,"type":"問われる論点(品詞/時制/前置詞/語彙 など)","explanation":"正解と各誤答が不適切な理由"}`;
+{"question":"空所を含む英文","choices":["A","B","C","D"],"answer":0〜3の正解インデックス,"type":"問われる論点。次のいずれか1つ: ${CATS.join(" / ")}","explanation":"正解と各誤答が不適切な理由"}`;
 async function makeQuiz(it){
   const q=await gemini(QPROMPT(it.text),0.7);
   if(!Array.isArray(q.choices)||q.choices.length!==4||!(q.answer>=0&&q.answer<4))throw new Error("問題の形式が不正でした。もう一度試してください。");
@@ -605,13 +685,13 @@ async function makeQuiz(it){
 function addWord(w,gids=[]){
   const ex=db.words.find(x=>x.word.toLowerCase()===String(w.word).toLowerCase());
   if(ex){ex.gids=uniq([...ex.gids,...gids]);return false}
-  db.words.unshift({id:uid(),word:String(w.word),pos:w.pos||"",meaning:w.meaning||"",note:w.note||"",level:+w.level||0,src:w.src||null,gids:uniq(gids),known:false});return true;
+  db.words.unshift(normWord({id:uid(),word:String(w.word),pos:w.pos||"",meaning:w.meaning||"",note:w.note||"",level:+w.level||0,src:w.src||null,gids:uniq(gids)}));return true;
 }
 function renderStruct(){
   const box=$("#tab-struct"),it=getCur();
   if(!it){box.innerHTML=bar();return}
   const a=it.analysis;
-  let h=bar(`<span class="grow"></span><button class="pri" id="vRun">${a?"再解析":"解析する"}</button>`);
+  let h=bar(`<span class="grow"></span><button class="pri" id="vRun">${a?"再解析":"解析する"}</button>`)+'<div id="mgCard"></div>';
   if(a){
     const sl=(a.slash||[]).map((c,i)=>`${i?'<span class="sl">/</span>':""}<span class="chunk"><b>${esc(c.en)}</b><i>${esc(c.ja)}</i></span>`).join("");
     h+=`<div class="card"><h3>日本語訳</h3>${esc(a.translation)}</div>
@@ -636,16 +716,21 @@ function renderStruct(){
   h+=`<div class="card"><div class="row"><h3 class="grow" style="margin:0">TOEIC風 4択問題</h3><button class="sm" id="vQuiz">${q?"別の問題を作る":"この英文から問題を作る"}</button></div>
     ${q?`<div class="en" style="margin-top:6px">${esc(q.question)}</div>
     <div>${q.choices.map((c,i)=>`<div style="margin:4px 0"><button class="qc" data-i="${i}" style="width:100%;text-align:left">(${"ABCD"[i]}) ${esc(c)}</button></div>`).join("")}</div>
-    <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
-  box.innerHTML=h;wireBar(box);
+    <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div><div id="qRec"></div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
+  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);
   const err=box.querySelector(".sbErr");
-  $("#vRun").onclick=e=>act(e.target,"解析中…",()=>analyze(it),err);
+  $("#vRun").onclick=e=>{
+    if(it.analysis&&it.verified&&!confirm("確認済みの解析結果を、新しい解析で上書きします。よろしいですか?"))return;
+    act(e.target,"解析中…",()=>analyze(it),err);
+  };
   $("#vQuiz").onclick=e=>act(e.target,"作成中…",()=>makeQuiz(it),err);
   $("#toRel")?.addEventListener("click",()=>tab("rel"));
   box.querySelectorAll(".qc").forEach(b=>b.onclick=()=>{
     const ok=+b.dataset.i===it.quiz.answer;
     box.querySelectorAll(".qc").forEach(x=>{x.disabled=true;if(+x.dataset.i===it.quiz.answer)x.classList.add("on")});
     b.insertAdjacentText("beforeend",ok?"  ✅ 正解":"  ❌");$("#qEx").classList.remove("hide");
+    it.review_count=(it.review_count||0)+1;it.last_reviewed=today();save();renderManage(box.querySelector("#mgCard"),it);
+    if(!ok)showRec(it,it.quiz,box);
   });
   $("#vTgrp")?.addEventListener("click",()=>{
     const names=[a.toeic.part,a.toeic.scene,...(a.toeic.points||[]).map(p=>p.type)].filter(Boolean).map(s=>"TOEIC:"+String(s).trim());
@@ -656,6 +741,185 @@ function renderStruct(){
   $("#vAddAll")?.addEventListener("click",()=>{const n=a.vocab.filter(reg).length;save();renderAll();toast(n+" 語を単語帳に追加しました")});
 }
 
+
+/* ---------- 学習管理(状態・難易度・確認・間違い) ---------- */
+const CAT_RX=[["品詞",/品詞/],["時制",/時制/],["助動詞",/助動詞/],["受動態",/受動/],["前置詞",/前置詞/],["接続詞",/接続詞|副詞/],["関係詞",/関係/],["不定詞・動名詞",/不定詞|動名詞/],["分詞",/分詞/],["比較",/比較/],["語彙",/語彙|語法|コロケ/],["構文把握",/構文|文型/]];
+function guessCat(texts){ // 問題の論点や解析の文法ポイントから、間違いの分類を推測する
+  for(const t of texts){const s=String(t||"").trim();if(CATS.includes(s))return s;for(const [c,rx] of CAT_RX)if(rx.test(s))return c}
+  return "その他";
+}
+function renderManage(el,it){
+  if(!el)return;
+  const a=it.analysis,rr=()=>renderManage(el,it);
+  el.innerHTML=`<div class="card"><h3>学習管理</h3>
+   <div class="row"><span class="sub">状態</span>${Object.entries(STATUS).map(([k,v])=>`<button class="sm stBtn ${it.status===k?"on":""}" data-st="${k}">${v}</button>`).join("")}
+     <span class="sub" style="margin-left:8px">難易度</span><select class="auto lvSel"><option value="">未判定</option>${LEVELS.map(n=>`<option value="${n}" ${it.level===n?"selected":""}>${n}点</option>`).join("")}</select>
+     <span class="sub grow" style="text-align:right">復習 ${it.review_count}回${it.last_reviewed?` ・ 最終 ${it.last_reviewed}`:""}</span></div>
+   ${a?`<div class="row" style="margin-top:8px">${it.verified?'<span class="tag">✅ 確認済み</span><button class="sm unvBtn">未確認に戻す</button>':'<span class="tag warn">⚠ 未確認</span><button class="sm pri okBtn">確認済みにする</button>'}<button class="sm edBtn">解析結果を修正</button></div>
+     ${it.verified?"":'<div class="sub">AI の解析には誤りが混じることがあります。内容を確かめ、必要なら修正してから「確認済み」にしてください。</div>'}`:""}
+   <div style="margin-top:10px"><div class="sub" style="font-weight:700;color:var(--tx-text)">間違いの記録(${it.mistakes.length}件)</div>
+     ${it.mistakes.map((m,i)=>`<div class="row" style="margin-top:4px"><span class="tag">${esc(m.category||"その他")}</span><span class="sub">${esc(m.date)}</span><span class="grow">${esc(m.note)}</span><button class="sm mDel" data-i="${i}">削除</button></div>`).join("")}
+     <div class="row" style="margin-top:6px"><select class="auto mCat">${CATS.map(c=>`<option>${c}</option>`).join("")}</select><input type="text" class="mNote grow" placeholder="メモ(任意)"><button class="sm mAdd">間違いを記録</button></div></div></div>`;
+  el.querySelectorAll(".stBtn").forEach(b=>b.onclick=()=>{it.status=b.dataset.st;save();rr()});
+  el.querySelector(".lvSel").onchange=e=>{it.level=normLevel(e.target.value);save()};
+  el.querySelector(".okBtn")?.addEventListener("click",()=>{it.verified=true;save();rr();toast("確認済みにしました")});
+  el.querySelector(".unvBtn")?.addEventListener("click",()=>{it.verified=false;save();rr()});
+  el.querySelector(".edBtn")?.addEventListener("click",()=>openEdit(it));
+  el.querySelector(".mAdd").onclick=()=>{
+    it.mistakes.push({date:today(),category:el.querySelector(".mCat").value,note:el.querySelector(".mNote").value.trim()});save();rr();toast("間違いを記録しました");
+  };
+  el.querySelectorAll(".mDel").forEach(b=>b.onclick=()=>{it.mistakes.splice(+b.dataset.i,1);save();rr()});
+}
+// 4択に不正解だったとき、分類を選んで記録する
+function showRec(it,q,box){
+  const a=it.analysis,cat=guessCat([q.type,...(a?.toeic?.points||[]).map(p=>p.type),a?.tense?.name]),el=$("#qRec");
+  el.innerHTML=`<div class="card" style="margin:8px 0 0;padding:10px 12px"><b>この間違いを記録しますか?</b>
+    <div class="row" style="margin-top:6px"><select class="auto rCat">${CATS.map(c=>`<option ${c===cat?"selected":""}>${c}</option>`).join("")}</select>
+    <input type="text" class="rNote grow" placeholder="メモ(任意)"><button class="sm pri rOk">記録する</button><button class="sm rNo">記録しない</button></div></div>`;
+  el.querySelector(".rOk").onclick=()=>{
+    const c=el.querySelector(".rCat").value;
+    it.mistakes.push({date:today(),category:c,note:el.querySelector(".rNote").value.trim()});save();
+    el.innerHTML=`<div class="sub">✔「${esc(c)}」として記録しました</div>`;renderManage(box.querySelector("#mgCard"),it);
+  };
+  el.querySelector(".rNo").onclick=()=>{el.innerHTML=""};
+}
+
+/* ---------- 解析結果の修正(保存前の確認) ---------- */
+let ed=null,edIt=null;
+const ED_NEW={el:()=>({role:"M",text:"",note:""}),gr:()=>({point:"",explanation:""}),vo:()=>({word:"",pos:"",meaning:"",note:"",level:0,toeic:""})};
+function openEdit(it){
+  const a=it.analysis;edIt=it;
+  ed={t:a.translation||"",pt:a.pattern?.type||"",pe:a.pattern?.explanation||"",tn:a.tense?.name||"",te:a.tense?.explanation||"",
+    el:(a.elements||[]).map(x=>({...x})),gr:(a.grammar||[]).map(x=>({...x})),vo:(a.vocab||[]).map(x=>({...x}))};
+  renderEd();$("#editDlg").showModal();
+}
+function renderEd(){
+  const inp=(f,v,ph)=>`<input type="text" data-f="${f}" value="${esc(v)}" placeholder="${ph}" class="grow">`;
+  const row=(cls,kind,i,inner)=>`<div class="row ${cls}" style="margin-top:4px">${inner}<button class="sm" data-del="${kind}" data-i="${i}" title="この行を削除">✕</button></div>`;
+  $("#edBody").innerHTML=`
+   <label class="sub">和訳</label><textarea id="edT" style="min-height:60px">${esc(ed.t)}</textarea>
+   <label class="sub">文型</label><input type="text" id="edPt" value="${esc(ed.pt)}"><textarea id="edPe" style="min-height:50px;margin-top:4px" placeholder="なぜその文型か">${esc(ed.pe)}</textarea>
+   <label class="sub">時制・態</label><input type="text" id="edTn" value="${esc(ed.tn)}"><textarea id="edTe" style="min-height:50px;margin-top:4px" placeholder="解説">${esc(ed.te)}</textarea>
+   <div class="sub" style="margin-top:8px">文の要素(S 主語 / V 動詞 / O 目的語 / C 補語 / M 修飾)</div>
+   ${ed.el.map((x,i)=>row("edEl","el",i,`<select class="auto" data-f="role">${["S","V","O","C","M"].map(r=>`<option ${x.role===r?"selected":""}>${r}</option>`).join("")}</select>${inp("text",x.text,"英語の語句")}${inp("note",x.note,"補足")}`)).join("")}
+   <button class="sm" data-add="el" style="margin-top:4px">＋ 要素を追加</button>
+   <div class="sub" style="margin-top:8px">文法ポイント</div>
+   ${ed.gr.map((x,i)=>row("edGr","gr",i,inp("point",x.point,"文法事項")+inp("explanation",x.explanation,"解説"))).join("")}
+   <button class="sm" data-add="gr" style="margin-top:4px">＋ 文法ポイントを追加</button>
+   <div class="sub" style="margin-top:8px">単語・熟語</div>
+   ${ed.vo.map((x,i)=>row("edVo","vo",i,inp("word",x.word,"単語")+inp("pos",x.pos,"品詞")+inp("meaning",x.meaning,"意味"))).join("")}
+   <button class="sm" data-add="vo" style="margin-top:4px">＋ 単語を追加</button>`;
+}
+function readEd(){
+  const d=$("#edBody");if(!ed||!d)return;
+  ed.t=d.querySelector("#edT").value;ed.pt=d.querySelector("#edPt").value;ed.pe=d.querySelector("#edPe").value;ed.tn=d.querySelector("#edTn").value;ed.te=d.querySelector("#edTe").value;
+  for(const [cls,k] of [["edEl","el"],["edGr","gr"],["edVo","vo"]])
+    d.querySelectorAll("."+cls).forEach((r,i)=>r.querySelectorAll("[data-f]").forEach(f=>{if(ed[k][i])ed[k][i][f.dataset.f]=f.value}));
+}
+$("#edBody").onclick=e=>{
+  const b=e.target.closest("[data-del],[data-add]");if(!b)return;readEd();
+  if(b.dataset.del)ed[b.dataset.del].splice(+b.dataset.i,1);else ed[b.dataset.add].push(ED_NEW[b.dataset.add]());
+  renderEd();
+};
+function saveEdit(verify){
+  readEd();const it=edIt,base=it.analysis,keep=(arr,f)=>arr.filter(x=>String(x[f]||"").trim());
+  it.analysis={...base,translation:ed.t.trim(),pattern:{...(base.pattern||{}),type:ed.pt.trim(),explanation:ed.pe.trim()},
+    tense:{...(base.tense||{}),name:ed.tn.trim(),explanation:ed.te.trim()},elements:keep(ed.el,"text"),grammar:keep(ed.gr,"point"),vocab:keep(ed.vo,"word")};
+  if(verify)it.verified=true;
+  save();$("#editDlg").close();renderAll();toast(verify?"保存して確認済みにしました":"保存しました");
+}
+$("#edCancel").onclick=()=>$("#editDlg").close();
+$("#edSave").onclick=()=>saveEdit(false);
+$("#edSaveOk").onclick=()=>saveEdit(true);
+
+/* ---------- 弱点集計 ---------- */
+let weakDays=30,weakCat=null;
+function renderWeak(){
+  const box=$("#tab-weak"),since=weakDays?ymd(new Date(Date.now()-weakDays*86400000)):"";
+  const recs=[];db.items.forEach(it=>it.mistakes.forEach(m=>{if(!since||String(m.date)>=since)recs.push({it,m})}));
+  const cnt={};recs.forEach(r=>{const c=r.m.category||"その他";cnt[c]=(cnt[c]||0)+1});
+  const rows=Object.entries(cnt).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;
+  let h=`<div class="card"><h3>弱点集計</h3>
+    <div class="row">${[[7,"直近7日"],[30,"直近30日"],[0,"全期間"]].map(([n,l])=>`<button class="sm wkP ${weakDays===n?"on":""}" data-d="${n}">${l}</button>`).join("")}
+      <span class="sub grow" style="text-align:right">間違い ${recs.length}件 ・ ${new Set(recs.map(r=>r.it.id)).size}文</span></div>
+    ${rows.length?rows.map(([c,n])=>`<button class="wk ${weakCat===c?"on":""}" data-c="${esc(c)}"><span>${esc(c)}</span><span class="wkt"><span class="wkb" style="width:${Math.round(n/max*100)}%"></span></span><span class="wkc">${n}</span></button>`).join(""):'<div class="sub" style="margin-top:10px">この期間の間違いはありません。4択問題で間違えたときや、⑴の「学習管理」から記録できます。</div>'}</div>`;
+  if(weakCat&&cnt[weakCat]){
+    const hit=new Map();recs.filter(r=>(r.m.category||"その他")===weakCat).forEach(r=>{if(!hit.has(r.it))hit.set(r.it,[]);hit.get(r.it).push(r.m)});
+    const list=[...hit.entries()].sort((a,b)=>String(b[1].at(-1).date).localeCompare(String(a[1].at(-1).date)));
+    h+=`<div class="card"><h3>「${esc(weakCat)}」で間違えた英文(${list.length}文)</h3>${list.map(([it,ms])=>`<div class="item"><div class="t" data-open="${it.id}">${esc(it.text)}
+      <div class="sub">${ms.length}回 ・ 最後 ${esc(ms.at(-1).date)}${ms.some(m=>m.note)?" ・ "+esc(ms.map(m=>m.note).filter(Boolean).join(" / ")):""}</div></div></div>`).join("")}</div>`;
+  }
+  box.innerHTML=h;
+  box.querySelectorAll(".wkP").forEach(b=>b.onclick=()=>{weakDays=+b.dataset.d;renderWeak()});
+  box.querySelectorAll(".wk").forEach(b=>b.onclick=()=>{weakCat=weakCat===b.dataset.c?null:b.dataset.c;renderWeak()});
+  box.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{
+    const ids=[...box.querySelectorAll("[data-open]")].map(x=>x.dataset.open);openItem(b.dataset.open,"struct",ids);
+  });
+}
+
+/* ---------- 英文生成 ---------- */
+const THEMES=["会議","出張","受発注","人事","施設","契約","経理・財務","広告・販促","顧客対応","社内通知"];
+const gen={res:[],form:{theme:"",cats:[],level:730,count:5,group:"AI生成",analyze:false}};
+const GENPROMPT=f=>`TOEIC のビジネス場面を想定した英文を、${f.count}文、オリジナルで作成してください。
+条件:
+- テーマ: ${f.theme||"ビジネス全般(会議・出張・人事・契約・顧客対応など)"}
+- 含める文法項目: ${f.cats.length?f.cats.join("、")+"(各文に、このうち少なくとも1つを含める)":"指定なし"}
+- 難易度: ${f.level}点レベル(${LV_DESC[f.level]})
+- 既存の問題集・公式問題・書籍・ウェブサイトの文を再現・引用しないこと。すべてあなたが新しく作ったオリジナルの文にすること。
+- 1つの文は、1行で完結する英文1文にする。会社名・人名は架空のものを使い、実在のものは使わない。
+JSON のみで答えてください: {"sentences":[{"text":"英文","grammar":["含めた文法項目"]}]}`;
+async function generate(f){
+  const r=await gemini(GENPROMPT(f),0.9);
+  const arr=Array.isArray(r)?r:(r.sentences||r.items||[]);
+  const have=new Set([...db.items.map(i=>i.text.toLowerCase()),...gen.res.map(x=>x.text.toLowerCase())]);
+  const out=[];
+  for(const s of arr){
+    const t=String(typeof s==="string"?s:s?.text||"").replace(/\s+/g," ").trim();
+    if(t.length<8||t.length>400||have.has(t.toLowerCase()))continue;
+    have.add(t.toLowerCase());out.push({id:uid(),text:t,level:f.level,adopt:true});
+  }
+  if(!out.length)throw new Error("使える英文が返りませんでした。もう一度試してください。");
+  gen.res=[...out,...gen.res];
+}
+function readGen(){
+  const b=$("#tab-gen"),f=gen.form;if(!b.querySelector("#gTheme"))return;
+  f.theme=b.querySelector("#gTheme").value.trim();f.cats=[...b.querySelectorAll("#gCats input:checked")].map(i=>i.value);
+  f.level=normLevel(b.querySelector("#gLevel").value)||730;f.count=Math.min(10,Math.max(1,parseInt(b.querySelector("#gCount").value,10)||5));
+  const g=b.querySelector("#gGroup");if(g){f.group=g.value.trim();f.analyze=b.querySelector("#gAnalyze").checked}
+}
+function renderGen(){
+  const box=$("#tab-gen"),f=gen.form;
+  box.innerHTML=`<div class="card"><h3>英文生成</h3>
+    <div class="sub">TOEIC風のビジネス場面の英文を、AI にオリジナルで作らせます(既存の問題集の文を再現しない指示つき)。</div>
+    <input type="text" id="gTheme" list="gThemes" placeholder="テーマ(例: 会議、出張、受発注、人事、施設)" value="${esc(f.theme)}" style="margin-top:8px">
+    <datalist id="gThemes">${THEMES.map(t=>`<option value="${t}">`).join("")}</datalist>
+    <div class="sub" style="margin-top:8px">文法項目(複数選べます)</div>
+    <div class="row" id="gCats">${CATS.map(c=>`<label class="ck"><input type="checkbox" value="${c}" ${f.cats.includes(c)?"checked":""}>${c}</label>`).join("")}</div>
+    <div class="row" style="margin-top:8px"><label class="ck">難易度 <select id="gLevel" class="auto">${LEVELS.map(n=>`<option value="${n}" ${f.level===n?"selected":""}>${n}点</option>`).join("")}</select></label>
+      <label class="ck">件数 <input type="number" id="gCount" min="1" max="10" value="${f.count}" style="width:80px"></label></div>
+    <button class="pri" id="gGo" style="margin-top:10px">英文を生成</button><div class="err" id="gErr"></div></div>
+   ${gen.res.length?`<div class="card"><h3>生成された英文(${gen.res.length}文)</h3>
+    ${gen.res.map(r=>`<div class="item" data-id="${r.id}"><input type="checkbox" class="gAd" ${r.adopt?"checked":""} style="margin-top:7px"><div class="t" style="cursor:default">${esc(r.text)}<span class="tag">${r.level}点</span></div><button class="sm gDel">削除</button></div>`).join("")}
+    <div class="row" style="margin-top:10px"><input type="text" id="gGroup" list="grpList" value="${esc(f.group)}" placeholder="追加先のグループ(任意)" class="grow">
+      <label class="ck"><input type="checkbox" id="gAnalyze" ${f.analyze?"checked":""}>追加後にそのまま解析する</label></div>
+    <div class="row" style="margin-top:8px"><button class="pri" id="gAdopt">採用した英文を追加</button><button id="gClear">すべて削除</button></div>
+    <div class="sub" id="gMsg" style="margin-top:6px"></div>
+    <div class="sub">解析した英文は「未確認」として表示されます。内容を確かめてから使ってください。</div></div>`:""}`;
+  $("#gGo").onclick=e=>{readGen();act(e.target,"生成中…",()=>generate(f),$("#gErr"))};
+  box.querySelectorAll(".gAd").forEach(c=>c.onchange=()=>{gen.res.find(r=>r.id===c.closest(".item").dataset.id).adopt=c.checked});
+  box.querySelectorAll(".gDel").forEach(b=>b.onclick=()=>{gen.res=gen.res.filter(r=>r.id!==b.closest(".item").dataset.id);readGen();renderGen()});
+  $("#gClear")?.addEventListener("click",()=>{if(confirm("生成された英文をすべて削除しますか?")){gen.res=[];readGen();renderGen()}});
+  $("#gAdopt")?.addEventListener("click",async()=>{
+    readGen();const picks=gen.res.filter(r=>r.adopt);
+    if(!picks.length)return toast("採用する英文を選んでください。");
+    const before=new Set(db.items.map(i=>i.id));
+    const n=addSentences(picks.map(r=>({text:r.text,level:r.level})),ensureGroups(f.group));
+    const added=db.items.filter(i=>!before.has(i.id));
+    gen.res=gen.res.filter(r=>!r.adopt);toast(`${n} 文を追加しました`);renderGen();
+    if(f.analyze&&added.length)await runAnalyze(added,t=>{const e=$("#gMsg");if(e)e.textContent=t});
+  });
+}
+
 /* ---------- ⑵⑹ グループ化(共通) ---------- */
 let props={s:null,w:null}; // グループ案 [{name,reason,ids}]
 const S_VIEWS=["おまかせ(学習に役立つ観点)","文法事項(構文・時制・品詞・関係詞など)","TOEIC の場面(人事・会議・出張・広告など)","話題・テーマ","難易度"];
@@ -663,7 +927,7 @@ const W_VIEWS=["おまかせ(覚えやすい観点)","意味・話題が近い�
 const S_KEYS={pattern:["文型",a=>[(a.pattern?.type||"").match(/第[1-5１-５]文型/)?.[0]||a.pattern?.type]],
   tense:["時制",a=>[(a.tense?.name||"").split(/[・、,，\s(（]/)[0]]],
   part:["TOEIC",a=>[a.toeic?.part]],scene:["場面",a=>[a.toeic?.scene]],point:["論点",a=>(a.toeic?.points||[]).map(p=>p.type)]};
-const W_KEYS={pos:["品詞",w=>[(w.pos||"").split(/[\/・、,]/)[0]]],level:["頻出度",w=>[w.level?"★".repeat(Math.min(3,w.level)):""]],known:["習得",w=>[w.known?"習得済み":"未習得"]]};
+const W_KEYS={pos:["品詞",w=>[(w.pos||"").split(/[\/・、,]/)[0]]],level:["頻出度",w=>[w.level?"★".repeat(Math.min(3,w.level)):""]],status:["習得",w=>[STATUS[w.status]||"未学習"]]};
 function autoProps(kind,key){
   const [prefix,fn]=(kind==="s"?S_KEYS:W_KEYS)[key];const map={};
   const src=kind==="s"?db.items.filter(i=>i.analysis):db.words;
@@ -686,7 +950,7 @@ async function aiProps(kind,targets,view){
 const label=(kind,id)=>kind==="s"?db.items.find(i=>i.id===id)?.text:db.words.find(w=>w.id===id)?.word;
 function toolsHTML(kind){
   const views=kind==="s"?S_VIEWS:W_VIEWS;
-  const keys=kind==="s"?{pattern:"5文型",tense:"時制",part:"TOEIC パート",scene:"ビジネス場面",point:"TOEIC 論点"}:{pos:"品詞",level:"頻出度",known:"習得状況"};
+  const keys=kind==="s"?{pattern:"5文型",tense:"時制",part:"TOEIC パート",scene:"ビジネス場面",point:"TOEIC 論点"}:{pos:"品詞",level:"頻出度",status:"習得状況"};
   const p=props[kind];
   return `<div class="card"><h3>${kind==="s"?"⑵ 英文グループ化":"⑹ 英単語グループ化"}</h3>
    <div class="row"><span class="sub">AIでグループ案を作る</span>
@@ -900,8 +1164,8 @@ const au={token:0,idx:0,list:[],kind:"s",chunk:-1,playing:false};
 function audioList(){
   const c=auCfg(),[k,t,g]=c.src.split(":");
   if(k==="s"){const it=getCur();
-    return t==="cur"?(it?[it]:[]):t==="bm"?db.items.filter(i=>i.bm):t==="g"?db.items.filter(i=>i.gids.includes(g)):db.items}
-  return t==="todo"?db.words.filter(w=>!w.known):t==="g"?db.words.filter(w=>w.gids.includes(g)):db.words;
+    return t==="cur"?(it?[it]:[]):t==="bm"?db.items.filter(i=>i.bm):t==="todo"?db.items.filter(i=>i.status!=="mastered"):t==="g"?db.items.filter(i=>i.gids.includes(g)):db.items}
+  return t==="todo"?db.words.filter(w=>w.status!=="mastered"):t==="g"?db.words.filter(w=>w.gids.includes(g)):db.words;
 }
 function say(text,lang,rate){
   return new Promise(res=>{const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=rate;
@@ -949,8 +1213,8 @@ function renderAudio(){
   const go=(v,l)=>`<option value="${v}" ${c.src===v?"selected":""}>${esc(l)}</option>`;
   box.innerHTML=`<div class="card"><h3>⑸ 音声化</h3>
     <div class="row"><select id="auSrc" class="grow">
-      <optgroup label="英文">${go("s:cur","現在の英文")}${go("s:bm","★ブックマークの英文")}${go("s:all","すべての英文")}${db.groups.map(g=>go("s:g:"+g.id,"英文: 🗂 "+g.name)).join("")}</optgroup>
-      <optgroup label="単語">${go("w:all","すべての単語")}${go("w:todo","未習得の単語")}${db.groups.map(g=>go("w:g:"+g.id,"単語: 🗂 "+g.name)).join("")}</optgroup></select></div>
+      <optgroup label="英文">${go("s:cur","現在の英文")}${go("s:bm","★ブックマークの英文")}${go("s:todo","覚えた以外の英文")}${go("s:all","すべての英文")}${db.groups.map(g=>go("s:g:"+g.id,"英文: 🗂 "+g.name)).join("")}</optgroup>
+      <optgroup label="単語">${go("w:all","すべての単語")}${go("w:todo","覚えた以外の単語")}${db.groups.map(g=>go("w:g:"+g.id,"単語: 🗂 "+g.name)).join("")}</optgroup></select></div>
     <div class="row" style="margin-top:8px">
       <select id="auVoice" class="auto"><option value="">声: 自動(英語)</option>${vs.map(v=>`<option ${c.voice===v.name?"selected":""}>${esc(v.name)}</option>`).join("")}</select>
       <label class="ck">速さ <input type="range" id="auRate" min="0.5" max="1.5" step="0.1" value="${c.rate}"> <span id="auRateV">${c.rate}</span>x</label>
@@ -989,15 +1253,15 @@ function renderWords(){
   fillGroupSelect($("#wGrp"));renderWordList();
 }
 function renderWordList(){
-  const q=$("#wq").value.trim().toLowerCase(),g=$("#wGrp").value;
-  const rows=db.words.filter(w=>(!q||w.word.toLowerCase().includes(q)||w.meaning.includes(q))&&inGroup(w,g)&&(!onlyTodo||!w.known));
-  $("#wCount").textContent=`${rows.length} / ${db.words.length} 語 ・ 習得済み ${db.words.filter(w=>w.known).length}`;
-  $("#wHide").classList.toggle("on",hideMean);$("#wTodo").classList.toggle("on",onlyTodo);
+  const q=$("#wq").value.trim().toLowerCase(),g=$("#wGrp").value,sf=$("#wStatus").value;
+  const rows=db.words.filter(w=>(!q||w.word.toLowerCase().includes(q)||w.meaning.includes(q))&&inGroup(w,g)&&stOk(w.status,sf));
+  $("#wCount").textContent=`${rows.length} / ${db.words.length} 語 ・ 覚えた ${db.words.filter(w=>w.status==="mastered").length}`;
+  $("#wHide").classList.toggle("on",hideMean);
   $("#wList").innerHTML=rows.length?rows.map(w=>`<div class="item" data-id="${w.id}">
-    <input type="checkbox" data-a="known" ${w.known?"checked":""} title="覚えた" style="margin-top:7px">
-    <div class="t" style="cursor:default"><span class="wd">${esc(w.word)}</span> <span class="sub">${esc(w.pos)} ${"★".repeat(Math.min(3,w.level||0))}</span>${chips(w.gids)}
+    <div class="t" style="cursor:default"><span class="wd">${esc(w.word)}</span> <span class="sub">${esc(w.pos)} ${"★".repeat(Math.min(3,w.level||0))}</span>${chips(w.gids)}${w.review_count?`<span class="tag">復習${w.review_count}回</span>`:""}
       <div class="${hideMean?"hidden-m":""}" data-a="rev">${esc(w.meaning)}<span class="sub"> ${esc(w.note)}</span></div>
       ${w.src&&db.items.some(i=>i.id===w.src)?`<a href="#" class="sub" data-a="src">用例の英文を見る</a>`:""}</div>
+    <select class="auto wSt" title="学習の状態">${Object.entries(STATUS).map(([k,v])=>`<option value="${k}" ${w.status===k?"selected":""}>${v}</option>`).join("")}</select>
     <button class="sm" data-a="speak" title="発音">🔊</button>
     <button class="sm" data-a="grp" title="グループ">🗂</button>
     <button class="sm" data-a="del" title="削除">🗑</button></div>`).join(""):'<div class="sub">単語がありません。⑴ の「＋単語帳」または上のフォームから追加できます。</div>';
@@ -1006,17 +1270,19 @@ $("#wList").onclick=e=>{
   const b=e.target.closest("[data-a]");if(!b)return;if(e.target.closest("a"))e.preventDefault();
   const id=b.closest(".item").dataset.id,w=db.words.find(x=>x.id===id);
   switch(b.dataset.a){
-    case"known":w.known=b.checked;save();renderWordList();break;
-    case"rev":b.classList.remove("hidden-m");break;
+    case"rev":if(b.classList.contains("hidden-m")){b.classList.remove("hidden-m");w.review_count=(w.review_count||0)+1;w.last_reviewed=today();save()}break; // 隠した意味を見る = 復習1回
     case"src":openItem(w.src);break;
     case"speak":speak(w.word);break;
     case"grp":pickGroups("この単語のグループ",w.gids,ids=>w.gids=ids);break;
     case"del":if(confirm("削除しますか?")){db.words=db.words.filter(x=>x.id!==id);save();renderAll()}break;
   }
 };
-$("#wq").oninput=renderWordList;$("#wGrp").onchange=renderWordList;
+$("#wList").onchange=e=>{
+  const s=e.target.closest(".wSt");if(!s)return;
+  const w=db.words.find(x=>x.id===s.closest(".item").dataset.id);w.status=s.value;save();renderWordList();
+};
+$("#wq").oninput=renderWordList;$("#wGrp").onchange=renderWordList;$("#wStatus").onchange=renderWordList;
 $("#wHide").onclick=()=>{hideMean=!hideMean;renderWordList()};
-$("#wTodo").onclick=()=>{onlyTodo=!onlyTodo;renderWordList()};
 $("#nwAdd").onclick=()=>{
   const word=$("#nwWord").value.trim();if(!word)return;
   addWord({word,meaning:$("#nwMean").value.trim()},ensureGroups($("#nwGrp").value));
@@ -1082,6 +1348,7 @@ async function applyRemote(rec,key){
     delete sync.hashes[kk];return true;
   }
   const o=await decrypt(rec.iv,rec.data,key);
+  if(k==="item")normItem(o);else if(k==="word")normWord(o); // 古い版のデータにも新項目を補う
   if(localDirty)return false; // この端末の変更を優先し、次の送信で上書きする
   const h=hashOf(o);
   if(idx>=0)arr[idx]=o;
@@ -1091,7 +1358,7 @@ async function applyRemote(rec,key){
     if(di>=0){
       const loc=arr[di];arr.splice(di,1);
       if(k==="group")[...db.items,...db.words].forEach(x=>x.gids=uniq(x.gids.map(g=>g===loc.id?o.id:g)));
-      else{o.gids=uniq([...(o.gids||[]),...(loc.gids||[])]);for(const f of["analysis","quiz","rel","illus","meaning"])if(!o[f]&&loc[f])o[f]=loc[f]}
+      else{o.gids=uniq([...(o.gids||[]),...(loc.gids||[])]);for(const f of["analysis","quiz","rel","illus","meaning"])if(!o[f]&&loc[f])o[f]=loc[f];if(loc.mistakes?.length)o.mistakes=[...(o.mistakes||[]),...loc.mistakes]}
     }
     arr.push(o);
   }
