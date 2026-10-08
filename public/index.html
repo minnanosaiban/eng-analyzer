@@ -104,6 +104,8 @@ dialog h3{font-size:13.5px;font-weight:700;margin:0 0 10px}
 .wd{font-size:17px;font-weight:600;font-family:Georgia,"Times New Roman",serif}
 .diagram{overflow:auto;border:1px solid var(--tx-border);border-radius:10px;background:#fff;margin-top:10px}
 .diagram svg{display:block;max-width:none}
+.diagram.fit svg{width:100%;height:auto}
+.card h3.grow{flex:1 1 9em;min-width:9em}
 .illu{text-align:center;margin-top:10px}
 .illu img,.illu svg{width:100%;max-width:560px;border-radius:10px;border:1px solid var(--tx-border);box-shadow:var(--tx-shadow-sm);background:#fff}
 .prop{display:block;padding:8px 0;border-bottom:1px solid var(--tx-border)}
@@ -1082,6 +1084,19 @@ note ID "補足" pos=bottom   (top|bottom|left|right)
 - 色: S=blue, V=red, O=green, C=yellow, M=purple, 接続詞・関係詞=teal
 - 主節は1行目に左から語順どおり。従属節は2行目以降に置き zone で囲み、接続詞・関係詞から主節の語(先行詞など)へ矢印を引く。修飾語は修飾先の近くに置き、修飾先へ点線の矢印。
 - 時制などの補足は動詞に note で付ける。`;
+// RelaGrid の図は、グリッドの外側にも広い余白が付く。中身の外枠に合わせて、表示範囲を決め直す
+function cropSvg(s){
+  try{
+    let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    s.querySelectorAll(":scope > g.rg-zones, :scope > g.rg-edges, :scope > g.rg-nodes, :scope > g.rg-notes, :scope > text").forEach(e=>{
+      const b=e.getBBox();if(b.width||b.height){x0=Math.min(x0,b.x);y0=Math.min(y0,b.y);x1=Math.max(x1,b.x+b.width);y1=Math.max(y1,b.y+b.height)}});
+    if(!(x1>x0&&y1>y0))return;
+    const p=14;x0=Math.floor(x0-p);y0=Math.floor(y0-p);const w=Math.ceil(x1-x0+p),hh=Math.ceil(y1-y0+p);
+    s.setAttribute("viewBox",`${x0} ${y0} ${w} ${hh}`);s.setAttribute("width",w);s.setAttribute("height",hh);
+    const bg=s.querySelector(".rg-bg");if(bg){bg.setAttribute("x",x0);bg.setAttribute("y",y0);bg.setAttribute("width",w);bg.setAttribute("height",hh)}
+  }catch{}
+}
+let relFit=true; // 既定は、画面の幅に合わせて全体を見せる(拡大すると、横にスクロールして細部を見る)
 function renderRel(){
   const box=$("#tab-rel"),it=getCur();
   if(!it){box.innerHTML=bar();return}
@@ -1090,7 +1105,8 @@ function renderRel(){
       <button class="sm" id="rAuto" ${it.analysis?"":"disabled title='先に⑴で解析してください'"}>解析結果から作成(API 不要)</button>
       <button class="sm pri" id="rAi">AIで詳しく作成</button></div>
     <div class="sub">S=青 / V=赤 / O=緑 / C=黄 / M=紫。従属節は枠(ゾーン)で囲まれます。</div>
-    <div class="diagram ${dsl?"":"hide"}" id="rView"></div>
+    <div class="diagram ${relFit?"fit":""} ${dsl?"":"hide"}" id="rView"></div>
+    <div class="row" style="margin-top:6px"><button class="sm ${dsl?"":"hide"}" id="rFit">${relFit?"拡大して見る(横にスクロール)":"画面に合わせて全体を見る"}</button></div>
     <div class="err" id="rErr"></div>
     <details style="margin-top:8px" ${dsl?"":"open"}><summary class="sub">DSL を編集する(RelaGrid の記法)</summary>
       <textarea class="code" id="rDsl" placeholder="grid 3x1&#10;node s A1 icon=user color=blue &quot;The cat (S)&quot;&#10;node v B1 icon=bolt color=red &quot;chased (V)&quot;&#10;s -> v &quot;主語&quot;">${esc(dsl)}</textarea>
@@ -1102,15 +1118,18 @@ function renderRel(){
   const draw=t=>{
     if(!window.RelaGrid){$("#rErr").textContent="RelaGrid を読み込めませんでした。";return false}
     const r=RelaGrid.parseDSL(t);
-    $("#rErr").textContent=r.errors.map(e=>`${e.line}行目: ${e.message}`).join("\n");
+    $("#rErr").textContent=r.errors.length?r.errors.map(e=>`${e.line}行目: ${e.message}`).join("\n")+"\n→ 描画できませんでした。「解析結果から作成」で作り直すか、下の DSL を直してください。":"";
     if(r.errors.length)return false;
     const v=$("#rView");v.classList.remove("hide");RelaGrid.render(v,r.model,{theme:isDark()?"dark":"light"});v.style.background=isDark()?"#0f172a":"#fff";
+    const s=v.querySelector("svg");if(s)cropSvg(s);
+    $("#rFit")?.classList.remove("hide");
     return true;
   };
   if(dsl)draw(dsl);
   const setDsl=t=>{it.rel=t;save();renderRel()};
   $("#rAuto").onclick=()=>{const t=autoDSL(it);if(t)setDsl(t);else $("#rErr").textContent="解析結果に文の要素がありません。再解析してください。"};
   $("#rAi").onclick=e=>act(e.target,"作成中…",async()=>{const r=await gemini(RPROMPT(it.text));if(!r.dsl)throw new Error("DSL が返りませんでした。");it.rel=String(r.dsl);save()},$("#rErr"));
+  $("#rFit").onclick=()=>{relFit=!relFit;$("#rView").classList.toggle("fit",relFit);$("#rFit").textContent=relFit?"拡大して見る(横にスクロール)":"画面に合わせて全体を見る"};
   $("#rDraw").onclick=()=>{const t=$("#rDsl").value;if(draw(t)){it.rel=t;save()}};
   $("#rCopy").onclick=()=>navigator.clipboard.writeText($("#rDsl").value).then(()=>toast("コピーしました。RelaGrid エディタに貼り付けると編集できます。"));
   $("#rSvg").onclick=()=>{const s=$("#rView svg");if(s){s.setAttribute("xmlns","http://www.w3.org/2000/svg");download("relation.svg",s.outerHTML)}};

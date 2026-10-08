@@ -1,4 +1,4 @@
-const CACHE = "eng-analyzer-v9";
+const CACHE = "eng-analyzer-v10";
 const FILES = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./relagrid/icons.js", "./relagrid/colors.js", "./relagrid/model.js", "./relagrid/parser.js", "./relagrid/renderer.js", "./vendor/qrcode.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => e.waitUntil(
