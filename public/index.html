@@ -605,16 +605,36 @@ async function batchCopy(todo,msg){
   return k;
 }
 $("#btnExport").onclick=()=>download("english-library.json",JSON.stringify({groups:db.groups,items:db.items,words:db.words},null,1),"application/json");
+// 英文・単語・グループを取り込む。strict=true は、外から届いたデータ用(使う項目だけを取り出す)
+const clip=(s,n)=>String(s??"").replace(/\s+/g," ").trim().slice(0,n);
+function cleanItem(i){
+  const an=i.analysis&&typeof i.analysis==="object"&&!Array.isArray(i.analysis)&&JSON.stringify(i.analysis).length<30000?i.analysis:null;
+  return{text:clip(i.text,500),bm:false,added:Date.now(),analysis:an,level:i.level,verified:an?false:true};
+}
+function cleanWord(w){return{word:clip(w.word,100),pos:clip(w.pos,40),meaning:clip(w.meaning,300),note:clip(w.note,500),level:Math.min(3,Math.max(0,+w.level||0))}}
+function importData(d,{strict=false}={}){
+  const gmap=Object.create(null); // 外から届くキー(__proto__ など)で、オブジェクトを壊されない
+  for(const g of Array.isArray(d.groups)?d.groups:[]){if(g&&typeof g.name==="string"&&g.name.trim())gmap[g.id]=ensureGroup(g.name)}
+  const remap=a=>uniq((Array.isArray(a)?a:[]).map(id=>gmap[id]).filter(Boolean));
+  const have=new Set(db.items.map(i=>i.text.toLowerCase()));let n=0;
+  for(const i of Array.isArray(d.items)?d.items:[]){
+    if(!i||typeof i.text!=="string"||!i.text.trim())continue;
+    const o=strict?cleanItem(i):i,key=o.text.toLowerCase();
+    if(have.has(key))continue;have.add(key);
+    db.items.push(normItem({...o,id:uid(),gids:remap(i.gids)}));n++;
+  }
+  const hw=new Set(db.words.map(w=>w.word.toLowerCase()));let m=0;
+  for(const w of Array.isArray(d.words)?d.words:[]){
+    if(!w||typeof w.word!=="string"||!w.word.trim())continue;
+    const o=strict?cleanWord(w):w,key=o.word.toLowerCase();
+    if(hw.has(key))continue;hw.add(key);
+    db.words.push(normWord({...o,id:uid(),src:null,gids:remap(w.gids)}));m++;
+  }
+  return{n,m};
+}
 $("#importIn").onchange=async e=>{
   try{
-    const d=JSON.parse(await e.target.files[0].text());
-    const gmap={};
-    for(const g of d.groups||[])gmap[g.id]=ensureGroup(g.name);
-    const remap=a=>uniq((a||[]).map(id=>gmap[id]).filter(Boolean));
-    const have=new Set(db.items.map(i=>i.text.toLowerCase()));let n=0;
-    for(const i of d.items||[]){if(i.text&&!have.has(i.text.toLowerCase())){db.items.push(normItem({...i,id:uid(),gids:remap(i.gids)}));n++}}
-    const hw=new Set(db.words.map(w=>w.word.toLowerCase()));let m=0;
-    for(const w of d.words||[]){if(w.word&&!hw.has(w.word.toLowerCase())){db.words.push(normWord({...w,id:uid(),src:null,gids:remap(w.gids)}));m++}}
+    const {n,m}=importData(JSON.parse(await e.target.files[0].text()));
     save();renderAll();toast(`英文 ${n} / 単語 ${m} を復元しました`);
   }catch(err){toast("読み込めませんでした: "+err.message)}
   e.target.value="";
@@ -1366,6 +1386,30 @@ async function applyRemote(rec,key){
 }
 function setSyncStatus(text,err){const b=$("#syncStatus");b.classList.toggle("hide",!sync);b.textContent=text;b.style.color=err?"var(--warn)":""}
 function scheduleSync(){if(!sync)return;clearTimeout(syncTimer);setSyncStatus("☁ 未同期の変更あり");syncTimer=setTimeout(()=>syncNow(),3000)}
+// 受信箱から受け取る: 1通ずつ、公開鍵で包まれた AES 鍵を秘密鍵で開き、本文を復号して取り込む
+async function pullInbox(key){
+  const total={n:0,m:0,bad:0};
+  for(let round=0;round<40;round++){
+    const r=await api("inbox");
+    if(!r.items?.length)break;
+    const kp=await decrypt(r.keys.priv_iv,r.keys.priv_data,key);
+    const priv=await crypto.subtle.importKey("pkcs8",fromB64(kp.pkcs8),{name:"RSA-OAEP",hash:"SHA-256"},false,["decrypt"]);
+    const done=[];
+    for(const it of r.items){
+      try{
+        const raw=await crypto.subtle.decrypt({name:"RSA-OAEP"},priv,fromB64(it.wrapped));
+        const aes=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
+        const {n,m}=importData(await decrypt(it.iv,it.data,aes),{strict:true});
+        total.n+=n;total.m+=m;
+      }catch{total.bad++} // 復号できない・形が違う通は、取り込まずに捨てる
+      done.push(it.id);
+    }
+    saveLocal(); // 先に保存してから、受信箱から消す(途中で止まっても、次回の重複除外で二重にならない)
+    await api("inbox",{method:"DELETE",body:JSON.stringify({ids:done})});
+    if(!r.more)break;
+  }
+  return total;
+}
 async function syncNow(manual){
   if(!sync)return;
   if(syncing){syncAgain=true;return}
@@ -1378,6 +1422,9 @@ async function syncNow(manual){
       if(!r.more)break;
     }
     if(got){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();saveSync();renderAll()}
+    let inb={n:0,m:0,bad:0};
+    try{inb=await pullInbox(key)}catch(e){if(manual)toast("受信箱を確認できませんでした: "+e.message,true)}
+    if(inb.n||inb.m){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();renderAll();toast(`受信箱から 英文 ${inb.n} / 単語 ${inb.m} を受け取りました${inb.bad?`(読めなかった ${inb.bad} 通は捨てました)`:""}`)}
     const present=new Set(),out=[]; // 2) 送信(前回の同期から変わったものだけ)
     for(const k of Object.keys(COLL))for(const o of COLL[k]()){
       const kk=rk(k,o.id),h=hashOf(o);present.add(kk);
@@ -1396,9 +1443,17 @@ async function syncNow(manual){
   }catch(e){setSyncStatus("☁ 同期エラー",true);if(manual)toast("同期できませんでした: "+e.message,true)}
   finally{syncing=false;if(syncAgain){syncAgain=false;scheduleSync()}}
 }
+// 受信箱の鍵: 公開鍵(RSA-OAEP)と、保管庫の鍵で暗号化した秘密鍵。秘密鍵の中身はサーバーに渡らない
+async function makeInboxKeys(key){
+  const kp=await crypto.subtle.generateKey({name:"RSA-OAEP",modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:"SHA-256"},true,["encrypt","decrypt"]);
+  const pub=toB64(new Uint8Array(await crypto.subtle.exportKey("spki",kp.publicKey)));
+  const enc=await encrypt({pkcs8:toB64(new Uint8Array(await crypto.subtle.exportKey("pkcs8",kp.privateKey)))},key);
+  return{inbox_pub:pub,inbox_priv_iv:enc.iv,inbox_priv_data:enc.data};
+}
 async function createSync(pass,setup){
   const salt=toB64(crypto.getRandomValues(new Uint8Array(16))),key=await deriveKey(pass,salt),chk=await encrypt(CHECK,key);
-  const {token}=await api("vault",{method:"POST",body:JSON.stringify({salt,check_iv:chk.iv,check_data:chk.data,setup})},null);
+  const ib=await makeInboxKeys(key);
+  const {token}=await api("vault",{method:"POST",body:JSON.stringify({salt,check_iv:chk.iv,check_data:chk.data,setup,...ib})},null);
   sync={token,key:await exportKey(key),since:0,hashes:{},last:0};cryptoKey=null;saveSync();newToken=token;
   await syncNow(true);
 }
@@ -1409,6 +1464,42 @@ async function joinSync(token,pass){
   sync={token,key:await exportKey(key),since:0,hashes:{},last:0};cryptoKey=null;saveSync();
   await syncNow(true);
 }
+// 受信箱の設定: Claude Code などが、書き込み専用の合言葉で英文を預けられるようにする
+let inboxBundle=null;
+async function renderInbox(){
+  const box=$("#inboxBox");if(!box)return;
+  const title='<div class="sub" style="font-weight:700;color:var(--tx-text)">受信箱(Claude などから英文を受け取る)</div>';
+  box.innerHTML=title+'<div class="sub">確認中…</div>';
+  let v;try{v=await api("vault")}catch(e){box.innerHTML=title+`<div class="err">${esc(e.message)}</div>`;return}
+  const inb=v.inbox||{};
+  if(!inb.enabled){
+    box.innerHTML=title+`<div class="sub">書き込み専用の合言葉で、外から英文を預けられるようにします。預けられた英文は暗号化されていて、中身を読めるのはこの端末だけです。</div>
+      <div class="row" style="margin-top:6px"><button class="sm" id="ibOn">受信箱を有効にする</button></div><div class="err" id="ibErr"></div>`;
+    $("#ibOn").onclick=async e=>{
+      e.target.disabled=true;
+      try{await api("inbox/setup",{method:"PUT",body:JSON.stringify(await makeInboxKeys(await getKey()))});renderInbox()}
+      catch(x){$("#ibErr").textContent=x.message;e.target.disabled=false}
+    };return;
+  }
+  box.innerHTML=title+`<div class="sub">受信箱は有効です(合言葉: ${inb.token_set?"発行済み":"未発行"})。届いた英文は、この端末が同期するときに受け取って登録します。</div>
+    ${inboxBundle?`<div class="card" style="margin:8px 0;padding:10px 12px"><b>受信用の設定(いま1回だけ表示します)</b>
+      <textarea readonly id="ibOut" class="code" style="min-height:110px;margin-top:6px">${esc(inboxBundle)}</textarea>
+      <div class="row" style="margin-top:6px"><button class="sm pri" id="ibCopy">コピー</button></div>
+      <div class="sub">このテキストを、Claude Code を使うフォルダの <code>tools/inbox.json</code> に保存してください(Git には入りません)。合言葉は、英文を預けることしかできません。中身を読むことはできません。</div></div>`:""}
+    <div class="row" style="margin-top:6px"><button class="sm ${inb.token_set?"":"pri"}" id="ibNew">${inb.token_set?"合言葉を再発行する":"受信用の設定を発行する"}</button>
+      ${inb.token_set?'<button class="sm" id="ibOff">合言葉を無効にする</button>':""}</div><div class="err" id="ibErr"></div>`;
+  $("#ibNew").onclick=async e=>{
+    if(inb.token_set&&!confirm("合言葉を再発行すると、いまの合言葉は使えなくなります。よろしいですか?"))return;
+    e.target.disabled=true;
+    try{const t=await api("inbox/token",{method:"POST"});inboxBundle=JSON.stringify({url:location.origin,token:t.token,pub:t.pub},null,2);renderInbox()}
+    catch(x){$("#ibErr").textContent=x.message;e.target.disabled=false}
+  };
+  $("#ibOff")?.addEventListener("click",async()=>{
+    if(!confirm("合言葉を無効にします。外から英文を預けられなくなります。よろしいですか?"))return;
+    try{await api("inbox/token",{method:"DELETE"});inboxBundle=null;renderInbox()}catch(x){$("#ibErr").textContent=x.message}
+  });
+  $("#ibCopy")?.addEventListener("click",()=>copyText(inboxBundle,$("#ibOut")).then(()=>toast("コピーしました。tools/inbox.json に保存してください。")));
+}
 function renderSyncBox(){
   const box=$("#syncBox");
   if(sync){
@@ -1417,8 +1508,10 @@ function renderSyncBox(){
         <input type="text" readonly id="tokOut" value="${esc(newToken)}" style="margin-top:6px;font-family:monospace;font-size:12px">
         <div class="sub">パスワード管理アプリなど安全な場所に保管してください。パスフレーズとは別に必要です。</div></div>`:""}
       <div id="qrBox" class="hide" style="margin-top:8px;text-align:center"></div>
+      <div id="inboxBox" style="margin-top:12px;padding-top:10px;border-top:1px solid var(--tx-border)"></div>
       <div class="row" style="margin-top:6px"><button class="sm pri" id="sNow">今すぐ同期</button><button class="sm" id="sQr">スマホで接続(QRコード)</button><button class="sm" id="sKey">同期キーをコピー</button><button class="sm" id="sOff">この端末の同期を解除</button></div>`;
     $("#sNow").onclick=()=>syncNow(true).then(renderSyncBox);
+    renderInbox();
     $("#sQr").onclick=()=>{ // 同期キーを URL の # 以降に入れた QR コード(# 以降はサーバーに送られない)
       const box=$("#qrBox");if(!box.classList.contains("hide")){box.classList.add("hide");box.innerHTML="";return}
       const q=qrcode(0,"M");q.addData(location.origin+location.pathname+"#sync="+encodeURIComponent(sync.token));q.make();
@@ -1427,7 +1520,7 @@ function renderSyncBox(){
       box.classList.remove("hide");
     };
     $("#sKey").onclick=()=>copyText(sync.token,$("#tokOut")||$("#apiKey")).then(()=>toast("同期キーをコピーしました。安全な場所に保管してください。"));
-    $("#sOff").onclick=()=>{if(!confirm("この端末の同期を解除しますか?\n(この端末のデータとクラウドのデータは消えません)"))return;sync=null;cryptoKey=null;newToken=null;saveSync();setSyncStatus("");renderSyncBox()};
+    $("#sOff").onclick=()=>{if(!confirm("この端末の同期を解除しますか?\n(この端末のデータとクラウドのデータは消えません)"))return;sync=null;cryptoKey=null;newToken=null;inboxBundle=null;saveSync();setSyncStatus("");renderSyncBox()};
     return;
   }
   box.innerHTML=`<div class="sub">英文・単語・グループを、この端末で暗号化してから Cloudflare に保存し、PC とスマホで共有できます。パスフレーズは送信されないので、Cloudflare 側からも中身は読めません。<b>パスフレーズを忘れると復元できません。</b></div>

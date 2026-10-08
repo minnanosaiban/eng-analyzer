@@ -1,0 +1,5 @@
+{
+  "url": "https://eng-analyzer.scratch-2026-10-07-cb3f9c.workers.dev",
+  "token": "アプリの「設定 → 受信箱」で発行した合言葉(保管庫ID.秘密)",
+  "pub": "アプリで発行した公開鍵(base64)"
+}
