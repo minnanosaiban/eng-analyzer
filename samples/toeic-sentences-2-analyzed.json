@@ -1,0 +1,4284 @@
+{
+ "groups": [
+  {
+   "id": "g1",
+   "name": "Part 5 文法"
+  },
+  {
+   "id": "g2",
+   "name": "ビジネス:物流・製造"
+  },
+  {
+   "id": "g3",
+   "name": "Part 5 語彙"
+  },
+  {
+   "id": "g4",
+   "name": "ビジネス:IT・施設"
+  },
+  {
+   "id": "g5",
+   "name": "ビジネス:人事"
+  },
+  {
+   "id": "g6",
+   "name": "ビジネス:契約・財務"
+  },
+  {
+   "id": "g7",
+   "name": "ビジネス:会議・出張"
+  },
+  {
+   "id": "g8",
+   "name": "ビジネス:広告・顧客対応"
+  },
+  {
+   "id": "g9",
+   "name": "Part 6 / 7 頻出"
+  }
+ ],
+ "items": [
+  {
+   "id": "toeic-set2-01",
+   "text": "The shipment, which was originally scheduled for Monday, will now arrive on Wednesday because of severe weather.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371382,
+   "analysis": {
+    "translation": "当初は月曜日に予定されていたその発送品は、悪天候のため、現在は水曜日に到着する予定です。",
+    "slash": [
+     {
+      "en": "The shipment, which was originally scheduled for Monday,",
+      "ja": "当初月曜に予定されていた発送品は"
+     },
+     {
+      "en": "will now arrive on Wednesday",
+      "ja": "今は水曜に到着する予定だ"
+     },
+     {
+      "en": "because of severe weather.",
+      "ja": "悪天候のため"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は The shipment (S) will arrive (V) で、arrive は目的語を取らない自動詞。on Wednesday などは修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "The shipment, which was originally scheduled for Monday, will now arrive on Wednesday because of severe weather.",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     },
+     {
+      "text": "which was originally scheduled for Monday",
+      "kind": "関係詞節",
+      "role": "The shipment を補足説明する(非制限用法)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The shipment, which was originally scheduled for Monday",
+      "role": "S",
+      "note": "関係詞節を伴う主語"
+     },
+     {
+      "text": "will now arrive",
+      "role": "V",
+      "note": "未来を表す助動詞 will + 副詞 now"
+     },
+     {
+      "text": "on Wednesday",
+      "role": "M",
+      "note": "到着日"
+     },
+     {
+      "text": "because of severe weather",
+      "role": "M",
+      "note": "理由を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "未来形(will)/関係詞節内は過去形の受動態",
+     "explanation": "主節は will arrive で未来の予定を表します。関係詞節の was scheduled は過去の受動態です。"
+    },
+    "grammar": [
+     {
+      "point": "非制限用法の関係代名詞 which",
+      "explanation": "コンマ付きの which は先行詞 The shipment に補足情報を加えます。"
+     },
+     {
+      "point": "because of + 名詞句",
+      "explanation": "because of は前置詞扱いで名詞(句)が続きます。接続詞 because の後には節が来ます。"
+     },
+     {
+      "point": "be scheduled for",
+      "explanation": "be scheduled for + 日時で「~に予定されている」。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "shipment",
+      "pos": "名詞",
+      "meaning": "発送品、出荷",
+      "note": "",
+      "level": 3,
+      "toeic": "a shipment of ~ / track a shipment など"
+     },
+     {
+      "word": "originally",
+      "pos": "副詞",
+      "meaning": "当初は",
+      "note": "",
+      "level": 2,
+      "toeic": "originally scheduled / planned の形で頻出"
+     },
+     {
+      "word": "be scheduled for",
+      "pos": "熟語",
+      "meaning": "~に予定されている",
+      "note": "",
+      "level": 3,
+      "toeic": "be scheduled for + 日時"
+     },
+     {
+      "word": "severe",
+      "pos": "形容詞",
+      "meaning": "厳しい、深刻な",
+      "note": "",
+      "level": 2,
+      "toeic": "severe weather / severe delay"
+     }
+    ],
+    "toeic": {
+     "scene": "出張・物流(配送連絡)",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "because of(前置詞)と because(接続詞)の使い分け"
+      },
+      {
+       "type": "時制",
+       "detail": "will arrive の未来形と予定変更の表現"
+      }
+     ],
+     "paraphrase": [
+      "The delivery has been postponed to Wednesday due to bad weather.",
+      "The package is now expected on Wednesday."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-02",
+   "text": "Please make sure all cartons are properly labeled before they are loaded onto the truck.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371381,
+   "analysis": {
+    "translation": "トラックに積み込まれる前に、すべての段ボール箱に適切にラベルが貼られているよう確認してください。",
+    "slash": [
+     {
+      "en": "Please make sure",
+      "ja": "確認してください"
+     },
+     {
+      "en": "all cartons are properly labeled",
+      "ja": "すべての箱が適切にラベル付けされていると"
+     },
+     {
+      "en": "before they are loaded onto the truck.",
+      "ja": "トラックに積まれる前に"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "命令文で主語 You は省略。make sure の後ろに接続詞 that が省略された名詞節が続き、これが目的語の働きをします。"
+    },
+    "clauses": [
+     {
+      "text": "Please make sure all cartons are properly labeled before they are loaded onto the truck.",
+      "kind": "主節",
+      "role": "命令文"
+     },
+     {
+      "text": "all cartons are properly labeled",
+      "kind": "名詞節",
+      "role": "make sure の目的語(that が省略)"
+     },
+     {
+      "text": "before they are loaded onto the truck",
+      "kind": "副詞節",
+      "role": "時を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "make sure",
+      "role": "V",
+      "note": "主語 You は省略された命令文"
+     },
+     {
+      "text": "all cartons are properly labeled",
+      "role": "O",
+      "note": "that 省略の名詞節"
+     },
+     {
+      "text": "before they are loaded onto the truck",
+      "role": "M",
+      "note": "時の副詞節"
+     }
+    ],
+    "tense": {
+     "name": "現在形の命令文/受動態",
+     "explanation": "make sure は命令文。従属節内は現在形の受動態(are labeled, are loaded)です。"
+    },
+    "grammar": [
+     {
+      "point": "make sure (that) + 節",
+      "explanation": "「~を確実にする」。that は省略されることが多い。"
+     },
+     {
+      "point": "before 節",
+      "explanation": "before は接続詞として節を導き、時を表します。"
+     },
+     {
+      "point": "副詞の位置",
+      "explanation": "properly は過去分詞 labeled を修飾し be と過去分詞の間に置かれます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "make sure",
+      "pos": "熟語",
+      "meaning": "確実にする、確認する",
+      "note": "",
+      "level": 3,
+      "toeic": "make sure that ~ の形で指示文に頻出"
+     },
+     {
+      "word": "carton",
+      "pos": "名詞",
+      "meaning": "段ボール箱",
+      "note": "",
+      "level": 1,
+      "toeic": "a carton of ~"
+     },
+     {
+      "word": "properly",
+      "pos": "副詞",
+      "meaning": "適切に",
+      "note": "",
+      "level": 2,
+      "toeic": "properly labeled / function properly"
+     },
+     {
+      "word": "load",
+      "pos": "動詞",
+      "meaning": "積み込む",
+      "note": "",
+      "level": 2,
+      "toeic": "load A onto B"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備・倉庫業務",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "before が節を導く接続詞であることの識別"
+      },
+      {
+       "type": "語法",
+       "detail": "make sure の後の節の構造"
+      }
+     ],
+     "paraphrase": [
+      "Be certain that every box has a label before loading.",
+      "Check that all boxes are labeled prior to loading."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-03",
+   "text": "Had the supplier delivered the parts on time, the assembly line would not have been shut down.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371380,
+   "analysis": {
+    "translation": "もし納入業者が時間どおりに部品を納めていたら、組立ラインは停止されなかっただろう。",
+    "slash": [
+     {
+      "en": "Had the supplier delivered",
+      "ja": "もし納入業者が納めていたら"
+     },
+     {
+      "en": "the parts on time,",
+      "ja": "部品を時間どおりに"
+     },
+     {
+      "en": "the assembly line would not have been shut down.",
+      "ja": "組立ラインは停止されなかっただろう"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の The assembly line would not have been shut down で、目的語を取らない形です。能動態にすれば SVO ですが、受動態の文としては S + V の形です。"
+    },
+    "clauses": [
+     {
+      "text": "the assembly line would not have been shut down",
+      "kind": "主節",
+      "role": "仮定法過去完了の帰結"
+     },
+     {
+      "text": "Had the supplier delivered the parts on time",
+      "kind": "副詞節",
+      "role": "If the supplier had delivered の倒置による条件節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Had the supplier delivered the parts on time",
+      "role": "M",
+      "note": "If を省略した倒置の条件節"
+     },
+     {
+      "text": "the assembly line",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "would not have been shut down",
+      "role": "V",
+      "note": "仮定法過去完了の受動態"
+     }
+    ],
+    "tense": {
+     "name": "仮定法過去完了・受動態",
+     "explanation": "過去の事実に反する仮定を表し、条件節は had + 過去分詞、主節は would have + 過去分詞です。"
+    },
+    "grammar": [
+     {
+      "point": "if の省略による倒置",
+      "explanation": "If the supplier had delivered は If を省略して Had the supplier delivered になります。"
+     },
+     {
+      "point": "仮定法過去完了",
+      "explanation": "If + S + had p.p., S + would have p.p. が基本形。"
+     },
+     {
+      "point": "受動態の完了形",
+      "explanation": "would not have been shut down は would have + been + 過去分詞。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "supplier",
+      "pos": "名詞",
+      "meaning": "納入業者、供給元",
+      "note": "",
+      "level": 3,
+      "toeic": "a supplier of ~ / contact the supplier"
+     },
+     {
+      "word": "on time",
+      "pos": "熟語",
+      "meaning": "時間どおりに",
+      "note": "",
+      "level": 3,
+      "toeic": "arrive on time / deliver on time"
+     },
+     {
+      "word": "assembly line",
+      "pos": "名詞",
+      "meaning": "組立ライン",
+      "note": "",
+      "level": 2,
+      "toeic": "工場関連の文章で頻出"
+     },
+     {
+      "word": "shut down",
+      "pos": "熟語",
+      "meaning": "停止する、閉鎖する",
+      "note": "",
+      "level": 2,
+      "toeic": "be shut down for maintenance"
+     }
+    ],
+    "toeic": {
+     "scene": "契約・製造(納期遅延)",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "倒置による仮定法過去完了の形(Had + S + p.p.)"
+      },
+      {
+       "type": "語彙",
+       "detail": "on time と in time の区別"
+      }
+     ],
+     "paraphrase": [
+      "The production line stopped because the parts were late.",
+      "The supplier's delay caused the line to close."
+     ]
+    }
+   },
+   "level": 860,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-04",
+   "text": "The factory has reduced its energy consumption by installing more efficient machinery.",
+   "gids": [
+    "g3",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371379,
+   "analysis": {
+    "translation": "その工場は、より効率的な機械を導入することでエネルギー消費量を減らしました。",
+    "slash": [
+     {
+      "en": "The factory has reduced",
+      "ja": "その工場は減らした"
+     },
+     {
+      "en": "its energy consumption",
+      "ja": "エネルギー消費量を"
+     },
+     {
+      "en": "by installing more efficient machinery.",
+      "ja": "より効率的な機械を導入することで"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "The factory (S) has reduced (V) its energy consumption (O) の形。reduce は他動詞で目的語を取ります。"
+    },
+    "clauses": [
+     {
+      "text": "The factory has reduced its energy consumption by installing more efficient machinery.",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The factory",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "has reduced",
+      "role": "V",
+      "note": "現在完了形"
+     },
+     {
+      "text": "its energy consumption",
+      "role": "O",
+      "note": ""
+     },
+     {
+      "text": "by installing more efficient machinery",
+      "role": "M",
+      "note": "手段を表す前置詞句(動名詞)"
+     }
+    ],
+    "tense": {
+     "name": "現在完了形",
+     "explanation": "過去の行動の結果が現在に及んでいることを表します(has + 過去分詞)。"
+    },
+    "grammar": [
+     {
+      "point": "by + 動名詞",
+      "explanation": "「~することによって」と手段を表し、前置詞の後は動名詞になります。"
+     },
+     {
+      "point": "現在完了形",
+      "explanation": "has reduced は結果や完了を表します。"
+     },
+     {
+      "point": "不可算名詞 machinery",
+      "explanation": "machinery は不可算名詞なので a や複数形 s は付きません。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "reduce",
+      "pos": "動詞",
+      "meaning": "減らす",
+      "note": "",
+      "level": 3,
+      "toeic": "reduce costs / reduce consumption"
+     },
+     {
+      "word": "consumption",
+      "pos": "名詞",
+      "meaning": "消費",
+      "note": "",
+      "level": 2,
+      "toeic": "energy consumption"
+     },
+     {
+      "word": "install",
+      "pos": "動詞",
+      "meaning": "設置する、導入する",
+      "note": "",
+      "level": 3,
+      "toeic": "install equipment / software"
+     },
+     {
+      "word": "efficient",
+      "pos": "形容詞",
+      "meaning": "効率的な",
+      "note": "",
+      "level": 2,
+      "toeic": "energy-efficient / cost-efficient"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備・環境対策",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "by の後は動名詞(installing)になる"
+      },
+      {
+       "type": "品詞",
+       "detail": "efficient(形容詞)と efficiently(副詞)の識別"
+      }
+     ],
+     "paraphrase": [
+      "The plant uses less energy after installing new machines.",
+      "The factory cut its power usage."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-05",
+   "text": "Quality inspectors are responsible for ensuring that every product meets the safety standards.",
+   "gids": [
+    "g3",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371378,
+   "analysis": {
+    "translation": "品質検査員は、すべての製品が安全基準を満たすようにする責任があります。",
+    "slash": [
+     {
+      "en": "Quality inspectors are responsible",
+      "ja": "品質検査員は責任がある"
+     },
+     {
+      "en": "for ensuring",
+      "ja": "確実にすることに対して"
+     },
+     {
+      "en": "that every product meets the safety standards.",
+      "ja": "すべての製品が安全基準を満たすと"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "Quality inspectors (S) are (V) responsible (C) の形で、are は S=C の関係を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Quality inspectors are responsible for ensuring that every product meets the safety standards.",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     },
+     {
+      "text": "that every product meets the safety standards",
+      "kind": "名詞節",
+      "role": "動名詞 ensuring の目的語"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Quality inspectors",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "are",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "responsible",
+      "role": "C",
+      "note": "形容詞"
+     },
+     {
+      "text": "for ensuring that every product meets the safety standards",
+      "role": "M",
+      "note": "責任の内容を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "職務や一般的な事実を表します。that 節内は主語 every product が単数なので meets と三単現の s が付きます。"
+    },
+    "grammar": [
+     {
+      "point": "be responsible for + 名詞/動名詞",
+      "explanation": "for の後ろは動名詞です。to 不定詞は不可。"
+     },
+     {
+      "point": "every + 単数名詞",
+      "explanation": "every product は単数扱いで動詞は meets。"
+     },
+     {
+      "point": "ensure that 節",
+      "explanation": "ensure は「確実にする」で that 節を取ります。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "inspector",
+      "pos": "名詞",
+      "meaning": "検査員",
+      "note": "",
+      "level": 2,
+      "toeic": "quality inspector / safety inspector"
+     },
+     {
+      "word": "be responsible for",
+      "pos": "熟語",
+      "meaning": "~に責任がある",
+      "note": "",
+      "level": 3,
+      "toeic": "be responsible for + 名詞/動名詞"
+     },
+     {
+      "word": "ensure",
+      "pos": "動詞",
+      "meaning": "確実にする",
+      "note": "",
+      "level": 3,
+      "toeic": "ensure that ~ / ensure safety"
+     },
+     {
+      "word": "meet",
+      "pos": "動詞",
+      "meaning": "(基準などを)満たす",
+      "note": "",
+      "level": 3,
+      "toeic": "meet the standards / requirements"
+     }
+    ],
+    "toeic": {
+     "scene": "人事・職務説明(品質管理)",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "responsible の後の前置詞は for"
+      },
+      {
+       "type": "語法",
+       "detail": "ensure と insure の区別、meet の目的語(standards など)"
+      }
+     ],
+     "paraphrase": [
+      "Inspectors must make sure products satisfy safety requirements.",
+      "Quality inspectors are in charge of checking safety compliance."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-06",
+   "text": "Due to the high volume of orders, customers may experience delays in processing.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791462371377,
+   "analysis": {
+    "translation": "注文量が多いため、お客様は処理に遅れが生じる場合があります。",
+    "slash": [
+     {
+      "en": "Due to the high volume of orders,",
+      "ja": "注文量が多いため"
+     },
+     {
+      "en": "customers may experience",
+      "ja": "お客様は経験するかもしれない"
+     },
+     {
+      "en": "delays in processing.",
+      "ja": "処理の遅れを"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "customers (S) may experience (V) delays in processing (O) の形で、experience は他動詞です。"
+    },
+    "clauses": [
+     {
+      "text": "Due to the high volume of orders, customers may experience delays in processing.",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Due to the high volume of orders",
+      "role": "M",
+      "note": "理由を表す前置詞句"
+     },
+     {
+      "text": "customers",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "may experience",
+      "role": "V",
+      "note": "may は可能性を表す助動詞"
+     },
+     {
+      "text": "delays in processing",
+      "role": "O",
+      "note": ""
+     }
+    ],
+    "tense": {
+     "name": "現在形(助動詞 may)",
+     "explanation": "may + 動詞の原形で、起こりうる可能性を表します。"
+    },
+    "grammar": [
+     {
+      "point": "due to + 名詞(句)",
+      "explanation": "due to は前置詞扱いで、名詞(句)が続き節は続きません。"
+     },
+     {
+      "point": "助動詞 may",
+      "explanation": "may の後は動詞の原形。"
+     },
+     {
+      "point": "the volume of",
+      "explanation": "volume は「量」の意味で、a high volume of orders のように使います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "due to",
+      "pos": "前置詞",
+      "meaning": "~のため",
+      "note": "",
+      "level": 3,
+      "toeic": "due to + 名詞 / 理由を示す"
+     },
+     {
+      "word": "volume",
+      "pos": "名詞",
+      "meaning": "量、取引量",
+      "note": "",
+      "level": 2,
+      "toeic": "high volume of orders / calls"
+     },
+     {
+      "word": "experience",
+      "pos": "動詞",
+      "meaning": "経験する、被る",
+      "note": "",
+      "level": 2,
+      "toeic": "experience delays / difficulties"
+     },
+     {
+      "word": "delay",
+      "pos": "名詞",
+      "meaning": "遅れ",
+      "note": "",
+      "level": 3,
+      "toeic": "experience a delay / without delay"
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応(お知らせ)",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "due to と because / since の品詞の違い"
+      },
+      {
+       "type": "語彙",
+       "detail": "volume と quantity の語法"
+      }
+     ],
+     "paraphrase": [
+      "Because of a large number of orders, processing may be slow.",
+      "Customers might face delays since orders are heavy."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-07",
+   "text": "Employees are required to change their passwords every ninety days to protect confidential data.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371376,
+   "analysis": {
+    "translation": "従業員は、機密データを保護するため、90日ごとにパスワードを変更することが求められています。",
+    "slash": [
+     {
+      "en": "Employees are required",
+      "ja": "従業員は求められている"
+     },
+     {
+      "en": "to change their passwords",
+      "ja": "パスワードを変更することを"
+     },
+     {
+      "en": "every ninety days",
+      "ja": "90日ごとに"
+     },
+     {
+      "en": "to protect confidential data.",
+      "ja": "機密データを守るために"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Employees (S) are required (V) の受動態の文です。能動態の require A to do(SVOC)の A が主語になった形で、to change 以下は付随する語句として働きます。"
+    },
+    "clauses": [
+     {
+      "text": "Employees are required to change their passwords every ninety days to protect confidential data.",
+      "kind": "主節",
+      "role": "文全体の中心となる節(受動態)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Employees",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "are required",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to change their passwords",
+      "role": "M",
+      "note": "要求される内容を示す to 不定詞"
+     },
+     {
+      "text": "every ninety days",
+      "role": "M",
+      "note": "頻度"
+     },
+     {
+      "text": "to protect confidential data",
+      "role": "M",
+      "note": "目的を表す to 不定詞"
+     }
+    ],
+    "tense": {
+     "name": "現在形の受動態",
+     "explanation": "規則や決まりを表す be required to ~ の形です。"
+    },
+    "grammar": [
+     {
+      "point": "be required to + 動詞の原形",
+      "explanation": "「~することを求められる」。to の後は原形です。"
+     },
+     {
+      "point": "every + 数詞 + 複数名詞",
+      "explanation": "every ninety days は「90日ごとに」。"
+     },
+     {
+      "point": "目的を表す to 不定詞",
+      "explanation": "to protect は「守るために」と目的を表します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be required to",
+      "pos": "熟語",
+      "meaning": "~することを求められる",
+      "note": "",
+      "level": 3,
+      "toeic": "be required to + 動詞の原形"
+     },
+     {
+      "word": "password",
+      "pos": "名詞",
+      "meaning": "パスワード",
+      "note": "",
+      "level": 2,
+      "toeic": "change a password / reset"
+     },
+     {
+      "word": "protect",
+      "pos": "動詞",
+      "meaning": "保護する",
+      "note": "",
+      "level": 2,
+      "toeic": "protect data / information"
+     },
+     {
+      "word": "confidential",
+      "pos": "形容詞",
+      "meaning": "機密の",
+      "note": "",
+      "level": 3,
+      "toeic": "confidential information / document"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知(情報セキュリティ)",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "be required to の後に動詞の原形が来る"
+      },
+      {
+       "type": "品詞",
+       "detail": "confidential(形容詞)と confidence(名詞)の識別"
+      }
+     ],
+     "paraphrase": [
+      "Staff must update their passwords every 90 days.",
+      "Workers need to renew passwords regularly to keep information secure."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-08",
+   "text": "The IT department will be upgrading the server over the weekend, so access to the system may be limited.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371375,
+   "analysis": {
+    "translation": "IT部門は週末にサーバーをアップグレードする予定ですので、システムへのアクセスが制限される可能性があります。",
+    "slash": [
+     {
+      "en": "The IT department will be upgrading the server",
+      "ja": "IT部門はサーバーを更新する予定だ"
+     },
+     {
+      "en": "over the weekend,",
+      "ja": "週末の間に"
+     },
+     {
+      "en": "so access to the system may be limited.",
+      "ja": "だからシステムへのアクセスは制限されるかもしれない"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "前半の節は The IT department (S) will be upgrading (V) the server (O) の形です。so 以下は結果を表す節で、全体は重文です。"
+    },
+    "clauses": [
+     {
+      "text": "The IT department will be upgrading the server over the weekend",
+      "kind": "主節",
+      "role": "前半の節"
+     },
+     {
+      "text": "so access to the system may be limited",
+      "kind": "等位節",
+      "role": "前半の結果を述べる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The IT department",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "will be upgrading",
+      "role": "V",
+      "note": "未来進行形"
+     },
+     {
+      "text": "the server",
+      "role": "O",
+      "note": ""
+     },
+     {
+      "text": "over the weekend",
+      "role": "M",
+      "note": "期間"
+     }
+    ],
+    "tense": {
+     "name": "未来進行形/助動詞 may の受動態",
+     "explanation": "will be upgrading は未来の一定期間に行われる動作を表します。後半は may be limited で可能性を表します。"
+    },
+    "grammar": [
+     {
+      "point": "未来進行形",
+      "explanation": "will be + -ing で、未来のある時点や期間に進行している動作を表します。"
+     },
+     {
+      "point": "接続詞 so",
+      "explanation": "so は結果を表す等位接続詞で、前にコンマを置くことが多い。"
+     },
+     {
+      "point": "access to",
+      "explanation": "access の後の前置詞は to。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "upgrade",
+      "pos": "動詞",
+      "meaning": "アップグレードする",
+      "note": "",
+      "level": 2,
+      "toeic": "upgrade software / equipment"
+     },
+     {
+      "word": "access",
+      "pos": "名詞",
+      "meaning": "アクセス、利用",
+      "note": "",
+      "level": 3,
+      "toeic": "access to ~"
+     },
+     {
+      "word": "limited",
+      "pos": "形容詞",
+      "meaning": "制限された",
+      "note": "",
+      "level": 2,
+      "toeic": "limited access / limited time"
+     },
+     {
+      "word": "over the weekend",
+      "pos": "熟語",
+      "meaning": "週末の間に",
+      "note": "",
+      "level": 2,
+      "toeic": "scheduled maintenance over the weekend"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知(システム保守)",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "未来進行形が予定を表すこと"
+      },
+      {
+       "type": "前置詞",
+       "detail": "access の後は to"
+      }
+     ],
+     "paraphrase": [
+      "System maintenance will take place on the weekend.",
+      "Users may not be able to get into the system during the update."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-09",
+   "text": "Once the software has been installed, users will be prompted to create an account.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371374,
+   "analysis": {
+    "translation": "ソフトウェアがインストールされると、ユーザーはアカウントの作成を求められます。",
+    "slash": [
+     {
+      "en": "Once the software has been installed,",
+      "ja": "いったんソフトが導入されると"
+     },
+     {
+      "en": "users will be prompted",
+      "ja": "ユーザーは促される"
+     },
+     {
+      "en": "to create an account.",
+      "ja": "アカウントを作成するよう"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "users (S) will be prompted (V) の受動態の文です。能動態の prompt A to do(SVOC)の A が主語になった形で、to create 以下は付随する語句です。"
+    },
+    "clauses": [
+     {
+      "text": "users will be prompted to create an account",
+      "kind": "主節",
+      "role": "文全体の中心となる節(受動態)"
+     },
+     {
+      "text": "Once the software has been installed",
+      "kind": "副詞節",
+      "role": "時の条件を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Once the software has been installed",
+      "role": "M",
+      "note": "時を表す副詞節(現在完了の受動態)"
+     },
+     {
+      "text": "users",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "will be prompted",
+      "role": "V",
+      "note": "未来の受動態"
+     },
+     {
+      "text": "to create an account",
+      "role": "M",
+      "note": "促される内容を示す to 不定詞"
+     }
+    ],
+    "tense": {
+     "name": "未来形の受動態/現在完了形の受動態",
+     "explanation": "主節は will be prompted、once 節は未来のことでも現在完了(has been installed)で表します。"
+    },
+    "grammar": [
+     {
+      "point": "時を表す副詞節では未来を現在形・現在完了で表す",
+      "explanation": "once 節の中では will を使わず has been installed となります。"
+     },
+     {
+      "point": "接続詞 once",
+      "explanation": "once は「いったん~すると」の意味で節を導く接続詞です。"
+     },
+     {
+      "point": "be prompted to + 動詞の原形",
+      "explanation": "「~するよう促される」。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "install",
+      "pos": "動詞",
+      "meaning": "インストールする",
+      "note": "",
+      "level": 3,
+      "toeic": "install software / equipment"
+     },
+     {
+      "word": "prompt",
+      "pos": "動詞",
+      "meaning": "促す",
+      "note": "",
+      "level": 2,
+      "toeic": "be prompted to + 動詞の原形"
+     },
+     {
+      "word": "create an account",
+      "pos": "熟語",
+      "meaning": "アカウントを作成する",
+      "note": "",
+      "level": 2,
+      "toeic": "create / set up an account"
+     },
+     {
+      "word": "once",
+      "pos": "接続詞",
+      "meaning": "いったん~すると",
+      "note": "",
+      "level": 2,
+      "toeic": "once + S + V"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知(ソフトウェア導入)",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "時を表す副詞節では未来の内容でも現在完了・現在形を使う"
+      },
+      {
+       "type": "接続詞・副詞",
+       "detail": "once が接続詞として節を導くこと"
+      }
+     ],
+     "paraphrase": [
+      "After the program is set up, users will be asked to register.",
+      "When installation is finished, users must create an account."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-10",
+   "text": "The newly renovated lobby features comfortable seating and a large display screen showing the daily schedule.",
+   "gids": [
+    "g3",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371373,
+   "analysis": {
+    "translation": "新しく改装されたロビーには、快適な座席と、その日の予定を表示する大型のディスプレイ画面があります。",
+    "slash": [
+     {
+      "en": "The newly renovated lobby",
+      "ja": "新しく改装されたロビーには"
+     },
+     {
+      "en": "features",
+      "ja": "備わっている"
+     },
+     {
+      "en": "comfortable seating and a large display screen",
+      "ja": "快適な座席と大型ディスプレイ画面が"
+     },
+     {
+      "en": "showing the daily schedule.",
+      "ja": "その日の予定を表示する"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "The newly renovated lobby (S) features (V) comfortable seating and a large display screen (O) の形です。feature は「~を特徴とする、備える」の他動詞です。"
+    },
+    "clauses": [
+     {
+      "text": "The newly renovated lobby features comfortable seating and a large display screen showing the daily schedule.",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     },
+     {
+      "text": "showing the daily schedule",
+      "kind": "現在分詞句(後置修飾)",
+      "role": "a large display screen を後ろから修飾する"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The newly renovated lobby",
+      "role": "S",
+      "note": "過去分詞 renovated が lobby を修飾"
+     },
+     {
+      "text": "features",
+      "role": "V",
+      "note": "他動詞"
+     },
+     {
+      "text": "comfortable seating and a large display screen showing the daily schedule",
+      "role": "O",
+      "note": "現在分詞句が後ろから修飾"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "施設の特徴や現状を述べる現在形です。"
+    },
+    "grammar": [
+     {
+      "point": "過去分詞の前置修飾",
+      "explanation": "newly renovated は「改装された」と lobby を前から修飾します。"
+     },
+     {
+      "point": "現在分詞の後置修飾",
+      "explanation": "showing the daily schedule は screen を後ろから修飾し、「~を表示する」の意味です。"
+     },
+     {
+      "point": "副詞 newly",
+      "explanation": "newly は過去分詞 renovated を修飾する副詞です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "renovate",
+      "pos": "動詞",
+      "meaning": "改装する",
+      "note": "",
+      "level": 3,
+      "toeic": "newly renovated / be renovated"
+     },
+     {
+      "word": "feature",
+      "pos": "動詞",
+      "meaning": "~を特徴とする、備える",
+      "note": "",
+      "level": 3,
+      "toeic": "The hotel features ~ の広告表現"
+     },
+     {
+      "word": "seating",
+      "pos": "名詞",
+      "meaning": "座席",
+      "note": "",
+      "level": 2,
+      "toeic": "seating area / seating capacity"
+     },
+     {
+      "word": "display",
+      "pos": "名詞",
+      "meaning": "表示、ディスプレイ",
+      "note": "",
+      "level": 2,
+      "toeic": "on display / display screen"
+     }
+    ],
+    "toeic": {
+     "scene": "広告・施設/設備",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "品詞",
+       "detail": "newly(副詞)が過去分詞を修飾する形"
+      },
+      {
+       "type": "語彙",
+       "detail": "feature, include, offer など動詞の語法"
+      }
+     ],
+     "paraphrase": [
+      "The recently remodeled entrance hall has comfortable chairs.",
+      "The lobby is equipped with a big screen displaying today's schedule."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-11",
+   "text": "Visitors who wish to use the fitness center must first register at the reception desk.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371372,
+   "analysis": {
+    "translation": "フィットネスセンターの利用を希望する来訪者は、まず受付で登録しなければなりません。",
+    "slash": [
+     {
+      "en": "Visitors who wish to use the fitness center",
+      "ja": "フィットネスセンターを使いたい来訪者は"
+     },
+     {
+      "en": "must first register",
+      "ja": "まず登録しなければならない"
+     },
+     {
+      "en": "at the reception desk.",
+      "ja": "受付で"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は Visitors (S) must first register (V) で、目的語や補語がなくても意味が完結するため SV。at the reception desk は場所を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Visitors who wish to use the fitness center must first register at the reception desk",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     },
+     {
+      "text": "who wish to use the fitness center",
+      "kind": "関係詞節",
+      "role": "先行詞 Visitors を後ろから修飾する"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Visitors who wish to use the fitness center",
+      "role": "S",
+      "note": "who 以下が Visitors を修飾"
+     },
+     {
+      "text": "must first register",
+      "role": "V",
+      "note": "must + 副詞 first + 動詞原形"
+     },
+     {
+      "text": "at the reception desk",
+      "role": "M",
+      "note": "場所を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "現在形・能動態(助動詞 must)",
+     "explanation": "must は義務を表す助動詞で、後ろに動詞原形 register が続きます。関係詞節内は現在形で、一般的な条件を表します。"
+    },
+    "grammar": [
+     {
+      "point": "主格の関係代名詞 who",
+      "explanation": "先行詞が人(Visitors)で、関係詞節の中で主語の働きをするため who を使います。動詞 wish は先行詞に合わせて複数形です。"
+     },
+     {
+      "point": "wish to do",
+      "explanation": "wish は不定詞を目的語にとり、「~したいと望む」の意味になります。"
+     },
+     {
+      "point": "助動詞 + 副詞 + 動詞原形",
+      "explanation": "must と register の間に副詞 first が入る語順です。頻度・順序の副詞は助動詞の後ろに置かれます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "register",
+      "pos": "動詞",
+      "meaning": "登録する",
+      "note": "register for ~ で「~に登録する」",
+      "level": 3,
+      "toeic": "register for a seminar / register online など"
+     },
+     {
+      "word": "reception desk",
+      "pos": "名詞",
+      "meaning": "受付",
+      "note": "",
+      "level": 2,
+      "toeic": "at the reception desk の形でよく出る"
+     },
+     {
+      "word": "visitor",
+      "pos": "名詞",
+      "meaning": "来訪者",
+      "note": "",
+      "level": 2,
+      "toeic": "visitor badge / visitors must sign in"
+     },
+     {
+      "word": "wish to do",
+      "pos": "熟語",
+      "meaning": "~したいと望む",
+      "note": "want to よりかたい表現",
+      "level": 2,
+      "toeic": "Employees who wish to ~ は案内文の定番"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "関係詞",
+       "detail": "先行詞が人のとき、空所に who を選ぶ問題(which や whose との区別)"
+      },
+      {
+       "type": "品詞",
+       "detail": "must の後ろには動詞原形が来るので、register の形を選ぶ問題"
+      }
+     ],
+     "paraphrase": [
+      "Guests who would like to use the gym need to sign up at the front desk first.",
+      "Registration at the reception desk is required before using the fitness center."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-12",
+   "text": "The air conditioning system is so old that it cannot cool the entire building in summer.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791462371371,
+   "analysis": {
+    "translation": "その空調システムは非常に古く、夏には建物全体を冷やすことができません。",
+    "slash": [
+     {
+      "en": "The air conditioning system is so old",
+      "ja": "その空調システムはとても古いので"
+     },
+     {
+      "en": "that it cannot cool the entire building",
+      "ja": "建物全体を冷やせない"
+     },
+     {
+      "en": "in summer.",
+      "ja": "夏には"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "主節は The air conditioning system (S) is (V) so old (C)。be動詞の後ろの形容詞 old が主語の状態を説明する補語です。that 以下は so ~ that... の結果を表す節です。"
+    },
+    "clauses": [
+     {
+      "text": "The air conditioning system is so old",
+      "kind": "主節",
+      "role": "文の中心となる節"
+     },
+     {
+      "text": "that it cannot cool the entire building in summer",
+      "kind": "副詞節",
+      "role": "so old の結果・程度を表す(so ~ that ...)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The air conditioning system",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "so old",
+      "role": "C",
+      "note": "so が old を強める"
+     },
+     {
+      "text": "that it cannot cool the entire building in summer",
+      "role": "M",
+      "note": "結果を表す that 節"
+     }
+    ],
+    "tense": {
+     "name": "現在形・能動態",
+     "explanation": "現在の状態を表す現在形です。cannot は現在の不可能を表します。"
+    },
+    "grammar": [
+     {
+      "point": "so ~ that ... 構文",
+      "explanation": "「とても~なので...」と程度と結果を表します。so の後ろは形容詞・副詞で、that 節は完全な文です。"
+     },
+     {
+      "point": "cannot + 動詞原形",
+      "explanation": "cannot の後ろには動詞原形 cool が続き、「~できない」を表します。"
+     },
+     {
+      "point": "entire の位置",
+      "explanation": "entire は the の後ろ、名詞の前に置いて「全体の」を表します(the entire building)。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "air conditioning",
+      "pos": "名詞",
+      "meaning": "空調、エアコン",
+      "note": "",
+      "level": 2,
+      "toeic": "air conditioning unit / repair the air conditioning"
+     },
+     {
+      "word": "cool",
+      "pos": "動詞",
+      "meaning": "冷やす",
+      "note": "",
+      "level": 1,
+      "toeic": ""
+     },
+     {
+      "word": "entire",
+      "pos": "形容詞",
+      "meaning": "全体の",
+      "note": "whole とほぼ同義",
+      "level": 2,
+      "toeic": "the entire staff / the entire process"
+     },
+     {
+      "word": "so ~ that ...",
+      "pos": "熟語",
+      "meaning": "とても~なので...",
+      "note": "",
+      "level": 2,
+      "toeic": "so + 形容詞 + that 節の形で空所補充に出る"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "so ~ that ... の対応関係から、空所に that や so を選ぶ問題"
+      },
+      {
+       "type": "語彙",
+       "detail": "entire / whole / all の用法の違い"
+      }
+     ],
+     "paraphrase": [
+      "The cooling system is too outdated to keep the whole building cool in the summer.",
+      "The building cannot be cooled adequately because the air conditioner is old."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-13",
+   "text": "Ms. Alvarez, whose department exceeded its annual target, was invited to speak at the company retreat.",
+   "gids": [
+    "g1",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791462371370,
+   "analysis": {
+    "translation": "アルバレスさんは、彼女の部署が年間目標を上回ったため、社内研修旅行で講演するよう依頼されました。",
+    "slash": [
+     {
+      "en": "Ms. Alvarez,",
+      "ja": "アルバレスさんは"
+     },
+     {
+      "en": "whose department exceeded its annual target,",
+      "ja": "その部署が年間目標を上回った"
+     },
+     {
+      "en": "was invited to speak",
+      "ja": "話すよう招かれた"
+     },
+     {
+      "en": "at the company retreat.",
+      "ja": "社内研修旅行で"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の Ms. Alvarez (S) was invited (V) で、to speak 以下は修飾語句として働きます。能動態にすれば invite A to do の形ですが、ここでは受動態の語順で SV と捉えます。"
+    },
+    "clauses": [
+     {
+      "text": "Ms. Alvarez, whose department exceeded its annual target, was invited to speak at the company retreat",
+      "kind": "主節",
+      "role": "文の中心となる節"
+     },
+     {
+      "text": "whose department exceeded its annual target",
+      "kind": "関係詞節",
+      "role": "Ms. Alvarez について補足説明する(非制限用法)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Ms. Alvarez",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "whose department exceeded its annual target",
+      "role": "M",
+      "note": "補足説明の関係詞節"
+     },
+     {
+      "text": "was invited",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to speak at the company retreat",
+      "role": "M",
+      "note": "to 不定詞(目的)で、「講演するために」の意味"
+     }
+    ],
+    "tense": {
+     "name": "過去形・受動態",
+     "explanation": "was invited は過去の受動態です。関係詞節内の exceeded は過去形で、目標を上回ったことが招待より前か同時期の出来事です。"
+    },
+    "grammar": [
+     {
+      "point": "所有格の関係代名詞 whose",
+      "explanation": "whose + 名詞で「その人の~」を表します。ここでは whose department が関係詞節の主語です。"
+     },
+     {
+      "point": "非制限用法",
+      "explanation": "コンマで区切って先行詞に補足説明を加えます。固有名詞には通常この用法を使います。"
+     },
+     {
+      "point": "be invited to do",
+      "explanation": "「~するよう依頼される・招かれる」を表す受動態の形です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "exceed",
+      "pos": "動詞",
+      "meaning": "上回る、超える",
+      "note": "他動詞なので前置詞は不要",
+      "level": 3,
+      "toeic": "exceed expectations / exceed the budget"
+     },
+     {
+      "word": "annual",
+      "pos": "形容詞",
+      "meaning": "年間の、毎年の",
+      "note": "",
+      "level": 3,
+      "toeic": "annual report / annual meeting / annual target"
+     },
+     {
+      "word": "target",
+      "pos": "名詞",
+      "meaning": "目標",
+      "note": "",
+      "level": 2,
+      "toeic": "meet / reach a target"
+     },
+     {
+      "word": "retreat",
+      "pos": "名詞",
+      "meaning": "社内研修旅行、合宿",
+      "note": "「退却」ではなくビジネスでは研修の意味",
+      "level": 1,
+      "toeic": "company retreat / management retreat"
+     },
+     {
+      "word": "department",
+      "pos": "名詞",
+      "meaning": "部署",
+      "note": "",
+      "level": 3,
+      "toeic": "sales department / department head"
+     }
+    ],
+    "toeic": {
+     "scene": "人事",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "関係詞",
+       "detail": "空所の後ろに名詞(department)が続くので、所有格の whose を選ぶ問題"
+      },
+      {
+       "type": "語法",
+       "detail": "exceed は他動詞で後ろに前置詞なしで目的語をとる"
+      }
+     ],
+     "paraphrase": [
+      "Ms. Alvarez was asked to give a talk at the company retreat because her team surpassed its yearly goal.",
+      "Her department outperformed its annual goal."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-14",
+   "text": "Candidates are advised to bring copies of their certificates to the interview.",
+   "gids": [
+    "g3",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791462371369,
+   "analysis": {
+    "translation": "応募者は、面接に証明書のコピーを持参するよう勧められています。",
+    "slash": [
+     {
+      "en": "Candidates are advised",
+      "ja": "応募者は勧められている"
+     },
+     {
+      "en": "to bring copies of their certificates",
+      "ja": "証明書のコピーを持ってくるよう"
+     },
+     {
+      "en": "to the interview.",
+      "ja": "面接に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の Candidates (S) are advised (V) です。能動態では advise A to do の形ですが、受動態としての語順に即して SV と考え、to bring 以下を修飾語句として扱います。"
+    },
+    "clauses": [
+     {
+      "text": "Candidates are advised to bring copies of their certificates to the interview",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Candidates",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "are advised",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to bring copies of their certificates",
+      "role": "M",
+      "note": "勧められる内容を表す to 不定詞"
+     },
+     {
+      "text": "to the interview",
+      "role": "M",
+      "note": "到達点を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "are advised は現在形の受動態で、一般的な案内や指示を表します。"
+    },
+    "grammar": [
+     {
+      "point": "be advised to do",
+      "explanation": "「~するよう勧められる」を表します。advise は advise + 人 + to do の形をとり、受動態ではその人が主語になります。"
+     },
+     {
+      "point": "bring と take",
+      "explanation": "bring は話し手・相手のいる場所へ持ってくる場合に使います。面接へ持参する案内文では bring がよく使われます。"
+     },
+     {
+      "point": "copies of ~",
+      "explanation": "copy は可算名詞で、複数のコピーなので copies と複数形になります。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "candidate",
+      "pos": "名詞",
+      "meaning": "応募者、候補者",
+      "note": "",
+      "level": 3,
+      "toeic": "job candidate / qualified candidate"
+     },
+     {
+      "word": "advise",
+      "pos": "動詞",
+      "meaning": "助言する、勧める",
+      "note": "advise + 人 + to do",
+      "level": 3,
+      "toeic": "be advised to do / advise against ~"
+     },
+     {
+      "word": "certificate",
+      "pos": "名詞",
+      "meaning": "証明書、資格証",
+      "note": "",
+      "level": 2,
+      "toeic": "a certificate of completion / a gift certificate"
+     },
+     {
+      "word": "interview",
+      "pos": "名詞",
+      "meaning": "面接",
+      "note": "",
+      "level": 3,
+      "toeic": "job interview / interview process"
+     }
+    ],
+    "toeic": {
+     "scene": "人事",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "be advised のあとには to 不定詞が続く(that 節や -ing ではない)"
+      },
+      {
+       "type": "品詞",
+       "detail": "空所に動詞 advise の過去分詞 advised を入れる問題"
+      }
+     ],
+     "paraphrase": [
+      "Applicants should take photocopies of their credentials to the job interview.",
+      "Job seekers are encouraged to carry duplicates of their certificates."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-15",
+   "text": "The training session is designed to help new managers communicate more effectively with their teams.",
+   "gids": [
+    "g1",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791462371368,
+   "analysis": {
+    "translation": "この研修は、新任マネージャーがチームとより効果的にコミュニケーションをとれるよう支援するために設計されています。",
+    "slash": [
+     {
+      "en": "The training session is designed",
+      "ja": "その研修は設計されている"
+     },
+     {
+      "en": "to help new managers",
+      "ja": "新任マネージャーを助けるために"
+     },
+     {
+      "en": "communicate more effectively",
+      "ja": "より効果的に意思疎通できるよう"
+     },
+     {
+      "en": "with their teams.",
+      "ja": "チームと"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の The training session (S) is designed (V) です。to help 以下は目的を表す修飾語句で、全体として SV の語順です。"
+    },
+    "clauses": [
+     {
+      "text": "The training session is designed to help new managers communicate more effectively with their teams",
+      "kind": "主節",
+      "role": "文の中心となる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The training session",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "is designed",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to help new managers communicate more effectively with their teams",
+      "role": "M",
+      "note": "目的を表す to 不定詞。help の後ろは(to)原形不定詞"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "is designed は現在形の受動態で、研修の性質・目的を一般的に述べています。"
+    },
+    "grammar": [
+     {
+      "point": "be designed to do",
+      "explanation": "「~するように設計されている、~することを目的としている」を表す頻出表現です。"
+     },
+     {
+      "point": "help + 人 + 動詞原形",
+      "explanation": "help の後ろは人 + (to) 動詞原形の形をとります。ここでは communicate が原形で使われています。"
+     },
+     {
+      "point": "副詞 effectively",
+      "explanation": "動詞 communicate を修飾するので形容詞ではなく副詞が入ります。more を付けて比較級になっています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be designed to do",
+      "pos": "熟語",
+      "meaning": "~するよう設計されている",
+      "note": "",
+      "level": 3,
+      "toeic": "be designed to improve efficiency など"
+     },
+     {
+      "word": "training session",
+      "pos": "名詞",
+      "meaning": "研修会",
+      "note": "",
+      "level": 3,
+      "toeic": "attend a training session / hold a training session"
+     },
+     {
+      "word": "communicate",
+      "pos": "動詞",
+      "meaning": "意思疎通する",
+      "note": "communicate with ~",
+      "level": 2,
+      "toeic": "communicate with clients"
+     },
+     {
+      "word": "effectively",
+      "pos": "副詞",
+      "meaning": "効果的に",
+      "note": "",
+      "level": 2,
+      "toeic": "work effectively / use time effectively"
+     }
+    ],
+    "toeic": {
+     "scene": "人事",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "品詞",
+       "detail": "動詞 communicate を修飾する副詞 effectively を選ぶ問題"
+      },
+      {
+       "type": "語法",
+       "detail": "be designed の後ろに to 不定詞が来る形"
+      }
+     ],
+     "paraphrase": [
+      "The workshop aims to enable new supervisors to interact better with their staff.",
+      "The program is intended to improve new managers' communication with their teams."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-16",
+   "text": "The more closely we monitor expenses, the more money we can save.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791462371367,
+   "analysis": {
+    "translation": "経費を綿密に管理すればするほど、より多くのお金を節約できます。",
+    "slash": [
+     {
+      "en": "The more closely we monitor expenses,",
+      "ja": "経費を綿密に監視すればするほど"
+     },
+     {
+      "en": "the more money we can save.",
+      "ja": "より多くのお金を節約できる"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "主節は we (S) can save (V) the more money (O) で、the more money が save の目的語です。文頭の The more ~ は比例を表す従属節です。"
+    },
+    "clauses": [
+     {
+      "text": "the more money we can save",
+      "kind": "主節",
+      "role": "文の中心となる節(比例の結果を述べる)"
+     },
+     {
+      "text": "The more closely we monitor expenses",
+      "kind": "副詞節",
+      "role": "比例関係の条件側を表す(the + 比較級 ~, the + 比較級 ...)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The more closely we monitor expenses",
+      "role": "M",
+      "note": "比例の条件を表す節"
+     },
+     {
+      "text": "the more money",
+      "role": "O",
+      "note": "save の目的語が前に出ている"
+     },
+     {
+      "text": "we",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "can save",
+      "role": "V",
+      "note": ""
+     }
+    ],
+    "tense": {
+     "name": "現在形・能動態(助動詞 can)",
+     "explanation": "現在形で一般的な事実・可能性を述べています。can は「~できる」という可能を表します。"
+    },
+    "grammar": [
+     {
+      "point": "the + 比較級 ~, the + 比較級 ...",
+      "explanation": "「~すればするほど...」を表す構文です。それぞれの the は比較級の前に置き、比較級のあとに文の残りが続きます。"
+     },
+     {
+      "point": "比較級 more closely",
+      "explanation": "closely は副詞で、more を付けて比較級にします。monitor を修飾しています。"
+     },
+     {
+      "point": "目的語の前置",
+      "explanation": "the more money は本来 save の後ろにある目的語ですが、比較級とともに文頭側に出ています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "monitor",
+      "pos": "動詞",
+      "meaning": "監視する、管理する",
+      "note": "",
+      "level": 2,
+      "toeic": "monitor progress / monitor expenses"
+     },
+     {
+      "word": "expense",
+      "pos": "名詞",
+      "meaning": "経費",
+      "note": "複数形で使うことが多い",
+      "level": 3,
+      "toeic": "travel expenses / expense report"
+     },
+     {
+      "word": "closely",
+      "pos": "副詞",
+      "meaning": "綿密に、注意深く",
+      "note": "",
+      "level": 2,
+      "toeic": "work closely with ~"
+     },
+     {
+      "word": "save",
+      "pos": "動詞",
+      "meaning": "節約する、貯める",
+      "note": "",
+      "level": 2,
+      "toeic": "save money / save time"
+     }
+    ],
+    "toeic": {
+     "scene": "会議",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "品詞",
+       "detail": "the more の後ろに入る副詞(closely)か形容詞かを見分ける問題"
+      },
+      {
+       "type": "語法",
+       "detail": "the + 比較級 ~, the + 比較級 ... の対応を問う問題"
+      }
+     ],
+     "paraphrase": [
+      "Careful tracking of costs leads to greater savings.",
+      "If we control spending more strictly, we can reduce costs more."
+     ]
+    }
+   },
+   "level": 860,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-17",
+   "text": "The meeting was postponed until all department heads could attend.",
+   "gids": [
+    "g1",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791462371366,
+   "analysis": {
+    "translation": "その会議は、すべての部長が出席できるようになるまで延期されました。",
+    "slash": [
+     {
+      "en": "The meeting was postponed",
+      "ja": "会議は延期された"
+     },
+     {
+      "en": "until all department heads",
+      "ja": "すべての部長が~まで"
+     },
+     {
+      "en": "could attend.",
+      "ja": "出席できる(ようになる)"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の The meeting (S) was postponed (V) です。until 以下は時を表す副詞節で、修飾語句として働きます。"
+    },
+    "clauses": [
+     {
+      "text": "The meeting was postponed",
+      "kind": "主節",
+      "role": "文の中心となる節"
+     },
+     {
+      "text": "until all department heads could attend",
+      "kind": "副詞節",
+      "role": "延期の期限(いつまで)を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The meeting",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "was postponed",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "until all department heads could attend",
+      "role": "M",
+      "note": "時を表す副詞節"
+     }
+    ],
+    "tense": {
+     "name": "過去形・受動態",
+     "explanation": "was postponed は過去の受動態です。従属節の could attend は過去の時点での「出席できる」状況を表します。"
+    },
+    "grammar": [
+     {
+      "point": "接続詞 until",
+      "explanation": "until は「~まで」を表し、後ろに主語と動詞を伴う節を置きます。前置詞の until + 名詞との違いに注意します。"
+     },
+     {
+      "point": "postpone と受動態",
+      "explanation": "postpone は他動詞で「延期する」を表します。会議が延期される側なので受動態になります。"
+     },
+     {
+      "point": "all + 複合名詞",
+      "explanation": "all department heads のように all は冠詞や所有格より前、名詞句の先頭に置きます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "postpone",
+      "pos": "動詞",
+      "meaning": "延期する",
+      "note": "postpone ~ until / to ...",
+      "level": 3,
+      "toeic": "be postponed until next week"
+     },
+     {
+      "word": "department head",
+      "pos": "名詞",
+      "meaning": "部長、部門責任者",
+      "note": "",
+      "level": 2,
+      "toeic": "meeting of department heads"
+     },
+     {
+      "word": "attend",
+      "pos": "動詞",
+      "meaning": "出席する",
+      "note": "他動詞(attend to は別の意味)",
+      "level": 3,
+      "toeic": "attend a meeting / attend a conference"
+     },
+     {
+      "word": "until",
+      "pos": "接続詞",
+      "meaning": "~するまで",
+      "note": "",
+      "level": 2,
+      "toeic": "until further notice"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "後ろに節が続くので、前置詞 during や by ではなく接続詞 until を選ぶ問題"
+      },
+      {
+       "type": "語彙",
+       "detail": "postpone と delay / reschedule / put off の言い換え"
+      }
+     ],
+     "paraphrase": [
+      "The meeting was put off until every department manager was available.",
+      "The session was rescheduled to a time when all the heads could come."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-18",
+   "text": "Although the conference was held in a remote location, attendance exceeded expectations.",
+   "gids": [
+    "g1",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791462371365,
+   "analysis": {
+    "translation": "会議は辺鄙な場所で開催されたにもかかわらず、参加者数は予想を上回りました。",
+    "slash": [
+     {
+      "en": "Although the conference was held",
+      "ja": "会議は開催されたけれども"
+     },
+     {
+      "en": "in a remote location,",
+      "ja": "辺鄙な場所で"
+     },
+     {
+      "en": "attendance exceeded expectations.",
+      "ja": "参加者数は予想を超えた"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "主節は attendance (S) exceeded (V) expectations (O) で、exceed は目的語をとる他動詞です。Although 節は逆接を表す副詞節です。"
+    },
+    "clauses": [
+     {
+      "text": "attendance exceeded expectations",
+      "kind": "主節",
+      "role": "文の中心となる節"
+     },
+     {
+      "text": "Although the conference was held in a remote location",
+      "kind": "副詞節",
+      "role": "譲歩(~だけれども)を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Although the conference was held in a remote location",
+      "role": "M",
+      "note": "譲歩を表す副詞節"
+     },
+     {
+      "text": "attendance",
+      "role": "S",
+      "note": "不可算名詞で「出席者数、出席」"
+     },
+     {
+      "text": "exceeded",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "expectations",
+      "role": "O",
+      "note": "通常は複数形で使う"
+     }
+    ],
+    "tense": {
+     "name": "過去形(従属節は受動態)",
+     "explanation": "主節は過去形の能動態、Although 節は was held の過去の受動態です。いずれも過去の出来事を述べています。"
+    },
+    "grammar": [
+     {
+      "point": "譲歩の接続詞 although",
+      "explanation": "Although は「~だけれども」を表し、後ろに主語と動詞を伴う節を置きます。前置詞の despite / in spite of + 名詞とは使い分けます。"
+     },
+     {
+      "point": "exceed expectations",
+      "explanation": "exceed は他動詞なので前置詞なしで目的語をとります。expectations は複数形がよく使われます。"
+     },
+     {
+      "point": "従属節が文頭のときのコンマ",
+      "explanation": "文頭に副詞節を置くと、主節の前にコンマが入ります。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "attendance",
+      "pos": "名詞",
+      "meaning": "出席者数、出席",
+      "note": "",
+      "level": 3,
+      "toeic": "attendance record / high attendance"
+     },
+     {
+      "word": "exceed",
+      "pos": "動詞",
+      "meaning": "上回る",
+      "note": "",
+      "level": 3,
+      "toeic": "exceed expectations / exceed the limit"
+     },
+     {
+      "word": "remote",
+      "pos": "形容詞",
+      "meaning": "辺鄙な、離れた",
+      "note": "",
+      "level": 2,
+      "toeic": "remote location / remote work"
+     },
+     {
+      "word": "conference",
+      "pos": "名詞",
+      "meaning": "会議、学会",
+      "note": "",
+      "level": 3,
+      "toeic": "hold a conference / conference room"
+     },
+     {
+      "word": "although",
+      "pos": "接続詞",
+      "meaning": "~だけれども",
+      "note": "",
+      "level": 2,
+      "toeic": "although + 節 / despite + 名詞 の区別"
+     }
+    ],
+    "toeic": {
+     "scene": "会議",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "後ろに節が続くため、Despite ではなく Although を選ぶ問題"
+      },
+      {
+       "type": "語彙",
+       "detail": "exceed の類義語(surpass, top)や言い換え"
+      }
+     ],
+     "paraphrase": [
+      "More people came than had been expected, even though the venue was far away.",
+      "Turnout surpassed forecasts despite the isolated site."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-19",
+   "text": "Please book your hotel at least a month in advance to take advantage of the corporate discount.",
+   "gids": [
+    "g3",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791462371364,
+   "analysis": {
+    "translation": "会社の割引を利用するために、少なくとも1か月前までにホテルを予約してください。",
+    "slash": [
+     {
+      "en": "Please book your hotel",
+      "ja": "ホテルを予約してください"
+     },
+     {
+      "en": "at least a month in advance",
+      "ja": "少なくとも1か月前に"
+     },
+     {
+      "en": "to take advantage of the corporate discount.",
+      "ja": "法人割引を利用するために"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "命令文で主語 You が省略されており、book (V) your hotel (O) の形です。at least a month in advance は時を表す修飾語句、to 不定詞は目的を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Please book your hotel at least a month in advance to take advantage of the corporate discount",
+      "kind": "主節",
+      "role": "命令文の主節(主語 You が省略)"
+     }
+    ],
+    "elements": [
+     {
+      "text": "book",
+      "role": "V",
+      "note": "命令文なので主語 You は省略。Please は丁寧さを加える"
+     },
+     {
+      "text": "your hotel",
+      "role": "O",
+      "note": ""
+     },
+     {
+      "text": "at least a month in advance",
+      "role": "M",
+      "note": "時間的な前倒しを表す"
+     },
+     {
+      "text": "to take advantage of the corporate discount",
+      "role": "M",
+      "note": "目的を表す to 不定詞"
+     }
+    ],
+    "tense": {
+     "name": "命令形・能動態",
+     "explanation": "動詞原形 book で始まる命令文です。Please を付けて丁寧な依頼になっています。"
+    },
+    "grammar": [
+     {
+      "point": "in advance",
+      "explanation": "「前もって」を表す副詞句です。at least a month in advance で「少なくとも1か月前に」となります。"
+     },
+     {
+      "point": "take advantage of ~",
+      "explanation": "「~を利用する」を表す熟語で、of の後ろに利用する対象が来ます。"
+     },
+     {
+      "point": "目的を表す to 不定詞",
+      "explanation": "文末の to take ... は「~するために」と、予約する目的を示しています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "book",
+      "pos": "動詞",
+      "meaning": "予約する",
+      "note": "",
+      "level": 3,
+      "toeic": "book a flight / book a room"
+     },
+     {
+      "word": "in advance",
+      "pos": "熟語",
+      "meaning": "前もって",
+      "note": "",
+      "level": 3,
+      "toeic": "reserve in advance / pay in advance"
+     },
+     {
+      "word": "take advantage of",
+      "pos": "熟語",
+      "meaning": "~を利用する",
+      "note": "",
+      "level": 3,
+      "toeic": "take advantage of a discount / an offer"
+     },
+     {
+      "word": "corporate",
+      "pos": "形容詞",
+      "meaning": "法人の、企業の",
+      "note": "",
+      "level": 2,
+      "toeic": "corporate discount / corporate client"
+     },
+     {
+      "word": "discount",
+      "pos": "名詞",
+      "meaning": "割引",
+      "note": "",
+      "level": 2,
+      "toeic": "receive a discount / a discount of 10 percent"
+     }
+    ],
+    "toeic": {
+     "scene": "出張",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "take advantage of の of を問う前置詞問題"
+      },
+      {
+       "type": "語彙",
+       "detail": "book と reserve の言い換え、in advance と beforehand の言い換え"
+      }
+     ],
+     "paraphrase": [
+      "Reserve your accommodation at least four weeks beforehand to receive the company rate.",
+      "Make hotel reservations early to benefit from the business discount."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-20",
+   "text": "Mr. Nakamura is scheduled to present the quarterly results to the board next Tuesday.",
+   "gids": [
+    "g1",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791462371363,
+   "analysis": {
+    "translation": "ナカムラさんは、来週の火曜日に四半期の業績を取締役会に報告する予定です。",
+    "slash": [
+     {
+      "en": "Mr. Nakamura is scheduled",
+      "ja": "ナカムラ氏は予定されている"
+     },
+     {
+      "en": "to present the quarterly results",
+      "ja": "四半期の結果を報告することが"
+     },
+     {
+      "en": "to the board",
+      "ja": "取締役会に"
+     },
+     {
+      "en": "next Tuesday.",
+      "ja": "来週の火曜日に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は受動態の Mr. Nakamura (S) is scheduled (V) です。to present 以下は予定の内容を表す修飾語句で、全体は SV の語順です。"
+    },
+    "clauses": [
+     {
+      "text": "Mr. Nakamura is scheduled to present the quarterly results to the board next Tuesday",
+      "kind": "主節",
+      "role": "文全体の中心となる節"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Mr. Nakamura",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "is scheduled",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to present the quarterly results to the board",
+      "role": "M",
+      "note": "予定の内容を表す to 不定詞"
+     },
+     {
+      "text": "next Tuesday",
+      "role": "M",
+      "note": "時を表す副詞句(前置詞なし)"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態(予定)",
+     "explanation": "is scheduled to do は、現在形でこれから先の予定を表します。next Tuesday が未来の時を示しています。"
+    },
+    "grammar": [
+     {
+      "point": "be scheduled to do",
+      "explanation": "「~する予定である」を表す頻出表現で、be expected to / be supposed to などと並んで出題されます。"
+     },
+     {
+      "point": "present A to B",
+      "explanation": "present は「A を B に提示・報告する」を表し、to の後ろに相手が来ます。"
+     },
+     {
+      "point": "next + 曜日",
+      "explanation": "next Tuesday のように next を付けると前置詞 on は不要です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be scheduled to do",
+      "pos": "熟語",
+      "meaning": "~する予定である",
+      "note": "",
+      "level": 3,
+      "toeic": "be scheduled for ~ / be scheduled to begin"
+     },
+     {
+      "word": "present",
+      "pos": "動詞",
+      "meaning": "提示する、発表する",
+      "note": "アクセントは後ろ(pre-SENT)",
+      "level": 3,
+      "toeic": "present a report / present findings"
+     },
+     {
+      "word": "quarterly",
+      "pos": "形容詞",
+      "meaning": "四半期の",
+      "note": "",
+      "level": 2,
+      "toeic": "quarterly results / quarterly report"
+     },
+     {
+      "word": "board",
+      "pos": "名詞",
+      "meaning": "取締役会",
+      "note": "board of directors の略",
+      "level": 3,
+      "toeic": "board meeting / board member"
+     }
+    ],
+    "toeic": {
+     "scene": "会議",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "be scheduled の後ろが to 不定詞か for 名詞かを見分ける問題"
+      },
+      {
+       "type": "品詞",
+       "detail": "results を修飾する形容詞 quarterly を選ぶ問題"
+      }
+     ],
+     "paraphrase": [
+      "Mr. Nakamura will give a presentation on the three-month earnings to the directors next Tuesday.",
+      "Mr. Nakamura is due to report the quarterly performance to the board."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-21",
+   "text": "In the event of a cancellation, the deposit will be returned within ten business days.",
+   "gids": [
+    "g3",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791462371362,
+   "analysis": {
+    "translation": "キャンセルの場合、保証金は10営業日以内に返金されます。",
+    "slash": [
+     {
+      "en": "In the event of a cancellation,",
+      "ja": "キャンセルの場合には"
+     },
+     {
+      "en": "the deposit",
+      "ja": "保証金は"
+     },
+     {
+      "en": "will be returned",
+      "ja": "返金される"
+     },
+     {
+      "en": "within ten business days.",
+      "ja": "10営業日以内に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は the deposit(S)+will be returned(V)で、受動態の文。目的語や補語を取らず、語順は SV+修飾語句の形です。能動態にすると「(会社が)保証金を返す」で SVO になります。"
+    },
+    "clauses": [
+     {
+      "text": "the deposit will be returned within ten business days",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     }
+    ],
+    "elements": [
+     {
+      "text": "In the event of a cancellation",
+      "role": "M",
+      "note": "条件を表す前置詞句"
+     },
+     {
+      "text": "the deposit",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "will be returned",
+      "role": "V",
+      "note": "未来の受動態"
+     },
+     {
+      "text": "within ten business days",
+      "role": "M",
+      "note": "期限を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "未来の受動態(will be + 過去分詞)",
+     "explanation": "will be returned は「返金されるだろう」という未来の受動態です。保証金は返される側なので受動態になります。"
+    },
+    "grammar": [
+     {
+      "point": "in the event of + 名詞",
+      "explanation": "「〜の場合には」を表す前置詞句。後ろには名詞が来ます(if のように節は続けません)。"
+     },
+     {
+      "point": "within + 期間",
+      "explanation": "「〜以内に」を表します。「期間の経過後」を表す in や after と区別します。"
+     },
+     {
+      "point": "受動態",
+      "explanation": "be + 過去分詞。return は「〜を返す」という他動詞なので受動態にできます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "cancellation",
+      "pos": "名詞",
+      "meaning": "キャンセル、取り消し",
+      "note": "動詞は cancel",
+      "level": 3,
+      "toeic": "cancellation policy / cancellation fee などで予約・契約の場面に頻出"
+     },
+     {
+      "word": "deposit",
+      "pos": "名詞",
+      "meaning": "保証金、手付金",
+      "note": "預金の意味もある",
+      "level": 3,
+      "toeic": "security deposit / pay a deposit"
+     },
+     {
+      "word": "in the event of",
+      "pos": "前置詞句",
+      "meaning": "〜の場合には",
+      "note": "",
+      "level": 2,
+      "toeic": "in the event of rain / in the event of an emergency"
+     },
+     {
+      "word": "business day",
+      "pos": "名詞",
+      "meaning": "営業日",
+      "note": "土日祝日を除く",
+      "level": 2,
+      "toeic": "within five business days"
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "within(〜以内に)と、期間の経過を表す前置詞との識別が問われうる。"
+      },
+      {
+       "type": "語彙",
+       "detail": "deposit や cancellation など予約・契約に関する語彙の意味確認。"
+      }
+     ],
+     "paraphrase": [
+      "If a booking is canceled, the deposit will be refunded within two weeks.",
+      "Deposits are refundable in the case of cancellation."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-22",
+   "text": "The firm's profits have risen steadily since it began exporting to overseas markets.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791462371361,
+   "analysis": {
+    "translation": "その会社の利益は、海外市場への輸出を始めて以来、着実に増加している。",
+    "slash": [
+     {
+      "en": "The firm's profits",
+      "ja": "その会社の利益は"
+     },
+     {
+      "en": "have risen steadily",
+      "ja": "着実に増加している"
+     },
+     {
+      "en": "since it began",
+      "ja": "始めて以来"
+     },
+     {
+      "en": "exporting to overseas markets.",
+      "ja": "海外市場へ輸出することを"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は The firm's profits(S)+have risen(V)で、rise は目的語を取らない自動詞なので SV。steadily や since 節は修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "The firm's profits have risen steadily",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     },
+     {
+      "text": "since it began exporting to overseas markets",
+      "kind": "副詞節",
+      "role": "主節の起点となる時を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The firm's profits",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "have risen",
+      "role": "V",
+      "note": "rise は自動詞"
+     },
+     {
+      "text": "steadily",
+      "role": "M",
+      "note": "副詞"
+     },
+     {
+      "text": "since it began exporting to overseas markets",
+      "role": "M",
+      "note": "起点を表す副詞節"
+     }
+    ],
+    "tense": {
+     "name": "現在完了形",
+     "explanation": "have risen は「過去から今まで増加し続けている」という継続を表します。since 節の動詞が過去形 began なのが典型的な形です。"
+    },
+    "grammar": [
+     {
+      "point": "since + 過去の一時点と現在完了",
+      "explanation": "主節が現在完了、since 節が過去形で「〜して以来ずっと」を表します。"
+     },
+     {
+      "point": "begin + 動名詞",
+      "explanation": "begin は to 不定詞も動名詞も取れます。ここでは exporting が続いています。"
+     },
+     {
+      "point": "自動詞 rise",
+      "explanation": "rise は目的語を取らない自動詞で、他動詞 raise(〜を上げる)と区別して出題されます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "profit",
+      "pos": "名詞",
+      "meaning": "利益",
+      "note": "",
+      "level": 3,
+      "toeic": "increase profits / profit margin"
+     },
+     {
+      "word": "steadily",
+      "pos": "副詞",
+      "meaning": "着実に",
+      "note": "形容詞は steady",
+      "level": 2,
+      "toeic": "increase steadily / grow steadily"
+     },
+     {
+      "word": "export",
+      "pos": "動詞",
+      "meaning": "輸出する",
+      "note": "名詞では アクセントが前",
+      "level": 2,
+      "toeic": "export goods to overseas markets"
+     },
+     {
+      "word": "overseas",
+      "pos": "形容詞",
+      "meaning": "海外の",
+      "note": "副詞用法もある",
+      "level": 2,
+      "toeic": "overseas market / overseas branch"
+     }
+    ],
+    "toeic": {
+     "scene": "会議",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "since 節と呼応して主節が現在完了になることが問われる。"
+      },
+      {
+       "type": "語法",
+       "detail": "rise と raise の自動詞・他動詞の区別。"
+      }
+     ],
+     "paraphrase": [
+      "The company has seen a steady increase in earnings since starting to sell abroad.",
+      "Revenue has been growing since the firm expanded overseas."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-23",
+   "text": "Applications for the research grant must be received no later than the end of this month.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791462371360,
+   "analysis": {
+    "translation": "研究助成金の申請書は、遅くとも今月末までに受領されなければならない。",
+    "slash": [
+     {
+      "en": "Applications for the research grant",
+      "ja": "研究助成金の申請書は"
+     },
+     {
+      "en": "must be received",
+      "ja": "受け取られなければならない"
+     },
+     {
+      "en": "no later than",
+      "ja": "遅くとも"
+     },
+     {
+      "en": "the end of this month.",
+      "ja": "今月末までに"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は Applications for the research grant(S)+must be received(V)で、受動態の文。目的語や補語はなく、no later than 以下は修飾語句です。能動態にすると SVO になります。"
+    },
+    "clauses": [
+     {
+      "text": "Applications for the research grant must be received no later than the end of this month",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Applications for the research grant",
+      "role": "S",
+      "note": "for 以下は application を修飾"
+     },
+     {
+      "text": "must be received",
+      "role": "V",
+      "note": "助動詞を含む受動態"
+     },
+     {
+      "text": "no later than the end of this month",
+      "role": "M",
+      "note": "期限を表す"
+     }
+    ],
+    "tense": {
+     "name": "助動詞を含む受動態(must be + 過去分詞)",
+     "explanation": "must be received は「受け取られなければならない」という義務を表す受動態です。時制は現在(助動詞 must)です。"
+    },
+    "grammar": [
+     {
+      "point": "助動詞 + be + 過去分詞",
+      "explanation": "助動詞の後の受動態は原形 be を使います。must be received のように be の形に注意します。"
+     },
+     {
+      "point": "no later than",
+      "explanation": "「遅くとも〜までに」という期限を表します。by と同じく締切の表現です。"
+     },
+     {
+      "point": "application for",
+      "explanation": "「〜への申請」は application for を使います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "application",
+      "pos": "名詞",
+      "meaning": "申請書、応募",
+      "note": "",
+      "level": 3,
+      "toeic": "submit an application / application form"
+     },
+     {
+      "word": "grant",
+      "pos": "名詞",
+      "meaning": "助成金",
+      "note": "動詞では「与える」",
+      "level": 2,
+      "toeic": "research grant / receive a grant"
+     },
+     {
+      "word": "receive",
+      "pos": "動詞",
+      "meaning": "受け取る",
+      "note": "",
+      "level": 3,
+      "toeic": "be received by + 日付"
+     },
+     {
+      "word": "no later than",
+      "pos": "副詞句",
+      "meaning": "遅くとも〜までに",
+      "note": "",
+      "level": 3,
+      "toeic": "no later than 5 P.M. on Friday"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "must の後に be received の形(原形 be)を選ぶ問題。"
+      },
+      {
+       "type": "前置詞",
+       "detail": "期限を表す by や no later than の使い分け。"
+      }
+     ],
+     "paraphrase": [
+      "Grant applications must arrive by the end of the month.",
+      "The deadline for submitting research grant applications is the last day of this month."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-24",
+   "text": "Because the budget was cut, the project team was forced to scale back its original plans.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791462371359,
+   "analysis": {
+    "translation": "予算が削減されたため、プロジェクトチームは当初の計画を縮小せざるを得なかった。",
+    "slash": [
+     {
+      "en": "Because the budget was cut,",
+      "ja": "予算が削減されたので"
+     },
+     {
+      "en": "the project team",
+      "ja": "プロジェクトチームは"
+     },
+     {
+      "en": "was forced",
+      "ja": "余儀なくされた"
+     },
+     {
+      "en": "to scale back",
+      "ja": "縮小することを"
+     },
+     {
+      "en": "its original plans.",
+      "ja": "当初の計画を"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "主節は the project team(S)+was forced(V)の受動態で、to scale back 以下が続きます。force A to do(Aに〜させる)の受動態で、能動態にすると SVOC の形になります。ここでは実際の語順に即して SV としています。"
+    },
+    "clauses": [
+     {
+      "text": "the project team was forced to scale back its original plans",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     },
+     {
+      "text": "Because the budget was cut",
+      "kind": "副詞節",
+      "role": "主節の理由を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Because the budget was cut",
+      "role": "M",
+      "note": "理由を表す副詞節"
+     },
+     {
+      "text": "the project team",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "was forced",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "to scale back its original plans",
+      "role": "M",
+      "note": "to 不定詞句(be forced to do の一部)"
+     }
+    ],
+    "tense": {
+     "name": "過去形の受動態",
+     "explanation": "was cut、was forced はいずれも過去の受動態です。理由の節と主節の時制が揃っています。"
+    },
+    "grammar": [
+     {
+      "point": "be forced to do",
+      "explanation": "「〜せざるを得ない」を表す表現で、force + 人 + to do の受動態です。"
+     },
+     {
+      "point": "Because と Because of",
+      "explanation": "Because は後ろに節(S+V)が続きます。名詞が続く場合は because of を使います。"
+     },
+     {
+      "point": "句動詞 scale back",
+      "explanation": "「縮小する」。副詞 back を含む句動詞で、目的語は plans です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "budget",
+      "pos": "名詞",
+      "meaning": "予算",
+      "note": "",
+      "level": 3,
+      "toeic": "budget cut / within budget"
+     },
+     {
+      "word": "scale back",
+      "pos": "句動詞",
+      "meaning": "縮小する",
+      "note": "",
+      "level": 2,
+      "toeic": "scale back operations / plans"
+     },
+     {
+      "word": "be forced to do",
+      "pos": "熟語",
+      "meaning": "〜せざるを得ない",
+      "note": "",
+      "level": 2,
+      "toeic": "be forced to cancel / postpone"
+     },
+     {
+      "word": "original",
+      "pos": "形容詞",
+      "meaning": "当初の、元の",
+      "note": "",
+      "level": 2,
+      "toeic": "original plan / original receipt"
+     }
+    ],
+    "toeic": {
+     "scene": "会議",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "Because(接続詞)と Because of(前置詞)の識別。"
+      },
+      {
+       "type": "語法",
+       "detail": "be forced の後に to 不定詞が続く形。"
+      }
+     ],
+     "paraphrase": [
+      "Due to reduced funding, the team had to downsize its initial plans.",
+      "The project was scaled down after budget cuts."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-25",
+   "text": "Our new line of kitchen appliances is not only affordable but also environmentally friendly.",
+   "gids": [
+    "g1",
+    "g8"
+   ],
+   "bm": false,
+   "added": 1791462371358,
+   "analysis": {
+    "translation": "当社の新しい台所用品シリーズは、手頃な価格であるだけでなく環境にも優しい。",
+    "slash": [
+     {
+      "en": "Our new line of kitchen appliances",
+      "ja": "当社の新しい台所用品シリーズは"
+     },
+     {
+      "en": "is",
+      "ja": "である"
+     },
+     {
+      "en": "not only affordable",
+      "ja": "手頃な価格なだけでなく"
+     },
+     {
+      "en": "but also environmentally friendly.",
+      "ja": "環境にも優しい"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "Our new line of kitchen appliances(S)+is(V)+not only affordable but also environmentally friendly(C)。be 動詞の後に形容詞が補語として来る SVC です。"
+    },
+    "clauses": [
+     {
+      "text": "Our new line of kitchen appliances is not only affordable but also environmentally friendly",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Our new line of kitchen appliances",
+      "role": "S",
+      "note": "line は「製品群」"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "not only affordable but also environmentally friendly",
+      "role": "C",
+      "note": "形容詞2つが対等に並ぶ"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "製品の性質を述べる現在形です。単数主語 line に合わせて is を使います。"
+    },
+    "grammar": [
+     {
+      "point": "not only A but also B",
+      "explanation": "「AだけでなくBも」。A と B は同じ品詞・形に揃えます(ここでは形容詞)。"
+     },
+     {
+      "point": "主語と動詞の一致",
+      "explanation": "主語の中心は line(単数)なので is。of kitchen appliances に引きずられて are としないこと。"
+     },
+     {
+      "point": "-ly 副詞による形容詞の修飾",
+      "explanation": "environmentally(副詞)が friendly(形容詞)を修飾しています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "line",
+      "pos": "名詞",
+      "meaning": "製品群、シリーズ",
+      "note": "",
+      "level": 3,
+      "toeic": "a new line of products"
+     },
+     {
+      "word": "appliance",
+      "pos": "名詞",
+      "meaning": "家電製品、器具",
+      "note": "",
+      "level": 3,
+      "toeic": "kitchen appliances / home appliances"
+     },
+     {
+      "word": "affordable",
+      "pos": "形容詞",
+      "meaning": "手頃な価格の",
+      "note": "",
+      "level": 3,
+      "toeic": "affordable price"
+     },
+     {
+      "word": "environmentally friendly",
+      "pos": "形容詞句",
+      "meaning": "環境に優しい",
+      "note": "",
+      "level": 2,
+      "toeic": "environmentally friendly products"
+     }
+    ],
+    "toeic": {
+     "scene": "広告",
+     "part": "Part 5",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "not only に対応する but also を選ぶ相関表現の問題。"
+      },
+      {
+       "type": "品詞",
+       "detail": "friendly の前で環境を修飾する副詞 environmentally を選ぶ。"
+      }
+     ],
+     "paraphrase": [
+      "The new range of kitchen products is both inexpensive and eco-friendly.",
+      "Our latest kitchenware is low in price and good for the environment."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-26",
+   "text": "If you are not completely satisfied with your purchase, you may return it within thirty days for a full refund.",
+   "gids": [
+    "g1",
+    "g8"
+   ],
+   "bm": false,
+   "added": 1791462371357,
+   "analysis": {
+    "translation": "ご購入品に完全にご満足いただけない場合は、30日以内であれば全額返金で返品できます。",
+    "slash": [
+     {
+      "en": "If you are not completely satisfied with your purchase,",
+      "ja": "購入品に完全に満足していなければ"
+     },
+     {
+      "en": "you may return it",
+      "ja": "それを返品できる"
+     },
+     {
+      "en": "within thirty days",
+      "ja": "30日以内に"
+     },
+     {
+      "en": "for a full refund.",
+      "ja": "全額返金のために"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "主節は you(S)+may return(V)+it(O)。return は「〜を返す」という他動詞で目的語 it を取ります。within 以下と for 以下は修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "you may return it within thirty days for a full refund",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     },
+     {
+      "text": "If you are not completely satisfied with your purchase",
+      "kind": "副詞節",
+      "role": "主節の条件を表す"
+     }
+    ],
+    "elements": [
+     {
+      "text": "If you are not completely satisfied with your purchase",
+      "role": "M",
+      "note": "条件を表す副詞節"
+     },
+     {
+      "text": "you",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "may return",
+      "role": "V",
+      "note": "may は許可・可能"
+     },
+     {
+      "text": "it",
+      "role": "O",
+      "note": "your purchase を指す"
+     },
+     {
+      "text": "within thirty days",
+      "role": "M",
+      "note": "期間"
+     },
+     {
+      "text": "for a full refund",
+      "role": "M",
+      "note": "目的・見返り"
+     }
+    ],
+    "tense": {
+     "name": "現在形(条件節)+助動詞 may",
+     "explanation": "If 節は現在形で、主節には許可を表す may が使われています。"
+    },
+    "grammar": [
+     {
+      "point": "be satisfied with",
+      "explanation": "「〜に満足している」。by や for ではなく with を使います。"
+     },
+     {
+      "point": "条件を表す if 節",
+      "explanation": "if 節の中は現在形で、現在・未来の条件を表します。"
+     },
+     {
+      "point": "助動詞 may",
+      "explanation": "ここでは「〜してよい」という許可で、規約・案内でよく使われます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "satisfied",
+      "pos": "形容詞",
+      "meaning": "満足した",
+      "note": "動詞 satisfy の過去分詞",
+      "level": 3,
+      "toeic": "be satisfied with / customer satisfaction"
+     },
+     {
+      "word": "purchase",
+      "pos": "名詞",
+      "meaning": "購入品、購入",
+      "note": "動詞でもある",
+      "level": 3,
+      "toeic": "proof of purchase / make a purchase"
+     },
+     {
+      "word": "refund",
+      "pos": "名詞",
+      "meaning": "返金",
+      "note": "",
+      "level": 3,
+      "toeic": "full refund / request a refund"
+     },
+     {
+      "word": "return",
+      "pos": "動詞",
+      "meaning": "返品する",
+      "note": "",
+      "level": 2,
+      "toeic": "return an item"
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "satisfied の後に続く前置詞 with を選ぶ。"
+      },
+      {
+       "type": "語彙",
+       "detail": "refund や return など返品方針に関する語彙の理解。"
+      }
+     ],
+     "paraphrase": [
+      "Customers who are unhappy with an item can send it back within a month and get all their money back.",
+      "A full refund is available if returned within 30 days."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-27",
+   "text": "Customer feedback indicates that most users prefer the redesigned website to the previous version.",
+   "gids": [
+    "g3",
+    "g8"
+   ],
+   "bm": false,
+   "added": 1791462371356,
+   "analysis": {
+    "translation": "顧客からの意見によると、大半のユーザーは以前のバージョンより刷新されたウェブサイトを好んでいる。",
+    "slash": [
+     {
+      "en": "Customer feedback",
+      "ja": "顧客の意見は"
+     },
+     {
+      "en": "indicates",
+      "ja": "示している"
+     },
+     {
+      "en": "that most users prefer",
+      "ja": "大半のユーザーが好むことを"
+     },
+     {
+      "en": "the redesigned website",
+      "ja": "刷新されたウェブサイトを"
+     },
+     {
+      "en": "to the previous version.",
+      "ja": "以前のバージョンよりも"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "主節は Customer feedback(S)+indicates(V)+that 節(O)。that 以下の名詞節が indicate の目的語です。"
+    },
+    "clauses": [
+     {
+      "text": "Customer feedback indicates that most users prefer the redesigned website to the previous version",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     },
+     {
+      "text": "that most users prefer the redesigned website to the previous version",
+      "kind": "名詞節",
+      "role": "indicates の目的語になる"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Customer feedback",
+      "role": "S",
+      "note": "不可算名詞で単数扱い"
+     },
+     {
+      "text": "indicates",
+      "role": "V",
+      "note": "三人称単数の s"
+     },
+     {
+      "text": "that most users prefer the redesigned website to the previous version",
+      "role": "O",
+      "note": "名詞節"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "調査結果や一般的な傾向を述べる現在形です。feedback は不可算で単数扱いなので indicates になります。"
+    },
+    "grammar": [
+     {
+      "point": "prefer A to B",
+      "explanation": "「BよりAを好む」。比較対象は than ではなく to で示します。"
+     },
+     {
+      "point": "名詞節を導く that",
+      "explanation": "indicate, show, suggest などの後の that 節は目的語になります。"
+     },
+     {
+      "point": "過去分詞の形容詞用法",
+      "explanation": "redesigned は「再設計された」という意味で website を修飾します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "feedback",
+      "pos": "名詞",
+      "meaning": "意見、反応",
+      "note": "不可算名詞",
+      "level": 3,
+      "toeic": "customer feedback / positive feedback"
+     },
+     {
+      "word": "indicate",
+      "pos": "動詞",
+      "meaning": "示す",
+      "note": "",
+      "level": 3,
+      "toeic": "survey results indicate that"
+     },
+     {
+      "word": "prefer A to B",
+      "pos": "熟語",
+      "meaning": "BよりAを好む",
+      "note": "",
+      "level": 2,
+      "toeic": "prefer ... to ..."
+     },
+     {
+      "word": "previous",
+      "pos": "形容詞",
+      "meaning": "以前の",
+      "note": "",
+      "level": 3,
+      "toeic": "previous version / previous experience"
+     }
+    ],
+    "toeic": {
+     "scene": "広告",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "prefer A to B の to を選ぶ問題。"
+      },
+      {
+       "type": "語法",
+       "detail": "feedback が不可算名詞で単数扱いになる点。"
+      }
+     ],
+     "paraphrase": [
+      "Responses from customers show that a majority like the updated site better than the old one.",
+      "Survey results suggest that users favor the new web design."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-28",
+   "text": "Free parking is available to customers who spend more than fifty dollars.",
+   "gids": [
+    "g1",
+    "g8"
+   ],
+   "bm": false,
+   "added": 1791462371355,
+   "analysis": {
+    "translation": "50ドルを超えて買い物をしたお客様は、無料で駐車できます。",
+    "slash": [
+     {
+      "en": "Free parking",
+      "ja": "無料駐車は"
+     },
+     {
+      "en": "is available",
+      "ja": "利用できる"
+     },
+     {
+      "en": "to customers",
+      "ja": "お客様に対して"
+     },
+     {
+      "en": "who spend more than fifty dollars.",
+      "ja": "50ドルより多く使う"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "Free parking(S)+is(V)+available(C)。形容詞 available が補語になる SVC で、to customers は修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Free parking is available to customers who spend more than fifty dollars",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     },
+     {
+      "text": "who spend more than fifty dollars",
+      "kind": "関係詞節",
+      "role": "customers を修飾する"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Free parking",
+      "role": "S",
+      "note": "不可算名詞"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "available",
+      "role": "C",
+      "note": ""
+     },
+     {
+      "text": "to customers who spend more than fifty dollars",
+      "role": "M",
+      "note": "対象を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "サービスの条件を述べる現在形です。関係詞節の spend も現在形で、一般的な条件を表します。"
+    },
+    "grammar": [
+     {
+      "point": "主格の関係代名詞 who",
+      "explanation": "先行詞 customers(人)を受け、who の後に動詞 spend が続きます。複数名詞なので spend の形です。"
+     },
+     {
+      "point": "more than + 数量",
+      "explanation": "「〜を超える」。50ドルちょうどは含みません。at least との違いに注意。"
+     },
+     {
+      "point": "available to",
+      "explanation": "be available to + 人 で「(人)が利用できる」。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "available",
+      "pos": "形容詞",
+      "meaning": "利用できる",
+      "note": "",
+      "level": 3,
+      "toeic": "be available to / available upon request"
+     },
+     {
+      "word": "free",
+      "pos": "形容詞",
+      "meaning": "無料の",
+      "note": "",
+      "level": 2,
+      "toeic": "free parking / free of charge"
+     },
+     {
+      "word": "parking",
+      "pos": "名詞",
+      "meaning": "駐車",
+      "note": "不可算",
+      "level": 2,
+      "toeic": "parking lot / parking permit"
+     },
+     {
+      "word": "spend",
+      "pos": "動詞",
+      "meaning": "(お金を)使う",
+      "note": "",
+      "level": 2,
+      "toeic": "spend more than $50"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "関係詞",
+       "detail": "先行詞が人のとき主格 who を選ぶ。"
+      },
+      {
+       "type": "語彙",
+       "detail": "available や free など利用条件を示す語の意味。"
+      }
+     ],
+     "paraphrase": [
+      "Customers whose purchases exceed $50 can park at no charge.",
+      "Parking is complimentary for shoppers spending over $50."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-29",
+   "text": "Because of ongoing construction, the main entrance will remain closed until further notice.",
+   "gids": [
+    "g9"
+   ],
+   "bm": false,
+   "added": 1791462371354,
+   "analysis": {
+    "translation": "工事が続いているため、正面入口は追って通知があるまで閉鎖されたままです。",
+    "slash": [
+     {
+      "en": "Because of ongoing construction,",
+      "ja": "継続中の工事のために"
+     },
+     {
+      "en": "the main entrance",
+      "ja": "正面入口は"
+     },
+     {
+      "en": "will remain closed",
+      "ja": "閉鎖されたままである"
+     },
+     {
+      "en": "until further notice.",
+      "ja": "追って通知があるまで"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "the main entrance(S)+will remain(V)+closed(C)。remain は「〜のままである」という状態を表す動詞で、形容詞 closed を補語に取ります。"
+    },
+    "clauses": [
+     {
+      "text": "the main entrance will remain closed until further notice",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Because of ongoing construction",
+      "role": "M",
+      "note": "理由を表す前置詞句"
+     },
+     {
+      "text": "the main entrance",
+      "role": "S",
+      "note": ""
+     },
+     {
+      "text": "will remain",
+      "role": "V",
+      "note": "状態の継続を表す"
+     },
+     {
+      "text": "closed",
+      "role": "C",
+      "note": "形容詞的な過去分詞"
+     },
+     {
+      "text": "until further notice",
+      "role": "M",
+      "note": "決まり文句"
+     }
+    ],
+    "tense": {
+     "name": "未来形(will + 原形)",
+     "explanation": "will remain は今後の状態の継続を示す未来形です。能動態の文です。"
+    },
+    "grammar": [
+     {
+      "point": "Because of + 名詞",
+      "explanation": "理由を表す前置詞句で、後ろは名詞です。節が続く because との区別が出題されます。"
+     },
+     {
+      "point": "remain + 形容詞",
+      "explanation": "remain は SVC を作る動詞で、補語に形容詞や過去分詞が来ます。"
+     },
+     {
+      "point": "until further notice",
+      "explanation": "「追って通知があるまで」。掲示や案内でよく使う定型表現です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "ongoing",
+      "pos": "形容詞",
+      "meaning": "進行中の",
+      "note": "",
+      "level": 3,
+      "toeic": "ongoing construction / ongoing project"
+     },
+     {
+      "word": "construction",
+      "pos": "名詞",
+      "meaning": "工事",
+      "note": "",
+      "level": 3,
+      "toeic": "under construction / construction work"
+     },
+     {
+      "word": "remain",
+      "pos": "動詞",
+      "meaning": "〜のままである",
+      "note": "",
+      "level": 3,
+      "toeic": "remain closed / remain open"
+     },
+     {
+      "word": "until further notice",
+      "pos": "熟語",
+      "meaning": "追って通知があるまで",
+      "note": "",
+      "level": 3,
+      "toeic": "closed until further notice"
+     }
+    ],
+    "toeic": {
+     "scene": "施設/設備",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "Because of(前置詞)と Because(接続詞)の使い分け。"
+      },
+      {
+       "type": "語法",
+       "detail": "remain の後に形容詞(closed)が続く形。"
+      }
+     ],
+     "paraphrase": [
+      "The front entrance is closed due to the building work and will stay so until we announce otherwise.",
+      "The main door will not be accessible while construction continues."
+     ]
+    }
+   },
+   "level": 600,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  },
+  {
+   "id": "toeic-set2-30",
+   "text": "Attached is the revised schedule, which reflects the changes discussed during yesterday's meeting.",
+   "gids": [
+    "g9"
+   ],
+   "bm": false,
+   "added": 1791462371353,
+   "analysis": {
+    "translation": "昨日の会議で話し合われた変更点を反映した改訂版のスケジュールを添付します。",
+    "slash": [
+     {
+      "en": "Attached is",
+      "ja": "添付されているのは"
+     },
+     {
+      "en": "the revised schedule,",
+      "ja": "改訂版のスケジュールです"
+     },
+     {
+      "en": "which reflects the changes",
+      "ja": "それは変更点を反映している"
+     },
+     {
+      "en": "discussed during yesterday's meeting.",
+      "ja": "昨日の会議で話し合われた"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "補語 Attached が文頭に出た倒置文で、通常の語順にすると The revised schedule(S)is(V)attached(C)の SVC です。主語は後ろの the revised schedule です。"
+    },
+    "clauses": [
+     {
+      "text": "Attached is the revised schedule",
+      "kind": "主節",
+      "role": "文の中心となる主張を述べる(倒置文)"
+     },
+     {
+      "text": "which reflects the changes discussed during yesterday's meeting",
+      "kind": "関係詞節",
+      "role": "the revised schedule を補足説明する"
+     },
+     {
+      "text": "discussed during yesterday's meeting",
+      "kind": "過去分詞句(後置修飾)",
+      "role": "the changes を後ろから修飾する"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Attached",
+      "role": "C",
+      "note": "文頭に出た補語"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": ""
+     },
+     {
+      "text": "the revised schedule",
+      "role": "S",
+      "note": "倒置により動詞の後ろに来ている"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "is、reflects は現在形です。discussed は過去分詞で、「話し合われた」という受動の意味で changes を修飾します。"
+    },
+    "grammar": [
+     {
+      "point": "補語の倒置(Attached is ...)",
+      "explanation": "ビジネスメールの定型で、主語が長いときに補語を前に出します。動詞は後ろの主語に一致させます。"
+     },
+     {
+      "point": "非制限用法の関係代名詞 which",
+      "explanation": "コンマの後ろの which は先行詞 the revised schedule に補足説明を加えます。"
+     },
+     {
+      "point": "過去分詞の後置修飾",
+      "explanation": "discussed during yesterday's meeting が the changes を後ろから修飾します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "attach",
+      "pos": "動詞",
+      "meaning": "添付する",
+      "note": "",
+      "level": 3,
+      "toeic": "attached file / please find attached"
+     },
+     {
+      "word": "revised",
+      "pos": "形容詞",
+      "meaning": "改訂された",
+      "note": "",
+      "level": 3,
+      "toeic": "revised schedule / revised edition"
+     },
+     {
+      "word": "reflect",
+      "pos": "動詞",
+      "meaning": "反映する",
+      "note": "",
+      "level": 2,
+      "toeic": "reflect changes"
+     },
+     {
+      "word": "schedule",
+      "pos": "名詞",
+      "meaning": "予定表、日程",
+      "note": "",
+      "level": 3,
+      "toeic": "revised schedule / ahead of schedule"
+     }
+    ],
+    "toeic": {
+     "scene": "社内通知",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "関係詞",
+       "detail": "コンマの後ろで物を先行詞とする which を選ぶ。"
+      },
+      {
+       "type": "語彙",
+       "detail": "attach や revise など、メールで使う動詞・形容詞の意味確認。"
+      }
+     ],
+     "paraphrase": [
+      "Please see the updated timetable enclosed with this message.",
+      "The attached schedule incorporates the amendments made in the meeting yesterday."
+     ]
+    }
+   },
+   "level": 730,
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null
+  }
+ ],
+ "words": []
+}
