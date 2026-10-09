@@ -162,14 +162,131 @@
       "finish the safety course",
       "Newcomers need to take the safety training first."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "All",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "employees",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "complete",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "safety",
+      "p": "n"
+     },
+     {
+      "w": "training",
+      "p": "n"
+     },
+     {
+      "w": "before",
+      "p": "conj"
+     },
+     {
+      "w": "they",
+      "p": "pron"
+     },
+     {
+      "w": "begin",
+      "p": "v"
+     },
+     {
+      "w": "working",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "production",
+      "p": "n"
+     },
+     {
+      "w": "floor.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "All new employees must complete the safety training ______ they begin working on the production floor.",
+    "choices": [
+     "during",
+     "before",
+     "unless",
+     "despite"
+    ],
+    "answer": 1,
+    "type": "接続詞",
+    "explanation": "後ろに「主語+動詞」の節が続くので接続詞が必要で、「働き始める前に」の意味になる before が正解。during と despite は前置詞で節を導けず、unless は「~しない限り」で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#d9cdb8",
+     "caption": "働き始める前に安全研修を終える",
+     "items": [
+      {
+       "emoji": "👷",
+       "label": "employees",
+       "x": 22,
+       "y": 45,
+       "size": 2.8
+      },
+      {
+       "emoji": "📋",
+       "label": "safety training",
+       "x": 50,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🏭",
+       "label": "production floor",
+       "x": 78,
+       "y": 55,
+       "size": 2.2
+      },
+      {
+       "emoji": "⏰",
+       "label": "before",
+       "x": 50,
+       "y": 72,
+       "size": 1.7
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 副詞節(時)\"\nzone B2:D2 \"副詞節(時)\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"All new employees (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"must complete (V)\"\nnode a3 C1 icon=box color=green size=1 \"the safety training (O)\"\nnode a4 B2 icon=link color=teal size=1 \"before (接)\"\nnode a5 C2 icon=pin color=purple size=1 \"they begin working (M)\"\nnode a6 D2 icon=pin color=purple size=1 \"the production floor (M)\"\na1 -> a2 \"主語\"\na2 -> a3 \"目的語\"\na4 -> a2 \"時\"\na6 -> a5 dashed \"場所\"\nnote a2 \"義務の助動詞 must\" pos=top"
   },
   {
    "id": "toeic-sample-02",
@@ -298,14 +415,127 @@
       "got a promotion",
       "moved up to a senior management position"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Ms.",
+      "p": "n"
+     },
+     {
+      "w": "Tanaka,",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "joined",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "marketing",
+      "p": "n"
+     },
+     {
+      "w": "team",
+      "p": "n"
+     },
+     {
+      "w": "last",
+      "p": "adj"
+     },
+     {
+      "w": "spring,",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "promoted",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "senior",
+      "p": "adj"
+     },
+     {
+      "w": "manager.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Ms. Tanaka, ______ joined the marketing team last spring, has been promoted to senior manager.",
+    "choices": [
+     "who",
+     "whose",
+     "which",
+     "whom"
+    ],
+    "answer": 0,
+    "type": "関係詞",
+    "explanation": "先行詞は人(Ms. Tanaka)で、空所の後に動詞 joined が続くので主格の who が正解。whose は後ろに名詞が必要、which は人に使わない、whom は目的格で動詞の主語にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "昨春入社の田中さんが昇進",
+     "items": [
+      {
+       "emoji": "👩‍💼",
+       "label": "Ms. Tanaka",
+       "x": 22,
+       "y": 50,
+       "size": 2.8
+      },
+      {
+       "emoji": "👥",
+       "label": "marketing team",
+       "x": 55,
+       "y": 28,
+       "size": 2
+      },
+      {
+       "emoji": "🌸",
+       "label": "last spring",
+       "x": 78,
+       "y": 62,
+       "size": 1.8
+      },
+      {
+       "emoji": "👔",
+       "label": "senior manager",
+       "x": 50,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 関係詞節\"\nzone A2:D2 \"関係詞節\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"Ms. Tanaka (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"has been promoted (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"to senior manager (M)\"\nnode a4 A2 icon=link color=teal size=1 \"who (関)\"\nnode a5 B2 icon=bolt color=red size=1 \"joined (V)\"\nnode a6 C2 icon=box color=green size=1 \"the marketing team (O)\"\nnode a7 D2 icon=pin color=purple size=1 \"last spring (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"昇進先\"\na4 -> a1 \"先行詞\"\na5 -> a6 \"目的語\"\na7 -> a5 dashed \"時\"\nnote a2 \"現在完了・受動態\" pos=top"
   },
   {
    "id": "toeic-sample-03",
@@ -434,14 +664,119 @@
       "must send in two recommendation letters",
       "need to provide references with their résumés"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Applicants",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "required",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "submit",
+      "p": "v"
+     },
+     {
+      "w": "two",
+      "p": "other"
+     },
+     {
+      "w": "letters",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "recommendation",
+      "p": "n"
+     },
+     {
+      "w": "along",
+      "p": "prep"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "résumés.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Applicants are required to submit two letters of recommendation ______ their résumés.",
+    "choices": [
+     "regardless of",
+     "owing to",
+     "along with",
+     "in case of"
+    ],
+    "answer": 2,
+    "type": "前置詞",
+    "explanation": "「履歴書とあわせて」という添付の意味になる along with が正解。regardless of は「~に関係なく」、owing to は「~が原因で」、in case of は「~の場合は」で意味が通らない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "推薦状を履歴書と一緒に提出",
+     "items": [
+      {
+       "emoji": "🙋",
+       "label": "Applicants",
+       "x": 20,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "✉️",
+       "label": "letters of recommendation",
+       "x": 52,
+       "y": 28,
+       "size": 2.2
+      },
+      {
+       "emoji": "📄",
+       "label": "résumés",
+       "x": 78,
+       "y": 55,
+       "size": 2
+      },
+      {
+       "emoji": "📤",
+       "label": "submit",
+       "x": 50,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 不定詞\"\nnode a1 A1 icon=user color=blue size=1 \"Applicants (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"are required (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"to submit (M)\"\nnode a4 C2 icon=box color=green size=1 \"two letters of… (O)\"\nnode a5 D2 icon=pin color=purple size=1 \"along with their résumés (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"要求の内容\"\na3 -> a4 \"目的語\"\na5 -> a3 dashed \"添付\"\nnote a2 \"受動態\" pos=top"
   },
   {
    "id": "toeic-sample-04",
@@ -583,14 +918,131 @@
       "will make public the new leave policy",
       "after the board gives its approval"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "human",
+      "p": "adj"
+     },
+     {
+      "w": "resources",
+      "p": "n"
+     },
+     {
+      "w": "department",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "announce",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "vacation",
+      "p": "n"
+     },
+     {
+      "w": "policy",
+      "p": "n"
+     },
+     {
+      "w": "once",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "board",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "approved",
+      "p": "v"
+     },
+     {
+      "w": "it.",
+      "p": "pron"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The human resources department will announce the new vacation policy ______ the board has approved it.",
+    "choices": [
+     "despite",
+     "unless",
+     "whereas",
+     "once"
+    ],
+    "answer": 3,
+    "type": "接続詞",
+    "explanation": "「承認したらすぐ」という時を表す接続詞 once が正解で、後ろに節が続く。despite は前置詞、unless は「~しない限り」、whereas は「一方で」で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "取締役会の承認後に休暇制度を発表",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "human resources department",
+       "x": 22,
+       "y": 40,
+       "size": 2.5
+      },
+      {
+       "emoji": "📣",
+       "label": "announce",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "🏖️",
+       "label": "vacation policy",
+       "x": 78,
+       "y": 45,
+       "size": 2.5
+      },
+      {
+       "emoji": "🏛️",
+       "label": "board",
+       "x": 50,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 副詞節(時)\"\nzone B2:D2 \"副詞節(時)\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"The human resources… (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"will announce (V)\"\nnode a3 C1 icon=box color=green size=1 \"the new vacation policy (O)\"\nnode a4 B2 icon=link color=teal size=1 \"once (接)\"\nnode a5 C2 icon=user color=blue size=1 \"the board (S)\"\nnode a6 D2 icon=bolt color=red size=1 \"has approved it (V)\"\na1 -> a2 \"主語\"\na2 -> a3 \"目的語\"\na4 -> a2 \"時\"\na5 -> a6 \"主語\"\nnote a2 \"未来\" pos=top\nnote a6 \"現在完了(未来の代用)\" pos=bottom"
   },
   {
    "id": "toeic-sample-05",
@@ -715,14 +1167,103 @@
       "have the right to extra pay",
       "qualify for additional compensation"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Employees",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "work",
+      "p": "v"
+     },
+     {
+      "w": "overtime",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "entitled",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "additional",
+      "p": "adj"
+     },
+     {
+      "w": "compensation.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Employees who work overtime are ______ to additional compensation.",
+    "choices": [
+     "entitle",
+     "entitled",
+     "entitling",
+     "entitlement"
+    ],
+    "answer": 1,
+    "type": "品詞",
+    "explanation": "be entitled to ~ は「~を受ける資格がある」の形で、are の後ろは過去分詞 entitled が入る。entitle は原形、entitling は現在分詞、entitlement は名詞で、いずれも are の後に置けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "残業した人は追加手当をもらえる",
+     "items": [
+      {
+       "emoji": "👷",
+       "label": "Employees",
+       "x": 20,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "🌙",
+       "label": "overtime",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "💰",
+       "label": "additional compensation",
+       "x": 78,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "💼",
+       "label": "work",
+       "x": 50,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 関係詞節\"\nzone A2:C2 \"関係詞節\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"Employees (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"are entitled (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"additional compensation (M)\"\nnode a4 A2 icon=link color=teal size=1 \"who (関)\"\nnode a5 B2 icon=bolt color=red size=1 \"work (V)\"\nnode a6 C2 icon=pin color=purple size=1 \"overtime (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"資格の対象\"\na4 -> a1 \"先行詞\"\na6 -> a5 dashed \"修飾\"\nnote a2 \"be entitled to ~\" pos=top"
   },
   {
    "id": "toeic-sample-06",
@@ -851,14 +1392,127 @@
       "was recruited as a project coordinator",
       "due to his wide-ranging experience in logistics"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Mr.",
+      "p": "n"
+     },
+     {
+      "w": "Okada",
+      "p": "n"
+     },
+     {
+      "w": "was",
+      "p": "aux"
+     },
+     {
+      "w": "hired",
+      "p": "v"
+     },
+     {
+      "w": "as",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "project",
+      "p": "n"
+     },
+     {
+      "w": "coordinator",
+      "p": "n"
+     },
+     {
+      "w": "because",
+      "p": "prep"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "his",
+      "p": "det"
+     },
+     {
+      "w": "extensive",
+      "p": "adj"
+     },
+     {
+      "w": "experience",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "logistics.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Mr. Okada was hired as a project coordinator ______ his extensive experience in logistics.",
+    "choices": [
+     "because of",
+     "because",
+     "although",
+     "despite"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "後ろが名詞句(his extensive experience)なので、理由を表す前置詞 because of が正解。because と although は節を導く接続詞、despite は「~にもかかわらず」で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "物流の経験を買われて採用",
+     "items": [
+      {
+       "emoji": "👨‍💼",
+       "label": "Mr. Okada",
+       "x": 20,
+       "y": 45,
+       "size": 2.8
+      },
+      {
+       "emoji": "🏅",
+       "label": "extensive experience",
+       "x": 50,
+       "y": 25,
+       "size": 2
+      },
+      {
+       "emoji": "🚚",
+       "label": "logistics",
+       "x": 78,
+       "y": 30,
+       "size": 2.4
+      },
+      {
+       "emoji": "📋",
+       "label": "project coordinator",
+       "x": 50,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 理由の修飾\"\nnode a1 A1 icon=user color=blue size=1 \"Mr. Okada (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"was hired (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"as a project coordinator (M)\"\nnode a4 C2 icon=link color=teal size=1 \"because of (接)\"\nnode a5 D2 icon=pin color=purple size=1 \"his extensive experience (M)\"\nnode a6 E2 icon=pin color=purple size=1 \"in logistics (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"資格\"\na4 -> a2 dashed \"理由\"\na4 -> a5 \"理由の中身\"\na6 -> a5 dashed \"修飾\"\nnote a2 \"過去・受動態\" pos=top"
   },
   {
    "id": "toeic-sample-07",
@@ -987,14 +1641,119 @@
       "will take place next week",
       "A committee of three managers will carry out the interviews."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Interviews",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "conducted",
+      "p": "v"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "week",
+      "p": "n"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "panel",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "three",
+      "p": "other"
+     },
+     {
+      "w": "department",
+      "p": "n"
+     },
+     {
+      "w": "heads.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Interviews will be conducted next week ______ a panel of three department heads.",
+    "choices": [
+     "with",
+     "for",
+     "by",
+     "at"
+    ],
+    "answer": 2,
+    "type": "受動態",
+    "explanation": "受動態で動作の行為者を示すときは by を使う。by a panel of ~ で「委員会によって」の意味になる。with・for・at では行為者を表せない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "来週、部長3名の委員会が面接",
+     "items": [
+      {
+       "emoji": "🗣️",
+       "label": "Interviews",
+       "x": 20,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "📅",
+       "label": "next week",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "👥",
+       "label": "panel",
+       "x": 78,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "👔",
+       "label": "department heads",
+       "x": 50,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 受動態\"\nnode a1 A1 icon=user color=blue size=1 \"Interviews (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"will be conducted (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"next week (M)\"\nnode a4 D1 icon=pin color=purple size=1 \"by a panel of three… (M)\"\nnode a5 D2 icon=pin color=purple size=1 \"three department heads (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"時\"\na4 -> a2 dashed \"行為者\"\na5 -> a4 dashed \"構成員\"\nnote a2 \"未来・受動態\" pos=top"
   },
   {
    "id": "toeic-sample-08",
@@ -1132,14 +1891,119 @@
       "are qualified for the company's health insurance",
       "unless stated differently"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Unless",
+      "p": "conj"
+     },
+     {
+      "w": "otherwise",
+      "p": "adv"
+     },
+     {
+      "w": "noted,",
+      "p": "v"
+     },
+     {
+      "w": "all",
+      "p": "det"
+     },
+     {
+      "w": "full-time",
+      "p": "adj"
+     },
+     {
+      "w": "staff",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "v"
+     },
+     {
+      "w": "eligible",
+      "p": "adj"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "health",
+      "p": "n"
+     },
+     {
+      "w": "plan.",
+      "p": "n"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Unless otherwise noted, all full-time staff are ______ for the company health plan.",
+    "choices": [
+     "eligibly",
+     "eligibility",
+     "eligibles",
+     "eligible"
+    ],
+    "answer": 3,
+    "type": "品詞",
+    "explanation": "be 動詞 are の後ろで主語を説明する補語には形容詞が必要で、eligible for ~ は「~の資格がある」。eligibly は副詞、eligibility は名詞、eligibles は不自然な複数形で、補語にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "特に断りがなければ正社員は加入できる",
+     "items": [
+      {
+       "emoji": "👩‍💼",
+       "label": "full-time staff",
+       "x": 20,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "🏥",
+       "label": "health plan",
+       "x": 78,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "🏢",
+       "label": "company",
+       "x": 50,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📝",
+       "label": "otherwise noted",
+       "x": 50,
+       "y": 22,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第2文型 + 副詞節(条件)\"\nzone A2:B2 \"副詞節(条件)\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"all full-time staff (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"are (V)\"\nnode a3 C1 icon=check color=yellow size=1 \"eligible for (C)\"\nnode a4 D1 icon=pin color=purple size=1 \"the company health plan (M)\"\nnode a5 A2 icon=link color=teal size=1 \"Unless (接)\"\nnode a6 B2 icon=pin color=purple size=1 \"otherwise noted (M)\"\na1 -> a2 \"主語\"\na2 -> a3 \"補語\"\na4 -> a3 dashed \"対象\"\na5 -> a2 \"条件\"\na6 -> a5 dashed \"省略\""
   },
   {
    "id": "toeic-sample-09",
@@ -1281,14 +2145,127 @@
       "After going through every application, the committee chose five people.",
       "shortlisted five applicants for the next round"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Having",
+      "p": "aux"
+     },
+     {
+      "w": "reviewed",
+      "p": "v"
+     },
+     {
+      "w": "all",
+      "p": "pron"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "applications,",
+      "p": "n"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "committee",
+      "p": "n"
+     },
+     {
+      "w": "selected",
+      "p": "v"
+     },
+     {
+      "w": "five",
+      "p": "other"
+     },
+     {
+      "w": "candidates",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "second",
+      "p": "adj"
+     },
+     {
+      "w": "interview.",
+      "p": "n"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "______ all of the applications, the committee selected five candidates for a second interview.",
+    "choices": [
+     "Having been reviewed",
+     "Having reviewed",
+     "Being reviewed",
+     "Reviewed"
+    ],
+    "answer": 1,
+    "type": "分詞",
+    "explanation": "主節の主語 the committee が「検討した」側なので能動の完了分詞構文 Having reviewed が正解で、「検討した後で選んだ」と時間差も表せる。他は受動の形で、後ろに目的語 all of the applications を置けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "応募書類を検討して5名を選出",
+     "items": [
+      {
+       "emoji": "🗂️",
+       "label": "applications",
+       "x": 22,
+       "y": 50,
+       "size": 2.4
+      },
+      {
+       "emoji": "👥",
+       "label": "committee",
+       "x": 50,
+       "y": 22,
+       "size": 2.4
+      },
+      {
+       "emoji": "🙋",
+       "label": "candidates",
+       "x": 78,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "🎤",
+       "label": "second interview",
+       "x": 50,
+       "y": 75,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 分詞構文\"\nzone A2:B2 \"分詞構文\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"the committee (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"selected (V)\"\nnode a3 C1 icon=box color=green size=1 \"five candidates (O)\"\nnode a4 D1 icon=pin color=purple size=1 \"for a second interview (M)\"\nnode a5 A2 icon=bolt color=red size=1 \"Having reviewed (V)\"\nnode a6 B2 icon=box color=green size=1 \"all of the applications (O)\"\na1 -> a2 \"主語\"\na2 -> a3 \"目的語\"\na4 -> a3 dashed \"修飾\"\na5 -> a6 \"目的語\"\na5 -> a1 dashed \"意味上の主語\"\nnote a5 \"完了(先に起きた)\" pos=bottom"
   },
   {
    "id": "toeic-sample-10",
@@ -1426,14 +2403,135 @@
       "notify your manager beforehand",
       "let your supervisor know early"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "inform",
+      "p": "v"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "supervisor",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "least",
+      "p": "adj"
+     },
+     {
+      "w": "two",
+      "p": "other"
+     },
+     {
+      "w": "weeks",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "advance",
+      "p": "n"
+     },
+     {
+      "w": "if",
+      "p": "conj"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "plan",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "take",
+      "p": "v"
+     },
+     {
+      "w": "extended",
+      "p": "adj"
+     },
+     {
+      "w": "leave.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Please inform your supervisor at least two weeks ______ if you plan to take extended leave.",
+    "choices": [
+     "in advance",
+     "in addition",
+     "in charge",
+     "in case"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "「事前に」を表す in advance が正解で、at least two weeks in advance で「少なくとも2週間前に」となる。in addition は「加えて」、in charge は「担当して」、in case は接続詞的で、この位置に合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "長期休暇は2週間前までに上司へ",
+     "items": [
+      {
+       "emoji": "👨‍💼",
+       "label": "supervisor",
+       "x": 22,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "📅",
+       "label": "two weeks",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "🏖️",
+       "label": "extended leave",
+       "x": 78,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "🙋",
+       "label": "you",
+       "x": 50,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"命令文 + 副詞節(条件)\"\nzone B2:E2 \"副詞節(条件)\" color=teal\nnode a1 A1 icon=bolt color=red size=1 \"Please inform (V)\"\nnode a2 B1 icon=box color=green size=1 \"your supervisor (O)\"\nnode a3 C1 icon=pin color=purple size=1 \"at least two weeks… (M)\"\nnode a4 B2 icon=link color=teal size=1 \"if (接)\"\nnode a5 C2 icon=user color=blue size=1 \"you (S)\"\nnode a6 D2 icon=bolt color=red size=1 \"plan to take (V)\"\nnode a7 E2 icon=box color=green size=1 \"extended leave (O)\"\na1 -> a2 \"目的語\"\na3 -> a1 dashed \"時期\"\na4 -> a1 \"条件\"\na5 -> a6 \"主語\"\na6 -> a7 \"目的語\"\nnote a1 \"命令文(主語なし)\" pos=top"
   },
   {
    "id": "toeic-sample-11",
@@ -1562,14 +2660,127 @@
       "The meeting has been moved to Thursday.",
       "The meeting time has changed because the director will be traveling."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "quarterly",
+      "p": "adj"
+     },
+     {
+      "w": "sales",
+      "p": "n"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "rescheduled",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "Thursday",
+      "p": "n"
+     },
+     {
+      "w": "due",
+      "p": "prep"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "director's",
+      "p": "n"
+     },
+     {
+      "w": "business",
+      "p": "n"
+     },
+     {
+      "w": "trip.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The quarterly sales meeting has been rescheduled to Thursday ______ the director's business trip.",
+    "choices": [
+     "even though",
+     "in spite of",
+     "due to",
+     "as if"
+    ],
+    "answer": 2,
+    "type": "前置詞",
+    "explanation": "後ろが名詞句(the director's business trip)なので、理由を表す前置詞 due to が正解。even though と as if は節が必要、in spite of は「~にもかかわらず」で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "部長の出張で会議を木曜に変更",
+     "items": [
+      {
+       "emoji": "📊",
+       "label": "sales meeting",
+       "x": 20,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "📅",
+       "label": "Thursday",
+       "x": 50,
+       "y": 22,
+       "size": 2.4
+      },
+      {
+       "emoji": "✈️",
+       "label": "business trip",
+       "x": 78,
+       "y": 50,
+       "size": 2.6
+      },
+      {
+       "emoji": "👨‍💼",
+       "label": "director's",
+       "x": 50,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 受動態\"\nnode a1 A1 icon=user color=blue size=1 \"The quarterly sales… (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"has been rescheduled (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"to Thursday (M)\"\nnode a4 C2 icon=pin color=purple size=1 \"due to (M)\"\nnode a5 D2 icon=pin color=purple size=1 \"the director's business… (M)\"\na1 -> a2 \"主語\"\na3 -> a2 dashed \"変更先\"\na4 -> a2 dashed \"理由\"\na4 -> a5 \"対象\"\nnote a2 \"現在完了・受動態\" pos=top"
   },
   {
    "id": "toeic-sample-12",
@@ -1712,14 +2923,135 @@
       "Attendees should send their questions beforehand.",
       "Questions should be submitted ahead of time."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Participants",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "encouraged",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "submit",
+      "p": "v"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "questions",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "advance",
+      "p": "n"
+     },
+     {
+      "w": "so",
+      "p": "conj"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "speakers",
+      "p": "n"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "prepare",
+      "p": "v"
+     },
+     {
+      "w": "thorough",
+      "p": "adj"
+     },
+     {
+      "w": "answers.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Participants are encouraged to submit their questions in advance ______ the speakers can prepare thorough answers.",
+    "choices": [
+     "whereas",
+     "in order",
+     "rather than",
+     "so that"
+    ],
+    "answer": 3,
+    "type": "接続詞",
+    "explanation": "「~できるように」という目的を表す接続詞 so that が正解で、後ろに can を含む節が続く。whereas は「一方で」、in order は後ろに to が必要、rather than は「~よりむしろ」で合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "講演者が準備できるよう事前に質問",
+     "items": [
+      {
+       "emoji": "🙋",
+       "label": "Participants",
+       "x": 20,
+       "y": 50,
+       "size": 2.4
+      },
+      {
+       "emoji": "❓",
+       "label": "questions",
+       "x": 45,
+       "y": 25,
+       "size": 2.2
+      },
+      {
+       "emoji": "🎤",
+       "label": "speakers",
+       "x": 78,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "💬",
+       "label": "answers",
+       "x": 55,
+       "y": 75,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 6x2\ntitle \"第1文型 + 副詞節(目的)\"\nzone C2:F2 \"副詞節(目的)\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"Participants (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"are encouraged (V)\"\nnode a3 C1 icon=pin color=purple size=1 \"to submit (M)\"\nnode a4 D1 icon=box color=green size=1 \"their questions (O)\"\nnode a5 E1 icon=pin color=purple size=1 \"in advance (M)\"\nnode a6 C2 icon=link color=teal size=1 \"so that (接)\"\nnode a7 D2 icon=user color=blue size=1 \"the speakers (S)\"\nnode a8 E2 icon=bolt color=red size=1 \"can prepare (V)\"\nnode a9 F2 icon=box color=green size=1 \"thorough answers (O)\"\na1 -> a2 \"主語\"\na3 -> a4 \"目的語\"\na5 -> a3 dashed \"修飾\"\na6 -> a2 \"目的\"\na7 -> a8 \"主語\"\na8 -> a9 \"目的語\"\nnote a2 \"受動態\" pos=top\nnote a8 \"助動詞 can=可能\" pos=bottom"
   },
   {
    "id": "toeic-sample-13",
@@ -1853,14 +3185,111 @@
       "Notify the travel desk right away if your flight is late.",
       "In case of a flight delay, get in touch with the travel desk at once."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "If",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "flight",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "delayed,",
+      "p": "v"
+     },
+     {
+      "w": "please",
+      "p": "adv"
+     },
+     {
+      "w": "contact",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "travel",
+      "p": "n"
+     },
+     {
+      "w": "desk",
+      "p": "n"
+     },
+     {
+      "w": "immediately.",
+      "p": "adv"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "______ the flight is delayed, please contact the travel desk immediately.",
+    "choices": [
+     "Despite",
+     "If",
+     "Because of",
+     "During"
+    ],
+    "answer": 1,
+    "type": "接続詞",
+    "explanation": "後ろに「主語+動詞」(the flight is delayed)が続くので、条件を表す接続詞 If が正解。Despite・Because of・During は前置詞で、節を導けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#cfe3c4",
+     "caption": "遅延したらすぐ手配窓口へ連絡",
+     "items": [
+      {
+       "emoji": "✈️",
+       "label": "flight",
+       "x": 22,
+       "y": 40,
+       "size": 2.8
+      },
+      {
+       "emoji": "⏰",
+       "label": "delayed",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "🧳",
+       "label": "travel desk",
+       "x": 78,
+       "y": 50,
+       "size": 2.4
+      },
+      {
+       "emoji": "📞",
+       "label": "contact",
+       "x": 50,
+       "y": 75,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第3文型 + 副詞節(条件)\"\nzone A2:C2 \"副詞節(条件)\" color=teal\nnode a1 A1 icon=bolt color=red size=1 \"please contact (V)\"\nnode a2 B1 icon=box color=green size=1 \"the travel desk (O)\"\nnode a3 C1 icon=pin color=purple size=1 \"immediately (M)\"\nnode a4 A2 icon=link color=teal size=1 \"If (接)\"\nnode a5 B2 icon=user color=blue size=1 \"the flight (S)\"\nnode a6 C2 icon=bolt color=red size=1 \"is delayed (V)\"\na1 -> a2 \"目的語\"\na3 -> a1 dashed \"修飾\"\na4 -> a1 \"条件\"\na5 -> a6 \"主語\"\nnote a6 \"受動態\" pos=bottom"
   },
   {
    "id": "toeic-sample-14",
@@ -1972,14 +3401,112 @@
       "The room can hold a maximum of 40 people.",
       "The room seats up to 40."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "conference",
+      "p": "n"
+     },
+     {
+      "w": "room",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "third",
+      "p": "adj"
+     },
+     {
+      "w": "floor",
+      "p": "n"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "accommodate",
+      "p": "v"
+     },
+     {
+      "w": "up",
+      "p": "adv"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "forty",
+      "p": "other"
+     },
+     {
+      "w": "people.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The conference room on the third floor can ______ up to forty people.",
+    "choices": [
+     "accommodate",
+     "accommodation",
+     "accommodating",
+     "accommodated"
+    ],
+    "answer": 0,
+    "type": "品詞",
+    "explanation": "助動詞 can の後ろは動詞の原形なので accommodate が正解(「収容する」)。accommodation は名詞、accommodating は現在分詞・形容詞、accommodated は過去形・過去分詞で、can の後に置けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "3階の会議室は40人まで入れる",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "third floor",
+       "x": 25,
+       "y": 25,
+       "size": 2
+      },
+      {
+       "emoji": "🚪",
+       "label": "conference room",
+       "x": 50,
+       "y": 65,
+       "size": 2.8
+      },
+      {
+       "emoji": "👥",
+       "label": "forty people",
+       "x": 80,
+       "y": 40,
+       "size": 2.2
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第3文型 + 助動詞\"\nnode a1 A1 icon=user color=blue size=1 \"The conference room (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"can accommodate (V)\"\nnode a3 C1 icon=box color=green size=1 \"forty people (O)\"\nnode a4 A2 icon=pin color=purple size=1 \"on the third floor (M)\"\nnode a5 C2 icon=pin color=purple size=1 \"up to (M)\"\na1 -> a2 \"主語\"\na2 -> a3 \"目的語\"\na4 -> a1 dashed \"場所\"\na5 -> a3 dashed \"上限\"\nnote a2 \"可能 can\" pos=top"
   },
   {
    "id": "toeic-sample-15",
@@ -2109,14 +3636,123 @@
       "Neither the slides nor the materials had been prepared before the clients came.",
       "Nothing was ready when the clients got there."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Neither",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "presentation",
+      "p": "n"
+     },
+     {
+      "w": "nor",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "handouts",
+      "p": "n"
+     },
+     {
+      "w": "were",
+      "p": "v"
+     },
+     {
+      "w": "ready",
+      "p": "adj"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "time",
+      "p": "n"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "clients",
+      "p": "n"
+     },
+     {
+      "w": "arrived.",
+      "p": "v"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Neither the presentation nor the handouts were ready ______ the clients arrived.",
+    "choices": [
+     "even though",
+     "so that",
+     "by the time",
+     "whereas"
+    ],
+    "answer": 2,
+    "type": "接続詞",
+    "explanation": "「顧客が到着するまでに」という期限を表す接続詞 by the time が正解で、ready by the time ~ の形になる。even though は「~だけれども」、so that は「~するように」、whereas は「一方で」で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e4d9c4",
+     "caption": "顧客の到着までに準備が間に合わない",
+     "items": [
+      {
+       "emoji": "🖥️",
+       "label": "presentation",
+       "x": 20,
+       "y": 40,
+       "size": 2.6
+      },
+      {
+       "emoji": "📄",
+       "label": "handouts",
+       "x": 50,
+       "y": 72,
+       "size": 2.2
+      },
+      {
+       "emoji": "👥",
+       "label": "clients",
+       "x": 78,
+       "y": 45,
+       "size": 2.6
+      },
+      {
+       "emoji": "⏰",
+       "label": "by the time",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第2文型 + 副詞節(時)\"\nzone B2:D2 \"副詞節(時)\" color=teal\nnode a1 A1 icon=user color=blue size=1 \"Neither the presentation… (S)\"\nnode a2 B1 icon=bolt color=red size=1 \"were (V)\"\nnode a3 C1 icon=check color=yellow size=1 \"ready (C)\"\nnode a4 B2 icon=link color=teal size=1 \"by the time (接)\"\nnode a5 C2 icon=user color=blue size=1 \"the clients (S)\"\nnode a6 D2 icon=bolt color=red size=1 \"arrived (V)\"\na1 -> a2 \"主語\"\na2 -> a3 \"補語\"\na4 -> a3 \"期限\"\na5 -> a6 \"主語\"\nnote a1 \"neither A nor B(動詞は B に一致)\" pos=top"
   },
   {
    "id": "toeic-sample-16",
@@ -2258,14 +3894,142 @@
       "Mr. Sato will travel to the Singapore branch to supervise the system update.",
       "Mr. Sato is scheduled to visit the Singapore office."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Mr.",
+      "p": "n"
+     },
+     {
+      "w": "Sato",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "visiting",
+      "p": "v"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "Singapore",
+      "p": "n"
+     },
+     {
+      "w": "office",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "Monday",
+      "p": "n"
+     },
+     {
+      "w": "through",
+      "p": "prep"
+     },
+     {
+      "w": "Wednesday",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "oversee",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "system",
+      "p": "n"
+     },
+     {
+      "w": "upgrade.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Mr. Sato will be visiting our Singapore office from Monday through Wednesday to ______ the system upgrade.",
+    "choices": [
+     "overseeing",
+     "oversee",
+     "overseen",
+     "oversees"
+    ],
+    "answer": 1,
+    "type": "不定詞・動名詞",
+    "explanation": "「to + 動詞の原形」で目的(〜するため)を表すので原形 oversee が入る。overseeing・overseen・oversees は to の後ろに置けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "佐藤氏がシンガポール支社を訪れる",
+     "items": [
+      {
+       "emoji": "👨‍💼",
+       "label": "Mr. Sato",
+       "x": 20,
+       "y": 65,
+       "size": 3
+      },
+      {
+       "emoji": "✈️",
+       "label": "visiting",
+       "x": 45,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "🏢",
+       "label": "our Singapore office",
+       "x": 75,
+       "y": 65,
+       "size": 2.2
+      },
+      {
+       "emoji": "📅",
+       "label": "Monday through Wednesday",
+       "x": 75,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "💻",
+       "label": "the system upgrade",
+       "x": 50,
+       "y": 70,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第3文型 + 目的の不定詞\"\nnode s A1 icon=user color=blue size=1 \"Mr. Sato (S)\"\nnode v B1 icon=bolt color=red size=1 \"will be visiting (V)\"\nnode o C1 icon=box color=green size=1 \"our Singapore office (O)\"\nnode m1 D1 icon=pin color=purple size=1 \"from Monday through… (M)\"\nnode m2 E1 icon=pin color=purple size=1 \"to oversee the system… (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm1 -> v \"期間\" style=dashed\nm2 -> v \"目的\" style=dashed\nnote v \"未来進行形\" pos=bottom"
   },
   {
    "id": "toeic-sample-17",
@@ -2401,14 +4165,154 @@
       "Tomorrow's meeting will cover last month's budget and the new product launch.",
       "The meeting topics are the budget review and the product launch."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "agenda",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "tomorrow's",
+      "p": "n"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "includes",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "review",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "last",
+      "p": "adj"
+     },
+     {
+      "w": "month's",
+      "p": "n"
+     },
+     {
+      "w": "budget",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "discussion",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "upcoming",
+      "p": "adj"
+     },
+     {
+      "w": "product",
+      "p": "n"
+     },
+     {
+      "w": "launch.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The agenda for tomorrow's meeting ______ a review of last month's budget and a discussion of the upcoming product launch.",
+    "choices": [
+     "include",
+     "including",
+     "to include",
+     "includes"
+    ],
+    "answer": 3,
+    "type": "品詞",
+    "explanation": "主語 The agenda は三人称単数なので、現在形の includes が述語動詞になる。include は主語と一致せず、including と to include は述語動詞になれない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "会議の議題表",
+     "items": [
+      {
+       "emoji": "📋",
+       "label": "agenda",
+       "x": 20,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "📅",
+       "label": "tomorrow's meeting",
+       "x": 50,
+       "y": 20,
+       "size": 1.8
+      },
+      {
+       "emoji": "📊",
+       "label": "budget",
+       "x": 80,
+       "y": 35,
+       "size": 2
+      },
+      {
+       "emoji": "💬",
+       "label": "discussion",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🚀",
+       "label": "product launch",
+       "x": 72,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 並列の目的語\"\nnode s A1 icon=user color=blue size=1 \"The agenda (S)\"\nnode v B1 icon=bolt color=red size=1 \"includes (V)\"\nnode o1 C1 icon=box color=green size=1 \"a review of last month's… (O)\"\nnode o2 D1 icon=box color=green size=1 \"a discussion of the… (O)\"\nnode m A2 icon=pin color=purple size=1 \"for tomorrow's meeting (M)\"\ns -> v \"主語\"\nv -> o1 \"目的語\"\nv -> o2 \"目的語(and)\"\nm -> s \"修飾\" style=dashed\nnote v \"現在形・三単現\" pos=bottom"
   },
   {
    "id": "toeic-sample-18",
@@ -2537,14 +4441,111 @@
       "Employees must submit travel expense reports within a month after returning.",
       "Expense claims are due within 30 days."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Travel",
+      "p": "n"
+     },
+     {
+      "w": "expenses",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "reported",
+      "p": "v"
+     },
+     {
+      "w": "within",
+      "p": "prep"
+     },
+     {
+      "w": "thirty",
+      "p": "other"
+     },
+     {
+      "w": "days",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "trip.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Travel expenses must be ______ within thirty days of the trip.",
+    "choices": [
+     "report",
+     "reporting",
+     "reported",
+     "reports"
+    ],
+    "answer": 2,
+    "type": "受動態",
+    "explanation": "「must be + 過去分詞」で受動態(報告されなければならない)になる。report・reporting・reports は be の後ろで受動態を作れない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "出張費の報告期限",
+     "items": [
+      {
+       "emoji": "🧾",
+       "label": "Travel expenses",
+       "x": 25,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "📄",
+       "label": "reported",
+       "x": 65,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "📅",
+       "label": "thirty days",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "✈️",
+       "label": "trip",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 受動態\"\nnode s A1 icon=user color=blue size=1 \"Travel expenses (S)\"\nnode v B1 icon=bolt color=red size=1 \"must be reported (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"within thirty days (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"of the trip (M)\"\ns -> v \"主語\"\nm1 -> v \"期限\" style=dashed\nm2 -> m1 \"起点\" style=dashed\nnote v \"受動態 + 義務(must)\" pos=bottom"
   },
   {
    "id": "toeic-sample-19",
@@ -2682,14 +4683,142 @@
       "Early registrants will get a reduced entrance fee.",
       "People who sign up by the end of the month can pay less for admission."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Attendees",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "register",
+      "p": "v"
+     },
+     {
+      "w": "before",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "end",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "month",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "receive",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "discount",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "admission",
+      "p": "n"
+     },
+     {
+      "w": "fee.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Attendees ______ register before the end of the month will receive a discount on the admission fee.",
+    "choices": [
+     "who",
+     "whom",
+     "which",
+     "whose"
+    ],
+    "answer": 0,
+    "type": "関係詞",
+    "explanation": "先行詞 Attendees は人で、後ろの register の主語になるので主格の who が入る。whom は目的格、which は人に使わず、whose は直後に名詞が必要。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "月末までの登録で割引",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "Attendees",
+       "x": 22,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "📅",
+       "label": "end of the month",
+       "x": 68,
+       "y": 28,
+       "size": 1.8
+      },
+      {
+       "emoji": "✍️",
+       "label": "register",
+       "x": 50,
+       "y": 50,
+       "size": 1.6
+      },
+      {
+       "emoji": "💰",
+       "label": "discount",
+       "x": 30,
+       "y": 75,
+       "size": 2
+      },
+      {
+       "emoji": "🎫",
+       "label": "admission fee",
+       "x": 72,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第3文型 + 関係詞節\"\nzone A2:C2 \"関係詞節\" color=teal\nnode s A1 icon=user color=blue size=1 \"Attendees (S)\"\nnode v B1 icon=bolt color=red size=1 \"will receive (V)\"\nnode o C1 icon=box color=green size=1 \"a discount (O)\"\nnode m D1 icon=pin color=purple size=1 \"on the admission fee (M)\"\nnode w A2 icon=link color=teal size=1 \"who (関)\"\nnode rv B2 icon=bolt color=red size=1 \"register (V)\"\nnode rm C2 icon=pin color=purple size=1 \"before the end of… (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm -> o \"修飾\" style=dashed\nw -> s \"先行詞\"\nw -> rv \"主語\"\nrm -> rv \"時\" style=dashed"
   },
   {
    "id": "toeic-sample-20",
@@ -2818,14 +4947,126 @@
       "We are sorry for the trouble from the new seminar location.",
       "We regret any problems resulting from the venue change."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "apologize",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "any",
+      "p": "det"
+     },
+     {
+      "w": "inconvenience",
+      "p": "n"
+     },
+     {
+      "w": "caused",
+      "p": "adj"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "change",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "seminar",
+      "p": "n"
+     },
+     {
+      "w": "venue.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "We apologize for any inconvenience ______ by the change in the seminar venue.",
+    "choices": [
+     "causing",
+     "causes",
+     "caused",
+     "to cause"
+    ],
+    "answer": 2,
+    "type": "分詞",
+    "explanation": "inconvenience が「引き起こされた」という受け身の関係なので、過去分詞 caused が後ろから修飾する。causing は能動、causes は動詞、to cause は不自然。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "会場変更のお詫び",
+     "items": [
+      {
+       "emoji": "👩‍💼",
+       "label": "We",
+       "x": 20,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "🙏",
+       "label": "apologize",
+       "x": 52,
+       "y": 22,
+       "size": 1.8
+      },
+      {
+       "emoji": "⚠️",
+       "label": "inconvenience",
+       "x": 80,
+       "y": 35,
+       "size": 2
+      },
+      {
+       "emoji": "🔄",
+       "label": "change",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "seminar venue",
+       "x": 72,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 過去分詞の後置修飾\"\nzone C2:D2 \"分詞句\" color=teal\nnode s A1 icon=user color=blue size=1 \"We (S)\"\nnode v B1 icon=bolt color=red size=1 \"apologize (V)\"\nnode m C1 icon=pin color=purple size=1 \"for any inconvenience (M)\"\nnode pv C2 icon=bolt color=red size=1 \"caused (V)\"\nnode pm D2 icon=pin color=purple size=1 \"by the change in the… (M)\"\ns -> v \"主語\"\nm -> v \"対象\" style=dashed\npv -> m \"後置修飾\" style=dashed\npm -> pv \"原因\" style=dashed"
   },
   {
    "id": "toeic-sample-21",
@@ -2980,14 +5221,135 @@
       "The contract is valid for two years.",
       "Either side must submit written notice to end the agreement."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "contract",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "remain",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "effect",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "two",
+      "p": "other"
+     },
+     {
+      "w": "years",
+      "p": "n"
+     },
+     {
+      "w": "unless",
+      "p": "conj"
+     },
+     {
+      "w": "either",
+      "p": "det"
+     },
+     {
+      "w": "party",
+      "p": "n"
+     },
+     {
+      "w": "gives",
+      "p": "v"
+     },
+     {
+      "w": "written",
+      "p": "adj"
+     },
+     {
+      "w": "notice",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "termination.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The contract will remain in effect for two years ______ either party gives written notice of termination.",
+    "choices": [
+     "whether",
+     "because",
+     "so that",
+     "unless"
+    ],
+    "answer": 3,
+    "type": "接続詞",
+    "explanation": "「どちらかが解約通知をしない限り」という否定の条件を表す unless が適切。whether・because・so that では意味が通らない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "契約は解約通知がない限り有効",
+     "items": [
+      {
+       "emoji": "📃",
+       "label": "contract",
+       "x": 22,
+       "y": 35,
+       "size": 3
+      },
+      {
+       "emoji": "⏳",
+       "label": "two years",
+       "x": 60,
+       "y": 22,
+       "size": 1.8
+      },
+      {
+       "emoji": "🤝",
+       "label": "either party",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "✉️",
+       "label": "written notice",
+       "x": 72,
+       "y": 65,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第2文型 + 副詞節(unless)\"\nzone B2:E2 \"副詞節(条件)\" color=teal\nnode s A1 icon=user color=blue size=1 \"The contract (S)\"\nnode v B1 icon=bolt color=red size=1 \"will remain (V)\"\nnode c C1 icon=check color=yellow size=1 \"in effect (C)\"\nnode m D1 icon=pin color=purple size=1 \"for two years (M)\"\nnode u B2 icon=link color=teal size=1 \"unless (接)\"\nnode s2 C2 icon=user color=blue size=1 \"either party (S)\"\nnode v2 D2 icon=bolt color=red size=1 \"gives (V)\"\nnode o2 E2 icon=box color=green size=1 \"written notice of… (O)\"\ns -> v \"主語\"\nv -> c \"補語\"\nm -> v \"期間\" style=dashed\nu -> v \"条件\"\ns2 -> v2 \"主語\"\nv2 -> o2 \"目的語\""
   },
   {
    "id": "toeic-sample-22",
@@ -3137,14 +5499,127 @@
       "Sales abroad rose by 12 percent year over year.",
       "Overseas earnings grew 12% from the previous year."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Revenue",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "overseas",
+      "p": "adj"
+     },
+     {
+      "w": "sales",
+      "p": "n"
+     },
+     {
+      "w": "increased",
+      "p": "v"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "12",
+      "p": "other"
+     },
+     {
+      "w": "percent",
+      "p": "n"
+     },
+     {
+      "w": "compared",
+      "p": "v"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "same",
+      "p": "adj"
+     },
+     {
+      "w": "period",
+      "p": "n"
+     },
+     {
+      "w": "last",
+      "p": "adj"
+     },
+     {
+      "w": "year.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Revenue from overseas sales ______ by 12 percent compared with the same period last year.",
+    "choices": [
+     "increase",
+     "increased",
+     "increasing",
+     "increases"
+    ],
+    "answer": 1,
+    "type": "時制",
+    "explanation": "last year との比較で過去の増加を述べているので、過去形 increased が入る。increase・increases は現在形で時制が合わず、increasing は述語動詞にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "",
+     "caption": "海外販売の収益が増加",
+     "items": [
+      {
+       "emoji": "💰",
+       "label": "Revenue",
+       "x": 22,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "🌍",
+       "label": "overseas sales",
+       "x": 62,
+       "y": 25,
+       "size": 2
+      },
+      {
+       "emoji": "📈",
+       "label": "increased",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📅",
+       "label": "same period last year",
+       "x": 72,
+       "y": 70,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第1文型 + 分詞構文\"\nzone C2:C2 \"分詞構文\" color=teal\nnode s A1 icon=user color=blue size=1 \"Revenue (S)\"\nnode v B1 icon=bolt color=red size=1 \"increased (V)\"\nnode m C1 icon=pin color=purple size=1 \"by 12 percent (M)\"\nnode f A2 icon=pin color=purple size=1 \"from overseas sales (M)\"\nnode c C2 icon=pin color=purple size=1 \"compared with the same… (M)\"\ns -> v \"主語\"\nm -> v \"増加幅\" style=dashed\nf -> s \"修飾\" style=dashed\nc -> v \"比較\" style=dashed\nnote v \"過去形\" pos=bottom"
   },
   {
    "id": "toeic-sample-23",
@@ -3272,14 +5747,119 @@
       "Invoices must be settled within 30 days.",
       "Payment is due no later than thirty days after issuance."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "All",
+      "p": "det"
+     },
+     {
+      "w": "invoices",
+      "p": "n"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "paid",
+      "p": "v"
+     },
+     {
+      "w": "within",
+      "p": "prep"
+     },
+     {
+      "w": "thirty",
+      "p": "other"
+     },
+     {
+      "w": "days",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "date",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "issue.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "All invoices should be paid within thirty days ______ the date of issue.",
+    "choices": [
+     "of",
+     "to",
+     "for",
+     "at"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「発行日から30日以内」は thirty days of the date の形で、of が起点を示す。to・for・at ではこの意味にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "請求書の支払期限",
+     "items": [
+      {
+       "emoji": "🧾",
+       "label": "invoices",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "💰",
+       "label": "paid",
+       "x": 62,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "📅",
+       "label": "thirty days",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📄",
+       "label": "date of issue",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 受動態\"\nnode s A1 icon=user color=blue size=1 \"All invoices (S)\"\nnode v B1 icon=bolt color=red size=1 \"should be paid (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"within thirty days (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"of the date of issue (M)\"\ns -> v \"主語\"\nm1 -> v \"期限\" style=dashed\nm2 -> m1 \"起点\" style=dashed\nnote v \"受動態 + 助動詞(should)\" pos=bottom"
   },
   {
    "id": "toeic-sample-24",
@@ -3420,14 +6000,123 @@
       "The accounting team is in charge of checking all receipts.",
       "It is the accounting department's job to confirm every receipt."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "accounting",
+      "p": "n"
+     },
+     {
+      "w": "department",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "responsible",
+      "p": "adj"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "verifying",
+      "p": "v"
+     },
+     {
+      "w": "every",
+      "p": "det"
+     },
+     {
+      "w": "receipt",
+      "p": "n"
+     },
+     {
+      "w": "submitted",
+      "p": "adj"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "an",
+      "p": "det"
+     },
+     {
+      "w": "expense",
+      "p": "n"
+     },
+     {
+      "w": "report.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The accounting department is ______ for verifying every receipt submitted with an expense report.",
+    "choices": [
+     "responsive",
+     "respectful",
+     "responsible",
+     "responding"
+    ],
+    "answer": 2,
+    "type": "語彙",
+    "explanation": "「be responsible for ~」で「〜の責任がある」という意味。responsive は反応が良い、respectful は礼儀正しい、responding は for と結びつかない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "経理部が領収書を確認",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "accounting department",
+       "x": 22,
+       "y": 35,
+       "size": 3
+      },
+      {
+       "emoji": "✅",
+       "label": "verifying",
+       "x": 62,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "🧾",
+       "label": "receipt",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📄",
+       "label": "expense report",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第2文型 + 過去分詞の後置修飾\"\nzone D2:D2 \"分詞句\" color=teal\nnode s A1 icon=user color=blue size=1 \"The accounting department (S)\"\nnode v B1 icon=bolt color=red size=1 \"is (V)\"\nnode c C1 icon=check color=yellow size=1 \"responsible for (C)\"\nnode o D1 icon=box color=green size=1 \"verifying every receipt (O)\"\nnode p D2 icon=pin color=purple size=1 \"submitted with an… (M)\"\ns -> v \"主語\"\nv -> c \"補語\"\nc -> o \"動名詞\"\np -> o \"後置修飾\" style=dashed"
   },
   {
    "id": "toeic-sample-25",
@@ -3577,14 +6266,127 @@
       "If the inspection finishes as planned, the new facility will begin operating in September.",
       "The new building is scheduled to open in September, depending on the inspection."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Provided",
+      "p": "conj"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "inspection",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "completed",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "schedule,",
+      "p": "n"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "facility",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "open",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "September.",
+      "p": "n"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "______ the inspection is completed on schedule, the new facility will open in September.",
+    "choices": [
+     "In case",
+     "Provided that",
+     "Even though",
+     "Because of"
+    ],
+    "answer": 1,
+    "type": "接続詞",
+    "explanation": "「検査が予定どおり完了すれば」という条件を表す Provided that が適切。In case は「〜の場合に備えて」、Even though は譲歩で意味が合わず、Because of は後ろに節を取れない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d9ecd0",
+     "caption": "検査が済めば9月に開業",
+     "items": [
+      {
+       "emoji": "🔍",
+       "label": "inspection",
+       "x": 22,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "⏰",
+       "label": "on schedule",
+       "x": 62,
+       "y": 22,
+       "size": 1.8
+      },
+      {
+       "emoji": "🏢",
+       "label": "new facility",
+       "x": 30,
+       "y": 72,
+       "size": 3
+      },
+      {
+       "emoji": "📅",
+       "label": "September",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 条件の副詞節\"\nzone A2:D2 \"副詞節(条件)\" color=teal\nnode s A1 icon=user color=blue size=1 \"the new facility (S)\"\nnode v B1 icon=bolt color=red size=1 \"will open (V)\"\nnode m C1 icon=pin color=purple size=1 \"in September (M)\"\nnode c A2 icon=link color=teal size=1 \"Provided that (接)\"\nnode s2 B2 icon=user color=blue size=1 \"the inspection (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"is completed (V)\"\nnode m2 D2 icon=pin color=purple size=1 \"on schedule (M)\"\ns -> v \"主語\"\nm -> v \"時\" style=dashed\nc -> v \"条件\"\ns2 -> v2 \"主語\"\nm2 -> v2 \"修飾\" style=dashed\nnote v2 \"受動態(現在)\" pos=bottom"
   },
   {
    "id": "toeic-sample-26",
@@ -3721,14 +6523,143 @@
       "Due to higher material costs, the firm will increase its prices by 5%.",
       "The company plans to charge five percent more."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Because",
+      "p": "prep"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "rising",
+      "p": "adj"
+     },
+     {
+      "w": "cost",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "raw",
+      "p": "adj"
+     },
+     {
+      "w": "materials,",
+      "p": "n"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "decided",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "raise",
+      "p": "v"
+     },
+     {
+      "w": "its",
+      "p": "det"
+     },
+     {
+      "w": "prices",
+      "p": "n"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "five",
+      "p": "other"
+     },
+     {
+      "w": "percent.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Because of the rising cost of raw materials, the company has decided to ______ its prices by five percent.",
+    "choices": [
+     "rise",
+     "arise",
+     "arouse",
+     "raise"
+    ],
+    "answer": 3,
+    "type": "語彙",
+    "explanation": "目的語 its prices を取る他動詞は raise(〜を上げる)。rise と arise は自動詞で目的語を取れず、arouse は「呼び起こす」で意味が違う。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "原材料費の上昇で値上げ",
+     "items": [
+      {
+       "emoji": "📈",
+       "label": "rising cost",
+       "x": 22,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "📦",
+       "label": "raw materials",
+       "x": 62,
+       "y": 25,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "the company",
+       "x": 30,
+       "y": 72,
+       "size": 3
+      },
+      {
+       "emoji": "🏷️",
+       "label": "prices",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第3文型 + 理由の前置詞句\"\nnode s A1 icon=user color=blue size=1 \"the company (S)\"\nnode v B1 icon=bolt color=red size=1 \"has decided (V)\"\nnode o C1 icon=box color=green size=1 \"to raise its prices (O)\"\nnode m D1 icon=pin color=purple size=1 \"by five percent (M)\"\nnode r A2 icon=pin color=purple size=1 \"Because of the rising… (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm -> o \"差\" style=dashed\nr -> v \"理由\" style=dashed\nnote v \"現在完了\" pos=bottom"
   },
   {
    "id": "toeic-sample-27",
@@ -3879,14 +6810,127 @@
       "You will get a full refund if you cancel before shipment.",
       "Customers are entitled to a complete refund for orders canceled before dispatch."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Payment",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "refunded",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "full",
+      "p": "n"
+     },
+     {
+      "w": "if",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "order",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "canceled",
+      "p": "v"
+     },
+     {
+      "w": "before",
+      "p": "conj"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "shipped.",
+      "p": "v"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Payment will be refunded in full ______ the order is canceled before it is shipped.",
+    "choices": [
+     "if",
+     "unless",
+     "although",
+     "while"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "「注文がキャンセルされた場合」という条件なので if が入る。unless は逆の意味になり、although と while も意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "発送前のキャンセルは全額返金",
+     "items": [
+      {
+       "emoji": "💵",
+       "label": "Payment",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🛒",
+       "label": "order",
+       "x": 62,
+       "y": 25,
+       "size": 2
+      },
+      {
+       "emoji": "❌",
+       "label": "canceled",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📦",
+       "label": "shipped",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x3\ntitle \"第1文型 + if節・before節\"\nzone A2:C2 \"if節(条件)\" color=teal\nzone B3:D3 \"before節(時)\" color=purple\nnode s A1 icon=user color=blue size=1 \"Payment (S)\"\nnode v B1 icon=bolt color=red size=1 \"will be refunded (V)\"\nnode m C1 icon=pin color=purple size=1 \"in full (M)\"\nnode c1 A2 icon=link color=teal size=1 \"if (接)\"\nnode s2 B2 icon=user color=blue size=1 \"the order (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"is canceled (V)\"\nnode c2 B3 icon=link color=teal size=1 \"before (接)\"\nnode s3 C3 icon=user color=blue size=1 \"it (S)\"\nnode v3 D3 icon=bolt color=red size=1 \"is shipped (V)\"\ns -> v \"主語\"\nm -> v \"程度\" style=dashed\nc1 -> v \"条件\"\ns2 -> v2 \"主語\"\nc2 -> v2 \"時\"\ns3 -> v3 \"主語\""
   },
   {
    "id": "toeic-sample-28",
@@ -4019,14 +7063,115 @@
       "Both sides signed the contract after weeks of discussion.",
       "The deal was finalized following lengthy negotiations."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "agreement",
+      "p": "n"
+     },
+     {
+      "w": "was",
+      "p": "aux"
+     },
+     {
+      "w": "signed",
+      "p": "v"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "both",
+      "p": "det"
+     },
+     {
+      "w": "parties",
+      "p": "n"
+     },
+     {
+      "w": "after",
+      "p": "prep"
+     },
+     {
+      "w": "several",
+      "p": "det"
+     },
+     {
+      "w": "weeks",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "negotiation.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The agreement was signed by both parties ______ several weeks of negotiation.",
+    "choices": [
+     "until",
+     "while",
+     "after",
+     "although"
+    ],
+    "answer": 2,
+    "type": "前置詞",
+    "explanation": "「数週間の交渉の後に」という意味で、名詞句の前に置ける前置詞 after が適切。while と although は接続詞で名詞句を直接取れず、until は意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "交渉の末に合意書へ署名",
+     "items": [
+      {
+       "emoji": "📝",
+       "label": "agreement",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🖊️",
+       "label": "signed",
+       "x": 62,
+       "y": 25,
+       "size": 1.8
+      },
+      {
+       "emoji": "🤝",
+       "label": "both parties",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "💬",
+       "label": "negotiation",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 受動態\"\nnode s A1 icon=user color=blue size=1 \"The agreement (S)\"\nnode v B1 icon=bolt color=red size=1 \"was signed (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"by both parties (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"after several weeks of… (M)\"\nnode m3 E1 icon=pin color=purple size=1 \"of negotiation (M)\"\ns -> v \"主語\"\nm1 -> v \"動作主\" style=dashed\nm2 -> v \"時\" style=dashed\nm3 -> m2 \"修飾\" style=dashed\nnote v \"受動態(過去)\" pos=bottom"
   },
   {
    "id": "toeic-sample-29",
@@ -4176,14 +7321,123 @@
       "Investors are likely to vote in favor of the planned merger.",
       "The shareholders' meeting next month is expected to approve the merger."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Shareholders",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "expected",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "approve",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "proposed",
+      "p": "adj"
+     },
+     {
+      "w": "merger",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "annual",
+      "p": "adj"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "month.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Shareholders are expected ______ the proposed merger at the annual meeting next month.",
+    "choices": [
+     "approving",
+     "approved",
+     "approve",
+     "to approve"
+    ],
+    "answer": 3,
+    "type": "不定詞・動名詞",
+    "explanation": "「be expected to + 動詞の原形」で「〜すると見込まれている」。approving・approved・approve はこの形にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "株主が合併を承認する見込み",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "Shareholders",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "✅",
+       "label": "approve",
+       "x": 62,
+       "y": 22,
+       "size": 1.8
+      },
+      {
+       "emoji": "🔀",
+       "label": "merger",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📅",
+       "label": "next month",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第3文型 + 受動態 + to不定詞\"\nnode s A1 icon=user color=blue size=1 \"Shareholders (S)\"\nnode v B1 icon=bolt color=red size=1 \"are expected to approve (V)\"\nnode o C1 icon=box color=green size=1 \"the proposed merger (O)\"\nnode m1 D1 icon=pin color=purple size=1 \"at the annual meeting (M)\"\nnode m2 E1 icon=pin color=purple size=1 \"next month (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm1 -> v \"場所\" style=dashed\nm2 -> v \"時\" style=dashed\nnote v \"受動態 + to不定詞\" pos=bottom"
   },
   {
    "id": "toeic-sample-30",
@@ -4328,14 +7582,119 @@
       "The auditors suggested that the company check its internal controls more often.",
       "Our auditors advised the firm to review its internal controls more frequently."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Our",
+      "p": "det"
+     },
+     {
+      "w": "auditors",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "recommended",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "firm",
+      "p": "n"
+     },
+     {
+      "w": "review",
+      "p": "v"
+     },
+     {
+      "w": "its",
+      "p": "det"
+     },
+     {
+      "w": "internal",
+      "p": "adj"
+     },
+     {
+      "w": "controls",
+      "p": "n"
+     },
+     {
+      "w": "more",
+      "p": "adv"
+     },
+     {
+      "w": "frequently.",
+      "p": "adv"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Our auditors have recommended that the firm ______ its internal controls more frequently.",
+    "choices": [
+     "review",
+     "reviewed",
+     "reviewing",
+     "to review"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "recommend などの後の that 節では、仮定法現在として動詞の原形を使う。reviewed・reviewing・to review は不可。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e6dcc8",
+     "caption": "監査人が内部統制の見直しを勧告",
+     "items": [
+      {
+       "emoji": "👩‍💼",
+       "label": "auditors",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "📋",
+       "label": "recommended",
+       "x": 62,
+       "y": 22,
+       "size": 1.8
+      },
+      {
+       "emoji": "🏢",
+       "label": "firm",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🔒",
+       "label": "internal controls",
+       "x": 72,
+       "y": 68,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第3文型 + 名詞節(that節)\"\nzone A2:E2 \"名詞節(that節)\" color=teal\nnode s A1 icon=user color=blue size=1 \"Our auditors (S)\"\nnode v B1 icon=bolt color=red size=1 \"have recommended (V)\"\nnode c A2 icon=link color=teal size=1 \"that (接)\"\nnode s2 B2 icon=user color=blue size=1 \"the firm (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"review (V)\"\nnode o2 D2 icon=box color=green size=1 \"its internal controls (O)\"\nnode m2 E2 icon=pin color=purple size=1 \"more frequently (M)\"\ns -> v \"主語\"\nc -> v \"目的語節\"\ns2 -> v2 \"主語\"\nv2 -> o2 \"目的語\"\nm2 -> v2 \"修飾\" style=dashed\nnote v2 \"仮定法現在(原形)\" pos=bottom"
   },
   {
    "id": "toeic-sample-31",
@@ -4465,14 +7824,127 @@
       "Buy two or more items and get a free present.",
       "Shoppers who buy at least two products are given a complimentary gift."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Customers",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "purchase",
+      "p": "v"
+     },
+     {
+      "w": "two",
+      "p": "other"
+     },
+     {
+      "w": "or",
+      "p": "conj"
+     },
+     {
+      "w": "more",
+      "p": "det"
+     },
+     {
+      "w": "items",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "receive",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "free",
+      "p": "adj"
+     },
+     {
+      "w": "gift",
+      "p": "n"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "order.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Customers ______ purchase two or more items will receive a free gift with their order.",
+    "choices": [
+     "which",
+     "who",
+     "whose",
+     "whom"
+    ],
+    "answer": 1,
+    "type": "関係詞",
+    "explanation": "先行詞が人(Customers)で、関係詞節の主語になるので主格の who が入る。which は人には使わず、whose は所有格、whom は目的格で、いずれも直後の動詞 purchase の主語にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "お客様が商品を買って景品をもらう",
+     "items": [
+      {
+       "emoji": "🛒",
+       "label": "Customers",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "📦",
+       "label": "items",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🎁",
+       "label": "free gift",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🧾",
+       "label": "order",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 関係詞節\"\nzone A2:B2 \"関係詞節\" color=teal\nnode cust A1 icon=user color=blue size=1 \"Customers (S)\"\nnode recv B1 icon=bolt color=red size=1 \"will receive (V)\"\nnode gift C1 icon=box color=green size=1 \"a free gift (O)\"\nnode who A2 icon=link color=teal size=1 \"who (関)\"\nnode buy B2 icon=bolt color=red size=1 \"purchase two or more… (V)\"\nnode ord D2 icon=pin color=purple size=1 \"with their order (M)\"\ncust -> recv \"主語\"\nrecv -> gift \"目的語\"\nwho -> cust \"先行詞\"\nwho -> buy \"主語\"\nord -> recv \"修飾\" style=dashed\nnote recv \"未来\" pos=top"
   },
   {
    "id": "toeic-sample-32",
@@ -4597,14 +8069,119 @@
       "The promotion lasts for six weeks and is aimed at young workers.",
       "The ad drive is directed at young professionals."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "advertising",
+      "p": "n"
+     },
+     {
+      "w": "campaign,",
+      "p": "n"
+     },
+     {
+      "w": "which",
+      "p": "conj"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "run",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "six",
+      "p": "other"
+     },
+     {
+      "w": "weeks,",
+      "p": "n"
+     },
+     {
+      "w": "targets",
+      "p": "v"
+     },
+     {
+      "w": "young",
+      "p": "adj"
+     },
+     {
+      "w": "professionals.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The new advertising campaign, ______ will run for six weeks, targets young professionals.",
+    "choices": [
+     "what",
+     "who",
+     "whose",
+     "which"
+    ],
+    "answer": 3,
+    "type": "関係詞",
+    "explanation": "先行詞が物(campaign)で、節の主語になるので主格の which が入る。what は先行詞を取らず、who は人用、whose は直後に名詞が必要で不適切。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "",
+     "caption": "6週間の広告キャンペーンが若手を狙う",
+     "items": [
+      {
+       "emoji": "📢",
+       "label": "advertising campaign",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "📅",
+       "label": "six weeks",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "👩‍💼",
+       "label": "young professionals",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🎯",
+       "label": "targets",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 関係詞節(非制限用法)\"\nzone A2:C2 \"関係詞節\" color=teal\nnode camp A1 icon=user color=blue size=1 \"The new advertising… (S)\"\nnode tgt B1 icon=bolt color=red size=1 \"targets (V)\"\nnode pro C1 icon=box color=green size=1 \"young professionals (O)\"\nnode which A2 icon=link color=teal size=1 \"which (関)\"\nnode run B2 icon=bolt color=red size=1 \"will run (V)\"\nnode wk C2 icon=pin color=purple size=1 \"for six weeks (M)\"\ncamp -> tgt \"主語\"\ntgt -> pro \"目的語\"\nwhich -> camp \"先行詞\"\nwhich -> run \"主語\"\nwk -> run \"期間\" style=dashed"
   },
   {
    "id": "toeic-sample-33",
@@ -4734,14 +8311,127 @@
       "Please fill out the brief questionnaire about your latest experience.",
       "We ask that you take part in a short survey."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "would",
+      "p": "aux"
+     },
+     {
+      "w": "appreciate",
+      "p": "v"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "if",
+      "p": "conj"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "could",
+      "p": "aux"
+     },
+     {
+      "w": "complete",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "short",
+      "p": "adj"
+     },
+     {
+      "w": "survey",
+      "p": "n"
+     },
+     {
+      "w": "about",
+      "p": "prep"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "recent",
+      "p": "adj"
+     },
+     {
+      "w": "experience.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "We would appreciate it ______ you could complete the short survey about your recent experience.",
+    "choices": [
+     "if",
+     "whether",
+     "unless",
+     "although"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "would appreciate it if ... で「〜していただければ幸いです」という丁寧な依頼になる。whether は appreciate it の後に続けられず、unless と although は意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "アンケートへの回答をお願いする",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "We",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "👤",
+       "label": "you",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "📋",
+       "label": "survey",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "⭐",
+       "label": "experience",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 条件の副詞節\"\nzone A2:D2 \"副詞節\" color=teal\nnode we A1 icon=user color=blue size=1 \"We (S)\"\nnode app B1 icon=bolt color=red size=1 \"would appreciate (V)\"\nnode it C1 icon=box color=green size=1 \"it (O)\"\nnode if A2 icon=link color=teal size=1 \"if (接)\"\nnode you B2 icon=user color=blue size=1 \"you (S)\"\nnode comp C2 icon=bolt color=red size=1 \"could complete (V)\"\nnode sv D2 icon=box color=green size=1 \"the short survey (O)\"\nwe -> app \"主語\"\napp -> it \"目的語\"\nif -> it \"条件\"\nyou -> comp \"主語\"\ncomp -> sv \"目的語\"\nnote comp \"仮定法の丁寧表現\" pos=bottom"
   },
   {
    "id": "toeic-sample-34",
@@ -4866,14 +8556,139 @@
       "If you have any inquiries about your purchase, feel free to call our support center.",
       "Please feel free to reach out to our customer service team."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Should",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "have",
+      "p": "v"
+     },
+     {
+      "w": "any",
+      "p": "det"
+     },
+     {
+      "w": "questions",
+      "p": "n"
+     },
+     {
+      "w": "about",
+      "p": "prep"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "order,",
+      "p": "n"
+     },
+     {
+      "w": "please",
+      "p": "adv"
+     },
+     {
+      "w": "do",
+      "p": "aux"
+     },
+     {
+      "w": "not",
+      "p": "adv"
+     },
+     {
+      "w": "hesitate",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "contact",
+      "p": "v"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "customer",
+      "p": "n"
+     },
+     {
+      "w": "service",
+      "p": "n"
+     },
+     {
+      "w": "center.",
+      "p": "n"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Should you have any questions about your order, please do not hesitate ______ our customer service center.",
+    "choices": [
+     "contacting",
+     "contact",
+     "to contact",
+     "contacted"
+    ],
+    "answer": 2,
+    "type": "不定詞・動名詞",
+    "explanation": "hesitate は to 不定詞を続けて do not hesitate to contact(遠慮なく連絡する)となる。動名詞や原形、過去分詞は hesitate の後に直接続けられない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "質問があればサービスセンターへ連絡",
+     "items": [
+      {
+       "emoji": "❓",
+       "label": "questions",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🧾",
+       "label": "order",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "📞",
+       "label": "contact",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "customer service center",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"倒置の条件節 + 命令文\"\nzone A2:E2 \"副詞節(倒置)\" color=teal\nnode pls A1 icon=pin color=purple size=1 \"please (M)\"\nnode hes B1 icon=bolt color=red size=1 \"do not hesitate (V)\"\nnode con C1 icon=pin color=purple size=1 \"to contact our customer… (M)\"\nnode should A2 icon=link color=teal size=1 \"Should (接)\"\nnode you B2 icon=user color=blue size=1 \"you (S)\"\nnode have C2 icon=bolt color=red size=1 \"have (V)\"\nnode q D2 icon=box color=green size=1 \"any questions (O)\"\nnode ord E2 icon=pin color=purple size=1 \"about your order (M)\"\npls -> hes \"丁寧\" style=dashed\ncon -> hes \"内容\" style=dashed\nshould -> hes \"条件\"\nyou -> have \"主語\"\nhave -> q \"目的語\"\nord -> q \"修飾\" style=dashed\nnote should \"If you should の倒置\" pos=bottom"
   },
   {
    "id": "toeic-sample-35",
@@ -5003,14 +8818,119 @@
       "The store's opening attracted more visitors than expected.",
       "The launch event brought in a bigger audience than the organizers had predicted."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "store's",
+      "p": "n"
+     },
+     {
+      "w": "grand",
+      "p": "adj"
+     },
+     {
+      "w": "opening",
+      "p": "n"
+     },
+     {
+      "w": "drew",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "larger",
+      "p": "adj"
+     },
+     {
+      "w": "crowd",
+      "p": "n"
+     },
+     {
+      "w": "than",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "organizers",
+      "p": "n"
+     },
+     {
+      "w": "had",
+      "p": "aux"
+     },
+     {
+      "w": "anticipated.",
+      "p": "v"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The store's grand opening drew a larger crowd ______ the organizers had anticipated.",
+    "choices": [
+     "as",
+     "than",
+     "that",
+     "then"
+    ],
+    "answer": 1,
+    "type": "比較",
+    "explanation": "a larger crowd と比較級があるので、比較の対象を導く than が入る。as は同等比較、that と then は比較の接続詞にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d9e8c8",
+     "caption": "開店式に予想以上の人が集まる",
+     "items": [
+      {
+       "emoji": "🏪",
+       "label": "store's",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🎉",
+       "label": "grand opening",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "👥",
+       "label": "crowd",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🧑‍💼",
+       "label": "organizers",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第3文型 + 比較の副詞節\"\nzone A2:C2 \"副詞節\" color=teal\nnode open A1 icon=user color=blue size=1 \"The store's grand opening (S)\"\nnode drew B1 icon=bolt color=red size=1 \"drew (V)\"\nnode crowd C1 icon=box color=green size=1 \"a larger crowd (O)\"\nnode than A2 icon=link color=teal size=1 \"than (接)\"\nnode org B2 icon=user color=blue size=1 \"the organizers (S)\"\nnode ant C2 icon=bolt color=red size=1 \"had anticipated (V)\"\nopen -> drew \"主語\"\ndrew -> crowd \"目的語\"\nthan -> crowd \"比較\"\norg -> ant \"主語\"\nnote ant \"過去完了\" pos=bottom"
   },
   {
    "id": "toeic-sample-36",
@@ -5135,14 +9055,131 @@
       "Items must be sent back in their original box to be eligible for money back.",
       "Products need to be returned in the original package for a refund."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "All",
+      "p": "det"
+     },
+     {
+      "w": "merchandise",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "returned",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "its",
+      "p": "det"
+     },
+     {
+      "w": "original",
+      "p": "adj"
+     },
+     {
+      "w": "packaging",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "order",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "qualify",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "refund.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "All merchandise ______ in its original packaging in order to qualify for a refund.",
+    "choices": [
+     "must return",
+     "must have returned",
+     "must returning",
+     "must be returned"
+    ],
+    "answer": 3,
+    "type": "受動態",
+    "explanation": "主語 All merchandise は「返品される」側なので受動態の must be returned が入る。must return は能動、must have returned は過去の推量で意味が合わず、must returning は形が誤り。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "元の包装で返品して返金を受ける",
+     "items": [
+      {
+       "emoji": "🛍️",
+       "label": "merchandise",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "↩️",
+       "label": "returned",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🎁",
+       "label": "original packaging",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "💰",
+       "label": "refund",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第1文型 + 受動態 + 目的の不定詞\"\nnode mer A1 icon=user color=blue size=1 \"All merchandise (S)\"\nnode ret B1 icon=bolt color=red size=1 \"must be returned (V)\"\nnode pk C1 icon=pin color=purple size=1 \"in its original packaging (M)\"\nnode ord B2 icon=pin color=purple size=1 \"in order to qualify (M)\"\nnode ref C2 icon=pin color=purple size=1 \"for a refund (M)\"\nmer -> ret \"主語\"\npk -> ret \"状態\" style=dashed\nord -> ret \"目的\" style=dashed\nref -> ord \"修飾\" style=dashed\nnote ret \"受動態・義務\" pos=top"
   },
   {
    "id": "toeic-sample-37",
@@ -5272,14 +9309,127 @@
       "Sales of the new blender have increased dramatically owing to good online feedback.",
       "Favorable web reviews boosted blender sales."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Thanks",
+      "p": "prep"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "positive",
+      "p": "adj"
+     },
+     {
+      "w": "reviews",
+      "p": "n"
+     },
+     {
+      "w": "posted",
+      "p": "adj"
+     },
+     {
+      "w": "online,",
+      "p": "adv"
+     },
+     {
+      "w": "sales",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "blender",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "risen",
+      "p": "v"
+     },
+     {
+      "w": "sharply.",
+      "p": "adv"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "______ the positive reviews posted online, sales of the new blender have risen sharply.",
+    "choices": [
+     "Thanks to",
+     "Because",
+     "Although",
+     "Despite"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "後ろに名詞句 the positive reviews が続くので前置詞が入り、「〜のおかげで」の Thanks to が意味も合う。Because と Although は接続詞で名詞句を直接続けられず、Despite は「〜にもかかわらず」で意味が逆になる。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "好評レビューでミキサーの売り上げが急増",
+     "items": [
+      {
+       "emoji": "💰",
+       "label": "sales",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "⭐",
+       "label": "positive reviews",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🍹",
+       "label": "blender",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📈",
+       "label": "risen sharply",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 3x2\ntitle \"第1文型 + 前置詞句 + 過去分詞\"\nzone C2:C2 \"分詞\" color=teal\nnode sales A1 icon=user color=blue size=1 \"sales of the new blender (S)\"\nnode rise B1 icon=bolt color=red size=1 \"have risen (V)\"\nnode sharp C1 icon=pin color=purple size=1 \"sharply (M)\"\nnode thx A2 icon=pin color=purple size=1 \"Thanks to (M)\"\nnode rev B2 icon=pin color=purple size=1 \"the positive reviews (M)\"\nnode post C2 icon=pin color=purple size=1 \"posted online (M)\"\nsales -> rise \"主語\"\nsharp -> rise \"様態\" style=dashed\nthx -> rise \"原因\" style=dashed\nthx -> rev \"対象\"\npost -> rev \"修飾\" style=dashed\nnote rise \"現在完了\" pos=top"
   },
   {
    "id": "toeic-sample-38",
@@ -5418,14 +9568,130 @@
       "The manager said sorry to the client and gave a free substitute.",
       "A new item was provided at no additional cost."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "manager",
+      "p": "n"
+     },
+     {
+      "w": "apologized",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "customer",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "offered",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "replacement",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "no",
+      "p": "det"
+     },
+     {
+      "w": "extra",
+      "p": "adj"
+     },
+     {
+      "w": "charge.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The manager apologized to the customer and ______ a replacement at no extra charge.",
+    "choices": [
+     "offering",
+     "offer",
+     "offered",
+     "to offer"
+    ],
+    "answer": 2,
+    "type": "時制",
+    "explanation": "and が apologized と offered を結び、同じ過去形で並べる。offering や to offer、原形の offer では並列の形がそろわず文が成り立たない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "店長が謝罪し無料で交換品を渡す",
+     "items": [
+      {
+       "emoji": "🧑‍💼",
+       "label": "manager",
+       "x": 18,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "🙇",
+       "label": "apologized",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "👤",
+       "label": "customer",
+       "x": 82,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🎁",
+       "label": "replacement",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🆓",
+       "label": "no extra charge",
+       "x": 70,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 動詞の並列\"\nnode mgr A1 icon=user color=blue size=1 \"The manager (S)\"\nnode apo B1 icon=bolt color=red size=1 \"apologized (V)\"\nnode off C1 icon=bolt color=red size=1 \"offered (V)\"\nnode rep D1 icon=box color=green size=1 \"a replacement (O)\"\nnode cus B2 icon=pin color=purple size=1 \"to the customer (M)\"\nnode chg D2 icon=pin color=purple size=1 \"at no extra charge (M)\"\nmgr -> apo \"主語\"\napo -> off \"and\"\noff -> rep \"目的語\"\ncus -> apo \"謝罪の相手\" style=dashed\nchg -> off \"条件\" style=dashed"
   },
   {
    "id": "toeic-sample-39",
@@ -5559,14 +9825,120 @@
       "The new model is more energy-efficient and also much quieter.",
       "It consumes less power and operates more silently."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Not",
+      "p": "adv"
+     },
+     {
+      "w": "only",
+      "p": "adv"
+     },
+     {
+      "w": "does",
+      "p": "aux"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "model",
+      "p": "n"
+     },
+     {
+      "w": "use",
+      "p": "v"
+     },
+     {
+      "w": "less",
+      "p": "det"
+     },
+     {
+      "w": "energy,",
+      "p": "n"
+     },
+     {
+      "w": "but",
+      "p": "conj"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "also",
+      "p": "adv"
+     },
+     {
+      "w": "considerably",
+      "p": "adv"
+     },
+     {
+      "w": "quieter.",
+      "p": "adj"
+     }
+    ]
    },
    "level": 860,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Not only ______ the new model use less energy, but it is also considerably quieter.",
+    "choices": [
+     "do",
+     "does",
+     "has",
+     "is"
+    ],
+    "answer": 1,
+    "type": "構文把握",
+    "explanation": "Not only が文頭に来ると倒置が起こり、does + 主語 + 原形となる。主語 the new model は三人称単数なので does。do は主語と合わず、has と is は後ろの原形 use と合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "新モデルは省エネで静か",
+     "items": [
+      {
+       "emoji": "🖨️",
+       "label": "new model",
+       "x": 22,
+       "y": 35,
+       "size": 3
+      },
+      {
+       "emoji": "⚡",
+       "label": "less energy",
+       "x": 70,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🔇",
+       "label": "quieter",
+       "x": 48,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + not only A but also B(倒置)\"\nzone A2:D2 \"対等の節\" color=teal\nnode no A1 icon=pin color=purple size=1 \"Not only (M)\"\nnode mod B1 icon=user color=blue size=1 \"the new model (S)\"\nnode use C1 icon=bolt color=red size=1 \"use (V)\"\nnode en D1 icon=box color=green size=1 \"less energy (O)\"\nnode but A2 icon=link color=teal size=1 \"but (接)\"\nnode it B2 icon=user color=blue size=1 \"it (S)\"\nnode is C2 icon=bolt color=red size=1 \"is (V)\"\nnode qt D2 icon=check color=yellow size=1 \"considerably quieter (C)\"\nno -> use \"強調\" style=dashed\nmod -> use \"主語\"\nuse -> en \"目的語\"\nbut -> use \"対等\"\nit -> is \"主語\"\nis -> qt \"補語\"\nnote use \"does で倒置\" pos=top"
   },
   {
    "id": "toeic-sample-40",
@@ -5695,14 +10067,123 @@
       "Shipping duration can differ based on stock and the delivery address.",
       "Delivery periods are subject to change."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Delivery",
+      "p": "n"
+     },
+     {
+      "w": "times",
+      "p": "n"
+     },
+     {
+      "w": "may",
+      "p": "aux"
+     },
+     {
+      "w": "vary",
+      "p": "v"
+     },
+     {
+      "w": "depending",
+      "p": "prep"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "availability",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "items",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "destination.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Delivery times may vary ______ the availability of the items and the destination.",
+    "choices": [
+     "depend on",
+     "depended on",
+     "depends on",
+     "depending on"
+    ],
+    "answer": 3,
+    "type": "分詞",
+    "explanation": "may vary という動詞がすでにあるので、後ろは分詞構文の depending on(〜に応じて)で修飾する。depend on などの動詞の形を続けるとさらに動詞が並び、文が成り立たない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d9e8c8",
+     "caption": "配送時間は在庫と届け先しだい",
+     "items": [
+      {
+       "emoji": "🚚",
+       "label": "Delivery times",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "📦",
+       "label": "items",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "📍",
+       "label": "destination",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "✅",
+       "label": "availability",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 分詞構文\"\nnode time A1 icon=user color=blue size=1 \"Delivery times (S)\"\nnode vary B1 icon=bolt color=red size=1 \"may vary (V)\"\nnode dep C1 icon=pin color=purple size=1 \"depending on (M)\"\nnode av B2 icon=pin color=purple size=1 \"the availability of the… (M)\"\nnode dest C2 icon=pin color=purple size=1 \"the destination (M)\"\ntime -> vary \"主語\"\ndep -> vary \"修飾\" style=dashed\ndep -> av \"対象\"\nav -- dest \"and\""
   },
   {
    "id": "toeic-sample-41",
@@ -5835,14 +10316,146 @@
       "The parking lot will be unavailable over the weekend.",
       "Notice: parking lot closure"
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "advised",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "parking",
+      "p": "n"
+     },
+     {
+      "w": "lot",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "closed",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "repaving",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "Friday",
+      "p": "n"
+     },
+     {
+      "w": "evening",
+      "p": "n"
+     },
+     {
+      "w": "until",
+      "p": "prep"
+     },
+     {
+      "w": "Monday",
+      "p": "n"
+     },
+     {
+      "w": "morning.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Please be advised ______ the parking lot will be closed for repaving from Friday evening until Monday morning.",
+    "choices": [
+     "that",
+     "which",
+     "what",
+     "who"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "be advised の後に、完全な文を導いて「〜ということ」を表す名詞節の接続詞 that が入る。which、what、who は節の中に欠けた要素がないため使えない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d9d9d9",
+     "caption": "週末は駐車場が再舗装で閉鎖",
+     "items": [
+      {
+       "emoji": "🅿️",
+       "label": "parking lot",
+       "x": 18,
+       "y": 30,
+       "size": 3
+      },
+      {
+       "emoji": "🚧",
+       "label": "closed",
+       "x": 50,
+       "y": 22,
+       "size": 2
+      },
+      {
+       "emoji": "📅",
+       "label": "Friday evening",
+       "x": 82,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🔧",
+       "label": "repaving",
+       "x": 30,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🌅",
+       "label": "Monday morning",
+       "x": 70,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x3\ntitle \"第2文型 + 名詞節(that)\"\nzone A2:E3 \"名詞節\" color=teal\nnode pls A1 icon=pin color=purple size=1 \"Please (M)\"\nnode be B1 icon=bolt color=red size=1 \"be (V)\"\nnode adv C1 icon=check color=yellow size=1 \"advised (C)\"\nnode that A2 icon=link color=teal size=1 \"that (接)\"\nnode lot B2 icon=user color=blue size=1 \"the parking lot (S)\"\nnode cls C2 icon=bolt color=red size=1 \"will be closed (V)\"\nnode rep D2 icon=pin color=purple size=1 \"for repaving (M)\"\nnode fri E2 icon=pin color=purple size=1 \"from Friday evening (M)\"\nnode mon E3 icon=pin color=purple size=1 \"until Monday morning (M)\"\npls -> be \"依頼\" style=dashed\nbe -> adv \"補語\"\nthat -> adv \"内容\"\nlot -> cls \"主語\"\nrep -> cls \"目的\" style=dashed\nfri -> cls \"期間\" style=dashed\nmon -> fri \"終点\" style=dashed"
   },
   {
    "id": "toeic-sample-42",
@@ -5975,14 +10588,127 @@
       "The cafeteria will move to the second floor during the renovation.",
       "The cafeteria will be relocated for the time being."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "cafeteria",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "temporarily",
+      "p": "adv"
+     },
+     {
+      "w": "relocated",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "second",
+      "p": "other"
+     },
+     {
+      "w": "floor",
+      "p": "n"
+     },
+     {
+      "w": "while",
+      "p": "conj"
+     },
+     {
+      "w": "renovations",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "v"
+     },
+     {
+      "w": "under",
+      "p": "prep"
+     },
+     {
+      "w": "way.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The cafeteria will be temporarily relocated to the second floor ______ renovations are under way.",
+    "choices": [
+     "during",
+     "unless",
+     "while",
+     "although"
+    ],
+    "answer": 2,
+    "type": "接続詞",
+    "explanation": "後ろに renovations are under way という節が続くので接続詞が必要で、「〜の間」の while が意味も合う。during は前置詞で節を取れず、unless と although は意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "改装中はカフェテリアが2階へ",
+     "items": [
+      {
+       "emoji": "🍽️",
+       "label": "cafeteria",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🏢",
+       "label": "second floor",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🔨",
+       "label": "renovations",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🚧",
+       "label": "under way",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 副詞節(while)\"\nzone B2:D2 \"副詞節\" color=teal\nnode caf A1 icon=user color=blue size=1 \"The cafeteria (S)\"\nnode rel B1 icon=bolt color=red size=1 \"will be temporarily… (V)\"\nnode fl C1 icon=pin color=purple size=1 \"to the second floor (M)\"\nnode wh B2 icon=link color=teal size=1 \"while (接)\"\nnode ren C2 icon=user color=blue size=1 \"renovations (S)\"\nnode uw D2 icon=bolt color=red size=1 \"are under way (V)\"\ncaf -> rel \"主語\"\nfl -> rel \"移転先\" style=dashed\nwh -> rel \"期間\" style=dashed\nren -> uw \"主語\"\nnote rel \"受動態\" pos=top"
   },
   {
    "id": "toeic-sample-43",
@@ -6124,14 +10850,127 @@
       "All staff must always wear ID badges in the building.",
       "Employees should keep their ID cards visible."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Employees",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "reminded",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "wear",
+      "p": "v"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "identification",
+      "p": "n"
+     },
+     {
+      "w": "badges",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "all",
+      "p": "det"
+     },
+     {
+      "w": "times",
+      "p": "n"
+     },
+     {
+      "w": "while",
+      "p": "conj"
+     },
+     {
+      "w": "inside",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "building.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Employees are reminded ______ their identification badges at all times while inside the building.",
+    "choices": [
+     "wear",
+     "to wear",
+     "wearing",
+     "wore"
+    ],
+    "answer": 1,
+    "type": "不定詞・動名詞",
+    "explanation": "be reminded to do で「〜するよう注意される」という形になるので、to wear が入る。原形、動名詞、過去形は reminded の後に直接続けられない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "建物内では常にバッジを着用",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "Employees",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🏷️",
+       "label": "identification badges",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "⏰",
+       "label": "at all times",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "building",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 不定詞 + 副詞節\"\nzone D2:E2 \"副詞節\" color=teal\nnode emp A1 icon=user color=blue size=1 \"Employees (S)\"\nnode rem B1 icon=bolt color=red size=1 \"are reminded (V)\"\nnode wear C1 icon=pin color=purple size=1 \"to wear (M)\"\nnode bad D1 icon=box color=green size=1 \"their identification… (O)\"\nnode all C2 icon=pin color=purple size=1 \"at all times (M)\"\nnode wh D2 icon=link color=teal size=1 \"while (接)\"\nnode bld E2 icon=pin color=purple size=1 \"inside the building (M)\"\nemp -> rem \"主語\"\nrem -> wear \"内容\"\nwear -> bad \"目的語\"\nall -> wear \"修飾\" style=dashed\nwh -> wear \"期間\" style=dashed\nwh -> bld \"場所\"\nnote rem \"受動態\" pos=top"
   },
   {
    "id": "toeic-sample-44",
@@ -6259,14 +11098,131 @@
       "Book a conference room through the internal website.",
       "Rooms can be reserved online."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "To",
+      "p": "other"
+     },
+     {
+      "w": "reserve",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "room,",
+      "p": "n"
+     },
+     {
+      "w": "please",
+      "p": "adv"
+     },
+     {
+      "w": "use",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "online",
+      "p": "adj"
+     },
+     {
+      "w": "booking",
+      "p": "n"
+     },
+     {
+      "w": "system",
+      "p": "n"
+     },
+     {
+      "w": "available",
+      "p": "adj"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "intranet.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "To reserve a meeting room, please ______ the online booking system available on the company intranet.",
+    "choices": [
+     "using",
+     "uses",
+     "used",
+     "use"
+    ],
+    "answer": 3,
+    "type": "その他",
+    "explanation": "please の後は動詞の原形を置く依頼の命令文なので use が入る。using、uses、used はいずれも命令文の動詞の形にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "イントラネットで会議室を予約",
+     "items": [
+      {
+       "emoji": "💻",
+       "label": "online booking system",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "🚪",
+       "label": "meeting room",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "company intranet",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📅",
+       "label": "reserve",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 不定詞(目的)\"\nnode rsv A1 icon=pin color=purple size=1 \"To reserve a meeting room (M)\"\nnode pls B1 icon=pin color=purple size=1 \"please (M)\"\nnode use C1 icon=bolt color=red size=1 \"use (V)\"\nnode sys D1 icon=box color=green size=1 \"the online booking system (O)\"\nnode av C2 icon=pin color=purple size=1 \"available (M)\"\nnode intra D2 icon=pin color=purple size=1 \"on the company intranet (M)\"\nrsv -> use \"目的\" style=dashed\npls -> use \"依頼\" style=dashed\nuse -> sys \"目的語\"\nav -> sys \"修飾\" style=dashed\nintra -> av \"場所\" style=dashed"
   },
   {
    "id": "toeic-sample-45",
@@ -6398,14 +11354,127 @@
       "Registered participants will receive a reminder by e-mail.",
       "Everyone enrolled in the workshop will be notified."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "reminder",
+      "p": "n"
+     },
+     {
+      "w": "e-mail",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "sent",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "everyone",
+      "p": "pron"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "signed",
+      "p": "v"
+     },
+     {
+      "w": "up",
+      "p": "adv"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "workshop.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A reminder e-mail will be sent to everyone ______ has signed up for the workshop.",
+    "choices": [
+     "who",
+     "whom",
+     "whose",
+     "which"
+    ],
+    "answer": 0,
+    "type": "関係詞",
+    "explanation": "先行詞 everyone は人で、節の中で has signed up の主語になるので主格の who が入る。whom は目的格、whose は所有格で、which は人には使わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc4",
+     "caption": "申込者全員に確認メールが届く",
+     "items": [
+      {
+       "emoji": "✉️",
+       "label": "reminder e-mail",
+       "x": 22,
+       "y": 32,
+       "size": 3
+      },
+      {
+       "emoji": "👥",
+       "label": "everyone",
+       "x": 72,
+       "y": 30,
+       "size": 2
+      },
+      {
+       "emoji": "📝",
+       "label": "signed up",
+       "x": 28,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🎓",
+       "label": "workshop",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 関係詞節\"\nzone C2:E2 \"関係詞節\" color=teal\nnode mail A1 icon=user color=blue size=1 \"A reminder e-mail (S)\"\nnode sent B1 icon=bolt color=red size=1 \"will be sent (V)\"\nnode ev C1 icon=pin color=purple size=1 \"to everyone (M)\"\nnode who C2 icon=link color=teal size=1 \"who (関)\"\nnode sign D2 icon=bolt color=red size=1 \"has signed up (V)\"\nnode ws E2 icon=pin color=purple size=1 \"for the workshop (M)\"\nmail -> sent \"主語\"\nev -> sent \"宛先\" style=dashed\nwho -> ev \"先行詞\"\nwho -> sign \"主語\"\nws -> sign \"修飾\" style=dashed\nnote sent \"受動態\" pos=top"
   },
   {
    "id": "toeic-sample-46",
@@ -6541,14 +11610,119 @@
       "Residents are asked to clear their belongings from the corridors.",
       "The building staff asks tenants to keep hallways clear."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "maintenance",
+      "p": "n"
+     },
+     {
+      "w": "team",
+      "p": "n"
+     },
+     {
+      "w": "requests",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "all",
+      "p": "det"
+     },
+     {
+      "w": "tenants",
+      "p": "n"
+     },
+     {
+      "w": "remove",
+      "p": "v"
+     },
+     {
+      "w": "personal",
+      "p": "adj"
+     },
+     {
+      "w": "items",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "hallways.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The maintenance team requests that all tenants ______ personal items from the hallways.",
+    "choices": [
+     "removes",
+     "remove",
+     "removing",
+     "to remove"
+    ],
+    "answer": 1,
+    "type": "その他",
+    "explanation": "request のように要求・提案を表す動詞に続く that 節では、動詞は原形(仮定法現在)を使う。removes は三単現で不適切、removing と to remove は節の述語にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "保守チームが入居者に廊下の私物の片付けを求める",
+     "items": [
+      {
+       "emoji": "🔧",
+       "label": "maintenance team",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "👥",
+       "label": "all tenants",
+       "x": 72,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "📦",
+       "label": "personal items",
+       "x": 28,
+       "y": 70,
+       "size": 2
+      },
+      {
+       "emoji": "🚪",
+       "label": "hallways",
+       "x": 72,
+       "y": 70,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 名詞節\"\nzone A2:D2 \"名詞節(目的語)\" color=teal\nnode t A1 icon=user color=blue size=1 \"The maintenance team (S)\"\nnode rq B1 icon=bolt color=red size=1 \"requests (V)\"\nnode th C1 icon=link color=teal size=1 \"that (接)\"\nnode ten A2 icon=user color=blue size=1 \"all tenants (S)\"\nnode rm B2 icon=bolt color=red size=1 \"remove (V)\"\nnode it C2 icon=box color=green size=1 \"personal items (O)\"\nnode hw D2 icon=pin color=purple size=1 \"from the hallways (M)\"\nt -> rq \"主語\"\nrq -> th \"目的語\"\nth -> rm \"節を導く\"\nten -> rm \"主語\"\nrm -> it \"目的語\"\nhw -> rm \"場所\" style=dashed\nnote rm \"原形(要求のthat節)\" pos=bottom\nnote rq \"現在形\" pos=top"
   },
   {
    "id": "toeic-sample-47",
@@ -6690,14 +11864,127 @@
       "As of today, guests are required to sign in at reception.",
       "Starting now, visitors must register and get a visitor pass."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Effective",
+      "p": "adj"
+     },
+     {
+      "w": "immediately,",
+      "p": "adv"
+     },
+     {
+      "w": "visitors",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "check",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "adv"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "front",
+      "p": "n"
+     },
+     {
+      "w": "desk",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "receive",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "guest",
+      "p": "n"
+     },
+     {
+      "w": "pass.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Effective immediately, visitors must check in at the front desk and ______ a guest pass.",
+    "choices": [
+     "receiving",
+     "received",
+     "receives",
+     "receive"
+    ],
+    "answer": 3,
+    "type": "助動詞",
+    "explanation": "and は must check in と並列で、助動詞 must の後なので動詞の原形 receive が入る。receiving は述語にならず、received と receives は must の後で形が誤り。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "来訪者が受付で手続きをして入館証を受け取る",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "visitors",
+       "x": 22,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "🛎️",
+       "label": "front desk",
+       "x": 75,
+       "y": 28,
+       "size": 2.2
+      },
+      {
+       "emoji": "🎫",
+       "label": "a guest pass",
+       "x": 75,
+       "y": 72,
+       "size": 2.2
+      },
+      {
+       "emoji": "✅",
+       "label": "check in",
+       "x": 28,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 6x2\ntitle \"第3文型 + 並列の動詞\"\nnode m1 A1 icon=pin color=purple size=1 \"Effective immediately (M)\"\nnode s B1 icon=user color=blue size=1 \"visitors (S)\"\nnode v1 C1 icon=bolt color=red size=1 \"must check in (V)\"\nnode m2 D1 icon=pin color=purple size=1 \"at the front desk (M)\"\nnode v2 E1 icon=bolt color=red size=1 \"receive (V)\"\nnode o F1 icon=box color=green size=1 \"a guest pass (O)\"\nnode and D2 icon=link color=teal size=1 \"and (接)\"\ns -> v1 \"主語\"\nm1 -> v1 \"時\" style=dashed\nm2 -> v1 \"場所\" style=dashed\nand -> v1 \"並列\"\nand -> v2 \"並列\"\nv2 -> o \"目的語\"\nnote v1 \"助動詞 must(義務)\" pos=top"
   },
   {
    "id": "toeic-sample-48",
@@ -6842,14 +12129,134 @@
       "Ms. Park will join us as the regional director.",
       "The company has appointed Ms. Park to a leadership position."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "are",
+      "p": "v"
+     },
+     {
+      "w": "pleased",
+      "p": "adj"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "announce",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "Ms.",
+      "p": "n"
+     },
+     {
+      "w": "Park",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "accepted",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "position",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "regional",
+      "p": "adj"
+     },
+     {
+      "w": "director.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "We are ______ to announce that Ms. Park has accepted the position of regional director.",
+    "choices": [
+     "pleasing",
+     "pleased",
+     "please",
+     "pleasure"
+    ],
+    "answer": 1,
+    "type": "分詞",
+    "explanation": "人が主語で「うれしく思う」は be pleased to do の形。pleasing は「人を喜ばせる」の意味で主語に合わず、please は動詞、pleasure は名詞で be 動詞の後に置けない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "新しい地域ディレクターの就任を喜んで発表する",
+     "items": [
+      {
+       "emoji": "📢",
+       "label": "announce",
+       "x": 25,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "👩‍💼",
+       "label": "Ms. Park",
+       "x": 75,
+       "y": 28,
+       "size": 2.6
+      },
+      {
+       "emoji": "😊",
+       "label": "pleased",
+       "x": 50,
+       "y": 52,
+       "size": 1.8
+      },
+      {
+       "emoji": "📄",
+       "label": "the position",
+       "x": 25,
+       "y": 75,
+       "size": 2
+      },
+      {
+       "emoji": "🏢",
+       "label": "regional director",
+       "x": 75,
+       "y": 75,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 6x2\ntitle \"第2文型 + 名詞節\"\nzone C2:F2 \"名詞節(発表内容)\" color=teal\nnode s A1 icon=user color=blue size=1 \"We (S)\"\nnode v B1 icon=bolt color=red size=1 \"are (V)\"\nnode c C1 icon=check color=yellow size=1 \"pleased (C)\"\nnode m D1 icon=pin color=purple size=1 \"to announce (M)\"\nnode th C2 icon=link color=teal size=1 \"that (接)\"\nnode s2 D2 icon=user color=blue size=1 \"Ms. Park (S)\"\nnode v2 E2 icon=bolt color=red size=1 \"has accepted (V)\"\nnode o2 F2 icon=box color=green size=1 \"the position of regional… (O)\"\ns -> v \"主語\"\nv -> c \"補語\"\nm -> c \"修飾\" style=dashed\nm -> th \"発表内容\"\nth -> v2 \"節を導く\"\ns2 -> v2 \"主語\"\nv2 -> o2 \"目的語\"\nnote v2 \"現在完了\" pos=bottom"
   },
   {
    "id": "toeic-sample-49",
@@ -6994,14 +12401,142 @@
       "The company network will be offline during the early morning.",
       "The system will be down for maintenance."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Due",
+      "p": "prep"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "scheduled",
+      "p": "adj"
+     },
+     {
+      "w": "system",
+      "p": "n"
+     },
+     {
+      "w": "update,",
+      "p": "n"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "internal",
+      "p": "adj"
+     },
+     {
+      "w": "network",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "v"
+     },
+     {
+      "w": "unavailable",
+      "p": "adj"
+     },
+     {
+      "w": "between",
+      "p": "prep"
+     },
+     {
+      "w": "midnight",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "3",
+      "p": "other"
+     },
+     {
+      "w": "A.M.",
+      "p": "other"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "______ a scheduled system update, the internal network will be unavailable between midnight and 3 A.M.",
+    "choices": [
+     "Due to",
+     "Because",
+     "Although",
+     "Owing"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "後ろに名詞句 a scheduled system update が続くので、理由を表す前置詞句 Due to が入る。Because と Although は接続詞で節が必要、Owing は to を伴わないと使えない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e6e9f5",
+     "ground": "",
+     "caption": "夜間のシステム更新で社内ネットワークが使えなくなる",
+     "items": [
+      {
+       "emoji": "💻",
+       "label": "internal network",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "🔧",
+       "label": "system update",
+       "x": 75,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "🚫",
+       "label": "unavailable",
+       "x": 75,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🌙",
+       "label": "midnight",
+       "x": 25,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "⏰",
+       "label": "3 A.M.",
+       "x": 50,
+       "y": 52,
+       "size": 1.6
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x1\ntitle \"第2文型\"\nnode m1 A1 icon=pin color=purple size=1 \"Due to a scheduled… (M)\"\nnode s B1 icon=user color=blue size=1 \"the internal network (S)\"\nnode v C1 icon=bolt color=red size=1 \"will be (V)\"\nnode c D1 icon=check color=yellow size=1 \"unavailable (C)\"\nnode m2 E1 icon=pin color=purple size=1 \"between midnight and 3… (M)\"\ns -> v \"主語\"\nv -> c \"補語\"\nm1 -> v \"理由\" style=dashed\nm2 -> c \"期間\" style=dashed\nnote v \"未来形\" pos=bottom"
   },
   {
    "id": "toeic-sample-50",
@@ -7133,14 +12668,123 @@
       "The attached brochure explains all of our consulting services.",
       "The leaflet outlines the services our department provides."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "enclosed",
+      "p": "adj"
+     },
+     {
+      "w": "brochure",
+      "p": "n"
+     },
+     {
+      "w": "describes",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "full",
+      "p": "adj"
+     },
+     {
+      "w": "range",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "services",
+      "p": "n"
+     },
+     {
+      "w": "offered",
+      "p": "adj"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "consulting",
+      "p": "n"
+     },
+     {
+      "w": "division.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The enclosed brochure describes the full range of services ______ by our consulting division.",
+    "choices": [
+     "offer",
+     "offering",
+     "offered",
+     "to offer"
+    ],
+    "answer": 2,
+    "type": "分詞",
+    "explanation": "services と offer は「提供される」関係なので、過去分詞 offered が後ろから修飾する。offer と offering は能動の形で意味が合わず、to offer も by 以下と合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "同封のパンフレットがコンサル部門のサービスを紹介する",
+     "items": [
+      {
+       "emoji": "📄",
+       "label": "enclosed brochure",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "🏢",
+       "label": "consulting division",
+       "x": 75,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "📊",
+       "label": "services",
+       "x": 25,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "✉️",
+       "label": "enclosed",
+       "x": 75,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 過去分詞句\"\nzone C2:D2 \"過去分詞句(後置修飾)\" color=teal\nnode s A1 icon=user color=blue size=1 \"The enclosed brochure (S)\"\nnode v B1 icon=bolt color=red size=1 \"describes (V)\"\nnode o C1 icon=box color=green size=1 \"the full range of… (O)\"\nnode p C2 icon=pin color=purple size=1 \"offered (M)\"\nnode by D2 icon=pin color=purple size=1 \"by our consulting… (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\np -> o \"後置修飾\" style=dashed\nby -> p \"行為者\" style=dashed\nnote p \"受け身(〜される)\" pos=bottom"
   },
   {
    "id": "toeic-sample-51",
@@ -7277,14 +12921,138 @@
       "The firm intends to extend its business into Southeast Asia.",
       "The company will enter new markets in Asia by next year."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "plans",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "expand",
+      "p": "v"
+     },
+     {
+      "w": "its",
+      "p": "det"
+     },
+     {
+      "w": "operations",
+      "p": "n"
+     },
+     {
+      "w": "into",
+      "p": "prep"
+     },
+     {
+      "w": "Southeast",
+      "p": "n"
+     },
+     {
+      "w": "Asia",
+      "p": "n"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "end",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "year.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The company plans ______ its operations into Southeast Asia by the end of next year.",
+    "choices": [
+     "expanding",
+     "to expand",
+     "expand",
+     "expanded"
+    ],
+    "answer": 1,
+    "type": "不定詞・動名詞",
+    "explanation": "plan は不定詞を目的語にとるので plans to expand となる。expanding は plan の後で使えず、expand と expanded は to がないため動詞として並べられない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d8ecc8",
+     "caption": "会社が来年末までに東南アジアへ事業拡大を計画する",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "company",
+       "x": 22,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "🏭",
+       "label": "operations",
+       "x": 50,
+       "y": 60,
+       "size": 2.2
+      },
+      {
+       "emoji": "🌏",
+       "label": "Southeast Asia",
+       "x": 78,
+       "y": 28,
+       "size": 2.2
+      },
+      {
+       "emoji": "📅",
+       "label": "next year",
+       "x": 78,
+       "y": 75,
+       "size": 2
+      },
+      {
+       "emoji": "✈️",
+       "label": "expand",
+       "x": 22,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x1\ntitle \"第3文型 + 不定詞\"\nnode s A1 icon=user color=blue size=1 \"The company (S)\"\nnode v B1 icon=bolt color=red size=1 \"plans (V)\"\nnode o C1 icon=box color=green size=1 \"to expand its operations (O)\"\nnode m1 D1 icon=pin color=purple size=1 \"into Southeast Asia (M)\"\nnode m2 E1 icon=pin color=purple size=1 \"by the end of next year (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm1 -> o \"方向\" style=dashed\nm2 -> o \"期限\" style=dashed\nnote v \"現在形\" pos=bottom"
   },
   {
    "id": "toeic-sample-52",
@@ -7428,14 +13196,115 @@
       "The plan was turned down because it did not satisfy the budget conditions.",
       "The proposal did not fit within the budget."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "proposal",
+      "p": "n"
+     },
+     {
+      "w": "was",
+      "p": "aux"
+     },
+     {
+      "w": "rejected",
+      "p": "v"
+     },
+     {
+      "w": "because",
+      "p": "conj"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "failed",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "meet",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "budget",
+      "p": "n"
+     },
+     {
+      "w": "requirements.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The proposal was rejected ______ it failed to meet the budget requirements.",
+    "choices": [
+     "although",
+     "unless",
+     "whereas",
+     "because"
+    ],
+    "answer": 3,
+    "type": "接続詞",
+    "explanation": "提案が却下された理由を導くので、理由を表す because が適切。although は譲歩、unless は否定の条件、whereas は対比で、いずれも意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "予算要件を満たさず提案が却下される",
+     "items": [
+      {
+       "emoji": "📄",
+       "label": "proposal",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "❌",
+       "label": "rejected",
+       "x": 72,
+       "y": 30,
+       "size": 2.4
+      },
+      {
+       "emoji": "💰",
+       "label": "budget requirements",
+       "x": 72,
+       "y": 72,
+       "size": 2.2
+      },
+      {
+       "emoji": "⚠️",
+       "label": "failed",
+       "x": 28,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 5x2\ntitle \"第1文型 + 副詞節\"\nzone A2:D2 \"副詞節(理由)\" color=teal\nnode s A1 icon=user color=blue size=1 \"The proposal (S)\"\nnode v B1 icon=bolt color=red size=1 \"was rejected (V)\"\nnode b A2 icon=link color=teal size=1 \"because (接)\"\nnode s2 B2 icon=user color=blue size=1 \"it (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"failed to meet (V)\"\nnode o2 D2 icon=box color=green size=1 \"the budget requirements (O)\"\ns -> v \"主語\"\nb -> v \"理由\" style=dashed\nb -> s2 \"節を導く\"\ns2 -> v2 \"主語\"\nv2 -> o2 \"目的語\"\nnote v \"受動態・過去\" pos=top"
   },
   {
    "id": "toeic-sample-53",
@@ -7571,14 +13440,134 @@
       "Mr. Lee is well respected by his coworkers.",
       "He is known for being dependable and detail-oriented."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Mr.",
+      "p": "n"
+     },
+     {
+      "w": "Lee",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "highly",
+      "p": "adv"
+     },
+     {
+      "w": "regarded",
+      "p": "v"
+     },
+     {
+      "w": "among",
+      "p": "prep"
+     },
+     {
+      "w": "his",
+      "p": "det"
+     },
+     {
+      "w": "colleagues",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "his",
+      "p": "det"
+     },
+     {
+      "w": "reliability",
+      "p": "n"
+     },
+     {
+      "w": "and",
+      "p": "conj"
+     },
+     {
+      "w": "attention",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "detail.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Mr. Lee is highly ______ among his colleagues for his reliability and attention to detail.",
+    "choices": [
+     "regards",
+     "regarding",
+     "regarded",
+     "regard"
+    ],
+    "answer": 2,
+    "type": "受動態",
+    "explanation": "主語 Mr. Lee は「評価される」側なので、be highly regarded の受動態になる。regards と regard は能動の形、regarding は be 動詞の後で受け身にならない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "信頼性と細部への注意で同僚から高く評価されるリー氏",
+     "items": [
+      {
+       "emoji": "👨‍💼",
+       "label": "Mr. Lee",
+       "x": 22,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "👥",
+       "label": "colleagues",
+       "x": 78,
+       "y": 28,
+       "size": 2.2
+      },
+      {
+       "emoji": "⭐",
+       "label": "highly regarded",
+       "x": 50,
+       "y": 50,
+       "size": 2
+      },
+      {
+       "emoji": "🤝",
+       "label": "reliability",
+       "x": 22,
+       "y": 75,
+       "size": 1.8
+      },
+      {
+       "emoji": "🔍",
+       "label": "attention to detail",
+       "x": 78,
+       "y": 75,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 前置詞句\"\nnode s A1 icon=user color=blue size=1 \"Mr. Lee (S)\"\nnode v B1 icon=bolt color=red size=1 \"is highly regarded (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"among his colleagues (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"for his reliability and… (M)\"\nnode m3 D2 icon=pin color=purple size=1 \"attention to detail (M)\"\ns -> v \"主語\"\nm1 -> v \"範囲\" style=dashed\nm2 -> v \"理由\" style=dashed\nm3 -> m2 \"並列\" style=dashed\nnote v \"受動態・現在\" pos=bottom"
   },
   {
    "id": "toeic-sample-54",
@@ -7727,14 +13716,119 @@
       "Be sure the machines are regularly serviced to prevent failures.",
       "Ensure that the equipment is kept in good condition."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "make",
+      "p": "v"
+     },
+     {
+      "w": "sure",
+      "p": "adj"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "equipment",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "properly",
+      "p": "adv"
+     },
+     {
+      "w": "maintained",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "avoid",
+      "p": "v"
+     },
+     {
+      "w": "unexpected",
+      "p": "adj"
+     },
+     {
+      "w": "breakdowns.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Please make sure that the equipment is ______ maintained to avoid unexpected breakdowns.",
+    "choices": [
+     "properly",
+     "proper",
+     "propriety",
+     "property"
+    ],
+    "answer": 0,
+    "type": "品詞",
+    "explanation": "過去分詞 maintained を修飾するので副詞 properly が入る。proper は形容詞、propriety と property は名詞で、いずれも修飾できない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "故障を避けるため設備の整備状況を確認する",
+     "items": [
+      {
+       "emoji": "🖨️",
+       "label": "equipment",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "🛠️",
+       "label": "maintained",
+       "x": 75,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "⚠️",
+       "label": "breakdowns",
+       "x": 75,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "✅",
+       "label": "make sure",
+       "x": 25,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"命令文 + 名詞節\"\nzone A2:C2 \"名詞節(目的語)\" color=teal\nnode p A1 icon=pin color=purple size=1 \"Please (M)\"\nnode v B1 icon=bolt color=red size=1 \"make sure (V)\"\nnode m D1 icon=pin color=purple size=1 \"to avoid unexpected… (M)\"\nnode th A2 icon=link color=teal size=1 \"that (接)\"\nnode s2 B2 icon=user color=blue size=1 \"the equipment (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"is properly maintained (V)\"\np -> v \"依頼\" style=dashed\nth -> v \"目的語\"\ns2 -> v2 \"主語\"\nm -> v2 \"目的\" style=dashed\nnote v2 \"受動態・現在\" pos=bottom"
   },
   {
    "id": "toeic-sample-55",
@@ -7875,14 +13969,123 @@
       "The vendor guaranteed that the goods would be delivered by Tuesday at the latest.",
       "The delivery is promised by Tuesday."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "supplier",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "assured",
+      "p": "v"
+     },
+     {
+      "w": "us",
+      "p": "pron"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "shipment",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "arrive",
+      "p": "v"
+     },
+     {
+      "w": "no",
+      "p": "adv"
+     },
+     {
+      "w": "later",
+      "p": "adv"
+     },
+     {
+      "w": "than",
+      "p": "prep"
+     },
+     {
+      "w": "Tuesday.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The supplier has assured us ______ the shipment will arrive no later than Tuesday.",
+    "choices": [
+     "which",
+     "what",
+     "that",
+     "whether"
+    ],
+    "answer": 2,
+    "type": "接続詞",
+    "explanation": "assure 人 that 節 の形で、完全な文を導く接続詞 that が入る。which と what は不完全な節が続く語、whether は「〜かどうか」で保証の内容に合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d8ecc8",
+     "caption": "納入業者が火曜日までの到着を保証する",
+     "items": [
+      {
+       "emoji": "🚚",
+       "label": "shipment",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "🤝",
+       "label": "assured",
+       "x": 75,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "📅",
+       "label": "Tuesday",
+       "x": 75,
+       "y": 72,
+       "size": 2.2
+      },
+      {
+       "emoji": "🏭",
+       "label": "supplier",
+       "x": 25,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第4文型 + 名詞節\"\nzone A2:D2 \"名詞節(直接目的語)\" color=teal\nnode s A1 icon=user color=blue size=1 \"The supplier (S)\"\nnode v B1 icon=bolt color=red size=1 \"has assured (V)\"\nnode o C1 icon=box color=green size=1 \"us (O)\"\nnode th A2 icon=link color=teal size=1 \"that (接)\"\nnode s2 B2 icon=user color=blue size=1 \"the shipment (S)\"\nnode v2 C2 icon=bolt color=red size=1 \"will arrive (V)\"\nnode m D2 icon=pin color=purple size=1 \"no later than Tuesday (M)\"\ns -> v \"主語\"\nv -> o \"間接目的語\"\nth -> v \"直接目的語\"\ns2 -> v2 \"主語\"\nm -> v2 \"期限\" style=dashed\nnote v \"現在完了\" pos=top\nnote v2 \"未来形\" pos=bottom"
   },
   {
    "id": "toeic-sample-56",
@@ -8014,14 +14217,119 @@
       "Many staff members have shown interest in flexible working hours.",
       "Numerous workers are interested in the new schedule."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "significant",
+      "p": "adj"
+     },
+     {
+      "w": "number",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "employees",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "expressed",
+      "p": "v"
+     },
+     {
+      "w": "interest",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "flexible",
+      "p": "adj"
+     },
+     {
+      "w": "work",
+      "p": "n"
+     },
+     {
+      "w": "schedule.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A significant number of employees ______ expressed interest in the flexible work schedule.",
+    "choices": [
+     "has",
+     "have",
+     "is",
+     "are"
+    ],
+    "answer": 1,
+    "type": "その他",
+    "explanation": "a number of は「多くの」の意味で複数扱いなので、現在完了は have expressed になる。has は単数扱いで不適切、is と are は be 動詞で expressed と結びつかない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "多くの従業員が柔軟な勤務に関心を示す",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "employees",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "💬",
+       "label": "expressed",
+       "x": 72,
+       "y": 30,
+       "size": 2.2
+      },
+      {
+       "emoji": "⏰",
+       "label": "flexible work schedule",
+       "x": 72,
+       "y": 72,
+       "size": 2.4
+      },
+      {
+       "emoji": "⭐",
+       "label": "interest",
+       "x": 25,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x1\ntitle \"第3文型\"\nnode s A1 icon=user color=blue size=1 \"A significant number of… (S)\"\nnode v B1 icon=bolt color=red size=1 \"have expressed (V)\"\nnode o C1 icon=box color=green size=1 \"interest (O)\"\nnode m D1 icon=pin color=purple size=1 \"in the flexible work… (M)\"\ns -> v \"主語\"\nv -> o \"目的語\"\nm -> o \"対象\" style=dashed\nnote v \"現在完了\" pos=bottom"
   },
   {
    "id": "toeic-sample-57",
@@ -8161,14 +14469,119 @@
       "The lobby remodeling is likely to finish earlier than planned.",
       "The work will be done before the deadline."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "renovation",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "lobby",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "expected",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "completed",
+      "p": "v"
+     },
+     {
+      "w": "ahead",
+      "p": "prep"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "schedule.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The renovation of the lobby is ______ to be completed ahead of schedule.",
+    "choices": [
+     "expecting",
+     "expects",
+     "expect",
+     "expected"
+    ],
+    "answer": 3,
+    "type": "受動態",
+    "explanation": "主語 renovation は「期待される」側なので、be expected to do の受動態になる。expecting と expects と expect は能動の形で、主語と意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "ロビーの改装が予定より早く終わる見込み",
+     "items": [
+      {
+       "emoji": "🏢",
+       "label": "lobby",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "🔧",
+       "label": "renovation",
+       "x": 72,
+       "y": 30,
+       "size": 2.4
+      },
+      {
+       "emoji": "✅",
+       "label": "completed",
+       "x": 72,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "📅",
+       "label": "schedule",
+       "x": 25,
+       "y": 72,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 不定詞\"\nnode s A1 icon=user color=blue size=1 \"The renovation of the… (S)\"\nnode lb A2 icon=pin color=purple size=1 \"of the lobby (M)\"\nnode v B1 icon=bolt color=red size=1 \"is expected (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"to be completed (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"ahead of schedule (M)\"\ns -> v \"主語\"\nlb -> s \"修飾\" style=dashed\nm1 -> v \"内容\" style=dashed\nm2 -> m1 \"時期\" style=dashed\nnote v \"受動態・現在\" pos=bottom"
   },
   {
    "id": "toeic-sample-58",
@@ -8300,14 +14713,111 @@
       "The market for EVs has been expanding consistently for ten years.",
       "Interest in electric cars has risen constantly."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Demand",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "electric",
+      "p": "adj"
+     },
+     {
+      "w": "vehicles",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "grown",
+      "p": "v"
+     },
+     {
+      "w": "steadily",
+      "p": "adv"
+     },
+     {
+      "w": "over",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "past",
+      "p": "adj"
+     },
+     {
+      "w": "decade.",
+      "p": "n"
+     }
+    ]
    },
    "level": 600,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Demand for electric vehicles has ______ steadily over the past decade.",
+    "choices": [
+     "growing",
+     "grew",
+     "grown",
+     "grow"
+    ],
+    "answer": 2,
+    "type": "時制",
+    "explanation": "has の後ろなので過去分詞 grown を置き、現在完了にする。past decade が示す現在までの継続とも合う。growing と grow と grew は has の後で形が誤り。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d8ecc8",
+     "caption": "電気自動車の需要が10年間で着実に伸びる",
+     "items": [
+      {
+       "emoji": "🚗",
+       "label": "electric vehicles",
+       "x": 25,
+       "y": 30,
+       "size": 2.8
+      },
+      {
+       "emoji": "📈",
+       "label": "grown",
+       "x": 72,
+       "y": 30,
+       "size": 2.4
+      },
+      {
+       "emoji": "📅",
+       "label": "past decade",
+       "x": 72,
+       "y": 72,
+       "size": 2
+      },
+      {
+       "emoji": "🔌",
+       "label": "electric",
+       "x": 25,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型\"\nnode s A1 icon=user color=blue size=1 \"Demand for electric… (S)\"\nnode ev A2 icon=pin color=purple size=1 \"for electric vehicles (M)\"\nnode v B1 icon=bolt color=red size=1 \"has grown (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"steadily (M)\"\nnode m2 D1 icon=pin color=purple size=1 \"over the past decade (M)\"\ns -> v \"主語\"\nev -> s \"修飾\" style=dashed\nm1 -> v \"様態\" style=dashed\nm2 -> v \"期間\" style=dashed\nnote v \"現在完了\" pos=bottom"
   },
   {
    "id": "toeic-sample-59",
@@ -8444,14 +14954,123 @@
       "The panel will reach a conclusion once it has reviewed every option.",
       "A final choice will be made after thorough review."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "committee",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "make",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "final",
+      "p": "adj"
+     },
+     {
+      "w": "decision",
+      "p": "n"
+     },
+     {
+      "w": "after",
+      "p": "prep"
+     },
+     {
+      "w": "carefully",
+      "p": "adv"
+     },
+     {
+      "w": "considering",
+      "p": "v"
+     },
+     {
+      "w": "all",
+      "p": "det"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "options.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The committee will make a final decision after carefully ______ all of the options.",
+    "choices": [
+     "considering",
+     "consider",
+     "considered",
+     "consideration"
+    ],
+    "answer": 0,
+    "type": "不定詞・動名詞",
+    "explanation": "前置詞 after の後ろは動名詞なので considering が入り、副詞 carefully がそれを修飾する。consider は原形、considered は過去分詞で、前置詞の後に置けない。consideration は名詞で carefully と合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#f6efe2",
+     "ground": "#e8dcc6",
+     "caption": "委員会が選択肢を慎重に検討して最終決定を下す",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "committee",
+       "x": 22,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "✅",
+       "label": "final decision",
+       "x": 78,
+       "y": 28,
+       "size": 2.4
+      },
+      {
+       "emoji": "🔍",
+       "label": "considering",
+       "x": 22,
+       "y": 75,
+       "size": 1.8
+      },
+      {
+       "emoji": "📋",
+       "label": "options",
+       "x": 78,
+       "y": 75,
+       "size": 2
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第3文型 + 副詞句\"\nzone B2:D2 \"副詞句(時)\" color=teal\nnode s A1 icon=user color=blue size=1 \"The committee (S)\"\nnode v B1 icon=bolt color=red size=1 \"will make (V)\"\nnode o C1 icon=box color=green size=1 \"a final decision (O)\"\nnode af B2 icon=link color=teal size=1 \"after (接)\"\nnode m C2 icon=pin color=purple size=1 \"carefully considering (M)\"\nnode o2 D2 icon=box color=green size=1 \"all of the options (O)\"\ns -> v \"主語\"\nv -> o \"目的語\"\naf -> v \"時\" style=dashed\naf -> m \"導く\"\nm -> o2 \"目的語\"\nnote v \"未来形\" pos=top"
   },
   {
    "id": "toeic-sample-60",
@@ -8591,14 +15210,115 @@
       "Local people must throw away trash in the assigned bins.",
       "Garbage should be put in the specified receptacles."
      ]
-    }
+    },
+    "words": [
+     {
+      "w": "Residents",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "asked",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "dispose",
+      "p": "v"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "waste",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "designated",
+      "p": "adj"
+     },
+     {
+      "w": "containers.",
+      "p": "n"
+     }
+    ]
    },
    "level": 730,
    "verified": false,
    "status": "new",
    "mistakes": [],
    "review_count": 0,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Residents are asked to dispose of their waste in the ______ containers.",
+    "choices": [
+     "designate",
+     "designating",
+     "designation",
+     "designated"
+    ],
+    "answer": 3,
+    "type": "分詞",
+    "explanation": "containers は「指定された」容器なので、過去分詞 designated が修飾する。designate は動詞、designation は名詞で名詞を修飾できず、designating は能動で意味が合わない。"
+   },
+   "illus": {
+    "type": "emoji",
+    "data": {
+     "bg": "#e8f3ff",
+     "ground": "#d8ecc8",
+     "caption": "住民はごみを指定の容器に捨てるよう求められる",
+     "items": [
+      {
+       "emoji": "👥",
+       "label": "Residents",
+       "x": 22,
+       "y": 28,
+       "size": 2.8
+      },
+      {
+       "emoji": "🗑️",
+       "label": "waste",
+       "x": 78,
+       "y": 28,
+       "size": 2.2
+      },
+      {
+       "emoji": "♻️",
+       "label": "designated containers",
+       "x": 50,
+       "y": 72,
+       "size": 2.2
+      },
+      {
+       "emoji": "📢",
+       "label": "asked",
+       "x": 20,
+       "y": 72,
+       "size": 1.8
+      }
+     ]
+    }
+   },
+   "rel": "grid 4x2\ntitle \"第1文型 + 不定詞\"\nnode s A1 icon=user color=blue size=1 \"Residents (S)\"\nnode v B1 icon=bolt color=red size=1 \"are asked (V)\"\nnode m1 C1 icon=pin color=purple size=1 \"to dispose of their waste (M)\"\nnode m2 C2 icon=pin color=purple size=1 \"in the designated… (M)\"\ns -> v \"主語\"\nm1 -> v \"依頼内容\" style=dashed\nm2 -> m1 \"場所\" style=dashed\nnote v \"受動態・現在\" pos=bottom"
   }
  ],
  "words": []

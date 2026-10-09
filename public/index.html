@@ -29,11 +29,13 @@ html.dark-mode{
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{margin:0;background:var(--page);color:var(--tx-text);font:14px/1.7 "Source Sans Pro",system-ui,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;padding:0 40px 100px}
+body{margin:0;background:var(--page);color:var(--tx-text);font:14px/1.7 "Source Sans Pro",system-ui,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;padding:0 var(--gut) 100px}
 a{color:inherit}
 .icon{width:1.05em;height:1.05em;flex:none}
 /* ヒーロー帯 */
-.hero{position:relative;width:100vw;left:50%;margin-left:-50vw;background:var(--band);border-bottom:1px solid var(--tx-border);padding:48px 40px 32px}
+/* 見出し帯は、本文の左右の余白を打ち消して、画面いっぱいに広げる(100vw はスクロールバーの幅ではみ出すため使わない) */
+:root{--gut:40px}
+.hero{margin:0 calc(-1*var(--gut));background:var(--band);border-bottom:1px solid var(--tx-border);padding:48px var(--gut) 32px}
 .hero-inner{max-width:1100px;margin:0 auto;display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap}
 .hero-text{flex:1;min-width:260px}
 .hero-badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--tx-border);color:var(--tx-muted)}
@@ -106,6 +108,24 @@ dialog h3{font-size:13.5px;font-weight:700;margin:0 0 10px}
 .diagram svg{display:block;max-width:none}
 .diagram.fit svg{width:100%;height:auto}
 .card h3.grow{flex:1 1 9em;min-width:9em}
+/* 品詞の色分け: 色に加えて、下線・品詞名でも区別できるようにする(色だけに頼らない) */
+:root{--pc-n:#1a73e8;--pc-pron:#a16207;--pc-v:#d33;--pc-aux:#c2410c;--pc-adj:#2e8a57;--pc-adv:#7c3aed;--pc-prep:#0f766e;--pc-conj:#db2777;--pc-det:#71717a;--pc-other:#71717a}
+html.dark-mode{--pc-n:#7aa7ff;--pc-pron:#e5b04f;--pc-v:#ff7a70;--pc-aux:#fb923c;--pc-adj:#5fcf8f;--pc-adv:#b190ff;--pc-prep:#2dd4bf;--pc-conj:#f472b6;--pc-det:#9aa0ab;--pc-other:#9aa0ab}
+.posbox{display:flex;flex-wrap:wrap;gap:8px 4px;align-items:flex-start;margin-top:8px}
+.pw{display:inline-flex;flex-direction:column;align-items:center;padding:0 3px 1px;border-bottom:3px solid var(--pc);color:var(--pc);transition:opacity .15s}
+.pw b{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:18px;line-height:1.5}
+.pw i{display:none;font-style:normal;font-size:10.5px;line-height:1.2;color:var(--pc)}
+.posbox.lbl .pw i{display:inline}
+.posbox[data-f] .pw:not(.f){opacity:.22}
+.poslegend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.poslegend button{height:26px;padding:0 9px;font-size:12px;gap:5px;color:var(--pc);border-color:var(--pc)}
+.poslegend button::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pc)}
+.poslegend button.on{background:var(--pc);color:#fff}
+.poslegend button.on::before{background:#fff}
+html.dark-mode .poslegend button.on{color:#1e2126}
+html.dark-mode .poslegend button.on::before{background:#1e2126}
+.p-n{--pc:var(--pc-n)}.p-pron{--pc:var(--pc-pron)}.p-v{--pc:var(--pc-v)}.p-aux{--pc:var(--pc-aux)}.p-adj{--pc:var(--pc-adj)}
+.p-adv{--pc:var(--pc-adv)}.p-prep{--pc:var(--pc-prep)}.p-conj{--pc:var(--pc-conj)}.p-det{--pc:var(--pc-det)}.p-other{--pc:var(--pc-other)}
 .illu{text-align:center;margin-top:10px}
 .illu img,.illu svg{width:100%;max-width:560px;border-radius:10px;border:1px solid var(--tx-border);box-shadow:var(--tx-shadow-sm);background:#fff}
 .prop{display:block;padding:8px 0;border-bottom:1px solid var(--tx-border)}
@@ -132,7 +152,7 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
 .back-to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:#1c1d21;color:#fff;border:none;padding:0;box-shadow:var(--tx-shadow-md);z-index:50}
 .back-to-top:hover{background:#262626}
 @media (max-width:860px){.hero h1{font-size:30px}.hero-desc{font-size:18px}}
-@media (max-width:600px){body{padding:0 16px 100px}.hero{padding:32px 20px 24px}.hero h1{font-size:26px}.hero-desc{font-size:16px}.card{padding:14px}.back-to-top{right:16px;bottom:16px}}
+@media (max-width:600px){:root{--gut:16px}.hero{padding:32px 20px 24px}.hero h1{font-size:26px}.hero-desc{font-size:16px}.card{padding:14px}.back-to-top{right:16px;bottom:16px}}
 </style>
 </head>
 <body>
@@ -168,6 +188,11 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
 
 <section id="tab-add" class="hide">
   <div class="card">
+    <h3>サンプル英文で試す</h3>
+    <div class="sub">TOEIC風のオリジナル英文 90文を、ボタン1つで入れます。解析・品詞の色分け・4択問題・絵文字のイラスト・関係図が、はじめから付いているので、<b>API キーなしで、すべての機能を試せます</b>。</div>
+    <div class="row" style="margin-top:8px"><button class="pri smpBtn">サンプル英文を入れる</button></div>
+  </div>
+  <div class="card">
     <h3>集めた英文を貼り付け(1行 = 1文。空行・重複は無視)</h3>
     <textarea id="addText" placeholder="I think that he will come tomorrow.&#10;The book which I bought yesterday is interesting."></textarea>
     <div class="row" style="margin-top:8px">
@@ -199,6 +224,7 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
     <div class="row sub" style="margin-top:8px">
       <span id="count"></span><span class="grow"></span>
       <button class="sm" id="btnBatch">表示中の未解析を一括解析</button>
+      <button class="sm" id="btnTag" title="解析済みで、品詞の色分けがまだない英文に付けます">表示中の品詞を一括で付ける</button>
       <button class="sm hide" id="btnBatchStop">停止</button>
       <button class="sm" id="btnSelAll">表示中を全選択</button>
       <button class="sm" id="btnExport">バックアップ保存</button>
@@ -532,7 +558,7 @@ function renderLib(){
     <button class="sm" data-a="bm" title="ブックマーク">${i.bm?"★":"☆"}</button>
     <div class="t" data-a="open">${esc(i.text)}${chips(i.gids)}${i.analysis?(i.verified?'<span class="tag">解析済</span>':'<span class="tag warn">未確認</span>'):""}${i.level?`<span class="tag">${i.level}点</span>`:""}${i.status!=="new"?`<span class="tag">${STATUS[i.status]}</span>`:""}${i.mistakes.length?`<span class="tag">間違い${i.mistakes.length}</span>`:""}</div>
     <button class="sm" data-a="grp" title="グループ">🗂</button>
-    <button class="sm" data-a="del" title="削除">🗑</button></div>`).join(""):'<div class="sub">該当する英文がありません。「➕ 追加」から登録してください。</div>';
+    <button class="sm" data-a="del" title="削除">🗑</button></div>`).join(""):'<div class="sub">該当する英文がありません。「追加」から登録するか、サンプル英文で試せます。</div><div class="row" style="margin-top:8px"><button class="sm pri smpBtn">サンプル英文を入れる</button></div>';
   [...sel].forEach(id=>{if(!db.items.some(i=>i.id===id))sel.delete(id)});
   $("#bulk").classList.toggle("hide",!sel.size);$("#bulkN").textContent=`${sel.size} 文を選択中`;
 }
@@ -565,6 +591,7 @@ let batchStop=false;
 // 解析結果を英文に反映する。新しい解析は「未確認」にし、難易度は未設定のときだけ採用する
 function applyAnalysis(it,a){
   delete a.n;const lv=normLevel(a.difficulty);delete a.difficulty;
+  const ws=cleanWords(a.words,it.text);if(ws)a.words=ws;else delete a.words; // 品詞が不正なら、色分けだけ付けない
   it.analysis=a;it.verified=false;if(it.level==null)it.level=lv;
 }
 async function runAnalyze(todo,msg){
@@ -588,6 +615,12 @@ $("#btnBatch").onclick=async()=>{
   finally{$("#btnBatch").classList.remove("hide");$("#btnBatchStop").classList.add("hide")}
 };
 $("#btnBatchStop").onclick=()=>batchStop=true;
+$("#btnTag").onclick=async()=>{
+  const todo=visibleItems().filter(i=>i.analysis&&!cleanWords(i.analysis.words,i.text));
+  if(!todo.length)return toast("表示中の解析済みの英文には、すべて品詞が付いています。");
+  $("#btnTag").disabled=true;
+  try{await tagMany(todo,t=>{$("#batchMsg").textContent=t})}finally{$("#btnTag").disabled=false}
+};
 // コピペモードの一括解析: 10 文ずつ 1 つのプロンプトにまとめる
 async function batchCopy(todo,msg){
   const N=10,rounds=Math.ceil(todo.length/N);
@@ -611,19 +644,60 @@ $("#btnExport").onclick=()=>download("english-library.json",JSON.stringify({grou
 const clip=(s,n)=>String(s??"").replace(/\s+/g," ").trim().slice(0,n);
 function cleanItem(i){
   const an=i.analysis&&typeof i.analysis==="object"&&!Array.isArray(i.analysis)&&JSON.stringify(i.analysis).length<30000?i.analysis:null;
-  return{text:clip(i.text,500),bm:false,added:Date.now(),analysis:an,level:i.level,verified:an?false:true};
+  const o={text:clip(i.text,500),bm:false,added:Date.now(),analysis:an,level:i.level,verified:an?false:true};
+  if(an){const w=cleanWords(an.words,o.text);if(w)an.words=w;else delete an.words}
+  const q=cleanQuiz(i.quiz),il=cleanIllus(i.illus),rl=cleanRel(i.rel);
+  if(q)o.quiz=q;if(il)o.illus=il;if(rl)o.rel=rl;
+  return o;
+}
+// 4択問題: 穴埋めに正解を入れると、原文と一致するかまでは見ない(形だけ)。AI が作る問題と同じ形を要求する
+function cleanQuiz(q){
+  if(!q||typeof q!=="object"||Array.isArray(q))return null;
+  const choices=Array.isArray(q.choices)?q.choices.map(c=>clip(c,120)):[];
+  if(choices.length!==4||choices.some(c=>!c)||new Set(choices).size!==4)return null;
+  const ans=Number.isInteger(q.answer)?q.answer:parseInt(q.answer,10);
+  if(!(ans>=0&&ans<4))return null;
+  const question=clip(q.question,500);if(question.length<5||!question.includes("______"))return null;
+  return{question,choices,answer:ans,type:clip(q.type,40)||"その他",explanation:clip(q.explanation,1200)};
+}
+// 絵文字イラスト: 絵文字の場面だけを受け付ける(外から届く SVG は受け付けない)
+function cleanIllus(il){
+  if(!il||typeof il!=="object"||il.type!=="emoji"||!il.data||typeof il.data!=="object")return null;
+  const d=il.data,items=(Array.isArray(d.items)?d.items:[]).slice(0,10).map(o=>o&&typeof o.emoji==="string"&&o.emoji.length>0&&o.emoji.length<=16
+    ?{emoji:o.emoji,label:clip(o.label,60),x:Math.min(100,Math.max(0,+o.x||50)),y:Math.min(100,Math.max(0,+o.y||50)),size:Math.min(3,Math.max(1,+o.size||1.5))}:null).filter(Boolean);
+  if(items.length<1)return null;
+  return{type:"emoji",data:{bg:safeColor(d.bg,"#eaf4ff"),ground:d.ground?safeColor(d.ground,""):"",caption:clip(d.caption,100),items}};
+}
+// 関係図の DSL: RelaGrid のパーサーで、エラーなく読めるものだけ
+function cleanRel(s){
+  if(typeof s!=="string"||s.length<10||s.length>4000)return null;
+  try{if(window.RelaGrid&&RelaGrid.parseDSL(s).errors.length)return null}catch{return null}
+  return s;
+}
+// すでにある英文に、足りないものだけを足す(解析結果・状態・記録は上書きしない)。足したら true
+function fillMissing(ex,i){
+  let c=false;
+  const ws=cleanWords(i.analysis?.words,ex.text);
+  if(ex.analysis&&!cleanWords(ex.analysis.words,ex.text)&&ws){ex.analysis.words=ws;c=true}
+  const q=cleanQuiz(i.quiz);if(!ex.quiz&&q){ex.quiz=q;c=true}
+  const il=cleanIllus(i.illus);if(!ex.illus&&il){ex.illus=il;c=true}
+  const rl=cleanRel(i.rel);if(!ex.rel&&rl){ex.rel=rl;c=true}
+  return c;
 }
 function cleanWord(w){return{word:clip(w.word,100),pos:clip(w.pos,40),meaning:clip(w.meaning,300),note:clip(w.note,500),level:Math.min(3,Math.max(0,+w.level||0))}}
 function importData(d,{strict=false}={}){
   const gmap=Object.create(null); // 外から届くキー(__proto__ など)で、オブジェクトを壊されない
   for(const g of Array.isArray(d.groups)?d.groups:[]){if(g&&typeof g.name==="string"&&g.name.trim())gmap[g.id]=ensureGroup(g.name)}
   const remap=a=>uniq((Array.isArray(a)?a:[]).map(id=>gmap[id]).filter(Boolean));
-  const have=new Set(db.items.map(i=>i.text.toLowerCase()));let n=0;
+  const have=new Map(db.items.map(i=>[i.text.toLowerCase(),i]));let n=0,u=0;
   for(const i of Array.isArray(d.items)?d.items:[]){
     if(!i||typeof i.text!=="string"||!i.text.trim())continue;
     const o=strict?cleanItem(i):i,key=o.text.toLowerCase();
-    if(have.has(key))continue;have.add(key);
-    db.items.push(normItem({...o,id:uid(),gids:remap(i.gids)}));n++;
+    if(have.has(key)){ // 同じ英文がすでにある: 足りないもの(品詞・問題・イラスト・関係図)だけを足す
+      if(fillMissing(have.get(key),i))u++;
+      continue;
+    }
+    const ni=normItem({...o,id:uid(),gids:remap(i.gids)});db.items.push(ni);have.set(key,ni);n++;
   }
   const hw=new Set(db.words.map(w=>w.word.toLowerCase()));let m=0;
   for(const w of Array.isArray(d.words)?d.words:[]){
@@ -632,12 +706,30 @@ function importData(d,{strict=false}={}){
     if(hw.has(key))continue;hw.add(key);
     db.words.push(normWord({...o,id:uid(),src:null,gids:remap(w.gids)}));m++;
   }
-  return{n,m};
+  return{n,m,u};
 }
+// アプリに同梱したサンプル(public/samples/)を読み込む。解析・品詞・4択問題・イラスト・関係図つきなので、API なしで全機能を試せる
+const SAMPLE_FILES=["toeic-sentences-analyzed.json","toeic-sentences-2-analyzed.json"];
+async function loadSamples(btn){
+  const label=btn.textContent;btn.disabled=true;btn.textContent="読み込み中…";
+  try{
+    let n=0,u=0;
+    for(const f of SAMPLE_FILES){
+      let r;try{r=await fetch("samples/"+f)}catch{throw new Error("通信できませんでした。オンラインのときに、もう一度お試しください。")}
+      if(!r.ok)throw new Error("サンプルを読み込めませんでした(HTTP "+r.status+")");
+      const d=importData(await r.json());n+=d.n;u+=d.u;
+    }
+    save();renderAll();
+    toast(n?`サンプル英文を ${n} 文 入れました${u?`(既存の ${u} 文にも、品詞・問題などを追加)`:""}`:u?`すでに入っています。既存の ${u} 文に、品詞・問題などを追加しました`:"サンプル英文は、すべて入っています。");
+    if(n)tab("lib");
+  }catch(e){toast(e.message,true)}
+  finally{btn.disabled=false;btn.textContent=label}
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".smpBtn");if(b)loadSamples(b)});
 $("#importIn").onchange=async e=>{
   try{
-    const {n,m}=importData(JSON.parse(await e.target.files[0].text()));
-    save();renderAll();toast(`英文 ${n} / 単語 ${m} を復元しました`);
+    const {n,m,u}=importData(JSON.parse(await e.target.files[0].text()));
+    save();renderAll();toast(`英文 ${n} / 単語 ${m} を復元しました${u?`(${u} 文に、品詞・問題・イラスト・関係図などを追加)`:""}`);
   }catch(err){toast("読み込めませんでした: "+err.message)}
   e.target.value="";
 };
@@ -682,10 +774,12 @@ JSON形式:
  "elements":[{"text":"英語の語句","role":"S|V|O|C|M のいずれか","note":"補足(任意、空文字可)"}],  // 主節の要素を文の順に。Mは修飾語句
  "tense":{"name":"時制・態・法(例: 現在完了形・受動態)","explanation":"解説"},
  "grammar":[{"point":"文法事項","explanation":"解説"}],
+ "words":[{"w":"英文を半角スペースで区切った1語","p":"品詞コード"}],  // 品詞の色分け用。下の「品詞コードの規則」に従う
  "vocab":[{"word":"単語・熟語(原形)","pos":"品詞","meaning":"この文脈での意味","note":"補足(任意)","level":"TOEIC頻出度 1〜3 の数字(3が最頻出)","toeic":"TOEICでの典型的な使われ方・よく組む語(コロケーション)。なければ空文字"}],
  "toeic":{"scene":"ビジネス場面(人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 など1つ)","part":"出題されやすいパート(例: Part 5 / Part 6 / Part 7)","points":[{"type":"品詞 / 時制 / 前置詞 / 接続詞・副詞 / 関係詞 / 代名詞 / 語彙 / 語法 のいずれか","detail":"この文で問われうる論点"}],"paraphrase":["TOEIC(Part 7の設問や選択肢)で使われそうな言い換え表現"]}
 }
 この英文がTOEICに出る場合の観点(toeic)も必ず含めること。
+【品詞コードの規則(words)】${POS_RULE}
 さらに JSON の最上位に "difficulty" を加え、この英文の難易度の目安を 600 / 730 / 860 のいずれかの数字1つで答えること(TOEICのスコア帯の目安)。
 ${LV_TEXT}`;
 const BPROMPT=list=>`次の${list.length}個の英文それぞれについて、下の「1文あたりの指示」どおりに分析し、結果を JSON 配列 [{"n":1, ...}, {"n":2, ...}] で答えてください(n は英文の番号。各要素は指示の JSON 形式に n を加えたもの)。
@@ -694,6 +788,84 @@ ${list.map((s,i)=>`${i+1}. ${s}`).join("\n")}
 
 --- 1文あたりの指示 ---
 ${PROMPT("(上の各英文)")}`;
+/* ---------- 品詞の色分け ---------- */
+// 品詞コード → 表示名。解析の words は、英文を半角スペースで区切った語ごとに、品詞コードを付けたもの
+const POS={n:"名詞",pron:"代名詞",v:"動詞",aux:"助動詞",adj:"形容詞",adv:"副詞",prep:"前置詞",conj:"接続詞・関係詞",det:"冠詞・限定詞",other:"その他"};
+const POS_RULE=`w は英文を半角スペースで区切った1語(句読点は語に付けたまま)。w を半角スペースでつなぐと、原文と完全に一致すること。
+p は品詞コードで、その文の中での働きで決める: n=名詞(固有名詞・動名詞の名詞用法を含む) / pron=代名詞(I, it, they, this など) / v=動詞(be動詞・分詞が動詞として働く場合を含む) / aux=助動詞(will, must, can, have/has/had と be の助動詞用法, do/does) / adj=形容詞(名詞を修飾する過去分詞・現在分詞を含む) / adv=副詞 / prep=前置詞 / conj=接続詞・関係詞(and, because, which, who, that(節を導く) など) / det=冠詞・限定詞(a, the, this/that+名詞, some, its, their, any など) / other=不定詞の to・数詞・記号・その他`;
+const WPROMPT=s=>`次の英文の各語に、品詞コードを付けてください。JSONのみで答えてください: {"words":[{"w":"語","p":"品詞コード"}]}
+英文: ${s}
+${POS_RULE}`;
+const BWPROMPT=list=>`次の${list.length}個の英文それぞれの各語に、品詞コードを付けてください。JSON配列のみで答えてください: [{"n":1,"words":[{"w":"語","p":"品詞コード"}]}, {"n":2,"words":[...]}]
+英文:
+${list.map((s,i)=>`${i+1}. ${s}`).join("\n")}
+${POS_RULE}`;
+// words を検査する。語をスペースでつないだものが原文と一致しなければ捨てる(色分けをしないだけで、解析は壊さない)
+function cleanWords(ws,text){
+  if(!Array.isArray(ws)||!ws.length||ws.length>150)return null;
+  const out=[];
+  for(const x of ws){if(!x||typeof x.w!=="string"||!x.w.trim())return null;out.push({w:x.w.trim(),p:Object.prototype.hasOwnProperty.call(POS,x.p)?x.p:"other"})}
+  const norm=s=>String(s).replace(/\s+/g," ").trim();
+  return norm(out.map(x=>x.w).join(" "))===norm(text)?out:null;
+}
+function applyWords(it,ws){
+  const c=cleanWords(ws,it.text);
+  if(!c)throw new Error("品詞を読み取れませんでした。もう一度試してください。");
+  it.analysis.words=c;
+}
+async function tagOne(it){const r=await gemini(WPROMPT(it.text),0.1);applyWords(it,r.words||r);save()}
+// 品詞が未付与の英文に、まとめて付ける(API: 1文ずつ / コピペモード: 10文ずつ)
+async function tagMany(todo,msg){
+  if(isCopyMode()){
+    const N=10,rounds=Math.ceil(todo.length/N);
+    if(!confirm(`${todo.length} 文の品詞を、${N} 文ずつまとめて付けます(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return 0;
+    let k=0;
+    for(let r=0;r<rounds;r++){
+      const part=todo.slice(r*N,r*N+N);msg(`コピペ ${r+1} / ${rounds} 回目(${part.length} 文)`);
+      try{
+        const res=await gemini(BWPROMPT(part.map(i=>i.text)),0.1);
+        const arr=Array.isArray(res)?res:res.results||[];
+        part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];const c=cleanWords(a?.words,it.text);if(c){it.analysis.words=c;k++}});
+        save();refreshLib();
+      }catch(e){msg(`停止しました(${k} 文に付与): ${e.message}`);return k}
+    }
+    msg(`完了: ${k} / ${todo.length} 文に品詞を付けました`+(k<todo.length?"(付かなかった文は、もう一度押すと再挑戦します)":""));return k;
+  }
+  if(!confirm(`${todo.length} 文の品詞を、1文ずつ付けます(API を ${todo.length} 回呼び出します)。よろしいですか?`))return 0;
+  batchStop=false;let k=0;
+  for(const it of todo){
+    if(batchStop){msg(`停止しました(${k} 文に付与)`);return k}
+    msg(`品詞を付与中… ${k+1} / ${todo.length}`);
+    try{await tagOne(it);k++;refreshLib()}catch(e){msg(`エラーで停止(${k} 文に付与): ${e.message}`);return k}
+    await wait(1500);
+  }
+  msg(`完了: ${k} 文に品詞を付けました`);return k;
+}
+let posFocus=null;
+function posCard(it){
+  const a=it.analysis,ws=cleanWords(a?.words,it.text);
+  if(!a)return "";
+  if(!ws)return `<div class="card"><div class="row"><h3 class="grow" style="margin:0">品詞の色分け</h3><button class="sm" id="posAdd">品詞を付ける</button></div>
+    <div class="sub">この英文には、まだ品詞の情報がありません。「品詞を付ける」で、AI が各語の品詞を判定します(新しく解析した英文には、はじめから付きます)。</div><div class="err" id="posErr"></div></div>`;
+  const used=Object.keys(POS).filter(k=>ws.some(x=>x.p===k));
+  return `<div class="card"><div class="row"><h3 class="grow" style="margin:0">品詞の色分け</h3>
+    <label class="ck"><input type="checkbox" id="posLbl" ${db.cfg.posLabels?"checked":""}>品詞名も表示</label></div>
+    <div class="posbox ${db.cfg.posLabels?"lbl":""}" id="posBox">${ws.map(x=>`<span class="pw p-${x.p}" data-p="${x.p}"><b>${esc(x.w)}</b><i>${esc(POS[x.p])}</i></span>`).join("")}</div>
+    <div class="poslegend">${used.map(k=>`<button class="p-${k}" data-p="${k}" title="この品詞だけを目立たせる">${esc(POS[k])} ${ws.filter(x=>x.p===k).length}</button>`).join("")}</div>
+    <div class="sub" style="margin-top:6px">下の品詞名を押すと、その品詞だけが目立ちます。品詞は AI の判定なので、誤りがあることがあります。</div></div>`;
+}
+function wirePos(box,it){
+  box.querySelector("#posAdd")?.addEventListener("click",e=>act(e.target,"判定中…",()=>tagOne(it),box.querySelector("#posErr")));
+  const pb=box.querySelector("#posBox");if(!pb)return;
+  const apply=()=>{
+    if(posFocus)pb.dataset.f=posFocus;else delete pb.dataset.f;
+    pb.querySelectorAll(".pw").forEach(s=>s.classList.toggle("f",s.dataset.p===posFocus));
+    box.querySelectorAll(".poslegend button").forEach(b=>b.classList.toggle("on",b.dataset.p===posFocus));
+  };
+  box.querySelectorAll(".poslegend button").forEach(b=>b.onclick=()=>{posFocus=posFocus===b.dataset.p?null:b.dataset.p;apply()});
+  box.querySelector("#posLbl").onchange=e=>{db.cfg.posLabels=e.target.checked;save();pb.classList.toggle("lbl",e.target.checked)};
+  apply();
+}
 async function analyze(it){const a=await gemini(PROMPT(it.text));applyAnalysis(it,a);save();return a}
 const QPROMPT=s=>`次の英文をもとに、TOEIC Part 5 形式の4択穴埋め問題を1問作り、JSONのみで答えてください。解説は日本語。
 英文: ${s}
@@ -718,7 +890,7 @@ function renderStruct(){
     const sl=(a.slash||[]).map((c,i)=>`${i?'<span class="sl">/</span>':""}<span class="chunk"><b>${esc(c.en)}</b><i>${esc(c.ja)}</i></span>`).join("");
     h+=`<div class="card"><h3>日本語訳</h3>${esc(a.translation)}</div>
     <div class="card"><h3>① スラッシュリーディング</h3><div class="chunks">${sl}</div></div>
-    <div class="card"><h3>② 文構造</h3>
+    ${posCard(it)}<div class="card"><h3>② 文構造</h3>
       ${(a.elements||[]).map(e=>`<div><span class="role ${esc(e.role)}">${esc(e.role)}</span><b>${esc(e.text)}</b> <span class="sub">${esc(e.note)}</span></div>`).join("")}
       <table style="margin-top:8px">${(a.clauses||[]).map(c=>`<tr><td><b>${esc(c.kind)}</b></td><td>${esc(c.text)}</td><td class="sub">${esc(c.role)}</td></tr>`).join("")}</table>
       <div class="row" style="margin-top:6px"><button class="sm" id="toRel">⑶ 関係図で見る</button></div></div>
@@ -739,7 +911,7 @@ function renderStruct(){
     ${q?`<div class="en" style="margin-top:6px">${esc(q.question)}</div>
     <div>${q.choices.map((c,i)=>`<div style="margin:4px 0"><button class="qc" data-i="${i}" style="width:100%;text-align:left">(${"ABCD"[i]}) ${esc(c)}</button></div>`).join("")}</div>
     <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div><div id="qRec"></div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
-  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);
+  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);wirePos(box,it);
   const err=box.querySelector(".sbErr");
   $("#vRun").onclick=e=>{
     if(it.analysis&&it.verified&&!confirm("確認済みの解析結果を、新しい解析で上書きします。よろしいですか?"))return;
@@ -1407,7 +1579,7 @@ function setSyncStatus(text,err){const b=$("#syncStatus");b.classList.toggle("hi
 function scheduleSync(){if(!sync)return;clearTimeout(syncTimer);setSyncStatus("☁ 未同期の変更あり");syncTimer=setTimeout(()=>syncNow(),3000)}
 // 受信箱から受け取る: 1通ずつ、公開鍵で包まれた AES 鍵を秘密鍵で開き、本文を復号して取り込む
 async function pullInbox(key){
-  const total={n:0,m:0,bad:0};
+  const total={n:0,m:0,u:0,bad:0};
   for(let round=0;round<40;round++){
     const r=await api("inbox");
     if(!r.items?.length)break;
@@ -1418,8 +1590,8 @@ async function pullInbox(key){
       try{
         const raw=await crypto.subtle.decrypt({name:"RSA-OAEP"},priv,fromB64(it.wrapped));
         const aes=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
-        const {n,m}=importData(await decrypt(it.iv,it.data,aes),{strict:true});
-        total.n+=n;total.m+=m;
+        const {n,m,u}=importData(await decrypt(it.iv,it.data,aes),{strict:true});
+        total.n+=n;total.m+=m;total.u+=u;
       }catch{total.bad++} // 復号できない・形が違う通は、取り込まずに捨てる
       done.push(it.id);
     }
@@ -1441,9 +1613,9 @@ async function syncNow(manual){
       if(!r.more)break;
     }
     if(got){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();saveSync();renderAll()}
-    let inb={n:0,m:0,bad:0};
+    let inb={n:0,m:0,u:0,bad:0};
     try{inb=await pullInbox(key)}catch(e){if(manual)toast("受信箱を確認できませんでした: "+e.message,true)}
-    if(inb.n||inb.m){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();renderAll();toast(`受信箱から 英文 ${inb.n} / 単語 ${inb.m} を受け取りました${inb.bad?`(読めなかった ${inb.bad} 通は捨てました)`:""}`)}
+    if(inb.n||inb.m||inb.u){db.items.sort((a,b)=>(b.added||0)-(a.added||0));saveLocal();renderAll();toast(`受信箱から 英文 ${inb.n} / 単語 ${inb.m} を受け取りました${inb.u?`(${inb.u} 文に、品詞・問題・イラスト・関係図などを追加)`:""}${inb.bad?`(読めなかった ${inb.bad} 通は捨てました)`:""}`)}
     const present=new Set(),out=[]; // 2) 送信(前回の同期から変わったものだけ)
     for(const k of Object.keys(COLL))for(const o of COLL[k]()){
       const kk=rk(k,o.id),h=hashOf(o);present.add(kk);
