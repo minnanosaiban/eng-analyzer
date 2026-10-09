@@ -147,6 +147,21 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
 .wkt{height:10px;background:var(--tx-bg-muted);border-radius:5px;overflow:hidden}
 .wkb{display:block;height:100%;background:var(--inv);border-radius:5px}
 .wkc{text-align:right;font-variant-numeric:tabular-nums}
+/* 音声: 画面の下の小さなプレーヤー */
+#miniPlayer{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--surface);border-top:1px solid var(--tx-border);box-shadow:0 -4px 14px rgba(0,0,0,.10)}
+#miniPlayer .mp-text{flex:1;min-width:0;cursor:pointer}
+#miniPlayer .mp-pos{font-size:11.5px;color:var(--tx-muted-2)}
+#miniPlayer .mp-en{font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#miniPlayer .mp-ja{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#miniPlayer .mp-ctl{display:flex;align-items:center;gap:6px;flex:none}
+#miniPlayer .mp-ctl button{height:34px;min-width:34px;padding:0 8px}
+#miniPlayer .mp-ctl select{height:34px;width:auto;padding:0 6px;font-size:12.5px}
+body.has-player{padding-bottom:140px}
+body.has-player .back-to-top{bottom:90px}
+.ck.cur{background:var(--hl);border-radius:4px}
+.dc-ans{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.9;margin-top:6px}
+.dc-ok{color:var(--pc-adj)}
+.dc-miss{color:var(--warn);text-decoration:underline wavy;text-underline-offset:4px;font-weight:600}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;max-width:min(90vw,640px);padding:10px 16px;border-radius:8px;background:#1c1d21;color:#fff;font-size:13px;box-shadow:0 2px 10px rgba(0,0,0,.28);white-space:pre-wrap}
 .toast.toast-error{background:#a12a2a}
 .back-to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:#1c1d21;color:#fff;border:none;padding:0;box-shadow:var(--tx-shadow-md);z-index:50}
@@ -178,8 +193,7 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
   <button data-tab="sgroup">⑵ 英文グループ化</button>
   <button data-tab="rel">⑶ 関係図化</button>
   <button data-tab="illust">⑷ イラスト化</button>
-  <button data-tab="audio">⑸ 音声化</button>
-  <button data-tab="words">⑹ 英単語グループ化</button>
+  <button data-tab="words">⑸ 英単語グループ化</button>
   <button data-tab="weak">弱点集計</button>
   <button data-tab="gen">英文生成</button>
 </nav>
@@ -219,6 +233,7 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
       <select id="fLevel" class="auto"><option value="">全難易度</option><option value="600">600点</option><option value="730">730点</option><option value="860">860点</option><option value="none">未判定</option></select>
       <button id="fUnv" class="sm">未確認のみ</button>
       <span class="grow"></span>
+      <button id="btnPlayAll" class="sm" title="表示中の英文を、順に読み上げます">この一覧を続けて再生</button>
       <button id="btnReview" class="sm pri">この条件で復習を始める</button>
     </div>
     <div class="row sub" style="margin-top:8px">
@@ -245,7 +260,6 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
 <section id="tab-sgroup" class="hide"></section>
 <section id="tab-rel" class="hide"></section>
 <section id="tab-illust" class="hide"></section>
-<section id="tab-audio" class="hide"></section>
 <section id="tab-weak" class="hide"></section>
 <section id="tab-gen" class="hide"></section>
 
@@ -259,6 +273,7 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
     </div>
     <div class="row" style="margin-top:8px">
       <button class="sm" id="wHide">意味を隠す</button>
+      <button class="sm" id="wPlay" title="表示中の単語を、順に読み上げます">この一覧を続けて再生</button>
       <select id="wStatus" class="auto"><option value="notmastered">覚えた以外</option><option value="">すべての状態</option><option value="new">未学習</option><option value="learning">学習中</option><option value="mastered">覚えた</option></select>
       <span class="sub grow" id="wCount"></span>
     </div>
@@ -285,6 +300,20 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
   <input type="text" id="model">
   </div>
   <div class="sub" id="usage" style="margin-top:8px"></div>
+  <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--tx-border)">
+    <div class="sub" style="font-weight:700;color:var(--tx-text)">音声(読み上げ)</div>
+    <div class="sub">すべての ▶ ボタン、続けて再生、音声練習が、この設定を使います。端末の読み上げ機能なので、無料・オフラインでも動きます。</div>
+    <div class="row" style="margin-top:6px"><label class="ck">声 <select id="auVoice" class="auto"></select></label>
+      <label class="ck">速さ <input type="range" id="auRate" min="0.5" max="1.5" step="0.05"> <span id="auRateV"></span>x</label></div>
+    <div class="row" style="margin-top:6px"><label class="ck">繰り返し <select id="auRep" class="auto"><option>1</option><option>2</option><option>3</option><option>5</option></select> 回</label>
+      <label class="ck">文のあとの間 <select id="auGap" class="auto"><option value="none">短く(続けて聞く)</option><option value="shadow">シャドーイング(同じ長さ)</option><option value="2">2秒</option><option value="4">4秒</option></select></label></div>
+    <div class="row" style="margin-top:6px"><label class="ck"><input type="checkbox" id="auChunk">スラッシュ区切りで読む</label>
+      <label class="ck"><input type="checkbox" id="auJa">訳・意味を表示</label>
+      <label class="ck"><input type="checkbox" id="auReadJa">英文のあとに和訳も読む</label>
+      <label class="ck"><input type="checkbox" id="auWmean">単語のあとに意味も読む</label></div>
+    <div class="row" style="margin-top:6px"><button class="sm" id="auTest">▶ 試し聞き</button></div>
+    <div class="sub">iPhone は、マナーモードだと音が出ないことがあります。声の種類は、端末によります。</div>
+  </div>
   <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--tx-border)">
     <div class="sub" style="font-weight:700;color:var(--tx-text)">クラウド同期(Cloudflare)</div>
     <div id="syncBox" style="margin-top:6px"></div>
@@ -340,6 +369,11 @@ html.dark-mode .tag.warn{background:#3a2323;border-color:#5a3434}
   <div class="row" style="margin-top:12px;justify-content:flex-end"><button id="mgClose">閉じる</button></div>
 </dialog>
 
+<div id="miniPlayer" class="hide" role="region" aria-label="音声プレーヤー">
+  <div class="mp-text" id="mpTxt" title="押すと、この英文の解析を開きます"></div>
+  <div class="mp-ctl"><span class="mp-pos" id="mpPos"></span><button id="mpPrev" title="前へ">⏮</button><button class="pri" id="mpPlay" title="一時停止">⏸</button><button id="mpNext" title="次へ">⏭</button>
+    <select id="mpRate" title="速さ"></select><button id="mpClose" title="閉じる">✕</button></div>
+</div>
 <button type="button" id="backToTop" class="back-to-top" aria-label="上へ戻る" hidden><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></svg></button>
 <script src="vendor/qrcode.js"></script>
 <script src="relagrid/icons.js"></script>
@@ -403,15 +437,13 @@ function ensureGroup(name){
 }
 const ensureGroups=str=>(str||"").split(/[,、;]/).map(ensureGroup).filter(Boolean);
 const getCur=()=>{let it=db.items.find(i=>i.id===curId)||db.items[0];curId=it?.id;return it};
-function speak(text,lang="en-US",rate=1){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=rate;speechSynthesis.speak(u)}
 function download(name,text,type="image/svg+xml"){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click()}
 
 /* ---------- tabs ---------- */
-const RENDER={lib:renderLib,add:()=>{},struct:renderStruct,sgroup:renderSGroup,rel:renderRel,illust:renderIllust,audio:renderAudio,words:renderWords,weak:renderWeak,gen:renderGen};
+const RENDER={lib:renderLib,add:()=>{},struct:renderStruct,sgroup:renderSGroup,rel:renderRel,illust:renderIllust,words:renderWords,weak:renderWeak,gen:renderGen};
 function tab(n){
   active=n;
   Object.keys(RENDER).forEach(t=>{$("#tab-"+t).classList.toggle("hide",t!==n);document.querySelector(`nav [data-tab=${t}]`).classList.toggle("on",t===n)});
-  if(n!=="audio")stopAudio();
   RENDER[n]();const ny=document.querySelector("nav").offsetTop;if(scrollY>ny)scrollTo(0,ny);
 }
 document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>tab(b.dataset.tab));
@@ -509,6 +541,7 @@ $("#btnSet").onclick=()=>{
   document.querySelector(`[name=aiMode][value=${isCopyMode()?"copy":"api"}]`).checked=true;syncMode();
   const kb=Math.round((localStorage.getItem(KEY)||"").length*2/1024);
   $("#usage").textContent=`保存データ: 約 ${kb} KB / 目安上限 約 5,000 KB(ブラウザにより異なります)`;
+  renderAuSettings();
   $("#dlg").showModal();
 };
 $("#setCancel").onclick=()=>$("#dlg").close();
@@ -557,6 +590,7 @@ function renderLib(){
     <input type="checkbox" data-a="sel" ${sel.has(i.id)?"checked":""} style="margin-top:7px">
     <button class="sm" data-a="bm" title="ブックマーク">${i.bm?"★":"☆"}</button>
     <div class="t" data-a="open">${esc(i.text)}${chips(i.gids)}${i.analysis?(i.verified?'<span class="tag">解析済</span>':'<span class="tag warn">未確認</span>'):""}${i.level?`<span class="tag">${i.level}点</span>`:""}${i.status!=="new"?`<span class="tag">${STATUS[i.status]}</span>`:""}${i.mistakes.length?`<span class="tag">間違い${i.mistakes.length}</span>`:""}</div>
+    <button class="sm" data-a="spk" title="読み上げ">▶</button>
     <button class="sm" data-a="grp" title="グループ">🗂</button>
     <button class="sm" data-a="del" title="削除">🗑</button></div>`).join(""):'<div class="sub">該当する英文がありません。「追加」から登録するか、サンプル英文で試せます。</div><div class="row" style="margin-top:8px"><button class="sm pri smpBtn">サンプル英文を入れる</button></div>';
   [...sel].forEach(id=>{if(!db.items.some(i=>i.id===id))sel.delete(id)});
@@ -568,6 +602,7 @@ $("#list").onclick=e=>{
   switch(b.dataset.a){
     case"sel":b.checked?sel.add(id):sel.delete(id);renderLib();break;
     case"bm":it.bm=!it.bm;save();renderLib();break;
+    case"spk":speak(it.text);break;
     case"grp":pickGroups("この英文のグループ",it.gids,ids=>it.gids=ids);break;
     case"del":if(confirm("削除しますか?")){db.items=db.items.filter(i=>i.id!==id);save();renderAll()}break;
     default:openItem(id,"struct",visibleItems().map(x=>x.id));
@@ -579,6 +614,7 @@ $("#q").oninput=renderLib;$("#fGrp").onchange=renderLib;
 $("#fBm").onclick=()=>{onlyBm=!onlyBm;renderLib()};
 $("#fStatus").onchange=renderLib;$("#fLevel").onchange=renderLib;
 $("#fUnv").onclick=()=>{onlyUnv=!onlyUnv;renderLib()};
+$("#btnPlayAll").onclick=()=>startPlayer(visibleItems(),"s");
 $("#btnReview").onclick=()=>{
   const l=visibleItems();if(!l.length)return toast("該当する英文がありません。");
   openItem(l[0].id,"struct",l.map(x=>x.id));toast(`${l.length} 文を順に復習します(「次へ」で進みます)`);
@@ -885,7 +921,7 @@ function renderStruct(){
   const box=$("#tab-struct"),it=getCur();
   if(!it){box.innerHTML=bar();return}
   const a=it.analysis;
-  let h=bar(`<span class="grow"></span><button class="pri" id="vRun">${a?"再解析":"解析する"}</button>`)+'<div id="mgCard"></div>';
+  let h=bar(`<span class="grow"></span><button class="pri" id="vRun">${a?"再解析":"解析する"}</button>`)+'<div id="mgCard"></div>'+practiceCard(it);
   if(a){
     const sl=(a.slash||[]).map((c,i)=>`${i?'<span class="sl">/</span>':""}<span class="chunk"><b>${esc(c.en)}</b><i>${esc(c.ja)}</i></span>`).join("");
     h+=`<div class="card"><h3>日本語訳</h3>${esc(a.translation)}</div>
@@ -910,13 +946,14 @@ function renderStruct(){
   h+=`<div class="card"><div class="row"><h3 class="grow" style="margin:0">TOEIC風 4択問題</h3><button class="sm" id="vQuiz">${q?"別の問題を作る":"この英文から問題を作る"}</button></div>
     ${q?`<div class="en" style="margin-top:6px">${esc(q.question)}</div>
     <div>${q.choices.map((c,i)=>`<div style="margin:4px 0"><button class="qc" data-i="${i}" style="width:100%;text-align:left">(${"ABCD"[i]}) ${esc(c)}</button></div>`).join("")}</div>
-    <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div><div id="qRec"></div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
-  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);wirePos(box,it);
+    <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div><div class="row" style="margin-top:6px"><button class="sm qSpk">▶ 正しい英文を聞く</button></div><div id="qRec"></div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
+  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);wirePos(box,it);wirePractice(box,it);
   const err=box.querySelector(".sbErr");
   $("#vRun").onclick=e=>{
     if(it.analysis&&it.verified&&!confirm("確認済みの解析結果を、新しい解析で上書きします。よろしいですか?"))return;
     act(e.target,"解析中…",()=>analyze(it),err);
   };
+  box.querySelector(".qSpk")?.addEventListener("click",()=>speak(it.text));
   $("#vQuiz").onclick=e=>act(e.target,"作成中…",()=>makeQuiz(it),err);
   $("#toRel")?.addEventListener("click",()=>tab("rel"));
   box.querySelectorAll(".qc").forEach(b=>b.onclick=()=>{
@@ -1041,9 +1078,10 @@ function renderWeak(){
     const hit=new Map();recs.filter(r=>(r.m.category||"その他")===weakCat).forEach(r=>{if(!hit.has(r.it))hit.set(r.it,[]);hit.get(r.it).push(r.m)});
     const list=[...hit.entries()].sort((a,b)=>String(b[1].at(-1).date).localeCompare(String(a[1].at(-1).date)));
     h+=`<div class="card"><h3>「${esc(weakCat)}」で間違えた英文(${list.length}文)</h3>${list.map(([it,ms])=>`<div class="item"><div class="t" data-open="${it.id}">${esc(it.text)}
-      <div class="sub">${ms.length}回 ・ 最後 ${esc(ms.at(-1).date)}${ms.some(m=>m.note)?" ・ "+esc(ms.map(m=>m.note).filter(Boolean).join(" / ")):""}</div></div></div>`).join("")}</div>`;
+      <div class="sub">${ms.length}回 ・ 最後 ${esc(ms.at(-1).date)}${ms.some(m=>m.note)?" ・ "+esc(ms.map(m=>m.note).filter(Boolean).join(" / ")):""}</div></div><button class="sm" data-spk="${it.id}" title="読み上げ">▶</button></div>`).join("")}</div>`;
   }
   box.innerHTML=h;
+  box.querySelectorAll("[data-spk]").forEach(b=>b.onclick=()=>speak(db.items.find(i=>i.id===b.dataset.spk)?.text||""));
   box.querySelectorAll(".wkP").forEach(b=>b.onclick=()=>{weakDays=+b.dataset.d;renderWeak()});
   box.querySelectorAll(".wk").forEach(b=>b.onclick=()=>{weakCat=weakCat===b.dataset.c?null:b.dataset.c;renderWeak()});
   box.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{
@@ -1093,7 +1131,7 @@ function renderGen(){
       <label class="ck">件数 <input type="number" id="gCount" min="1" max="10" value="${f.count}" style="width:80px"></label></div>
     <button class="pri" id="gGo" style="margin-top:10px">英文を生成</button><div class="err" id="gErr"></div></div>
    ${gen.res.length?`<div class="card"><h3>生成された英文(${gen.res.length}文)</h3>
-    ${gen.res.map(r=>`<div class="item" data-id="${r.id}"><input type="checkbox" class="gAd" ${r.adopt?"checked":""} style="margin-top:7px"><div class="t" style="cursor:default">${esc(r.text)}<span class="tag">${r.level}点</span></div><button class="sm gDel">削除</button></div>`).join("")}
+    ${gen.res.map(r=>`<div class="item" data-id="${r.id}"><input type="checkbox" class="gAd" ${r.adopt?"checked":""} style="margin-top:7px"><div class="t" style="cursor:default">${esc(r.text)}<span class="tag">${r.level}点</span></div><button class="sm gSpk" title="読み上げ">▶</button><button class="sm gDel">削除</button></div>`).join("")}
     <div class="row" style="margin-top:10px"><input type="text" id="gGroup" list="grpList" value="${esc(f.group)}" placeholder="追加先のグループ(任意)" class="grow">
       <label class="ck"><input type="checkbox" id="gAnalyze" ${f.analyze?"checked":""}>追加後にそのまま解析する</label></div>
     <div class="row" style="margin-top:8px"><button class="pri" id="gAdopt">採用した英文を追加</button><button id="gClear">すべて削除</button></div>
@@ -1101,6 +1139,7 @@ function renderGen(){
     <div class="sub">解析した英文は「未確認」として表示されます。内容を確かめてから使ってください。</div></div>`:""}`;
   $("#gGo").onclick=e=>{readGen();act(e.target,"生成中…",()=>generate(f),$("#gErr"))};
   box.querySelectorAll(".gAd").forEach(c=>c.onchange=()=>{gen.res.find(r=>r.id===c.closest(".item").dataset.id).adopt=c.checked});
+  box.querySelectorAll(".gSpk").forEach(b=>b.onclick=()=>speak(gen.res.find(r=>r.id===b.closest(".item").dataset.id)?.text||""));
   box.querySelectorAll(".gDel").forEach(b=>b.onclick=()=>{gen.res=gen.res.filter(r=>r.id!==b.closest(".item").dataset.id);readGen();renderGen()});
   $("#gClear")?.addEventListener("click",()=>{if(confirm("生成された英文をすべて削除しますか?")){gen.res=[];readGen();renderGen()}});
   $("#gAdopt")?.addEventListener("click",async()=>{
@@ -1114,7 +1153,7 @@ function renderGen(){
   });
 }
 
-/* ---------- ⑵⑹ グループ化(共通) ---------- */
+/* ---------- ⑵⑸ グループ化(共通) ---------- */
 let props={s:null,w:null}; // グループ案 [{name,reason,ids}]
 const S_VIEWS=["おまかせ(学習に役立つ観点)","文法事項(構文・時制・品詞・関係詞など)","TOEIC の場面(人事・会議・出張・広告など)","話題・テーマ","難易度"];
 const W_VIEWS=["おまかせ(覚えやすい観点)","意味・話題が近いもの","ビジネス場面(人事・会議・経理・物流など)","品詞・派生語(語形のつながり)","類義語・対義語のセット"];
@@ -1146,7 +1185,7 @@ function toolsHTML(kind){
   const views=kind==="s"?S_VIEWS:W_VIEWS;
   const keys=kind==="s"?{pattern:"5文型",tense:"時制",part:"TOEIC パート",scene:"ビジネス場面",point:"TOEIC 論点"}:{pos:"品詞",level:"頻出度",status:"習得状況"};
   const p=props[kind];
-  return `<div class="card"><h3>${kind==="s"?"⑵ 英文グループ化":"⑹ 英単語グループ化"}</h3>
+  return `<div class="card"><h3>${kind==="s"?"⑵ 英文グループ化":"⑸ 英単語グループ化"}</h3>
    <div class="row"><span class="sub">AIでグループ案を作る</span>
     <select class="auto gTarget"><option value="__none">対象: 未分類</option><option value="">対象: すべて</option>${db.groups.map(g=>`<option value="${g.id}">対象: ${esc(g.name)}</option>`).join("")}</select>
     <select class="auto gView">${views.map(v=>`<option>${esc(v)}</option>`).join("")}</select>
@@ -1194,14 +1233,15 @@ function renderSGroup(){
   if(sOpen){
     const list=db.items.filter(i=>inGroup(i,sOpen));
     h+=`<div class="card"><div class="row"><h3 class="grow" style="margin:0">🗂 ${esc(sOpen==="__none"?"未分類":gname(sOpen))}(${list.length} 文)</h3>
-      <button class="sm" data-x="play">⑸ 音声で連続再生</button><button class="sm" data-x="close">閉じる</button></div>
-      ${list.map(i=>`<div class="item"><div class="t" data-open="${i.id}">${esc(i.text)}${chips(i.gids)}</div></div>`).join("")}</div>`;
+      <button class="sm" data-x="play">この一覧を続けて再生</button><button class="sm" data-x="close">閉じる</button></div>
+      ${list.map(i=>`<div class="item"><div class="t" data-open="${i.id}">${esc(i.text)}${chips(i.gids)}</div><button class="sm" data-spk="${i.id}" title="読み上げ">▶</button></div>`).join("")}</div>`;
   }
   box.innerHTML=h;wireTools(box,"s");
   box.querySelectorAll(".gbox").forEach(b=>b.onclick=()=>{sOpen=b.dataset.g;renderSGroup();box.lastElementChild.scrollIntoView({behavior:"smooth"})});
   box.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openItem(b.dataset.open));
   box.querySelector("[data-x=close]")?.addEventListener("click",()=>{sOpen=null;renderSGroup()});
-  box.querySelector("[data-x=play]")?.addEventListener("click",()=>{auCfg().src=sOpen==="__none"?"s:all":"s:g:"+sOpen;save();tab("audio")});
+  box.querySelectorAll("[data-spk]").forEach(b=>b.onclick=()=>speak(db.items.find(i=>i.id===b.dataset.spk)?.text||""));
+  box.querySelector("[data-x=play]")?.addEventListener("click",()=>startPlayer(db.items.filter(i=>inGroup(i,sOpen)),"s",{label:sOpen==="__none"?"未分類":gname(sOpen)}));
 }
 
 /* ---------- ⑶ 関係図化 (RelaGrid) ---------- */
@@ -1369,103 +1409,150 @@ function renderIllust(){
   $("#iDel")?.addEventListener("click",()=>{delete it.illus;save();renderIllust()});
 }
 
-/* ---------- ⑸ 音声化 ---------- */
-const auCfg=()=>db.cfg.audio||=({src:"s:cur",voice:"",rate:1,rep:1,gap:"shadow",chunk:false,ja:true,hideEn:false,wmean:true});
-const au={token:0,idx:0,list:[],kind:"s",chunk:-1,playing:false};
-function audioList(){
-  const c=auCfg(),[k,t,g]=c.src.split(":");
-  if(k==="s"){const it=getCur();
-    return t==="cur"?(it?[it]:[]):t==="bm"?db.items.filter(i=>i.bm):t==="todo"?db.items.filter(i=>i.status!=="mastered"):t==="g"?db.items.filter(i=>i.gids.includes(g)):db.items}
-  return t==="todo"?db.words.filter(w=>w.status!=="mastered"):t==="g"?db.words.filter(w=>w.gids.includes(g)):db.words;
-}
+/* ---------- 音声(どの画面からでも使える。設定は「設定 → 音声」の1か所)----------
+   ・1回読む: 各画面の ▶ ボタン(speak)
+   ・続けて再生: 一覧の「この一覧を続けて再生」→ 画面の下の小さなプレーヤー(startPlayer)
+   ・練習: ⑴ の「音声練習」カード(区切りごと・シャドーイング・聞き取り) */
+const AU_DEF={voice:"",rate:1,rep:1,gap:"none",chunk:false,ja:true,readJa:false,wmean:true};
+function auCfg(){const c=db.cfg.audio||={};for(const k in AU_DEF)if(!(k in c))c[k]=AU_DEF[k];return c}
+const au={token:0,idx:0,list:[],kind:"s",chunk:-1,playing:false,done:false,open:false,opts:{}};
 function say(text,lang,rate){
   return new Promise(res=>{const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=rate;
-    const v=lang.startsWith("en")&&speechSynthesis.getVoices().find(v=>v.name===auCfg().voice);if(v)u.voice=v;
+    const v=lang.startsWith("en")&&auCfg().voice&&speechSynthesis.getVoices().find(v=>v.name===auCfg().voice);if(v)u.voice=v;
     u.onend=u.onerror=()=>res();speechSynthesis.speak(u)});
 }
-function stopAudio(){au.token++;au.playing=false;speechSynthesis.cancel();au.chunk=-1}
+// 1回読む(すべての ▶ ボタンが使う)。設定の速さ・声で読む
+function speak(text,lang="en-US",rate){stopAudio();say(text,lang,rate??(+auCfg().rate||1))}
+function stopAudio(){au.token++;au.playing=false;speechSynthesis.cancel();au.chunk=-1;if(au.open)showNow()}
+// 続けて再生する。opts で、練習用に、設定を一時的に上書きできる(例: シャドーイング)
+function startPlayer(list,kind="s",opts={}){
+  if(!list.length)return toast("読み上げる英文がありません。");
+  stopAudio();Object.assign(au,{list,kind,idx:0,done:false,open:true,opts});play();
+}
 async function play(){
-  const c=auCfg(),tk=++au.token;speechSynthesis.cancel();au.playing=true;showNow();
+  const tk=++au.token;speechSynthesis.cancel();au.playing=true;au.done=false;showNow();
   const alive=()=>tk===au.token;
   for(;au.idx<au.list.length;au.idx++){
-    const o=au.list[au.idx];
+    const c={...auCfg(),...au.opts},o=au.list[au.idx]; // 速さなどの変更は、次の1文から反映される
     for(let r=0;r<Math.max(1,+c.rep||1);r++){
       const parts=au.kind==="s"?(c.chunk&&o.analysis?.slash?.length?o.analysis.slash.map(x=>x.en):[o.text]):[o.word];
       for(let p=0;p<parts.length;p++){
         au.chunk=parts.length>1?p:-1;showNow();
         const t0=Date.now();await say(parts[p],"en-US",+c.rate||1);if(!alive())return;
-        const gap=c.gap==="shadow"?(Date.now()-t0)*1.1+300:c.gap==="none"?250:(+c.gap)*1000;
+        // シャドーイング: 読み上げた長さの 1.1 倍 + 0.3 秒、無音にして、まねする時間にする
+        const gap=c.gap==="shadow"?(Date.now()-t0)*1.1+300:c.gap==="none"?(parts.length>1?250:500):(+c.gap)*1000;
         await wait(gap);if(!alive())return;
       }
       au.chunk=-1;
     }
-    if(au.kind==="w"&&c.wmean&&o.meaning){await say(o.meaning,"ja-JP",1);if(!alive())return;await wait(600)}
-    if(au.kind==="s"&&c.readJa&&o.analysis?.translation){await say(o.analysis.translation,"ja-JP",1.1);if(!alive())return;await wait(600)}
+    if(au.kind==="w"&&c.wmean&&o.meaning){await say(o.meaning,"ja-JP",1);if(!alive())return;await wait(500)}
+    if(au.kind==="s"&&c.readJa&&o.analysis?.translation){await say(o.analysis.translation,"ja-JP",1.1);if(!alive())return;await wait(500)}
   }
-  au.playing=false;au.idx=Math.max(0,au.list.length-1);showNow();
+  au.playing=false;au.done=true;au.idx=Math.max(0,au.list.length-1);au.chunk=-1;showNow();
 }
+const AU_RATES=[0.6,0.75,0.9,1,1.2,1.5];
 function showNow(){
-  const el=$("#auNow");if(!el)return;
-  const c=auCfg(),o=au.list[au.idx];
-  $("#auPlay").textContent=au.playing?"⏸ 停止":"▶ 再生";
-  if(!o){el.innerHTML='<div class="sub">対象がありません。</div>';return}
-  let body;
+  const mp=$("#miniPlayer");mp.classList.toggle("hide",!au.open);document.body.classList.toggle("has-player",au.open);
+  if(!au.open)return;
+  const c={...auCfg(),...au.opts},o=au.list[au.idx];
+  $("#mpPlay").textContent=au.playing?"⏸":"▶";$("#mpPlay").title=au.playing?"一時停止":(au.done?"最初から再生":"再生");
+  $("#mpPos").textContent=`${au.idx+1} / ${au.list.length}`+(au.opts.label?` ・ ${au.opts.label}`:"");
+  const rates=[...new Set([...AU_RATES,+c.rate||1])].sort((a,b)=>a-b); // 設定の速さが、一覧にない値でも、そのまま選ばれて見える
+  $("#mpRate").innerHTML=rates.map(r=>`<option value="${r}" ${r===(+c.rate||1)?"selected":""}>${r}x</option>`).join("");
+  if(!o){$("#mpTxt").textContent="対象がありません";return}
   if(au.kind==="s"){
     const parts=c.chunk&&o.analysis?.slash?.length?o.analysis.slash.map(x=>x.en):[o.text];
-    body=`<div class="now ${c.hideEn?"blank":""}" id="auEn">${parts.map((p,i)=>`<span class="ck ${i===au.chunk?"cur":""}">${esc(p)}</span>`).join(parts.length>1?' <span class="sub">/</span> ':"")}</div>
-      ${c.ja&&o.analysis?`<div class="sub">${esc(o.analysis.translation)}</div>`:""}`;
-  }else body=`<div class="now ${c.hideEn?"blank":""}" id="auEn">${esc(o.word)}</div>${c.ja?`<div class="sub">${esc(o.meaning)}</div>`:""}`;
-  el.innerHTML=`<div class="sub">${au.idx+1} / ${au.list.length}</div>${body}`;
-  $("#auEn").onclick=e=>e.currentTarget.classList.remove("blank");
+    $("#mpTxt").innerHTML=`<div class="mp-en">${parts.map((p,i)=>`<span class="ck ${i===au.chunk?"cur":""}">${esc(p)}</span>`).join(parts.length>1?' <span class="sub">/</span> ':"")}</div>`
+      +(c.ja&&o.analysis?`<div class="sub mp-ja">${esc(o.analysis.translation)}</div>`:"");
+  }else $("#mpTxt").innerHTML=`<div class="mp-en">${esc(o.word)}</div>${c.ja?`<div class="sub mp-ja">${esc(o.meaning)}</div>`:""}`;
 }
-function renderAudio(){
-  const box=$("#tab-audio"),c=auCfg();
-  const vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));
-  const go=(v,l)=>`<option value="${v}" ${c.src===v?"selected":""}>${esc(l)}</option>`;
-  box.innerHTML=`<div class="card"><h3>⑸ 音声化</h3>
-    <div class="row"><select id="auSrc" class="grow">
-      <optgroup label="英文">${go("s:cur","現在の英文")}${go("s:bm","★ブックマークの英文")}${go("s:todo","覚えた以外の英文")}${go("s:all","すべての英文")}${db.groups.map(g=>go("s:g:"+g.id,"英文: 🗂 "+g.name)).join("")}</optgroup>
-      <optgroup label="単語">${go("w:all","すべての単語")}${go("w:todo","覚えた以外の単語")}${db.groups.map(g=>go("w:g:"+g.id,"単語: 🗂 "+g.name)).join("")}</optgroup></select></div>
-    <div class="row" style="margin-top:8px">
-      <select id="auVoice" class="auto"><option value="">声: 自動(英語)</option>${vs.map(v=>`<option ${c.voice===v.name?"selected":""}>${esc(v.name)}</option>`).join("")}</select>
-      <label class="ck">速さ <input type="range" id="auRate" min="0.5" max="1.5" step="0.1" value="${c.rate}"> <span id="auRateV">${c.rate}</span>x</label>
-      <label class="ck">繰り返し <select id="auRep" class="auto">${[1,2,3,5].map(n=>`<option ${+c.rep===n?"selected":""}>${n}</option>`).join("")}</select> 回</label>
-      <label class="ck">間 <select id="auGap" class="auto">${[["none","なし"],["shadow","シャドーイング(同じ長さ)"],["2","2秒"],["4","4秒"]].map(([v,l])=>`<option value="${v}" ${c.gap===v?"selected":""}>${l}</option>`).join("")}</select></label>
-    </div>
-    <div class="row" style="margin-top:6px">
-      <label class="ck"><input type="checkbox" id="auChunk" ${c.chunk?"checked":""}>スラッシュ区切りで読む</label>
-      <label class="ck"><input type="checkbox" id="auJa" ${c.ja?"checked":""}>訳・意味を表示</label>
-      <label class="ck"><input type="checkbox" id="auReadJa" ${c.readJa?"checked":""}>英文の訳も読む</label>
-      <label class="ck"><input type="checkbox" id="auWmean" ${c.wmean?"checked":""}>単語の意味も読む</label>
-      <label class="ck"><input type="checkbox" id="auHide" ${c.hideEn?"checked":""}>英語を隠す(ディクテーション)</label>
-    </div></div>
-    <div class="card"><div id="auNow"></div>
-      <div class="row" style="margin-top:8px"><button id="auPrev">⏮</button><button class="pri" id="auPlay">▶ 再生</button><button id="auNext">⏭</button>
-      <span class="grow"></span><button class="sm" id="auOpen">⑴ 構造を見る</button></div></div>
-    <p class="sub">端末の読み上げ機能を使うので無料・オフラインでも動きます(声の種類は端末によります)。iPhone はマナーモードだと音が出ないことがあります。</p>`;
-  const reload=()=>{stopAudio();au.kind=c.src[0];au.list=audioList();au.idx=au.kind==="s"&&c.src==="s:cur"?0:Math.min(au.idx,Math.max(0,au.list.length-1));showNow()};
-  const bind=(id,key,fn=v=>v)=>$(id).onchange=e=>{c[key]=fn(e.target.type==="checkbox"?e.target.checked:e.target.value);save();if(key==="src"){au.idx=0;reload()}else showNow()};
-  bind("#auSrc","src");bind("#auVoice","voice");bind("#auRep","rep",Number);bind("#auGap","gap");
-  bind("#auChunk","chunk");bind("#auJa","ja");bind("#auReadJa","readJa");bind("#auWmean","wmean");bind("#auHide","hideEn");
-  $("#auRate").oninput=e=>{c.rate=+e.target.value;$("#auRateV").textContent=c.rate;save()};
-  $("#auPlay").onclick=()=>{if(au.playing){stopAudio();showNow()}else play()};
-  const mv=d=>{const was=au.playing;stopAudio();au.idx=Math.min(Math.max(0,au.idx+d),Math.max(0,au.list.length-1));showNow();if(was)play()};
-  $("#auPrev").onclick=()=>mv(-1);$("#auNext").onclick=()=>mv(1);
-  $("#auOpen").onclick=()=>{const o=au.list[au.idx];if(!o)return;if(au.kind==="s")openItem(o.id);else if(o.src)openItem(o.src)};
-  reload();
-}
-speechSynthesis.onvoiceschanged=()=>{if(active==="audio"&&!au.playing)renderAudio()};
+$("#mpPlay").onclick=()=>{if(au.playing){stopAudio()}else{if(au.done){au.idx=0}play()}};
+const mpStep=d=>{const was=au.playing;stopAudio();au.idx=Math.min(Math.max(0,au.idx+d),Math.max(0,au.list.length-1));au.done=false;showNow();if(was)play()};
+$("#mpPrev").onclick=()=>mpStep(-1);$("#mpNext").onclick=()=>mpStep(1);
+$("#mpClose").onclick=()=>{stopAudio();au.open=false;showNow()};
+$("#mpRate").onchange=e=>{auCfg().rate=+e.target.value;save()};
+$("#mpTxt").onclick=()=>{const o=au.list[au.idx];if(!o)return;if(au.kind==="s")openItem(o.id);else if(o.src&&db.items.some(i=>i.id===o.src))openItem(o.src)};
 
-/* ---------- ⑹ 英単語グループ化 + 単語帳 ---------- */
+/* ---------- ⑴ の「音声練習」カード ---------- */
+function practiceCard(it){
+  const hasSlash=!!it.analysis?.slash?.length;
+  return `<div class="card" id="prCard"><h3>音声練習</h3>
+    <div class="row"><button class="sm prPlay">▶ 1回聞く</button>${hasSlash?'<button class="sm prChunk">区切りごとに聞く</button>':""}
+      <button class="sm prShadow">シャドーイング</button><button class="sm prDict">聞き取り練習</button></div>
+    <div class="sub" style="margin-top:6px">端末の読み上げを使います(無料・オフライン可)。速さ・声・繰り返しは「設定 → 音声」で変えられます。</div>
+    <div id="prArea"></div></div>`;
+}
+function wirePractice(box,it){
+  const q=s=>box.querySelector(s);if(!q("#prCard"))return;
+  q(".prPlay").onclick=()=>speak(it.text);
+  q(".prChunk")?.addEventListener("click",()=>startPlayer([it],"s",{chunk:true,gap:"none",rep:1,label:"区切りごと"}));
+  q(".prShadow").onclick=()=>{ // 読んだあと、同じ長さの無音を空けるので、その間に声に出してまねする
+    startPlayer([it],"s",{gap:"shadow",rep:Math.max(2,+auCfg().rep||1),chunk:false,label:"シャドーイング"});
+    q("#prArea").innerHTML='<div class="sub" style="margin-top:8px">読み上げのあとの無音の間に、声に出してまねしてください(画面の下のプレーヤーで、止めたり進めたりできます)。</div>';
+  };
+  q(".prDict").onclick=()=>dictation(it,q("#prArea"));
+}
+// 聞き取り練習: 英文を見せずに聞かせ、入力させて、語ごとに答え合わせをする
+const dnorm=t=>String(t).toLowerCase().replace(/[^a-z0-9'’-]/g,"");
+function dictationResult(orig,typed){
+  const O=String(orig).split(/\s+/).filter(Boolean).map(t=>({t,n:dnorm(t),ok:false}));
+  const ow=O.filter(x=>x.n),T=String(typed).split(/\s+/).map(dnorm).filter(Boolean);
+  const m=ow.length,n=T.length,dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));
+  for(let i=m-1;i>=0;i--)for(let j=n-1;j>=0;j--)dp[i][j]=ow[i].n===T[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+  let i=0,j=0;
+  while(i<m&&j<n){if(ow[i].n===T[j]){ow[i].ok=true;i++;j++}else if(dp[i+1][j]>=dp[i][j+1])i++;else j++}
+  return{tokens:O.map(x=>({t:x.t,ok:!x.n||x.ok})),hit:ow.filter(x=>x.ok).length,total:m};
+}
+function dictation(it,area){
+  stopAudio();au.open=false;showNow();
+  area.innerHTML=`<div class="sub" style="margin-top:8px">英文は隠しています。聞いて、聞こえたとおりに入力してください(本番と同じく、文字は見ません)。</div>
+    <textarea id="dcIn" style="min-height:70px;margin-top:6px" placeholder="聞こえた英文を入力" autocomplete="off" spellcheck="false"></textarea>
+    <div class="row" style="margin-top:6px"><button class="sm" id="dcAgain">▶ もう一度</button><button class="sm" id="dcSlow">▶ ゆっくり</button><button class="sm pri" id="dcCheck">答え合わせ</button></div>
+    <div id="dcOut"></div>`;
+  const rate=+auCfg().rate||1;
+  $("#dcAgain").onclick=()=>{stopAudio();say(it.text,"en-US",rate)};
+  $("#dcSlow").onclick=()=>{stopAudio();say(it.text,"en-US",Math.max(0.5,rate*0.75))};
+  $("#dcCheck").onclick=()=>{
+    const res=dictationResult(it.text,$("#dcIn").value),pct=res.total?Math.round(res.hit/res.total*100):0;
+    $("#dcOut").innerHTML=`<div class="card" style="margin:8px 0 0;padding:10px 12px"><b>聞き取れた語: ${res.hit} / ${res.total}(${pct}%)</b>
+      <div class="dc-ans">${res.tokens.map(x=>`<span class="${x.ok?"dc-ok":"dc-miss"}">${esc(x.t)}</span>`).join(" ")}</div>
+      <div class="sub">赤い語は、聞き取れなかった(入力と合わなかった)語です。</div>
+      <div class="row" style="margin-top:6px"><button class="sm" id="dcSpk">▶ 正しい英文を聞く</button></div></div>`;
+    $("#dcSpk").onclick=()=>speak(it.text);
+    it.review_count=(it.review_count||0)+1;it.last_reviewed=today();save(); // 聞き取りも、復習1回として数える
+  };
+  stopAudio();say(it.text,"en-US",rate); // 最初の1回は、すぐ流す
+}
+
+/* ---------- 設定 → 音声 ---------- */
+function renderAuSettings(){
+  const c=auCfg(),sel=$("#auVoice"),vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));
+  sel.innerHTML='<option value="">自動(端末の標準の英語)</option>'+vs.map(v=>`<option ${c.voice===v.name?"selected":""}>${esc(v.name)}</option>`).join("");
+  $("#auRate").value=c.rate;$("#auRateV").textContent=c.rate;$("#auRep").value=String(c.rep);$("#auGap").value=String(c.gap);
+  $("#auChunk").checked=!!c.chunk;$("#auJa").checked=!!c.ja;$("#auReadJa").checked=!!c.readJa;$("#auWmean").checked=!!c.wmean;
+}
+{
+  const bind=(id,key,fn=v=>v)=>$(id).onchange=e=>{auCfg()[key]=fn(e.target.type==="checkbox"?e.target.checked:e.target.value);save();if(au.open)showNow()};
+  bind("#auVoice","voice");bind("#auRep","rep",Number);bind("#auGap","gap");
+  bind("#auChunk","chunk");bind("#auJa","ja");bind("#auReadJa","readJa");bind("#auWmean","wmean");
+  $("#auRate").oninput=e=>{auCfg().rate=+e.target.value;$("#auRateV").textContent=e.target.value;save();if(au.open)showNow()};
+  $("#auTest").onclick=()=>speak("The meeting has been rescheduled to Thursday afternoon.");
+}
+speechSynthesis.onvoiceschanged=()=>{if($("#dlg").open)renderAuSettings()};
+
+/* ---------- ⑸ 英単語グループ化 + 単語帳 ---------- */
 function renderWords(){
   const box=$("#wTools");
   box.innerHTML=toolsHTML("w")+boardHTML("w");wireTools(box,"w");
   box.querySelectorAll(".gbox").forEach(b=>b.onclick=()=>{$("#wGrp").value=b.dataset.g;renderWordList();$("#wq").scrollIntoView({behavior:"smooth"})});
   fillGroupSelect($("#wGrp"));renderWordList();
 }
-function renderWordList(){
+function visibleWords(){
   const q=$("#wq").value.trim().toLowerCase(),g=$("#wGrp").value,sf=$("#wStatus").value;
-  const rows=db.words.filter(w=>(!q||w.word.toLowerCase().includes(q)||w.meaning.includes(q))&&inGroup(w,g)&&stOk(w.status,sf));
+  return db.words.filter(w=>(!q||w.word.toLowerCase().includes(q)||w.meaning.includes(q))&&inGroup(w,g)&&stOk(w.status,sf));
+}
+function renderWordList(){
+  const rows=visibleWords();
   $("#wCount").textContent=`${rows.length} / ${db.words.length} 語 ・ 覚えた ${db.words.filter(w=>w.status==="mastered").length}`;
   $("#wHide").classList.toggle("on",hideMean);
   $("#wList").innerHTML=rows.length?rows.map(w=>`<div class="item" data-id="${w.id}">
@@ -1493,6 +1580,7 @@ $("#wList").onchange=e=>{
   const w=db.words.find(x=>x.id===s.closest(".item").dataset.id);w.status=s.value;save();renderWordList();
 };
 $("#wq").oninput=renderWordList;$("#wGrp").onchange=renderWordList;$("#wStatus").onchange=renderWordList;
+$("#wPlay").onclick=()=>startPlayer(visibleWords(),"w");
 $("#wHide").onclick=()=>{hideMean=!hideMean;renderWordList()};
 $("#nwAdd").onclick=()=>{
   const word=$("#nwWord").value.trim();if(!word)return;
