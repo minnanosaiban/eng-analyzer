@@ -162,6 +162,18 @@ body.has-player .back-to-top{bottom:90px}
 .dc-ans{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.9;margin-top:6px}
 .dc-ok{color:var(--pc-adj)}
 .dc-miss{color:var(--warn);text-decoration:underline wavy;text-underline-offset:4px;font-weight:600}
+/* 区切りごとの形 */
+.phline{margin-top:8px;font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:2.1}
+.phs{border-bottom:3px solid var(--phc);padding:0 2px 1px;margin-right:2px}
+.phs sup{font-family:system-ui,sans-serif;font-size:11px;color:var(--phc);margin-right:2px}
+.phl{margin-top:8px}
+.phr{display:grid;grid-template-columns:1.6em 1fr;align-items:baseline;gap:2px 8px;padding:8px 0;border-top:1px solid var(--tx-border)}
+.phr .phf{grid-column:2;justify-self:start}
+@media (min-width:600px){.phr{grid-template-columns:1.6em minmax(0,1fr) auto}.phr .phf{grid-column:3;justify-self:end;align-self:center}}
+.phn{font-size:16px;color:var(--phc);min-width:1.4em}
+.pht{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:17px}
+.phf{display:inline-block;font-size:12.5px;line-height:1.7;padding:0 10px;border:1px solid var(--phc);color:var(--phc);border-radius:999px;white-space:nowrap}
+.ph-s{--phc:var(--pc-n)}.ph-v{--phc:var(--pc-adv)}.ph-p{--phc:var(--pc-prep)}.ph-c{--phc:var(--pc-conj)}.ph-o{--phc:var(--pc-det)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;max-width:min(90vw,640px);padding:10px 16px;border-radius:8px;background:#1c1d21;color:#fff;font-size:13px;box-shadow:0 2px 10px rgba(0,0,0,.28);white-space:pre-wrap}
 .toast.toast-error{background:#a12a2a}
 .back-to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:#1c1d21;color:#fff;border:none;padding:0;box-shadow:var(--tx-shadow-md);z-index:50}
@@ -239,7 +251,7 @@ body.has-player .back-to-top{bottom:90px}
     <div class="row sub" style="margin-top:8px">
       <span id="count"></span><span class="grow"></span>
       <button class="sm" id="btnBatch">表示中の未解析を一括解析</button>
-      <button class="sm" id="btnTag" title="解析済みで、品詞の色分けがまだない英文に付けます">表示中の品詞を一括で付ける</button>
+      <button class="sm" id="btnTag" title="解析済みで、品詞の色分けや、区切りの形がまだない英文に付けます">表示中の品詞・区切りの形を一括で付ける</button>
       <button class="sm hide" id="btnBatchStop">停止</button>
       <button class="sm" id="btnSelAll">表示中を全選択</button>
       <button class="sm" id="btnExport">バックアップ保存</button>
@@ -628,6 +640,7 @@ let batchStop=false;
 function applyAnalysis(it,a){
   delete a.n;const lv=normLevel(a.difficulty);delete a.difficulty;
   const ws=cleanWords(a.words,it.text);if(ws)a.words=ws;else delete a.words; // 品詞が不正なら、色分けだけ付けない
+  const ph=cleanPhrases(a.phrases,it.text);if(ph)a.phrases=ph;else delete a.phrases; // 区切りが不正なら、区切りの形だけ付けない
   it.analysis=a;it.verified=false;if(it.level==null)it.level=lv;
 }
 async function runAnalyze(todo,msg){
@@ -652,8 +665,8 @@ $("#btnBatch").onclick=async()=>{
 };
 $("#btnBatchStop").onclick=()=>batchStop=true;
 $("#btnTag").onclick=async()=>{
-  const todo=visibleItems().filter(i=>i.analysis&&!cleanWords(i.analysis.words,i.text));
-  if(!todo.length)return toast("表示中の解析済みの英文には、すべて品詞が付いています。");
+  const todo=visibleItems().filter(needsExtras);
+  if(!todo.length)return toast("表示中の解析済みの英文には、品詞も区切りの形も、すべて付いています。");
   $("#btnTag").disabled=true;
   try{await tagMany(todo,t=>{$("#batchMsg").textContent=t})}finally{$("#btnTag").disabled=false}
 };
@@ -681,7 +694,7 @@ const clip=(s,n)=>String(s??"").replace(/\s+/g," ").trim().slice(0,n);
 function cleanItem(i){
   const an=i.analysis&&typeof i.analysis==="object"&&!Array.isArray(i.analysis)&&JSON.stringify(i.analysis).length<30000?i.analysis:null;
   const o={text:clip(i.text,500),bm:false,added:Date.now(),analysis:an,level:i.level,verified:an?false:true};
-  if(an){const w=cleanWords(an.words,o.text);if(w)an.words=w;else delete an.words}
+  if(an){const w=cleanWords(an.words,o.text);if(w)an.words=w;else delete an.words;const p=cleanPhrases(an.phrases,o.text);if(p)an.phrases=p;else delete an.phrases}
   const q=cleanQuiz(i.quiz),il=cleanIllus(i.illus),rl=cleanRel(i.rel);
   if(q)o.quiz=q;if(il)o.illus=il;if(rl)o.rel=rl;
   return o;
@@ -715,6 +728,8 @@ function fillMissing(ex,i){
   let c=false;
   const ws=cleanWords(i.analysis?.words,ex.text);
   if(ex.analysis&&!cleanWords(ex.analysis.words,ex.text)&&ws){ex.analysis.words=ws;c=true}
+  const ph=cleanPhrases(i.analysis?.phrases,ex.text);
+  if(ex.analysis&&!cleanPhrases(ex.analysis.phrases,ex.text)&&ph){ex.analysis.phrases=ph;c=true}
   const q=cleanQuiz(i.quiz);if(!ex.quiz&&q){ex.quiz=q;c=true}
   const il=cleanIllus(i.illus);if(!ex.illus&&il){ex.illus=il;c=true}
   const rl=cleanRel(i.rel);if(!ex.rel&&rl){ex.rel=rl;c=true}
@@ -811,11 +826,13 @@ JSON形式:
  "tense":{"name":"時制・態・法(例: 現在完了形・受動態)","explanation":"解説"},
  "grammar":[{"point":"文法事項","explanation":"解説"}],
  "words":[{"w":"英文を半角スペースで区切った1語","p":"品詞コード"}],  // 品詞の色分け用。下の「品詞コードの規則」に従う
+ "phrases":[{"t":"原文を、文法上のまとまりごとに区切った英語","f":"そのまとまりの形(例: 主語+動詞 / to+不定詞句 / 前置詞句)"}],  // 区切りごとの形の説明用。下の「区切りの形の規則」に従う
  "vocab":[{"word":"単語・熟語(原形)","pos":"品詞","meaning":"この文脈での意味","note":"補足(任意)","level":"TOEIC頻出度 1〜3 の数字(3が最頻出)","toeic":"TOEICでの典型的な使われ方・よく組む語(コロケーション)。なければ空文字"}],
  "toeic":{"scene":"ビジネス場面(人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 など1つ)","part":"出題されやすいパート(例: Part 5 / Part 6 / Part 7)","points":[{"type":"品詞 / 時制 / 前置詞 / 接続詞・副詞 / 関係詞 / 代名詞 / 語彙 / 語法 のいずれか","detail":"この文で問われうる論点"}],"paraphrase":["TOEIC(Part 7の設問や選択肢)で使われそうな言い換え表現"]}
 }
 この英文がTOEICに出る場合の観点(toeic)も必ず含めること。
 【品詞コードの規則(words)】${POS_RULE}
+【区切りの形の規則(phrases)】${PHRASE_RULE}
 さらに JSON の最上位に "difficulty" を加え、この英文の難易度の目安を 600 / 730 / 860 のいずれかの数字1つで答えること(TOEICのスコア帯の目安)。
 ${LV_TEXT}`;
 const BPROMPT=list=>`次の${list.length}個の英文それぞれについて、下の「1文あたりの指示」どおりに分析し、結果を JSON 配列 [{"n":1, ...}, {"n":2, ...}] で答えてください(n は英文の番号。各要素は指示の JSON 形式に n を加えたもの)。
@@ -829,13 +846,16 @@ ${PROMPT("(上の各英文)")}`;
 const POS={n:"名詞",pron:"代名詞",v:"動詞",aux:"助動詞",adj:"形容詞",adv:"副詞",prep:"前置詞",conj:"接続詞・関係詞",det:"冠詞・限定詞",other:"その他"};
 const POS_RULE=`w は英文を半角スペースで区切った1語(句読点は語に付けたまま)。w を半角スペースでつなぐと、原文と完全に一致すること。
 p は品詞コードで、その文の中での働きで決める: n=名詞(固有名詞・動名詞の名詞用法を含む) / pron=代名詞(I, it, they, this など) / v=動詞(be動詞・分詞が動詞として働く場合を含む) / aux=助動詞(will, must, can, have/has/had と be の助動詞用法, do/does) / adj=形容詞(名詞を修飾する過去分詞・現在分詞を含む) / adv=副詞 / prep=前置詞 / conj=接続詞・関係詞(and, because, which, who, that(節を導く) など) / det=冠詞・限定詞(a, the, this/that+名詞, some, its, their, any など) / other=不定詞の to・数詞・記号・その他`;
-const WPROMPT=s=>`次の英文の各語に、品詞コードを付けてください。JSONのみで答えてください: {"words":[{"w":"語","p":"品詞コード"}]}
+// 品詞と、区切りの形を、いっしょに判定させる(後から足すとき用)
+const WPROMPT=s=>`次の英文について、(1) 各語の品詞コード(words)と、(2) 文法上のまとまりごとの区切りと形(phrases)を付けてください。JSONのみで答えてください: {"words":[{"w":"語","p":"品詞コード"}],"phrases":[{"t":"まとまり","f":"形"}]}
 英文: ${s}
-${POS_RULE}`;
-const BWPROMPT=list=>`次の${list.length}個の英文それぞれの各語に、品詞コードを付けてください。JSON配列のみで答えてください: [{"n":1,"words":[{"w":"語","p":"品詞コード"}]}, {"n":2,"words":[...]}]
+【words の規則】${POS_RULE}
+【phrases の規則】${PHRASE_RULE}`;
+const BWPROMPT=list=>`次の${list.length}個の英文それぞれについて、(1) 各語の品詞コード(words)と、(2) 文法上のまとまりごとの区切りと形(phrases)を付けてください。JSON配列のみで答えてください: [{"n":1,"words":[{"w":"語","p":"品詞コード"}],"phrases":[{"t":"まとまり","f":"形"}]}, {"n":2,...}]
 英文:
 ${list.map((s,i)=>`${i+1}. ${s}`).join("\n")}
-${POS_RULE}`;
+【words の規則】${POS_RULE}
+【phrases の規則】${PHRASE_RULE}`;
 // words を検査する。語をスペースでつないだものが原文と一致しなければ捨てる(色分けをしないだけで、解析は壊さない)
 function cleanWords(ws,text){
   if(!Array.isArray(ws)||!ws.length||ws.length>150)return null;
@@ -844,38 +864,87 @@ function cleanWords(ws,text){
   const norm=s=>String(s).replace(/\s+/g," ").trim();
   return norm(out.map(x=>x.w).join(" "))===norm(text)?out:null;
 }
-function applyWords(it,ws){
-  const c=cleanWords(ws,it.text);
-  if(!c)throw new Error("品詞を読み取れませんでした。もう一度試してください。");
-  it.analysis.words=c;
+const needsExtras=i=>!!i.analysis&&(!cleanWords(i.analysis.words,i.text)||!cleanPhrases(i.analysis.phrases,i.text));
+// 返ってきた words / phrases のうち、検査を通って、まだ無いものだけを入れる。入れたものの数を返す
+function applyExtras(it,r){
+  const a=it.analysis;let got=0;
+  const w=cleanWords(r?.words,it.text);if(w&&!cleanWords(a.words,it.text)){a.words=w;got++}
+  const p=cleanPhrases(r?.phrases,it.text);if(p&&!cleanPhrases(a.phrases,it.text)){a.phrases=p;got++}
+  return got;
 }
-async function tagOne(it){const r=await gemini(WPROMPT(it.text),0.1);applyWords(it,r.words||r);save()}
-// 品詞が未付与の英文に、まとめて付ける(API: 1文ずつ / コピペモード: 10文ずつ)
+async function tagOne(it){
+  const r=await gemini(WPROMPT(it.text),0.1);
+  if(!applyExtras(it,r))throw new Error("品詞・区切りの形を読み取れませんでした。もう一度試してください。");
+  save();
+}
+// 品詞・区切りの形が未付与の英文に、まとめて付ける(API: 1文ずつ / コピペモード: 10文ずつ)
 async function tagMany(todo,msg){
   if(isCopyMode()){
     const N=10,rounds=Math.ceil(todo.length/N);
-    if(!confirm(`${todo.length} 文の品詞を、${N} 文ずつまとめて付けます(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return 0;
+    if(!confirm(`${todo.length} 文の品詞・区切りの形を、${N} 文ずつまとめて付けます(Gemini とのコピペ ${rounds} 回)。よろしいですか?`))return 0;
     let k=0;
     for(let r=0;r<rounds;r++){
       const part=todo.slice(r*N,r*N+N);msg(`コピペ ${r+1} / ${rounds} 回目(${part.length} 文)`);
       try{
         const res=await gemini(BWPROMPT(part.map(i=>i.text)),0.1);
         const arr=Array.isArray(res)?res:res.results||[];
-        part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];const c=cleanWords(a?.words,it.text);if(c){it.analysis.words=c;k++}});
+        part.forEach((it,i)=>{const a=arr.find(x=>+x?.n===i+1)||arr[i];if(a&&applyExtras(it,a))k++});
         save();refreshLib();
       }catch(e){msg(`停止しました(${k} 文に付与): ${e.message}`);return k}
     }
-    msg(`完了: ${k} / ${todo.length} 文に品詞を付けました`+(k<todo.length?"(付かなかった文は、もう一度押すと再挑戦します)":""));return k;
+    msg(`完了: ${k} / ${todo.length} 文に付けました`+(k<todo.length?"(付かなかった文は、もう一度押すと再挑戦します)":""));return k;
   }
-  if(!confirm(`${todo.length} 文の品詞を、1文ずつ付けます(API を ${todo.length} 回呼び出します)。よろしいですか?`))return 0;
+  if(!confirm(`${todo.length} 文の品詞・区切りの形を、1文ずつ付けます(API を ${todo.length} 回呼び出します)。よろしいですか?`))return 0;
   batchStop=false;let k=0;
   for(const it of todo){
     if(batchStop){msg(`停止しました(${k} 文に付与)`);return k}
-    msg(`品詞を付与中… ${k+1} / ${todo.length}`);
+    msg(`付与中… ${k+1} / ${todo.length}`);
     try{await tagOne(it);k++;refreshLib()}catch(e){msg(`エラーで停止(${k} 文に付与): ${e.message}`);return k}
     await wait(1500);
   }
-  msg(`完了: ${k} 文に品詞を付けました`);return k;
+  msg(`完了: ${k} 文に付けました`);return k;
+}
+/* ---------- 区切りごとの形(例: ⑴ Candidates are advised:主語+動詞 / ⑵ to bring …:to+不定詞句 / ⑶ to the interview:前置詞句)---------- */
+const PHRASE_RULE=`phrases は、英文を、文法上のまとまり(主語+動詞の核、to不定詞句、前置詞句、副詞節、関係詞節など)ごとに、前から順に区切ったもの(2〜8個)。t は原文の語句で、t を半角スペースでつなぐと、原文と完全に一致すること。f は、そのまとまりの文法上の形で、短い日本語(24字以内)。
+f の例: 主語+動詞 / 主語+動詞+目的語 / 主語+動詞+補語 / to+不定詞句 / 動名詞句 / 分詞句 / 前置詞句 / 副詞(句) / 接続詞+節(副詞節) / 関係詞節 / 名詞節(that節) / 同格 / 比較句 / 挿入句
+例: "Candidates are advised to bring copies of their certificates to the interview." → [{"t":"Candidates are advised","f":"主語+動詞"},{"t":"to bring copies of their certificates","f":"to+不定詞句"},{"t":"to the interview","f":"前置詞句"}]`;
+// phrases を検査する。語句をスペースでつなぐと、原文と一致しなければ捨てる(区切りの形だけを付けない。解析の他の部分は残す)
+function cleanPhrases(ps,text){
+  if(!Array.isArray(ps)||ps.length<2||ps.length>12)return null;
+  const out=[];
+  for(const x of ps){
+    if(!x||typeof x.t!=="string"||!x.t.trim())return null;
+    const f=clip(x.f,40);if(!f)return null;
+    out.push({t:x.t.trim().replace(/\s+/g," "),f});
+  }
+  const norm=s=>String(s).replace(/\s+/g," ").trim();
+  return norm(out.map(x=>x.t).join(" "))===norm(text)?out:null;
+}
+const PH_NUM=i=>i<20?String.fromCodePoint(0x2474+i):`(${i+1})`; // ⑴⑵⑶…⒇
+// 形のラベルから、色の系統を決める(色だけに頼らず、ラベルの文字も必ず出す)
+function phraseClass(f){
+  if(/節/.test(f))return "c";
+  if(/不定詞|動名詞|分詞/.test(f))return "v";
+  if(/前置詞/.test(f))return "p";
+  if(/主語|動詞|目的語|補語/.test(f))return "s";
+  return "o";
+}
+function phrasesCard(it){
+  const a=it.analysis;if(!a)return "";
+  const ph=cleanPhrases(a.phrases,it.text);
+  if(!ph)return `<div class="card"><div class="row"><h3 class="grow" style="margin:0">区切りごとの形</h3><button class="sm" id="phAdd">区切りの形を付ける</button></div>
+    <div class="sub">この英文には、まだ区切りの情報がありません。「区切りの形を付ける」で、AI が、文法上のまとまりごとに区切って、形(主語+動詞、to+不定詞句、前置詞句など)を付けます(新しく解析した英文には、はじめから付きます)。</div><div class="err" id="phErr"></div></div>`;
+  return `<div class="card"><div class="row"><h3 class="grow" style="margin:0">区切りごとの形</h3><button class="sm" id="phCopy">テキストでコピー</button></div>
+    <div class="phline">${ph.map((x,i)=>`<span class="phs ph-${phraseClass(x.f)}"><sup>${PH_NUM(i)}</sup>${esc(x.t)}</span>`).join(" ")}</div>
+    <div class="phl">${ph.map((x,i)=>`<div class="phr ph-${phraseClass(x.f)}"><span class="phn">${PH_NUM(i)}</span><span class="pht">${esc(x.t)}</span><span class="phf">${esc(x.f)}</span></div>`).join("")}</div>
+    <div class="sub" style="margin-top:6px">AI の判定なので、誤りがあることがあります。</div></div>`;
+}
+function wirePhrases(box,it){
+  box.querySelector("#phAdd")?.addEventListener("click",e=>act(e.target,"判定中…",()=>tagOne(it),box.querySelector("#phErr")));
+  box.querySelector("#phCopy")?.addEventListener("click",()=>{
+    const ph=cleanPhrases(it.analysis?.phrases,it.text)||[];
+    copyText(ph.map((x,i)=>`${PH_NUM(i)} ${x.t}:${x.f}`).join("\n"),box.querySelector("#phCopy")).then(()=>toast("コピーしました。"));
+  });
 }
 let posFocus=null;
 function posCard(it){
@@ -926,7 +995,7 @@ function renderStruct(){
     const sl=(a.slash||[]).map((c,i)=>`${i?'<span class="sl">/</span>':""}<span class="chunk"><b>${esc(c.en)}</b><i>${esc(c.ja)}</i></span>`).join("");
     h+=`<div class="card"><h3>日本語訳</h3>${esc(a.translation)}</div>
     <div class="card"><h3>① スラッシュリーディング</h3><div class="chunks">${sl}</div></div>
-    ${posCard(it)}<div class="card"><h3>② 文構造</h3>
+    ${phrasesCard(it)}${posCard(it)}<div class="card"><h3>② 文構造</h3>
       ${(a.elements||[]).map(e=>`<div><span class="role ${esc(e.role)}">${esc(e.role)}</span><b>${esc(e.text)}</b> <span class="sub">${esc(e.note)}</span></div>`).join("")}
       <table style="margin-top:8px">${(a.clauses||[]).map(c=>`<tr><td><b>${esc(c.kind)}</b></td><td>${esc(c.text)}</td><td class="sub">${esc(c.role)}</td></tr>`).join("")}</table>
       <div class="row" style="margin-top:6px"><button class="sm" id="toRel">⑶ 関係図で見る</button></div></div>
@@ -947,7 +1016,7 @@ function renderStruct(){
     ${q?`<div class="en" style="margin-top:6px">${esc(q.question)}</div>
     <div>${q.choices.map((c,i)=>`<div style="margin:4px 0"><button class="qc" data-i="${i}" style="width:100%;text-align:left">(${"ABCD"[i]}) ${esc(c)}</button></div>`).join("")}</div>
     <div id="qEx" class="hide"><b>正解: (${"ABCD"[q.answer]}) ${esc(q.choices[q.answer])}</b> <span class="tag">${esc(q.type)}</span><div class="sub">${esc(q.explanation)}</div><div class="row" style="margin-top:6px"><button class="sm qSpk">▶ 正しい英文を聞く</button></div><div id="qRec"></div></div>`:'<div class="sub" style="margin-top:6px">解析済みでなくても作成できます。</div>'}</div>`;
-  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);wirePos(box,it);wirePractice(box,it);
+  box.innerHTML=h;wireBar(box);renderManage(box.querySelector("#mgCard"),it);wirePos(box,it);wirePhrases(box,it);wirePractice(box,it);
   const err=box.querySelector(".sbErr");
   $("#vRun").onclick=e=>{
     if(it.analysis&&it.verified&&!confirm("確認済みの解析結果を、新しい解析で上書きします。よろしいですか?"))return;

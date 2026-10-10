@@ -228,6 +228,16 @@
       "w": "floor.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "All new employees must complete the safety training",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "before they begin working on the production floor.",
+      "f": "接続詞+節(副詞節・時)"
+     }
     ]
    },
    "level": 600,
@@ -477,6 +487,24 @@
       "w": "manager.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Ms. Tanaka,",
+      "f": "主語"
+     },
+     {
+      "t": "who joined the marketing team last spring,",
+      "f": "関係詞節"
+     },
+     {
+      "t": "has been promoted",
+      "f": "動詞句"
+     },
+     {
+      "t": "to senior manager.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -717,6 +745,20 @@
      {
       "w": "résumés.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Applicants are required",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to submit two letters of recommendation",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "along with their résumés.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -984,6 +1026,16 @@
       "w": "it.",
       "p": "pron"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The human resources department will announce the new vacation policy",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "once the board has approved it.",
+      "f": "接続詞+節(副詞節・時)"
+     }
     ]
    },
    "level": 730,
@@ -1204,6 +1256,24 @@
      {
       "w": "compensation.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Employees",
+      "f": "主語"
+     },
+     {
+      "t": "who work overtime",
+      "f": "関係詞節"
+     },
+     {
+      "t": "are entitled",
+      "f": "動詞句"
+     },
+     {
+      "t": "to additional compensation.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -1454,6 +1524,20 @@
       "w": "logistics.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Mr. Okada was hired",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "as a project coordinator",
+      "f": "前置詞句"
+     },
+     {
+      "t": "because of his extensive experience in logistics.",
+      "f": "前置詞句(理由)"
+     }
     ]
    },
    "level": 730,
@@ -1694,6 +1778,20 @@
      {
       "w": "heads.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Interviews will be conducted",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "next week",
+      "f": "副詞句"
+     },
+     {
+      "t": "by a panel of three department heads.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -1944,6 +2042,20 @@
      {
       "w": "plan.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Unless otherwise noted,",
+      "f": "副詞節(条件)"
+     },
+     {
+      "t": "all full-time staff are eligible",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "for the company health plan.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -2206,6 +2318,20 @@
      {
       "w": "interview.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Having reviewed all of the applications,",
+      "f": "分詞句"
+     },
+     {
+      "t": "the committee selected five candidates",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "for a second interview.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -2473,6 +2599,20 @@
       "w": "leave.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Please inform your supervisor",
+      "f": "動詞+目的語(命令文)"
+     },
+     {
+      "t": "at least two weeks in advance",
+      "f": "副詞句"
+     },
+     {
+      "t": "if you plan to take extended leave.",
+      "f": "接続詞+節(副詞節・条件)"
+     }
     ]
    },
    "level": 730,
@@ -2721,6 +2861,20 @@
      {
       "w": "trip.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The quarterly sales meeting has been rescheduled",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to Thursday",
+      "f": "前置詞句"
+     },
+     {
+      "t": "due to the director's business trip.",
+      "f": "前置詞句(理由)"
      }
     ]
    },
@@ -2993,6 +3147,24 @@
       "w": "answers.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Participants are encouraged",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to submit their questions",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "in advance",
+      "f": "副詞句"
+     },
+     {
+      "t": "so that the speakers can prepare thorough answers.",
+      "f": "接続詞+節(副詞節・目的)"
+     }
     ]
    },
    "level": 730,
@@ -3231,6 +3403,20 @@
       "w": "immediately.",
       "p": "adv"
      }
+    ],
+    "phrases": [
+     {
+      "t": "If the flight is delayed,",
+      "f": "副詞節(条件)"
+     },
+     {
+      "t": "please contact the travel desk",
+      "f": "動詞+目的語(命令文)"
+     },
+     {
+      "t": "immediately.",
+      "f": "副詞"
+     }
     ]
    },
    "level": 600,
@@ -3454,6 +3640,24 @@
      {
       "w": "people.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The conference room",
+      "f": "主語"
+     },
+     {
+      "t": "on the third floor",
+      "f": "前置詞句"
+     },
+     {
+      "t": "can accommodate",
+      "f": "動詞句"
+     },
+     {
+      "t": "up to forty people.",
+      "f": "目的語"
      }
     ]
    },
@@ -3693,6 +3897,16 @@
      {
       "w": "arrived.",
       "p": "v"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Neither the presentation nor the handouts were ready",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "by the time the clients arrived.",
+      "f": "接続詞+節(副詞節)"
      }
     ]
    },
@@ -3963,6 +4177,20 @@
      {
       "w": "upgrade.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Mr. Sato will be visiting our Singapore office",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "from Monday through Wednesday",
+      "f": "前置詞句"
+     },
+     {
+      "t": "to oversee the system upgrade.",
+      "f": "to+不定詞句"
      }
     ]
    },
@@ -4247,6 +4475,20 @@
       "w": "launch.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The agenda",
+      "f": "主語"
+     },
+     {
+      "t": "for tomorrow's meeting",
+      "f": "前置詞句"
+     },
+     {
+      "t": "includes a review of last month's budget and a discussion of the upcoming product launch.",
+      "f": "動詞句+目的語"
+     }
     ]
    },
    "level": 730,
@@ -4486,6 +4728,16 @@
      {
       "w": "trip.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Travel expenses must be reported",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "within thirty days of the trip.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -4753,6 +5005,24 @@
       "w": "fee.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Attendees",
+      "f": "主語"
+     },
+     {
+      "t": "who register before the end of the month",
+      "f": "関係詞節"
+     },
+     {
+      "t": "will receive a discount",
+      "f": "動詞句+目的語"
+     },
+     {
+      "t": "on the admission fee.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -5000,6 +5270,20 @@
      {
       "w": "venue.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "We apologize",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "for any inconvenience",
+      "f": "前置詞句"
+     },
+     {
+      "t": "caused by the change in the seminar venue.",
+      "f": "分詞句"
      }
     ]
    },
@@ -5291,6 +5575,24 @@
       "w": "termination.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The contract will remain",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "in effect",
+      "f": "前置詞句"
+     },
+     {
+      "t": "for two years",
+      "f": "前置詞句"
+     },
+     {
+      "t": "unless either party gives written notice of termination.",
+      "f": "接続詞+節(副詞節・条件)"
+     }
     ]
    },
    "level": 730,
@@ -5561,6 +5863,20 @@
       "w": "year.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Revenue from overseas sales increased",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "by 12 percent",
+      "f": "前置詞句"
+     },
+     {
+      "t": "compared with the same period last year.",
+      "f": "比較句"
+     }
     ]
    },
    "level": 730,
@@ -5800,6 +6116,16 @@
      {
       "w": "issue.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "All invoices should be paid",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "within thirty days of the date of issue.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -6057,6 +6383,20 @@
      {
       "w": "report.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The accounting department is responsible",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "for verifying every receipt",
+      "f": "前置詞句"
+     },
+     {
+      "t": "submitted with an expense report.",
+      "f": "分詞句"
      }
     ]
    },
@@ -6327,6 +6667,20 @@
      {
       "w": "September.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Provided that the inspection is completed on schedule,",
+      "f": "接続詞+節(副詞節・条件)"
+     },
+     {
+      "t": "the new facility will open",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "in September.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -6601,6 +6955,24 @@
       "w": "percent.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Because of the rising cost of raw materials,",
+      "f": "前置詞句(理由)"
+     },
+     {
+      "t": "the company has decided",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to raise its prices",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "by five percent.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -6872,6 +7244,20 @@
       "w": "shipped.",
       "p": "v"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Payment will be refunded",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "in full",
+      "f": "前置詞句"
+     },
+     {
+      "t": "if the order is canceled before it is shipped.",
+      "f": "接続詞+節(副詞節・条件)"
+     }
     ]
    },
    "level": 730,
@@ -7112,6 +7498,20 @@
      {
       "w": "negotiation.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The agreement was signed",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "by both parties",
+      "f": "前置詞句"
+     },
+     {
+      "t": "after several weeks of negotiation.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -7379,6 +7779,24 @@
       "w": "month.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Shareholders are expected",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to approve the proposed merger",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "at the annual meeting",
+      "f": "前置詞句"
+     },
+     {
+      "t": "next month.",
+      "f": "副詞句"
+     }
     ]
    },
    "level": 730,
@@ -7636,6 +8054,16 @@
       "w": "frequently.",
       "p": "adv"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Our auditors have recommended",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "that the firm review its internal controls more frequently.",
+      "f": "名詞節(that節)"
+     }
     ]
    },
    "level": 860,
@@ -7886,6 +8314,24 @@
       "w": "order.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Customers",
+      "f": "主語"
+     },
+     {
+      "t": "who purchase two or more items",
+      "f": "関係詞節"
+     },
+     {
+      "t": "will receive a free gift",
+      "f": "動詞+目的語"
+     },
+     {
+      "t": "with their order.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 600,
@@ -8122,6 +8568,20 @@
      {
       "w": "professionals.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The new advertising campaign,",
+      "f": "主語"
+     },
+     {
+      "t": "which will run for six weeks,",
+      "f": "関係詞節"
+     },
+     {
+      "t": "targets young professionals.",
+      "f": "動詞+目的語"
      }
     ]
    },
@@ -8372,6 +8832,20 @@
      {
       "w": "experience.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "We would appreciate it",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "if you could complete the short survey",
+      "f": "接続詞+節(副詞節・条件)"
+     },
+     {
+      "t": "about your recent experience.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -8630,6 +9104,24 @@
       "w": "center.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Should you have any questions",
+      "f": "倒置(条件)"
+     },
+     {
+      "t": "about your order,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "please do not hesitate",
+      "f": "動詞句"
+     },
+     {
+      "t": "to contact our customer service center.",
+      "f": "to+不定詞句"
+     }
     ]
    },
    "level": 860,
@@ -8871,6 +9363,16 @@
      {
       "w": "anticipated.",
       "p": "v"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The store's grand opening drew a larger crowd",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "than the organizers had anticipated.",
+      "f": "比較句"
      }
     ]
    },
@@ -9121,6 +9623,20 @@
       "w": "refund.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "All merchandise must be returned",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "in its original packaging",
+      "f": "前置詞句"
+     },
+     {
+      "t": "in order to qualify for a refund.",
+      "f": "to+不定詞句(目的)"
+     }
     ]
    },
    "level": 730,
@@ -9370,6 +9886,24 @@
      {
       "w": "sharply.",
       "p": "adv"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Thanks to the positive reviews",
+      "f": "前置詞句"
+     },
+     {
+      "t": "posted online,",
+      "f": "分詞句"
+     },
+     {
+      "t": "sales of the new blender have risen",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "sharply.",
+      "f": "副詞"
      }
     ]
    },
@@ -9625,6 +10159,24 @@
      {
       "w": "charge.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The manager apologized",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to the customer",
+      "f": "前置詞句"
+     },
+     {
+      "t": "and offered a replacement",
+      "f": "動詞+目的語"
+     },
+     {
+      "t": "at no extra charge.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -9887,6 +10439,16 @@
       "w": "quieter.",
       "p": "adj"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Not only does the new model use less energy,",
+      "f": "倒置"
+     },
+     {
+      "t": "but it is also considerably quieter.",
+      "f": "接続詞+節"
+     }
     ]
    },
    "level": 860,
@@ -10124,6 +10686,16 @@
      {
       "w": "destination.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Delivery times may vary",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "depending on the availability of the items and the destination.",
+      "f": "分詞句"
      }
     ]
    },
@@ -10390,6 +10962,24 @@
       "w": "morning.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Please be advised",
+      "f": "動詞句"
+     },
+     {
+      "t": "that the parking lot will be closed",
+      "f": "名詞節(that節)"
+     },
+     {
+      "t": "for repaving",
+      "f": "前置詞句"
+     },
+     {
+      "t": "from Friday evening until Monday morning.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -10649,6 +11239,20 @@
      {
       "w": "way.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The cafeteria will be temporarily relocated",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to the second floor",
+      "f": "前置詞句"
+     },
+     {
+      "t": "while renovations are under way.",
+      "f": "接続詞+節(副詞節・時)"
      }
     ]
    },
@@ -10912,6 +11516,24 @@
       "w": "building.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Employees are reminded",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to wear their identification badges",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "at all times",
+      "f": "前置詞句"
+     },
+     {
+      "t": "while inside the building.",
+      "f": "接続詞+節(副詞節・時)"
+     }
     ]
    },
    "level": 730,
@@ -11163,6 +11785,20 @@
      {
       "w": "intranet.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "To reserve a meeting room,",
+      "f": "to+不定詞句(目的)"
+     },
+     {
+      "t": "please use the online booking system",
+      "f": "動詞+目的語"
+     },
+     {
+      "t": "available on the company intranet.",
+      "f": "分詞句"
      }
     ]
    },
@@ -11416,6 +12052,20 @@
       "w": "workshop.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "A reminder e-mail will be sent",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to everyone",
+      "f": "前置詞句"
+     },
+     {
+      "t": "who has signed up for the workshop.",
+      "f": "関係詞節"
+     }
     ]
    },
    "level": 730,
@@ -11663,6 +12313,16 @@
      {
       "w": "hallways.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The maintenance team requests",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "that all tenants remove personal items from the hallways.",
+      "f": "名詞節(that節)"
      }
     ]
    },
@@ -11925,6 +12585,24 @@
      {
       "w": "pass.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Effective immediately,",
+      "f": "副詞句"
+     },
+     {
+      "t": "visitors must check in",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "at the front desk",
+      "f": "前置詞句"
+     },
+     {
+      "t": "and receive a guest pass.",
+      "f": "動詞+目的語"
      }
     ]
    },
@@ -12190,6 +12868,24 @@
      {
       "w": "director.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "We are pleased",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "to announce",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "that Ms. Park has accepted the position",
+      "f": "名詞節(that節)"
+     },
+     {
+      "t": "of regional director.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -12471,6 +13167,20 @@
       "w": "A.M.",
       "p": "other"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Due to a scheduled system update,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "the internal network will be unavailable",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "between midnight and 3 A.M.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -12725,6 +13435,20 @@
      {
       "w": "division.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The enclosed brochure describes",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "the full range of services",
+      "f": "目的語"
+     },
+     {
+      "t": "offered by our consulting division.",
+      "f": "分詞句"
      }
     ]
    },
@@ -12987,6 +13711,24 @@
       "w": "year.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The company plans",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to expand its operations",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "into Southeast Asia",
+      "f": "前置詞句"
+     },
+     {
+      "t": "by the end of next year.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 600,
@@ -13246,6 +13988,16 @@
       "w": "requirements.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The proposal was rejected",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "because it failed to meet the budget requirements.",
+      "f": "接続詞+節(副詞節・理由)"
+     }
     ]
    },
    "level": 600,
@@ -13501,6 +14253,20 @@
      {
       "w": "detail.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Mr. Lee is highly regarded",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "among his colleagues",
+      "f": "前置詞句"
+     },
+     {
+      "t": "for his reliability and attention to detail.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -13770,6 +14536,20 @@
       "w": "breakdowns.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Please make sure",
+      "f": "動詞句"
+     },
+     {
+      "t": "that the equipment is properly maintained",
+      "f": "名詞節(that節)"
+     },
+     {
+      "t": "to avoid unexpected breakdowns.",
+      "f": "to+不定詞句"
+     }
     ]
    },
    "level": 730,
@@ -14027,6 +14807,20 @@
       "w": "Tuesday.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The supplier has assured us",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "that the shipment will arrive",
+      "f": "名詞節(that節)"
+     },
+     {
+      "t": "no later than Tuesday.",
+      "f": "比較句"
+     }
     ]
    },
    "level": 730,
@@ -14270,6 +15064,20 @@
      {
       "w": "schedule.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A significant number of",
+      "f": "主語"
+     },
+     {
+      "t": "employees have expressed interest",
+      "f": "動詞+目的語"
+     },
+     {
+      "t": "in the flexible work schedule.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -14523,6 +15331,24 @@
       "w": "schedule.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The renovation of the lobby",
+      "f": "主語"
+     },
+     {
+      "t": "is expected",
+      "f": "動詞句"
+     },
+     {
+      "t": "to be completed",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "ahead of schedule.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -14758,6 +15584,24 @@
      {
       "w": "decade.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Demand for electric vehicles",
+      "f": "主語"
+     },
+     {
+      "t": "has grown",
+      "f": "動詞句"
+     },
+     {
+      "t": "steadily",
+      "f": "副詞"
+     },
+     {
+      "t": "over the past decade.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -15012,6 +15856,16 @@
       "w": "options.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The committee will make a final decision",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "after carefully considering all of the options.",
+      "f": "前置詞句(動名詞句)"
+     }
     ]
    },
    "level": 730,
@@ -15259,6 +16113,20 @@
      {
       "w": "containers.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Residents are asked",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to dispose of their waste",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "in the designated containers.",
+      "f": "前置詞句"
      }
     ]
    },

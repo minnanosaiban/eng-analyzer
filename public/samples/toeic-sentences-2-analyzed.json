@@ -240,6 +240,28 @@
       "w": "weather.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The shipment,",
+      "f": "主語"
+     },
+     {
+      "t": "which was originally scheduled for Monday,",
+      "f": "関係詞節"
+     },
+     {
+      "t": "will now arrive",
+      "f": "動詞句"
+     },
+     {
+      "t": "on Wednesday",
+      "f": "前置詞句"
+     },
+     {
+      "t": "because of severe weather.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -493,6 +515,24 @@
      {
       "w": "truck.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Please make sure",
+      "f": "動詞句"
+     },
+     {
+      "t": "all cartons are properly labeled",
+      "f": "名詞節"
+     },
+     {
+      "t": "before they are loaded",
+      "f": "接続詞+節(副詞節)"
+     },
+     {
+      "t": "onto the truck.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -751,6 +791,24 @@
       "w": "down.",
       "p": "adv"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Had the supplier delivered the parts",
+      "f": "倒置(条件)"
+     },
+     {
+      "t": "on time,",
+      "f": "副詞句"
+     },
+     {
+      "t": "the assembly line",
+      "f": "主語"
+     },
+     {
+      "t": "would not have been shut down.",
+      "f": "動詞句"
+     }
     ]
    },
    "level": 860,
@@ -994,6 +1052,16 @@
      {
       "w": "machinery.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The factory has reduced its energy consumption",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "by installing more efficient machinery.",
+      "f": "動名詞句"
      }
     ]
    },
@@ -1241,6 +1309,20 @@
       "w": "standards.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Quality inspectors are responsible",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "for ensuring",
+      "f": "前置詞句"
+     },
+     {
+      "t": "that every product meets the safety standards.",
+      "f": "名詞節(that節)"
+     }
     ]
    },
    "level": 730,
@@ -1481,6 +1563,20 @@
      {
       "w": "processing.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Due to the high volume of orders,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "customers may experience delays",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "in processing.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -1735,6 +1831,24 @@
      {
       "w": "data.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Employees are required",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to change their passwords",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "every ninety days",
+      "f": "副詞句"
+     },
+     {
+      "t": "to protect confidential data.",
+      "f": "to+不定詞句(目的)"
      }
     ]
    },
@@ -2013,6 +2127,20 @@
       "w": "limited.",
       "p": "adj"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The IT department will be upgrading the server",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "over the weekend,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "so access to the system may be limited.",
+      "f": "接続詞+節"
+     }
     ]
    },
    "level": 730,
@@ -2262,6 +2390,20 @@
      {
       "w": "account.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Once the software has been installed,",
+      "f": "接続詞+節(副詞節)"
+     },
+     {
+      "t": "users will be prompted",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to create an account.",
+      "f": "to+不定詞句"
      }
     ]
    },
@@ -2520,6 +2662,16 @@
       "w": "schedule.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The newly renovated lobby features comfortable seating and a large display screen",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "showing the daily schedule.",
+      "f": "分詞句"
+     }
     ]
    },
    "level": 730,
@@ -2768,6 +2920,24 @@
      {
       "w": "desk.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Visitors",
+      "f": "主語"
+     },
+     {
+      "t": "who wish to use the fitness center",
+      "f": "関係詞節"
+     },
+     {
+      "t": "must first register",
+      "f": "動詞句"
+     },
+     {
+      "t": "at the reception desk.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -3026,6 +3196,16 @@
      {
       "w": "summer.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The air conditioning system is so old",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "that it cannot cool the entire building in summer.",
+      "f": "副詞節(結果)"
      }
     ]
    },
@@ -3297,6 +3477,28 @@
       "w": "retreat.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Ms. Alvarez,",
+      "f": "主語"
+     },
+     {
+      "t": "whose department exceeded its annual target,",
+      "f": "関係詞節"
+     },
+     {
+      "t": "was invited",
+      "f": "動詞句"
+     },
+     {
+      "t": "to speak",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "at the company retreat.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -3533,6 +3735,20 @@
      {
       "w": "interview.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Candidates are advised",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to bring copies of their certificates",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "to the interview.",
+      "f": "前置詞句"
      }
     ]
    },
@@ -3782,6 +3998,20 @@
       "w": "teams.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The training session is designed",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to help new managers communicate more effectively",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "with their teams.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -4020,6 +4250,16 @@
       "w": "save.",
       "p": "v"
      }
+    ],
+    "phrases": [
+     {
+      "t": "The more closely we monitor expenses,",
+      "f": "比較句"
+     },
+     {
+      "t": "the more money we can save.",
+      "f": "比較句"
+     }
     ]
    },
    "level": 860,
@@ -4248,6 +4488,16 @@
      {
       "w": "attend.",
       "p": "v"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The meeting was postponed",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "until all department heads could attend.",
+      "f": "接続詞+節(副詞節)"
      }
     ]
    },
@@ -4491,6 +4741,16 @@
      {
       "w": "expectations.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Although the conference was held in a remote location,",
+      "f": "接続詞+節(副詞節)"
+     },
+     {
+      "t": "attendance exceeded expectations.",
+      "f": "主語+動詞+目的語"
      }
     ]
    },
@@ -4757,6 +5017,20 @@
       "w": "discount.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Please book your hotel",
+      "f": "動詞+目的語(命令文)"
+     },
+     {
+      "t": "at least a month in",
+      "f": "副詞句"
+     },
+     {
+      "t": "advance to take advantage of the corporate discount.",
+      "f": "to+不定詞句"
+     }
     ]
    },
    "level": 730,
@@ -5005,6 +5279,24 @@
      {
       "w": "Tuesday.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Mr. Nakamura is scheduled",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to present the quarterly results",
+      "f": "to+不定詞句"
+     },
+     {
+      "t": "to the board",
+      "f": "前置詞句"
+     },
+     {
+      "t": "next Tuesday.",
+      "f": "副詞句"
      }
     ]
    },
@@ -5259,6 +5551,20 @@
       "w": "days.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "In the event of a cancellation,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "the deposit will be returned",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "within ten business days.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 600,
@@ -5508,6 +5814,16 @@
      {
       "w": "markets.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The firm's profits have risen steadily",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "since it began exporting to overseas markets.",
+      "f": "接続詞+節(副詞節)"
      }
     ]
    },
@@ -5760,6 +6076,20 @@
      {
       "w": "month.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Applications for the research grant",
+      "f": "主語"
+     },
+     {
+      "t": "must be received",
+      "f": "動詞句"
+     },
+     {
+      "t": "no later than the end of this month.",
+      "f": "比較句"
      }
     ]
    },
@@ -6027,6 +6357,20 @@
       "w": "plans.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Because the budget was cut,",
+      "f": "接続詞+節(副詞節)"
+     },
+     {
+      "t": "the project team was forced",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "to scale back its original plans.",
+      "f": "to+不定詞句"
+     }
     ]
    },
    "level": 730,
@@ -6270,6 +6614,16 @@
      {
       "w": "friendly.",
       "p": "adj"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Our new line of kitchen appliances",
+      "f": "主語"
+     },
+     {
+      "t": "is not only affordable but also environmentally friendly.",
+      "f": "動詞句+補語"
      }
     ]
    },
@@ -6559,6 +6913,24 @@
       "w": "refund.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "If you are not completely satisfied with your purchase,",
+      "f": "接続詞+節(副詞節)"
+     },
+     {
+      "t": "you may return it",
+      "f": "主語+動詞+目的語"
+     },
+     {
+      "t": "within thirty days",
+      "f": "前置詞句"
+     },
+     {
+      "t": "for a full refund.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 730,
@@ -6819,6 +7191,16 @@
       "w": "version.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Customer feedback indicates",
+      "f": "主語+動詞"
+     },
+     {
+      "t": "that most users prefer the redesigned website to the previous version.",
+      "f": "名詞節(that節)"
+     }
     ]
    },
    "level": 730,
@@ -7064,6 +7446,20 @@
      {
       "w": "dollars.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Free parking is available",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "to customers",
+      "f": "前置詞句"
+     },
+     {
+      "t": "who spend more than fifty dollars.",
+      "f": "関係詞節"
      }
     ]
    },
@@ -7314,6 +7710,20 @@
       "w": "notice.",
       "p": "n"
      }
+    ],
+    "phrases": [
+     {
+      "t": "Because of ongoing construction,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "the main entrance will remain closed",
+      "f": "主語+動詞+補語"
+     },
+     {
+      "t": "until further notice.",
+      "f": "前置詞句"
+     }
     ]
    },
    "level": 600,
@@ -7562,6 +7972,16 @@
      {
       "w": "meeting.",
       "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Attached is the revised schedule,",
+      "f": "倒置"
+     },
+     {
+      "t": "which reflects the changes discussed during yesterday's meeting.",
+      "f": "関係詞節"
      }
     ]
    },
