@@ -118,7 +118,8 @@
       "meaning": "~を修了する、完了する",
       "note": "",
       "level": 3,
-      "toeic": "complete a form / complete the training など"
+      "toeic": "complete a form / complete the training など",
+      "ipa": "kəmˈplit"
      },
      {
       "word": "employee",
@@ -126,7 +127,8 @@
       "meaning": "従業員",
       "note": "",
       "level": 3,
-      "toeic": "new employee / full-time employee"
+      "toeic": "new employee / full-time employee",
+      "ipa": "ɛmˈplɔɪi"
      },
      {
       "word": "safety",
@@ -134,7 +136,8 @@
       "meaning": "安全",
       "note": "",
       "level": 2,
-      "toeic": "safety regulations / safety inspection"
+      "toeic": "safety regulations / safety inspection",
+      "ipa": "ˈseɪfti"
      },
      {
       "word": "production floor",
@@ -142,7 +145,8 @@
       "meaning": "生産現場、工場の作業フロア",
       "note": "",
       "level": 2,
-      "toeic": "工場の場面で登場する"
+      "toeic": "工場の場面で登場する",
+      "ipa": "pɹəˈdʌkʃən ˈflɔɹ"
      }
     ],
     "toeic": {
@@ -381,7 +385,8 @@
       "meaning": "~を昇進させる",
       "note": "受動態で「昇進する」",
       "level": 3,
-      "toeic": "be promoted to ~ / promote a product(宣伝する)の意味もある"
+      "toeic": "be promoted to ~ / promote a product(宣伝する)の意味もある",
+      "ipa": "pɹəˈmoʊt"
      },
      {
       "word": "join",
@@ -389,7 +394,8 @@
       "meaning": "~に加わる",
       "note": "",
       "level": 2,
-      "toeic": "join the team / join the company"
+      "toeic": "join the team / join the company",
+      "ipa": "ˈdʒɔɪn"
      },
      {
       "word": "marketing",
@@ -397,7 +403,8 @@
       "meaning": "マーケティング",
       "note": "",
       "level": 2,
-      "toeic": "marketing department / marketing strategy"
+      "toeic": "marketing department / marketing strategy",
+      "ipa": "ˈmɑɹkətɪŋ"
      },
      {
       "word": "senior",
@@ -405,7 +412,8 @@
       "meaning": "上級の",
       "note": "",
       "level": 2,
-      "toeic": "senior manager / senior staff"
+      "toeic": "senior manager / senior staff",
+      "ipa": "ˈsinjɚ"
      }
     ],
     "toeic": {
@@ -648,7 +656,8 @@
       "meaning": "応募者",
       "note": "",
       "level": 3,
-      "toeic": "job applicant / qualified applicant"
+      "toeic": "job applicant / qualified applicant",
+      "ipa": "ˈæplɪkənt"
      },
      {
       "word": "submit",
@@ -656,7 +665,8 @@
       "meaning": "~を提出する",
       "note": "",
       "level": 3,
-      "toeic": "submit an application / submit a report"
+      "toeic": "submit an application / submit a report",
+      "ipa": "səbˈmɪt"
      },
      {
       "word": "letter of recommendation",
@@ -664,7 +674,8 @@
       "meaning": "推薦状",
       "note": "",
       "level": 2,
-      "toeic": "求人応募の書類として登場する"
+      "toeic": "求人応募の書類として登場する",
+      "ipa": "ˈlɛtɚ əv ˌɹɛkəmənˈdeɪʃən"
      },
      {
       "word": "résumé",
@@ -672,7 +683,8 @@
       "meaning": "履歴書",
       "note": "",
       "level": 3,
-      "toeic": "submit a résumé / attach a résumé"
+      "toeic": "submit a résumé / attach a résumé",
+      "ipa": "ˈɹɛzʊˌmeɪ"
      }
     ],
     "toeic": {
@@ -908,7 +920,8 @@
       "meaning": "~を発表する",
       "note": "",
       "level": 3,
-      "toeic": "announce a plan / announce the results"
+      "toeic": "announce a plan / announce the results",
+      "ipa": "əˈnaʊns"
      },
      {
       "word": "policy",
@@ -916,7 +929,8 @@
       "meaning": "方針、制度",
       "note": "",
       "level": 3,
-      "toeic": "company policy / return policy"
+      "toeic": "company policy / return policy",
+      "ipa": "ˈpɑləsi"
      },
      {
       "word": "approve",
@@ -924,7 +938,8 @@
       "meaning": "~を承認する",
       "note": "",
       "level": 3,
-      "toeic": "approve a request / approve the budget"
+      "toeic": "approve a request / approve the budget",
+      "ipa": "əˈpɹuv"
      },
      {
       "word": "board",
@@ -932,7 +947,8 @@
       "meaning": "取締役会",
       "note": "board of directors の略した言い方",
       "level": 2,
-      "toeic": "board meeting / board member"
+      "toeic": "board meeting / board member",
+      "ipa": "ˈbɔɹd"
      },
      {
       "word": "human resources",
@@ -940,7 +956,8 @@
       "meaning": "人事部",
       "note": "",
       "level": 3,
-      "toeic": "human resources department"
+      "toeic": "human resources department",
+      "ipa": "ˈhjumən ˈɹisɔɹsɪz"
      }
     ],
     "toeic": {
@@ -1175,7 +1192,8 @@
       "meaning": "~の資格・権利がある",
       "note": "",
       "level": 3,
-      "toeic": "be entitled to a refund / be entitled to benefits"
+      "toeic": "be entitled to a refund / be entitled to benefits",
+      "ipa": "ˈbi ɛnˈtaɪtəld tə"
      },
      {
       "word": "compensation",
@@ -1183,7 +1201,8 @@
       "meaning": "報酬、補償",
       "note": "不可算名詞",
       "level": 3,
-      "toeic": "compensation package / receive compensation"
+      "toeic": "compensation package / receive compensation",
+      "ipa": "ˌkɑmpənˈseɪʃən"
      },
      {
       "word": "overtime",
@@ -1191,7 +1210,8 @@
       "meaning": "時間外に",
       "note": "名詞では「残業」",
       "level": 2,
-      "toeic": "work overtime / overtime pay"
+      "toeic": "work overtime / overtime pay",
+      "ipa": "ˈoʊvɚˌtaɪm"
      },
      {
       "word": "additional",
@@ -1199,7 +1219,8 @@
       "meaning": "追加の",
       "note": "",
       "level": 2,
-      "toeic": "additional charge / additional information"
+      "toeic": "additional charge / additional information",
+      "ipa": "əˈdɪʃənəl"
      }
     ],
     "toeic": {
@@ -1418,7 +1439,8 @@
       "meaning": "~を雇う",
       "note": "",
       "level": 3,
-      "toeic": "be hired as ~ / hire a consultant"
+      "toeic": "be hired as ~ / hire a consultant",
+      "ipa": "ˈhaɪɚ"
      },
      {
       "word": "extensive",
@@ -1426,7 +1448,8 @@
       "meaning": "豊富な、広範囲の",
       "note": "",
       "level": 3,
-      "toeic": "extensive experience / extensive knowledge"
+      "toeic": "extensive experience / extensive knowledge",
+      "ipa": "ɪkˈstɛnsɪv"
      },
      {
       "word": "coordinator",
@@ -1434,7 +1457,8 @@
       "meaning": "調整役、まとめ役",
       "note": "",
       "level": 2,
-      "toeic": "project coordinator / event coordinator"
+      "toeic": "project coordinator / event coordinator",
+      "ipa": "koʊˈɔɹdəˌneɪtɚ"
      },
      {
       "word": "logistics",
@@ -1442,7 +1466,8 @@
       "meaning": "物流",
       "note": "",
       "level": 2,
-      "toeic": "logistics company / logistics manager"
+      "toeic": "logistics company / logistics manager",
+      "ipa": "ləˈdʒɪstɪks"
      }
     ],
     "toeic": {
@@ -1681,7 +1706,8 @@
       "meaning": "~を行う",
       "note": "",
       "level": 3,
-      "toeic": "conduct a survey / conduct an interview"
+      "toeic": "conduct a survey / conduct an interview",
+      "ipa": "ˈkɑndəkt"
      },
      {
       "word": "panel",
@@ -1689,7 +1715,8 @@
       "meaning": "委員会、審査員団",
       "note": "",
       "level": 2,
-      "toeic": "a panel of experts"
+      "toeic": "a panel of experts",
+      "ipa": "ˈpænəl"
      },
      {
       "word": "department head",
@@ -1697,7 +1724,8 @@
       "meaning": "部長",
       "note": "",
       "level": 2,
-      "toeic": "組織の役職として登場する"
+      "toeic": "組織の役職として登場する",
+      "ipa": "dɪˈpɑɹtmənt ˈhɛd"
      },
      {
       "word": "interview",
@@ -1705,7 +1733,8 @@
       "meaning": "面接",
       "note": "",
       "level": 3,
-      "toeic": "job interview / schedule an interview"
+      "toeic": "job interview / schedule an interview",
+      "ipa": "ˈɪntɚˌvju"
      }
     ],
     "toeic": {
@@ -1945,7 +1974,8 @@
       "meaning": "資格がある",
       "note": "",
       "level": 3,
-      "toeic": "be eligible for ~ / be eligible to do"
+      "toeic": "be eligible for ~ / be eligible to do",
+      "ipa": "ˈɛlədʒəbəl"
      },
      {
       "word": "unless otherwise noted",
@@ -1953,7 +1983,8 @@
       "meaning": "特に断りのない限り",
       "note": "",
       "level": 2,
-      "toeic": "案内文や規約でよく使われる"
+      "toeic": "案内文や規約でよく使われる",
+      "ipa": "ənˈlɛs ˈʌðɚˌwaɪz ˈnoʊtəd"
      },
      {
       "word": "full-time",
@@ -1961,7 +1992,8 @@
       "meaning": "正社員の、常勤の",
       "note": "",
       "level": 2,
-      "toeic": "full-time employee / full-time position"
+      "toeic": "full-time employee / full-time position",
+      "ipa": "ˈfʊlˌtaɪm"
      },
      {
       "word": "health plan",
@@ -1969,7 +2001,8 @@
       "meaning": "健康保険制度",
       "note": "",
       "level": 2,
-      "toeic": "福利厚生の場面で登場する"
+      "toeic": "福利厚生の場面で登場する",
+      "ipa": "ˈhɛlθ ˈplæn"
      }
     ],
     "toeic": {
@@ -2205,7 +2238,8 @@
       "meaning": "~を検討する、見直す",
       "note": "",
       "level": 3,
-      "toeic": "review a document / review an application"
+      "toeic": "review a document / review an application",
+      "ipa": "ˌɹiˈvju"
      },
      {
       "word": "application",
@@ -2213,7 +2247,8 @@
       "meaning": "応募書類、申込書",
       "note": "",
       "level": 3,
-      "toeic": "job application / application form"
+      "toeic": "job application / application form",
+      "ipa": "ˌæpləˈkeɪʃən"
      },
      {
       "word": "committee",
@@ -2221,7 +2256,8 @@
       "meaning": "委員会",
       "note": "",
       "level": 2,
-      "toeic": "selection committee / committee member"
+      "toeic": "selection committee / committee member",
+      "ipa": "kəˈmɪti"
      },
      {
       "word": "candidate",
@@ -2229,7 +2265,8 @@
       "meaning": "候補者",
       "note": "",
       "level": 3,
-      "toeic": "qualified candidate / candidate for a position"
+      "toeic": "qualified candidate / candidate for a position",
+      "ipa": "ˈkændədeɪt"
      },
      {
       "word": "select",
@@ -2237,7 +2274,8 @@
       "meaning": "~を選ぶ",
       "note": "",
       "level": 2,
-      "toeic": "be selected for ~"
+      "toeic": "be selected for ~",
+      "ipa": "səˈlɛkt"
      }
     ],
     "toeic": {
@@ -2485,7 +2523,8 @@
       "meaning": "~に知らせる",
       "note": "inform 人 of/that ~ の形が多い",
       "level": 3,
-      "toeic": "inform A of B / inform customers"
+      "toeic": "inform A of B / inform customers",
+      "ipa": "ˌɪnˈfɔɹm"
      },
      {
       "word": "supervisor",
@@ -2493,7 +2532,8 @@
       "meaning": "上司、監督者",
       "note": "",
       "level": 3,
-      "toeic": "immediate supervisor / contact your supervisor"
+      "toeic": "immediate supervisor / contact your supervisor",
+      "ipa": "ˈsupɚˌvaɪzɚ"
      },
      {
       "word": "in advance",
@@ -2501,7 +2541,8 @@
       "meaning": "前もって",
       "note": "",
       "level": 3,
-      "toeic": "book in advance / two weeks in advance"
+      "toeic": "book in advance / two weeks in advance",
+      "ipa": "ɪn ədˈvæns"
      },
      {
       "word": "extended leave",
@@ -2509,7 +2550,8 @@
       "meaning": "長期休暇",
       "note": "",
       "level": 2,
-      "toeic": "take extended leave / medical leave"
+      "toeic": "take extended leave / medical leave",
+      "ipa": "ɪkˈstɛndəd ˈliv"
      }
     ],
     "toeic": {
@@ -2756,7 +2798,8 @@
       "meaning": "日程を変更する",
       "note": "",
       "level": 3,
-      "toeic": "be rescheduled for/to + 日時 の形でよく出る。"
+      "toeic": "be rescheduled for/to + 日時 の形でよく出る。",
+      "ipa": "ɹiˈskɛdʒul"
      },
      {
       "word": "quarterly",
@@ -2764,7 +2807,8 @@
       "meaning": "四半期の、年4回の",
       "note": "",
       "level": 2,
-      "toeic": "quarterly report / quarterly earnings"
+      "toeic": "quarterly report / quarterly earnings",
+      "ipa": "ˈkwɔɹtɚli"
      },
      {
       "word": "due to",
@@ -2772,7 +2816,8 @@
       "meaning": "〜のために",
       "note": "",
       "level": 3,
-      "toeic": "due to + 名詞 / because of との使い分け"
+      "toeic": "due to + 名詞 / because of との使い分け",
+      "ipa": "ˈdu tə"
      },
      {
       "word": "business trip",
@@ -2780,7 +2825,8 @@
       "meaning": "出張",
       "note": "",
       "level": 2,
-      "toeic": "go on a business trip"
+      "toeic": "go on a business trip",
+      "ipa": "ˈbɪznəs ˈtɹɪp"
      }
     ],
     "toeic": {
@@ -3033,7 +3079,8 @@
       "meaning": "奨励する、促す",
       "note": "",
       "level": 3,
-      "toeic": "be encouraged to do の形で頻出。"
+      "toeic": "be encouraged to do の形で頻出。",
+      "ipa": "ɛnˈkɝɪdʒ"
      },
      {
       "word": "submit",
@@ -3041,7 +3088,8 @@
       "meaning": "提出する",
       "note": "",
       "level": 3,
-      "toeic": "submit a report / application / request"
+      "toeic": "submit a report / application / request",
+      "ipa": "səbˈmɪt"
      },
      {
       "word": "in advance",
@@ -3049,7 +3097,8 @@
       "meaning": "前もって、事前に",
       "note": "",
       "level": 3,
-      "toeic": "register in advance / book in advance"
+      "toeic": "register in advance / book in advance",
+      "ipa": "ɪn ədˈvæns"
      },
      {
       "word": "thorough",
@@ -3057,7 +3106,8 @@
       "meaning": "徹底的な、十分な",
       "note": "",
       "level": 2,
-      "toeic": "a thorough review / inspection"
+      "toeic": "a thorough review / inspection",
+      "ipa": "ˈθɝoʊ"
      }
     ],
     "toeic": {
@@ -3313,7 +3363,8 @@
       "meaning": "遅らせる(be delayed で遅れる)",
       "note": "名詞では「遅れ」",
       "level": 3,
-      "toeic": "be delayed due to bad weather / flight delay"
+      "toeic": "be delayed due to bad weather / flight delay",
+      "ipa": "dɪˈleɪ"
      },
      {
       "word": "contact",
@@ -3321,7 +3372,8 @@
       "meaning": "連絡する",
       "note": "他動詞",
       "level": 3,
-      "toeic": "contact the department / customer service"
+      "toeic": "contact the department / customer service",
+      "ipa": "ˈkɑnˌtækt"
      },
      {
       "word": "immediately",
@@ -3329,7 +3381,8 @@
       "meaning": "すぐに",
       "note": "",
       "level": 2,
-      "toeic": "notify us immediately"
+      "toeic": "notify us immediately",
+      "ipa": "ˌɪˈmiˌdiətli"
      },
      {
       "word": "flight",
@@ -3337,7 +3390,8 @@
       "meaning": "航空便",
       "note": "",
       "level": 2,
-      "toeic": "book a flight / flight schedule"
+      "toeic": "book a flight / flight schedule",
+      "ipa": "ˈflaɪt"
      }
     ],
     "toeic": {
@@ -3555,7 +3609,8 @@
       "meaning": "収容する、対応する",
       "note": "",
       "level": 3,
-      "toeic": "accommodate up to 50 guests / accommodate a request"
+      "toeic": "accommodate up to 50 guests / accommodate a request",
+      "ipa": "əˈkɑməˌdeɪt"
      },
      {
       "word": "conference room",
@@ -3563,7 +3618,8 @@
       "meaning": "会議室",
       "note": "",
       "level": 3,
-      "toeic": "reserve a conference room"
+      "toeic": "reserve a conference room",
+      "ipa": "ˈkɑnfɚəns ˈɹum"
      },
      {
       "word": "up to",
@@ -3571,7 +3627,8 @@
       "meaning": "最大で〜まで",
       "note": "",
       "level": 2,
-      "toeic": "up to 20 percent discount"
+      "toeic": "up to 20 percent discount",
+      "ipa": "ˈʌp tə"
      }
     ],
     "toeic": {
@@ -3796,7 +3853,8 @@
       "meaning": "配布資料",
       "note": "",
       "level": 3,
-      "toeic": "distribute handouts / prepare handouts"
+      "toeic": "distribute handouts / prepare handouts",
+      "ipa": "ˈhænˌdaʊt"
      },
      {
       "word": "presentation",
@@ -3804,7 +3862,8 @@
       "meaning": "プレゼンテーション",
       "note": "",
       "level": 3,
-      "toeic": "give a presentation"
+      "toeic": "give a presentation",
+      "ipa": "ˌpɹɛzənˈteɪʃən"
      },
      {
       "word": "ready",
@@ -3812,7 +3871,8 @@
       "meaning": "準備ができた",
       "note": "",
       "level": 2,
-      "toeic": "be ready for / get ready"
+      "toeic": "be ready for / get ready",
+      "ipa": "ˈɹɛdi"
      },
      {
       "word": "by the time",
@@ -3820,7 +3880,8 @@
       "meaning": "〜するときまでに",
       "note": "",
       "level": 2,
-      "toeic": "by the time + 節"
+      "toeic": "by the time + 節",
+      "ipa": "baɪ ðə ˈtaɪm"
      }
     ],
     "toeic": {
@@ -4064,7 +4125,8 @@
       "meaning": "監督する",
       "note": "",
       "level": 3,
-      "toeic": "oversee a project / operations"
+      "toeic": "oversee a project / operations",
+      "ipa": "ˈoʊvɚˌsi"
      },
      {
       "word": "upgrade",
@@ -4072,7 +4134,8 @@
       "meaning": "改良、更新",
       "note": "動詞としても使う",
       "level": 2,
-      "toeic": "system upgrade / software upgrade"
+      "toeic": "system upgrade / software upgrade",
+      "ipa": "əpˈɡɹeɪd"
      },
      {
       "word": "office",
@@ -4080,7 +4143,8 @@
       "meaning": "事務所、支社",
       "note": "",
       "level": 2,
-      "toeic": "branch office / head office"
+      "toeic": "branch office / head office",
+      "ipa": "ˈɔfɪs"
      },
      {
       "word": "through",
@@ -4088,7 +4152,8 @@
       "meaning": "〜まで(含む)",
       "note": "",
       "level": 2,
-      "toeic": "Monday through Friday"
+      "toeic": "Monday through Friday",
+      "ipa": "ˈθɹu"
      }
     ],
     "toeic": {
@@ -4341,7 +4406,8 @@
       "meaning": "議題、議事日程",
       "note": "",
       "level": 3,
-      "toeic": "on the agenda / agenda item"
+      "toeic": "on the agenda / agenda item",
+      "ipa": "əˈdʒɛndə"
      },
      {
       "word": "include",
@@ -4349,7 +4415,8 @@
       "meaning": "含む",
       "note": "",
       "level": 3,
-      "toeic": "The package includes ..."
+      "toeic": "The package includes ...",
+      "ipa": "ˌɪnˈklud"
      },
      {
       "word": "budget",
@@ -4357,7 +4424,8 @@
       "meaning": "予算",
       "note": "",
       "level": 3,
-      "toeic": "budget proposal / within budget"
+      "toeic": "budget proposal / within budget",
+      "ipa": "ˈbʌdʒɪt"
      },
      {
       "word": "upcoming",
@@ -4365,7 +4433,8 @@
       "meaning": "今度の、近く行われる",
       "note": "",
       "level": 2,
-      "toeic": "upcoming event / upcoming conference"
+      "toeic": "upcoming event / upcoming conference",
+      "ipa": "ˈʌpˌkʌmɪŋ"
      },
      {
       "word": "launch",
@@ -4373,7 +4442,8 @@
       "meaning": "発売、立ち上げ",
       "note": "動詞でも使う",
       "level": 2,
-      "toeic": "product launch"
+      "toeic": "product launch",
+      "ipa": "ˈlɔntʃ"
      }
     ],
     "toeic": {
@@ -4639,7 +4709,8 @@
       "meaning": "経費、費用",
       "note": "通常は複数形",
       "level": 3,
-      "toeic": "travel expenses / expense report"
+      "toeic": "travel expenses / expense report",
+      "ipa": "ɪkˈspɛns"
      },
      {
       "word": "report",
@@ -4647,7 +4718,8 @@
       "meaning": "報告する",
       "note": "",
       "level": 2,
-      "toeic": "report expenses to the accounting department"
+      "toeic": "report expenses to the accounting department",
+      "ipa": "ɹiˈpɔɹt"
      },
      {
       "word": "within",
@@ -4655,7 +4727,8 @@
       "meaning": "〜以内に",
       "note": "",
       "level": 3,
-      "toeic": "within 30 days / within a week"
+      "toeic": "within 30 days / within a week",
+      "ipa": "wɪˈðɪn"
      },
      {
       "word": "trip",
@@ -4663,7 +4736,8 @@
       "meaning": "旅行、出張",
       "note": "",
       "level": 1,
-      "toeic": "business trip"
+      "toeic": "business trip",
+      "ipa": "ˈtɹɪp"
      }
     ],
     "toeic": {
@@ -4891,7 +4965,8 @@
       "meaning": "出席者、参加者",
       "note": "",
       "level": 3,
-      "toeic": "conference attendees"
+      "toeic": "conference attendees",
+      "ipa": "əˈtɛnˈdi"
      },
      {
       "word": "register",
@@ -4899,7 +4974,8 @@
       "meaning": "登録する",
       "note": "",
       "level": 3,
-      "toeic": "register for a seminar / register online"
+      "toeic": "register for a seminar / register online",
+      "ipa": "ˈɹɛdʒɪstɚ"
      },
      {
       "word": "discount",
@@ -4907,7 +4983,8 @@
       "meaning": "割引",
       "note": "",
       "level": 3,
-      "toeic": "receive a discount / discount on"
+      "toeic": "receive a discount / discount on",
+      "ipa": "dɪˈskaʊnt"
      },
      {
       "word": "admission fee",
@@ -4915,7 +4992,8 @@
       "meaning": "入場料",
       "note": "",
       "level": 2,
-      "toeic": "free admission / admission fee"
+      "toeic": "free admission / admission fee",
+      "ipa": "ædˈmɪʃən ˈfi"
      }
     ],
     "toeic": {
@@ -5173,7 +5251,8 @@
       "meaning": "謝罪する",
       "note": "",
       "level": 3,
-      "toeic": "apologize for the delay / inconvenience"
+      "toeic": "apologize for the delay / inconvenience",
+      "ipa": "əˈpɑləˌdʒaɪz"
      },
      {
       "word": "inconvenience",
@@ -5181,7 +5260,8 @@
       "meaning": "不便、迷惑",
       "note": "不可算名詞",
       "level": 3,
-      "toeic": "We apologize for any inconvenience."
+      "toeic": "We apologize for any inconvenience.",
+      "ipa": "ˌɪnkənˈvinjəns"
      },
      {
       "word": "venue",
@@ -5189,7 +5269,8 @@
       "meaning": "会場",
       "note": "",
       "level": 3,
-      "toeic": "event venue / change of venue"
+      "toeic": "event venue / change of venue",
+      "ipa": "ˈvɛnju"
      },
      {
       "word": "cause",
@@ -5197,7 +5278,8 @@
       "meaning": "引き起こす",
       "note": "",
       "level": 2,
-      "toeic": "caused by / cause a delay"
+      "toeic": "caused by / cause a delay",
+      "ipa": "ˈkɑz"
      }
     ],
     "toeic": {
@@ -5453,7 +5535,8 @@
       "meaning": "契約",
       "note": "",
       "level": 3,
-      "toeic": "sign a contract / contract renewal など"
+      "toeic": "sign a contract / contract renewal など",
+      "ipa": "ˈkɑnˌtɹækt"
      },
      {
       "word": "in effect",
@@ -5461,7 +5544,8 @@
       "meaning": "有効で、施行されて",
       "note": "",
       "level": 3,
-      "toeic": "remain in effect / be in effect until ~"
+      "toeic": "remain in effect / be in effect until ~",
+      "ipa": "ɪn ɪˈfɛkt"
      },
      {
       "word": "party",
@@ -5469,7 +5553,8 @@
       "meaning": "(契約の)当事者",
       "note": "パーティーの意味ではない",
       "level": 2,
-      "toeic": "both parties / third party"
+      "toeic": "both parties / third party",
+      "ipa": "ˈpɑɹti"
      },
      {
       "word": "notice",
@@ -5477,7 +5562,8 @@
       "meaning": "通知",
       "note": "",
       "level": 3,
-      "toeic": "give notice / written notice / until further notice"
+      "toeic": "give notice / written notice / until further notice",
+      "ipa": "ˈnoʊtəs"
      },
      {
       "word": "termination",
@@ -5485,7 +5571,8 @@
       "meaning": "終了、解約",
       "note": "",
       "level": 2,
-      "toeic": "termination of a contract"
+      "toeic": "termination of a contract",
+      "ipa": "tɚməˈneɪʃən"
      }
     ],
     "toeic": {
@@ -5749,7 +5836,8 @@
       "meaning": "収益、売上高",
       "note": "不可算で使うことが多い",
       "level": 3,
-      "toeic": "annual revenue / revenue growth"
+      "toeic": "annual revenue / revenue growth",
+      "ipa": "ˈɹɛvəˌnu"
      },
      {
       "word": "overseas",
@@ -5757,7 +5845,8 @@
       "meaning": "海外の",
       "note": "",
       "level": 3,
-      "toeic": "overseas branch / overseas market"
+      "toeic": "overseas branch / overseas market",
+      "ipa": "ˈoʊvɚˈsiz"
      },
      {
       "word": "increase",
@@ -5765,7 +5854,8 @@
       "meaning": "増加する",
       "note": "",
       "level": 3,
-      "toeic": "increase by ~ percent / a sharp increase"
+      "toeic": "increase by ~ percent / a sharp increase",
+      "ipa": "ˌɪnˈkɹis"
      },
      {
       "word": "compared with",
@@ -5773,7 +5863,8 @@
       "meaning": "~と比べて",
       "note": "",
       "level": 2,
-      "toeic": "compared with last year"
+      "toeic": "compared with last year",
+      "ipa": "kəmˈpɛɹd wɪð"
      },
      {
       "word": "period",
@@ -5781,7 +5872,8 @@
       "meaning": "期間",
       "note": "",
       "level": 2,
-      "toeic": "the same period / trial period"
+      "toeic": "the same period / trial period",
+      "ipa": "ˈpɪɹiəd"
      }
     ],
     "toeic": {
@@ -6019,7 +6111,8 @@
       "meaning": "請求書",
       "note": "",
       "level": 3,
-      "toeic": "send an invoice / invoice number"
+      "toeic": "send an invoice / invoice number",
+      "ipa": "ˈɪnvɔɪs"
      },
      {
       "word": "pay",
@@ -6027,7 +6120,8 @@
       "meaning": "支払う",
       "note": "過去分詞は paid",
       "level": 3,
-      "toeic": "be paid in full / pay by credit card"
+      "toeic": "be paid in full / pay by credit card",
+      "ipa": "ˈpeɪ"
      },
      {
       "word": "within",
@@ -6035,7 +6129,8 @@
       "meaning": "~以内に",
       "note": "",
       "level": 3,
-      "toeic": "within 30 days / within the budget"
+      "toeic": "within 30 days / within the budget",
+      "ipa": "wɪˈðɪn"
      },
      {
       "word": "issue",
@@ -6043,7 +6138,8 @@
       "meaning": "発行",
       "note": "",
       "level": 2,
-      "toeic": "date of issue / issue a receipt"
+      "toeic": "date of issue / issue a receipt",
+      "ipa": "ˈɪʃu"
      }
     ],
     "toeic": {
@@ -6274,7 +6370,8 @@
       "meaning": "経理、会計",
       "note": "",
       "level": 3,
-      "toeic": "accounting department / accounting software"
+      "toeic": "accounting department / accounting software",
+      "ipa": "əˈkaʊntɪŋ"
      },
      {
       "word": "be responsible for",
@@ -6282,7 +6379,8 @@
       "meaning": "~に責任がある",
       "note": "",
       "level": 3,
-      "toeic": "be responsible for ~ing / be in charge of と近い"
+      "toeic": "be responsible for ~ing / be in charge of と近い",
+      "ipa": "ˈbi ɹiˈspɑnsəbəl fɚ"
      },
      {
       "word": "verify",
@@ -6290,7 +6388,8 @@
       "meaning": "確認する",
       "note": "",
       "level": 2,
-      "toeic": "verify the information / verify an order"
+      "toeic": "verify the information / verify an order",
+      "ipa": "ˈvɛɹəˌfaɪ"
      },
      {
       "word": "receipt",
@@ -6298,7 +6397,8 @@
       "meaning": "領収書",
       "note": "発音は p を読まない",
       "level": 3,
-      "toeic": "keep the receipt / receipt of payment"
+      "toeic": "keep the receipt / receipt of payment",
+      "ipa": "ɹɪˈsit"
      },
      {
       "word": "expense report",
@@ -6306,7 +6406,8 @@
       "meaning": "経費報告書",
       "note": "",
       "level": 2,
-      "toeic": "submit an expense report"
+      "toeic": "submit an expense report",
+      "ipa": "ɪkˈspɛns ɹiˈpɔɹt"
      }
     ],
     "toeic": {
@@ -6554,7 +6655,8 @@
       "meaning": "もし~ならば",
       "note": "",
       "level": 2,
-      "toeic": "契約書や規則で条件を示す"
+      "toeic": "契約書や規則で条件を示す",
+      "ipa": "pɹəˈvaɪdɪd ˈðæt"
      },
      {
       "word": "inspection",
@@ -6562,7 +6664,8 @@
       "meaning": "検査、点検",
       "note": "",
       "level": 3,
-      "toeic": "safety inspection / pass an inspection"
+      "toeic": "safety inspection / pass an inspection",
+      "ipa": "ˌɪnˈspɛkʃən"
      },
      {
       "word": "on schedule",
@@ -6570,7 +6673,8 @@
       "meaning": "予定どおりに",
       "note": "",
       "level": 3,
-      "toeic": "be on schedule / ahead of schedule"
+      "toeic": "be on schedule / ahead of schedule",
+      "ipa": "ɑn ˈskɛdʒʊl"
      },
      {
       "word": "facility",
@@ -6578,7 +6682,8 @@
       "meaning": "施設",
       "note": "",
       "level": 3,
-      "toeic": "manufacturing facility / facilities"
+      "toeic": "manufacturing facility / facilities",
+      "ipa": "fəˈsɪlɪti"
      },
      {
       "word": "complete",
@@ -6586,7 +6691,8 @@
       "meaning": "完了する、完成させる",
       "note": "",
       "level": 3,
-      "toeic": "be completed on time"
+      "toeic": "be completed on time",
+      "ipa": "kəmˈplit"
      }
     ],
     "toeic": {
@@ -6833,7 +6939,8 @@
       "meaning": "~のために",
       "note": "",
       "level": 3,
-      "toeic": "because of the delay / due to と近い"
+      "toeic": "because of the delay / due to と近い",
+      "ipa": "bɪˈkɔz əv"
      },
      {
       "word": "raw materials",
@@ -6841,7 +6948,8 @@
       "meaning": "原材料",
       "note": "",
       "level": 3,
-      "toeic": "the cost of raw materials"
+      "toeic": "the cost of raw materials",
+      "ipa": "ˈɹɑ məˈtɪɹiəlz"
      },
      {
       "word": "raise",
@@ -6849,7 +6957,8 @@
       "meaning": "引き上げる",
       "note": "他動詞(rise は自動詞)",
       "level": 3,
-      "toeic": "raise prices / raise funds"
+      "toeic": "raise prices / raise funds",
+      "ipa": "ˈɹeɪz"
      },
      {
       "word": "decide",
@@ -6857,7 +6966,8 @@
       "meaning": "決定する",
       "note": "",
       "level": 3,
-      "toeic": "decide to do"
+      "toeic": "decide to do",
+      "ipa": "ˌdɪˈsaɪd"
      }
     ],
     "toeic": {
@@ -7130,7 +7240,8 @@
       "meaning": "返金する",
       "note": "名詞では「返金」",
       "level": 3,
-      "toeic": "full refund / request a refund"
+      "toeic": "full refund / request a refund",
+      "ipa": "ɹɪˈfʌnd"
      },
      {
       "word": "payment",
@@ -7138,7 +7249,8 @@
       "meaning": "支払い、代金",
       "note": "",
       "level": 3,
-      "toeic": "make a payment / payment method"
+      "toeic": "make a payment / payment method",
+      "ipa": "ˈpeɪmənt"
      },
      {
       "word": "in full",
@@ -7146,7 +7258,8 @@
       "meaning": "全額",
       "note": "",
       "level": 2,
-      "toeic": "pay in full / refund in full"
+      "toeic": "pay in full / refund in full",
+      "ipa": "ɪn ˈfʊl"
      },
      {
       "word": "cancel",
@@ -7154,7 +7267,8 @@
       "meaning": "取り消す",
       "note": "",
       "level": 3,
-      "toeic": "cancel an order / cancellation policy"
+      "toeic": "cancel an order / cancellation policy",
+      "ipa": "ˈkænsəl"
      },
      {
       "word": "ship",
@@ -7162,7 +7276,8 @@
       "meaning": "発送する",
       "note": "",
       "level": 3,
-      "toeic": "ship an order / be shipped within 3 days"
+      "toeic": "ship an order / be shipped within 3 days",
+      "ipa": "ˈʃɪp"
      }
     ],
     "toeic": {
@@ -7405,7 +7520,8 @@
       "meaning": "合意、契約書",
       "note": "",
       "level": 3,
-      "toeic": "reach an agreement / sign an agreement"
+      "toeic": "reach an agreement / sign an agreement",
+      "ipa": "əˈɡɹimənt"
      },
      {
       "word": "sign",
@@ -7413,7 +7529,8 @@
       "meaning": "署名する",
       "note": "",
       "level": 3,
-      "toeic": "sign a contract"
+      "toeic": "sign a contract",
+      "ipa": "ˈsaɪn"
      },
      {
       "word": "party",
@@ -7421,7 +7538,8 @@
       "meaning": "当事者",
       "note": "",
       "level": 2,
-      "toeic": "both parties / the other party"
+      "toeic": "both parties / the other party",
+      "ipa": "ˈpɑɹti"
      },
      {
       "word": "negotiation",
@@ -7429,7 +7547,8 @@
       "meaning": "交渉",
       "note": "",
       "level": 3,
-      "toeic": "enter into negotiations / contract negotiation"
+      "toeic": "enter into negotiations / contract negotiation",
+      "ipa": "nɪˌɡoʊʃiˈeɪʃən"
      }
     ],
     "toeic": {
@@ -7669,7 +7788,8 @@
       "meaning": "株主",
       "note": "",
       "level": 2,
-      "toeic": "shareholders' meeting"
+      "toeic": "shareholders' meeting",
+      "ipa": "ˈʃɛɹˌhoʊldɚ"
      },
      {
       "word": "be expected to",
@@ -7677,7 +7797,8 @@
       "meaning": "~すると予想される",
       "note": "",
       "level": 3,
-      "toeic": "be expected to arrive / be expected to increase"
+      "toeic": "be expected to arrive / be expected to increase",
+      "ipa": "ˈbi ɪkˈspɛktəd tə"
      },
      {
       "word": "approve",
@@ -7685,7 +7806,8 @@
       "meaning": "承認する",
       "note": "",
       "level": 3,
-      "toeic": "approve a plan / approve a budget"
+      "toeic": "approve a plan / approve a budget",
+      "ipa": "əˈpɹuv"
      },
      {
       "word": "merger",
@@ -7693,7 +7815,8 @@
       "meaning": "合併",
       "note": "",
       "level": 2,
-      "toeic": "merger with ~ / mergers and acquisitions"
+      "toeic": "merger with ~ / mergers and acquisitions",
+      "ipa": "ˈmɝdʒɚ"
      },
      {
       "word": "annual",
@@ -7701,7 +7824,8 @@
       "meaning": "年次の",
       "note": "",
       "level": 3,
-      "toeic": "annual meeting / annual report"
+      "toeic": "annual meeting / annual report",
+      "ipa": "ˈænjuəl"
      }
     ],
     "toeic": {
@@ -7948,7 +8072,8 @@
       "meaning": "監査人",
       "note": "",
       "level": 2,
-      "toeic": "external auditor / audit"
+      "toeic": "external auditor / audit",
+      "ipa": "ˈɔdɪtɚ"
      },
      {
       "word": "recommend",
@@ -7956,7 +8081,8 @@
       "meaning": "勧める、勧告する",
       "note": "",
       "level": 3,
-      "toeic": "recommend that S + 原形"
+      "toeic": "recommend that S + 原形",
+      "ipa": "ˌɹɛkəˈmɛnd"
      },
      {
       "word": "firm",
@@ -7964,7 +8090,8 @@
       "meaning": "会社",
       "note": "形容詞では「固い」",
       "level": 2,
-      "toeic": "law firm / consulting firm"
+      "toeic": "law firm / consulting firm",
+      "ipa": "ˈfɝm"
      },
      {
       "word": "internal",
@@ -7972,7 +8099,8 @@
       "meaning": "内部の",
       "note": "",
       "level": 2,
-      "toeic": "internal policy / internal memo"
+      "toeic": "internal policy / internal memo",
+      "ipa": "ˌɪnˈtɝnəl"
      },
      {
       "word": "review",
@@ -7980,7 +8108,8 @@
       "meaning": "見直す、検討する",
       "note": "",
       "level": 3,
-      "toeic": "review a contract / performance review"
+      "toeic": "review a contract / performance review",
+      "ipa": "ˌɹiˈvju"
      }
     ],
     "toeic": {
@@ -8208,7 +8337,8 @@
       "meaning": "購入する",
       "note": "名詞でも使う",
       "level": 3,
-      "toeic": "purchase an item / proof of purchase(購入証明)"
+      "toeic": "purchase an item / proof of purchase(購入証明)",
+      "ipa": "ˈpɝtʃəs"
      },
      {
       "word": "receive",
@@ -8216,7 +8346,8 @@
       "meaning": "受け取る",
       "note": "",
       "level": 3,
-      "toeic": "receive a discount / receive a confirmation e-mail"
+      "toeic": "receive a discount / receive a confirmation e-mail",
+      "ipa": "ɹəˈsiv"
      },
      {
       "word": "free gift",
@@ -8224,7 +8355,8 @@
       "meaning": "無料の景品",
       "note": "",
       "level": 2,
-      "toeic": "a free gift with purchase(購入特典)"
+      "toeic": "a free gift with purchase(購入特典)",
+      "ipa": "ˈfɹi ˈɡɪft"
      },
      {
       "word": "order",
@@ -8232,7 +8364,8 @@
       "meaning": "注文",
       "note": "",
       "level": 3,
-      "toeic": "place an order / order form"
+      "toeic": "place an order / order form",
+      "ipa": "ˈɔɹdɚ"
      }
     ],
     "toeic": {
@@ -8471,7 +8604,8 @@
       "meaning": "広告(業)",
       "note": "形容詞的にも使う",
       "level": 3,
-      "toeic": "advertising campaign / advertising agency"
+      "toeic": "advertising campaign / advertising agency",
+      "ipa": "ˈædvɚˌtaɪzɪŋ"
      },
      {
       "word": "campaign",
@@ -8479,7 +8613,8 @@
       "meaning": "キャンペーン、運動",
       "note": "",
       "level": 3,
-      "toeic": "launch a campaign(キャンペーンを開始する)"
+      "toeic": "launch a campaign(キャンペーンを開始する)",
+      "ipa": "kæmˈpeɪn"
      },
      {
       "word": "run",
@@ -8487,7 +8622,8 @@
       "meaning": "(期間)続く、実施される",
       "note": "",
       "level": 2,
-      "toeic": "The promotion will run until May."
+      "toeic": "The promotion will run until May.",
+      "ipa": "ˈɹʌn"
      },
      {
       "word": "target",
@@ -8495,7 +8631,8 @@
       "meaning": "~を対象とする",
       "note": "名詞は「標的、目標」",
       "level": 2,
-      "toeic": "target customers / target audience"
+      "toeic": "target customers / target audience",
+      "ipa": "ˈtɑɹɡət"
      }
     ],
     "toeic": {
@@ -8727,7 +8864,8 @@
       "meaning": "ありがたく思う",
       "note": "",
       "level": 3,
-      "toeic": "We would appreciate your cooperation."
+      "toeic": "We would appreciate your cooperation.",
+      "ipa": "əˈpɹiʃiˌeɪt"
      },
      {
       "word": "complete",
@@ -8735,7 +8873,8 @@
       "meaning": "(書類などを)記入する、完成させる",
       "note": "形容詞は「完全な」",
       "level": 3,
-      "toeic": "complete a form / complete a survey"
+      "toeic": "complete a form / complete a survey",
+      "ipa": "kəmˈplit"
      },
      {
       "word": "survey",
@@ -8743,7 +8882,8 @@
       "meaning": "アンケート、調査",
       "note": "",
       "level": 3,
-      "toeic": "customer satisfaction survey"
+      "toeic": "customer satisfaction survey",
+      "ipa": "sɚˈveɪ"
      },
      {
       "word": "recent",
@@ -8751,7 +8891,8 @@
       "meaning": "最近の",
       "note": "",
       "level": 2,
-      "toeic": "recent purchase / in recent years"
+      "toeic": "recent purchase / in recent years",
+      "ipa": "ˈɹisənt"
      }
     ],
     "toeic": {
@@ -8986,7 +9127,8 @@
       "meaning": "ためらう",
       "note": "",
       "level": 3,
-      "toeic": "Do not hesitate to contact us."
+      "toeic": "Do not hesitate to contact us.",
+      "ipa": "ˈhɛzəˌteɪt"
      },
      {
       "word": "contact",
@@ -8994,7 +9136,8 @@
       "meaning": "連絡する",
       "note": "他動詞なので前置詞 to は不要",
       "level": 3,
-      "toeic": "contact customer service"
+      "toeic": "contact customer service",
+      "ipa": "ˈkɑnˌtækt"
      },
      {
       "word": "customer service",
@@ -9002,7 +9145,8 @@
       "meaning": "顧客サービス",
       "note": "",
       "level": 3,
-      "toeic": "customer service representative"
+      "toeic": "customer service representative",
+      "ipa": "ˈkʌstəmɚ ˈsɝvəs"
      },
      {
       "word": "order",
@@ -9010,7 +9154,8 @@
       "meaning": "注文",
       "note": "",
       "level": 3,
-      "toeic": "track an order"
+      "toeic": "track an order",
+      "ipa": "ˈɔɹdɚ"
      }
     ],
     "toeic": {
@@ -9266,7 +9411,8 @@
       "meaning": "開店、グランドオープン",
       "note": "",
       "level": 3,
-      "toeic": "hold a grand opening"
+      "toeic": "hold a grand opening",
+      "ipa": "ˈɡɹænd ˈoʊpənɪŋ"
      },
      {
       "word": "draw",
@@ -9274,7 +9420,8 @@
       "meaning": "(人を)引きつける",
       "note": "過去形 drew",
       "level": 2,
-      "toeic": "draw a crowd / draw attention"
+      "toeic": "draw a crowd / draw attention",
+      "ipa": "ˈdɹɔ"
      },
      {
       "word": "crowd",
@@ -9282,7 +9429,8 @@
       "meaning": "群衆、人出",
       "note": "",
       "level": 2,
-      "toeic": "a large crowd"
+      "toeic": "a large crowd",
+      "ipa": "ˈkɹaʊd"
      },
      {
       "word": "anticipate",
@@ -9290,7 +9438,8 @@
       "meaning": "予想する、見込む",
       "note": "",
       "level": 3,
-      "toeic": "anticipate demand"
+      "toeic": "anticipate demand",
+      "ipa": "ænˈtɪsəˌpeɪt"
      }
     ],
     "toeic": {
@@ -9513,7 +9662,8 @@
       "meaning": "商品",
       "note": "不可算",
       "level": 3,
-      "toeic": "return merchandise / merchandise display"
+      "toeic": "return merchandise / merchandise display",
+      "ipa": "ˈmɝtʃənˌdaɪz"
      },
      {
       "word": "packaging",
@@ -9521,7 +9671,8 @@
       "meaning": "包装",
       "note": "",
       "level": 2,
-      "toeic": "in the original packaging"
+      "toeic": "in the original packaging",
+      "ipa": "ˈpækɪdʒɪŋ"
      },
      {
       "word": "qualify for",
@@ -9529,7 +9680,8 @@
       "meaning": "~の資格を得る",
       "note": "",
       "level": 3,
-      "toeic": "qualify for a discount / qualify for a refund"
+      "toeic": "qualify for a discount / qualify for a refund",
+      "ipa": "ˈkwɑləˌfaɪ fɚ"
      },
      {
       "word": "refund",
@@ -9537,7 +9689,8 @@
       "meaning": "返金",
       "note": "動詞でも使う",
       "level": 3,
-      "toeic": "receive a full refund"
+      "toeic": "receive a full refund",
+      "ipa": "ɹɪˈfʌnd"
      }
     ],
     "toeic": {
@@ -9781,7 +9934,8 @@
       "meaning": "~のおかげで",
       "note": "",
       "level": 3,
-      "toeic": "Thanks to your support, ..."
+      "toeic": "Thanks to your support, ...",
+      "ipa": "ˈθæŋks tə"
      },
      {
       "word": "review",
@@ -9789,7 +9943,8 @@
       "meaning": "レビュー、評価",
       "note": "",
       "level": 2,
-      "toeic": "customer review / positive review"
+      "toeic": "customer review / positive review",
+      "ipa": "ˌɹiˈvju"
      },
      {
       "word": "sales",
@@ -9797,7 +9952,8 @@
       "meaning": "売り上げ",
       "note": "複数形で使う",
       "level": 3,
-      "toeic": "sales figures / sales increase"
+      "toeic": "sales figures / sales increase",
+      "ipa": "ˈseɪlz"
      },
      {
       "word": "sharply",
@@ -9805,7 +9961,8 @@
       "meaning": "急激に",
       "note": "",
       "level": 2,
-      "toeic": "rise sharply / drop sharply"
+      "toeic": "rise sharply / drop sharply",
+      "ipa": "ˈʃɑɹpli"
      }
     ],
     "toeic": {
@@ -10058,7 +10215,8 @@
       "meaning": "謝罪する",
       "note": "",
       "level": 3,
-      "toeic": "apologize for the inconvenience"
+      "toeic": "apologize for the inconvenience",
+      "ipa": "əˈpɑləˌdʒaɪz"
      },
      {
       "word": "offer",
@@ -10066,7 +10224,8 @@
       "meaning": "提供する",
       "note": "",
       "level": 3,
-      "toeic": "offer a discount"
+      "toeic": "offer a discount",
+      "ipa": "ˈɔfɚ"
      },
      {
       "word": "replacement",
@@ -10074,7 +10233,8 @@
       "meaning": "交換品、代替品",
       "note": "",
       "level": 3,
-      "toeic": "free replacement / replacement part"
+      "toeic": "free replacement / replacement part",
+      "ipa": "ɹɪˈpleɪsmənt"
      },
      {
       "word": "extra charge",
@@ -10082,7 +10242,8 @@
       "meaning": "追加料金",
       "note": "",
       "level": 3,
-      "toeic": "at no extra charge"
+      "toeic": "at no extra charge",
+      "ipa": "ˈɛkstɹə ˈtʃɑɹdʒ"
      }
     ],
     "toeic": {
@@ -10333,7 +10494,8 @@
       "meaning": "AだけでなくBも",
       "note": "",
       "level": 3,
-      "toeic": "A と B は文法的に同じ形にする"
+      "toeic": "A と B は文法的に同じ形にする",
+      "ipa": "ˈnɑt ˈoʊnli ə ˈbʌt ˈɔlsoʊ ˈbi"
      },
      {
       "word": "energy",
@@ -10341,7 +10503,8 @@
       "meaning": "エネルギー",
       "note": "",
       "level": 2,
-      "toeic": "energy-efficient / energy consumption"
+      "toeic": "energy-efficient / energy consumption",
+      "ipa": "ˈɛnɚdʒi"
      },
      {
       "word": "considerably",
@@ -10349,7 +10512,8 @@
       "meaning": "かなり",
       "note": "",
       "level": 2,
-      "toeic": "considerably higher / considerably faster"
+      "toeic": "considerably higher / considerably faster",
+      "ipa": "kənˈsɪdɚəbli"
      },
      {
       "word": "quiet",
@@ -10357,7 +10521,8 @@
       "meaning": "静かな",
       "note": "比較級 quieter",
       "level": 1,
-      "toeic": ""
+      "toeic": "",
+      "ipa": "ˈkwaɪət"
      }
     ],
     "toeic": {
@@ -10585,7 +10750,8 @@
       "meaning": "配送",
       "note": "",
       "level": 3,
-      "toeic": "delivery time / free delivery"
+      "toeic": "delivery time / free delivery",
+      "ipa": "dɪˈlɪvɚi"
      },
      {
       "word": "vary",
@@ -10593,7 +10759,8 @@
       "meaning": "異なる、変動する",
       "note": "",
       "level": 3,
-      "toeic": "prices vary / vary depending on ~"
+      "toeic": "prices vary / vary depending on ~",
+      "ipa": "ˈvɛɹi"
      },
      {
       "word": "availability",
@@ -10601,7 +10768,8 @@
       "meaning": "在庫の有無、利用可能性",
       "note": "",
       "level": 3,
-      "toeic": "subject to availability"
+      "toeic": "subject to availability",
+      "ipa": "əˌveɪləˈbɪləti"
      },
      {
       "word": "destination",
@@ -10609,7 +10777,8 @@
       "meaning": "届け先、目的地",
       "note": "",
       "level": 2,
-      "toeic": "final destination"
+      "toeic": "final destination",
+      "ipa": "ˌdɛstəˈneɪʃən"
      }
     ],
     "toeic": {
@@ -10844,7 +11013,8 @@
       "meaning": "承知しておく、知らされる",
       "note": "通知文の定型",
       "level": 3,
-      "toeic": "Please be advised that ~ の形で社内通知・お知らせに頻出"
+      "toeic": "Please be advised that ~ の形で社内通知・お知らせに頻出",
+      "ipa": "ˈbi ædˈvaɪzd"
      },
      {
       "word": "close",
@@ -10852,7 +11022,8 @@
       "meaning": "閉鎖する",
       "note": "",
       "level": 3,
-      "toeic": "be closed for repairs / closed to the public などで使われる"
+      "toeic": "be closed for repairs / closed to the public などで使われる",
+      "ipa": "ˈkloʊs"
      },
      {
       "word": "repave",
@@ -10860,7 +11031,8 @@
       "meaning": "再舗装する",
       "note": "名詞形は repaving",
       "level": 2,
-      "toeic": "道路・駐車場の工事の告知で使われる"
+      "toeic": "道路・駐車場の工事の告知で使われる",
+      "ipa": "ɹiˈpeɪv"
      },
      {
       "word": "parking lot",
@@ -10868,7 +11040,8 @@
       "meaning": "駐車場",
       "note": "",
       "level": 2,
-      "toeic": "施設・設備の案内で頻出"
+      "toeic": "施設・設備の案内で頻出",
+      "ipa": "ˈpɑɹkɪŋ ˈlɑt"
      }
     ],
     "toeic": {
@@ -11134,7 +11307,8 @@
       "meaning": "移転させる、移転する",
       "note": "",
       "level": 3,
-      "toeic": "relocate to ~ の形で、オフィスや部署の移転に頻出"
+      "toeic": "relocate to ~ の形で、オフィスや部署の移転に頻出",
+      "ipa": "ˌɹiˈloʊkeɪt"
      },
      {
       "word": "temporarily",
@@ -11142,7 +11316,8 @@
       "meaning": "一時的に",
       "note": "",
       "level": 2,
-      "toeic": "temporarily closed / temporarily unavailable"
+      "toeic": "temporarily closed / temporarily unavailable",
+      "ipa": "ˌtɛmpɚˈɛɹəli"
      },
      {
       "word": "renovation",
@@ -11150,7 +11325,8 @@
       "meaning": "改装、改修",
       "note": "",
       "level": 3,
-      "toeic": "under renovation / renovation work"
+      "toeic": "under renovation / renovation work",
+      "ipa": "ˌɹɛnəˈveɪʃən"
      },
      {
       "word": "under way",
@@ -11158,7 +11334,8 @@
       "meaning": "進行中で",
       "note": "",
       "level": 2,
-      "toeic": "be under way の形で工事・計画の進行を表す"
+      "toeic": "be under way の形で工事・計画の進行を表す",
+      "ipa": "ˈʌndɚ ˈweɪ"
      }
     ],
     "toeic": {
@@ -11410,7 +11587,8 @@
       "meaning": "念を押す、思い出させる",
       "note": "",
       "level": 3,
-      "toeic": "be reminded to do / remind A of B"
+      "toeic": "be reminded to do / remind A of B",
+      "ipa": "ɹiˈmaɪnd"
      },
      {
       "word": "identification",
@@ -11418,7 +11596,8 @@
       "meaning": "身分証明、識別",
       "note": "",
       "level": 2,
-      "toeic": "identification badge / photo identification"
+      "toeic": "identification badge / photo identification",
+      "ipa": "aɪˌdɛntəfəˈkeɪʃən"
      },
      {
       "word": "badge",
@@ -11426,7 +11605,8 @@
       "meaning": "名札、バッジ",
       "note": "",
       "level": 2,
-      "toeic": "wear a badge / security badge"
+      "toeic": "wear a badge / security badge",
+      "ipa": "ˈbædʒ"
      },
      {
       "word": "at all times",
@@ -11434,7 +11614,8 @@
       "meaning": "常に",
       "note": "",
       "level": 2,
-      "toeic": "規則・注意書きで頻出"
+      "toeic": "規則・注意書きで頻出",
+      "ipa": "ət ˈɔl ˈtaɪmz"
      }
     ],
     "toeic": {
@@ -11676,7 +11857,8 @@
       "meaning": "予約する",
       "note": "",
       "level": 3,
-      "toeic": "reserve a room / reserve a seat"
+      "toeic": "reserve a room / reserve a seat",
+      "ipa": "ɹɪˈzɝv"
      },
      {
       "word": "booking",
@@ -11684,7 +11866,8 @@
       "meaning": "予約",
       "note": "",
       "level": 2,
-      "toeic": "online booking / booking confirmation"
+      "toeic": "online booking / booking confirmation",
+      "ipa": "ˈbʊkɪŋ"
      },
      {
       "word": "available",
@@ -11692,7 +11875,8 @@
       "meaning": "利用できる",
       "note": "",
       "level": 3,
-      "toeic": "be available on / available to ~"
+      "toeic": "be available on / available to ~",
+      "ipa": "əˈveɪləbəl"
      },
      {
       "word": "intranet",
@@ -11700,7 +11884,8 @@
       "meaning": "社内ネットワーク",
       "note": "",
       "level": 2,
-      "toeic": "社内通知で on the intranet の形でよく使われる"
+      "toeic": "社内通知で on the intranet の形でよく使われる",
+      "ipa": "ˈɪntɹəˌnɛt"
      }
     ],
     "toeic": {
@@ -11946,7 +12131,8 @@
       "meaning": "~に申し込む、登録する",
       "note": "",
       "level": 3,
-      "toeic": "sign up for a workshop / newsletter"
+      "toeic": "sign up for a workshop / newsletter",
+      "ipa": "ˈsaɪn ˈʌp fɚ"
      },
      {
       "word": "reminder",
@@ -11954,7 +12140,8 @@
       "meaning": "念押しの連絡",
       "note": "",
       "level": 2,
-      "toeic": "reminder e-mail / send a reminder"
+      "toeic": "reminder e-mail / send a reminder",
+      "ipa": "ɹiˈmaɪndɚ"
      },
      {
       "word": "workshop",
@@ -11962,7 +12149,8 @@
       "meaning": "研修会、ワークショップ",
       "note": "",
       "level": 2,
-      "toeic": "attend a workshop / hold a workshop"
+      "toeic": "attend a workshop / hold a workshop",
+      "ipa": "ˈwɝkˌʃɑp"
      },
      {
       "word": "everyone",
@@ -11970,7 +12158,8 @@
       "meaning": "全員",
       "note": "単数扱い",
       "level": 1,
-      "toeic": "everyone who ~ の形で関係詞節を伴う"
+      "toeic": "everyone who ~ の形で関係詞節を伴う",
+      "ipa": "ˈɛvɹiˌwʌn"
      }
     ],
     "toeic": {
@@ -12208,7 +12397,8 @@
       "meaning": "要請する",
       "note": "",
       "level": 3,
-      "toeic": "request that S + 原形 / request A to do"
+      "toeic": "request that S + 原形 / request A to do",
+      "ipa": "ɹɪˈkwɛst"
      },
      {
       "word": "tenant",
@@ -12216,7 +12406,8 @@
       "meaning": "入居者、テナント",
       "note": "",
       "level": 3,
-      "toeic": "ビルの管理や賃貸の通知で頻出"
+      "toeic": "ビルの管理や賃貸の通知で頻出",
+      "ipa": "ˈtɛnənt"
      },
      {
       "word": "maintenance",
@@ -12224,7 +12415,8 @@
       "meaning": "保守管理",
       "note": "",
       "level": 3,
-      "toeic": "maintenance team / routine maintenance"
+      "toeic": "maintenance team / routine maintenance",
+      "ipa": "ˈmeɪntənəns"
      },
      {
       "word": "personal item",
@@ -12232,7 +12424,8 @@
       "meaning": "私物",
       "note": "",
       "level": 2,
-      "toeic": "personal belongings とも言う"
+      "toeic": "personal belongings とも言う",
+      "ipa": "ˈpɝsɪnəl ˈaɪtəm"
      },
      {
       "word": "hallway",
@@ -12240,7 +12433,8 @@
       "meaning": "廊下",
       "note": "",
       "level": 1,
-      "toeic": "施設の案内で使われる"
+      "toeic": "施設の案内で使われる",
+      "ipa": "ˈhɔlˌweɪ"
      }
     ],
     "toeic": {
@@ -12480,7 +12674,8 @@
       "meaning": "(規則などが)有効な、発効する",
       "note": "",
       "level": 3,
-      "toeic": "effective immediately / effective as of ~"
+      "toeic": "effective immediately / effective as of ~",
+      "ipa": "ɪˈfɛktɪv"
      },
      {
       "word": "check in",
@@ -12488,7 +12683,8 @@
       "meaning": "受付をする、チェックインする",
       "note": "",
       "level": 3,
-      "toeic": "check in at the front desk"
+      "toeic": "check in at the front desk",
+      "ipa": "ˈtʃɛk ɪn"
      },
      {
       "word": "front desk",
@@ -12496,7 +12692,8 @@
       "meaning": "受付",
       "note": "",
       "level": 2,
-      "toeic": "ホテルやオフィスの案内で頻出"
+      "toeic": "ホテルやオフィスの案内で頻出",
+      "ipa": "ˈfɹʌnt ˈdɛsk"
      },
      {
       "word": "guest pass",
@@ -12504,7 +12701,8 @@
       "meaning": "来訪者用の入館証",
       "note": "",
       "level": 2,
-      "toeic": "visitor badge とも言う"
+      "toeic": "visitor badge とも言う",
+      "ipa": "ˈɡɛst ˈpæs"
      }
     ],
     "toeic": {
@@ -12755,7 +12953,8 @@
       "meaning": "~することを嬉しく思う",
       "note": "",
       "level": 3,
-      "toeic": "be pleased to announce / be pleased to inform"
+      "toeic": "be pleased to announce / be pleased to inform",
+      "ipa": "ˈbi ˈplizd tə"
      },
      {
       "word": "announce",
@@ -12763,7 +12962,8 @@
       "meaning": "発表する、知らせる",
       "note": "",
       "level": 3,
-      "toeic": "announce that ~ / announce a plan"
+      "toeic": "announce that ~ / announce a plan",
+      "ipa": "əˈnaʊns"
      },
      {
       "word": "accept",
@@ -12771,7 +12971,8 @@
       "meaning": "受け入れる、引き受ける",
       "note": "",
       "level": 3,
-      "toeic": "accept a position / accept an offer"
+      "toeic": "accept a position / accept an offer",
+      "ipa": "ækˈsɛpt"
      },
      {
       "word": "position",
@@ -12779,7 +12980,8 @@
       "meaning": "職、役職",
       "note": "",
       "level": 3,
-      "toeic": "apply for a position / fill a position"
+      "toeic": "apply for a position / fill a position",
+      "ipa": "pəˈzɪʃən"
      },
      {
       "word": "regional",
@@ -12787,7 +12989,8 @@
       "meaning": "地域の",
       "note": "",
       "level": 2,
-      "toeic": "regional director / regional office"
+      "toeic": "regional director / regional office",
+      "ipa": "ˈɹidʒənəl"
      }
     ],
     "toeic": {
@@ -13045,7 +13248,8 @@
       "meaning": "~のために",
       "note": "",
       "level": 3,
-      "toeic": "due to ~ は理由を表し、because of とほぼ同じ"
+      "toeic": "due to ~ は理由を表し、because of とほぼ同じ",
+      "ipa": "ˈdu tə"
      },
      {
       "word": "scheduled",
@@ -13053,7 +13257,8 @@
       "meaning": "予定された",
       "note": "",
       "level": 3,
-      "toeic": "scheduled maintenance / scheduled meeting"
+      "toeic": "scheduled maintenance / scheduled meeting",
+      "ipa": "ˈskɛdʒʊld"
      },
      {
       "word": "unavailable",
@@ -13061,7 +13266,8 @@
       "meaning": "利用できない",
       "note": "",
       "level": 3,
-      "toeic": "temporarily unavailable"
+      "toeic": "temporarily unavailable",
+      "ipa": "ˌʌnəˈveɪləbəl"
      },
      {
       "word": "internal",
@@ -13069,7 +13275,8 @@
       "meaning": "社内の、内部の",
       "note": "",
       "level": 2,
-      "toeic": "internal network / internal memo"
+      "toeic": "internal network / internal memo",
+      "ipa": "ˌɪnˈtɝnəl"
      },
      {
       "word": "update",
@@ -13077,7 +13284,8 @@
       "meaning": "更新",
       "note": "",
       "level": 2,
-      "toeic": "system update / software update"
+      "toeic": "system update / software update",
+      "ipa": "əpˈdeɪt"
      }
     ],
     "toeic": {
@@ -13334,7 +13542,8 @@
       "meaning": "同封の",
       "note": "",
       "level": 3,
-      "toeic": "enclosed document / please find the enclosed ~"
+      "toeic": "enclosed document / please find the enclosed ~",
+      "ipa": "ɛnˈkloʊzd"
      },
      {
       "word": "brochure",
@@ -13342,7 +13551,8 @@
       "meaning": "パンフレット",
       "note": "",
       "level": 3,
-      "toeic": "product brochure / brochure describes ~"
+      "toeic": "product brochure / brochure describes ~",
+      "ipa": "bɹoʊˈʃʊɹ"
      },
      {
       "word": "range",
@@ -13350,7 +13560,8 @@
       "meaning": "範囲、種類",
       "note": "",
       "level": 3,
-      "toeic": "a wide range of ~ / the full range of ~"
+      "toeic": "a wide range of ~ / the full range of ~",
+      "ipa": "ˈɹeɪndʒ"
      },
      {
       "word": "division",
@@ -13358,7 +13569,8 @@
       "meaning": "部門",
       "note": "",
       "level": 2,
-      "toeic": "sales division / consulting division"
+      "toeic": "sales division / consulting division",
+      "ipa": "dɪˈvɪʒən"
      }
     ],
     "toeic": {
@@ -13601,7 +13813,8 @@
       "meaning": "拡大する",
       "note": "expand into ~ で「~へ進出する」",
       "level": 3,
-      "toeic": "expand operations / expand into new markets"
+      "toeic": "expand operations / expand into new markets",
+      "ipa": "ɪkˈspænd"
      },
      {
       "word": "operation",
@@ -13609,7 +13822,8 @@
       "meaning": "事業、業務",
       "note": "複数形で事業活動の意味",
       "level": 3,
-      "toeic": "business operations / daily operations"
+      "toeic": "business operations / daily operations",
+      "ipa": "ˌɑpɚˈeɪʃən"
      },
      {
       "word": "by the end of",
@@ -13617,7 +13831,8 @@
       "meaning": "~の終わりまでに",
       "note": "",
       "level": 2,
-      "toeic": "by the end of the month など期限表現"
+      "toeic": "by the end of the month など期限表現",
+      "ipa": "baɪ ðə ˈɛnd əv"
      },
      {
       "word": "plan",
@@ -13625,7 +13840,8 @@
       "meaning": "計画する",
       "note": "",
       "level": 2,
-      "toeic": "plan to do / plan on doing"
+      "toeic": "plan to do / plan on doing",
+      "ipa": "ˈplæn"
      }
     ],
     "toeic": {
@@ -13886,7 +14102,8 @@
       "meaning": "提案(書)",
       "note": "",
       "level": 3,
-      "toeic": "submit a proposal / budget proposal"
+      "toeic": "submit a proposal / budget proposal",
+      "ipa": "pɹəˈpoʊzəl"
      },
      {
       "word": "reject",
@@ -13894,7 +14111,8 @@
       "meaning": "却下する、断る",
       "note": "",
       "level": 2,
-      "toeic": "reject a proposal / reject an offer"
+      "toeic": "reject a proposal / reject an offer",
+      "ipa": "ɹɪˈdʒɛkt"
      },
      {
       "word": "meet",
@@ -13902,7 +14120,8 @@
       "meaning": "(要件など)を満たす",
       "note": "",
       "level": 3,
-      "toeic": "meet requirements / meet a deadline"
+      "toeic": "meet requirements / meet a deadline",
+      "ipa": "ˈmit"
      },
      {
       "word": "requirement",
@@ -13910,7 +14129,8 @@
       "meaning": "要件、必要条件",
       "note": "",
       "level": 3,
-      "toeic": "meet the requirements / safety requirements"
+      "toeic": "meet the requirements / safety requirements",
+      "ipa": "ɹɪˈkwaɪɹmənt"
      },
      {
       "word": "fail to do",
@@ -13918,7 +14138,8 @@
       "meaning": "~しそこなう",
       "note": "",
       "level": 2,
-      "toeic": "fail to comply with ~"
+      "toeic": "fail to comply with ~",
+      "ipa": "ˈfeɪl tə ˈdu"
      }
     ],
     "toeic": {
@@ -14148,7 +14369,8 @@
       "meaning": "評価する、みなす",
       "note": "be highly regarded で「高く評価されている」",
       "level": 2,
-      "toeic": "be highly regarded / regard A as B"
+      "toeic": "be highly regarded / regard A as B",
+      "ipa": "ɹɪˈɡɑɹd"
      },
      {
       "word": "colleague",
@@ -14156,7 +14378,8 @@
       "meaning": "同僚",
       "note": "",
       "level": 3,
-      "toeic": "a colleague of mine"
+      "toeic": "a colleague of mine",
+      "ipa": "ˈkɑliɡ"
      },
      {
       "word": "reliability",
@@ -14164,7 +14387,8 @@
       "meaning": "信頼性",
       "note": "形容詞は reliable",
       "level": 2,
-      "toeic": "product reliability"
+      "toeic": "product reliability",
+      "ipa": "ɹiˌlaɪəˈbɪləti"
      },
      {
       "word": "attention to detail",
@@ -14172,7 +14396,8 @@
       "meaning": "細部への注意",
       "note": "",
       "level": 3,
-      "toeic": "求人広告の応募要件でよく使われる"
+      "toeic": "求人広告の応募要件でよく使われる",
+      "ipa": "əˈtɛnʃən tə dɪˈteɪl"
      }
     ],
     "toeic": {
@@ -14430,7 +14655,8 @@
       "meaning": "確認する、確実にする",
       "note": "",
       "level": 3,
-      "toeic": "make sure that ~ / make sure to do"
+      "toeic": "make sure that ~ / make sure to do",
+      "ipa": "ˈmeɪk ˈʃʊɹ"
      },
      {
       "word": "equipment",
@@ -14438,7 +14664,8 @@
       "meaning": "設備、機器",
       "note": "不可算名詞で複数形にしない",
       "level": 3,
-      "toeic": "office equipment / safety equipment"
+      "toeic": "office equipment / safety equipment",
+      "ipa": "ɪˈkwɪpmənt"
      },
      {
       "word": "maintain",
@@ -14446,7 +14673,8 @@
       "meaning": "整備する、維持する",
       "note": "名詞は maintenance",
       "level": 3,
-      "toeic": "maintain equipment / regular maintenance"
+      "toeic": "maintain equipment / regular maintenance",
+      "ipa": "meɪnˈteɪn"
      },
      {
       "word": "avoid",
@@ -14454,7 +14682,8 @@
       "meaning": "避ける",
       "note": "目的語に動名詞をとる",
       "level": 2,
-      "toeic": "avoid doing / avoid delays"
+      "toeic": "avoid doing / avoid delays",
+      "ipa": "əˈvɔɪd"
      },
      {
       "word": "breakdown",
@@ -14462,7 +14691,8 @@
       "meaning": "故障",
       "note": "",
       "level": 2,
-      "toeic": "equipment breakdown"
+      "toeic": "equipment breakdown",
+      "ipa": "ˈbɹeɪkˌdaʊn"
      }
     ],
     "toeic": {
@@ -14705,7 +14935,8 @@
       "meaning": "納入業者、供給元",
       "note": "",
       "level": 3,
-      "toeic": "a supplier of parts"
+      "toeic": "a supplier of parts",
+      "ipa": "səˈplaɪɚ"
      },
      {
       "word": "assure",
@@ -14713,7 +14944,8 @@
       "meaning": "保証する、請け合う",
       "note": "assure + 人 + that ~",
       "level": 3,
-      "toeic": "assure customers that ~"
+      "toeic": "assure customers that ~",
+      "ipa": "əˈʃʊɹ"
      },
      {
       "word": "shipment",
@@ -14721,7 +14953,8 @@
       "meaning": "出荷品、積荷",
       "note": "",
       "level": 3,
-      "toeic": "a shipment of goods / delayed shipment"
+      "toeic": "a shipment of goods / delayed shipment",
+      "ipa": "ˈʃɪpmənt"
      },
      {
       "word": "no later than",
@@ -14729,7 +14962,8 @@
       "meaning": "遅くとも~までに",
       "note": "",
       "level": 2,
-      "toeic": "no later than 5 P.M."
+      "toeic": "no later than 5 P.M.",
+      "ipa": "ˈnoʊ ˈleɪtɚ ðən"
      }
     ],
     "toeic": {
@@ -14967,7 +15201,8 @@
       "meaning": "かなりの、重要な",
       "note": "",
       "level": 3,
-      "toeic": "a significant increase / significant number"
+      "toeic": "a significant increase / significant number",
+      "ipa": "səɡˈnɪfɪkənt"
      },
      {
       "word": "express",
@@ -14975,7 +15210,8 @@
       "meaning": "表明する",
       "note": "",
       "level": 2,
-      "toeic": "express interest in / express concern"
+      "toeic": "express interest in / express concern",
+      "ipa": "ɪkˈspɹɛs"
      },
      {
       "word": "flexible",
@@ -14983,7 +15219,8 @@
       "meaning": "柔軟な",
       "note": "",
       "level": 3,
-      "toeic": "flexible schedule / flexible hours"
+      "toeic": "flexible schedule / flexible hours",
+      "ipa": "ˈflɛksəbəl"
      },
      {
       "word": "employee",
@@ -14991,7 +15228,8 @@
       "meaning": "従業員",
       "note": "",
       "level": 3,
-      "toeic": "a full-time employee"
+      "toeic": "a full-time employee",
+      "ipa": "ɛmˈplɔɪi"
      }
     ],
     "toeic": {
@@ -15225,7 +15463,8 @@
       "meaning": "改装、改修",
       "note": "動詞は renovate",
       "level": 3,
-      "toeic": "building renovation / under renovation"
+      "toeic": "building renovation / under renovation",
+      "ipa": "ˌɹɛnəˈveɪʃən"
      },
      {
       "word": "lobby",
@@ -15233,7 +15472,8 @@
       "meaning": "ロビー",
       "note": "",
       "level": 2,
-      "toeic": "hotel lobby"
+      "toeic": "hotel lobby",
+      "ipa": "ˈlɑbi"
      },
      {
       "word": "be expected to do",
@@ -15241,7 +15481,8 @@
       "meaning": "~する見込みだ",
       "note": "",
       "level": 3,
-      "toeic": "be expected to arrive / be expected to increase"
+      "toeic": "be expected to arrive / be expected to increase",
+      "ipa": "ˈbi ɪkˈspɛktəd tə ˈdu"
      },
      {
       "word": "complete",
@@ -15249,7 +15490,8 @@
       "meaning": "完了する、完成させる",
       "note": "",
       "level": 3,
-      "toeic": "complete a project / be completed by ~"
+      "toeic": "complete a project / be completed by ~",
+      "ipa": "kəmˈplit"
      },
      {
       "word": "ahead of schedule",
@@ -15257,7 +15499,8 @@
       "meaning": "予定より早く",
       "note": "",
       "level": 3,
-      "toeic": "finish ahead of schedule"
+      "toeic": "finish ahead of schedule",
+      "ipa": "əˈhɛd əv ˈskɛdʒʊl"
      }
     ],
     "toeic": {
@@ -15495,7 +15738,8 @@
       "meaning": "需要",
       "note": "",
       "level": 3,
-      "toeic": "demand for ~ / in high demand"
+      "toeic": "demand for ~ / in high demand",
+      "ipa": "dɪˈmænd"
      },
      {
       "word": "steadily",
@@ -15503,7 +15747,8 @@
       "meaning": "着実に",
       "note": "形容詞は steady",
       "level": 2,
-      "toeic": "increase steadily / grow steadily"
+      "toeic": "increase steadily / grow steadily",
+      "ipa": "ˈstɛdəli"
      },
      {
       "word": "vehicle",
@@ -15511,7 +15756,8 @@
       "meaning": "車両",
       "note": "",
       "level": 2,
-      "toeic": "company vehicle / electric vehicle"
+      "toeic": "company vehicle / electric vehicle",
+      "ipa": "ˈvihɪkəl"
      },
      {
       "word": "decade",
@@ -15519,7 +15765,8 @@
       "meaning": "10年間",
       "note": "",
       "level": 2,
-      "toeic": "over the past decade"
+      "toeic": "over the past decade",
+      "ipa": "dɛˈkeɪd"
      }
     ],
     "toeic": {
@@ -15754,7 +16001,8 @@
       "meaning": "委員会",
       "note": "",
       "level": 3,
-      "toeic": "a committee member / the selection committee"
+      "toeic": "a committee member / the selection committee",
+      "ipa": "kəˈmɪti"
      },
      {
       "word": "make a decision",
@@ -15762,7 +16010,8 @@
       "meaning": "決定を下す",
       "note": "",
       "level": 3,
-      "toeic": "make a final decision"
+      "toeic": "make a final decision",
+      "ipa": "ˈmeɪk ə dɪˈsɪʒən"
      },
      {
       "word": "consider",
@@ -15770,7 +16019,8 @@
       "meaning": "検討する",
       "note": "目的語に動名詞をとる",
       "level": 3,
-      "toeic": "consider doing / consider an option"
+      "toeic": "consider doing / consider an option",
+      "ipa": "kənˈsɪdɚ"
      },
      {
       "word": "option",
@@ -15778,7 +16028,8 @@
       "meaning": "選択肢",
       "note": "",
       "level": 2,
-      "toeic": "payment options / available options"
+      "toeic": "payment options / available options",
+      "ipa": "ˈɑpʃən"
      }
     ],
     "toeic": {
@@ -16012,7 +16263,8 @@
       "meaning": "住民",
       "note": "",
       "level": 2,
-      "toeic": "local residents"
+      "toeic": "local residents",
+      "ipa": "ˈɹɛzɪdənt"
      },
      {
       "word": "dispose of",
@@ -16020,7 +16272,8 @@
       "meaning": "~を処分する",
       "note": "",
       "level": 3,
-      "toeic": "dispose of waste / proper disposal"
+      "toeic": "dispose of waste / proper disposal",
+      "ipa": "dɪˈspoʊz əv"
      },
      {
       "word": "waste",
@@ -16028,7 +16281,8 @@
       "meaning": "ごみ、廃棄物",
       "note": "",
       "level": 2,
-      "toeic": "industrial waste / waste disposal"
+      "toeic": "industrial waste / waste disposal",
+      "ipa": "ˈweɪst"
      },
      {
       "word": "designated",
@@ -16036,7 +16290,8 @@
       "meaning": "指定された",
       "note": "動詞 designate の過去分詞から",
       "level": 3,
-      "toeic": "designated area / designated parking"
+      "toeic": "designated area / designated parking",
+      "ipa": "ˈdɛzɪɡˌneɪtɪd"
      },
      {
       "word": "container",
@@ -16044,7 +16299,8 @@
       "meaning": "容器",
       "note": "",
       "level": 2,
-      "toeic": "storage container"
+      "toeic": "storage container",
+      "ipa": "kənˈteɪnɚ"
      }
     ],
     "toeic": {
